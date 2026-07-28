@@ -6,19 +6,17 @@ import json
 import urllib.request
 from flask import Flask, request
 from telegram import Update, Bot
-from google import genai
+from groq import Groq
 
 # ================== تنظیمات ==================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID", "0")
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")  # کلید گروق که تازه گرفتید
 WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
-# کلاینت جمنای
-client = genai.Client(api_key=GEMINI_API_KEY)
-
-# مشکل اصلی اینجا بود: مدل 2.5 وجود ندارد! به نسخه پایدار تغییر یافت
-MODEL_NAME = "gemini-2.0-flash" 
+# کلاینت گروق (با سرعت فوق‌العاده بالا)
+client = Groq(api_key=GROQ_API_KEY)
+MODEL_NAME = "llama-3.3-70b-versatile"
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -34,7 +32,7 @@ TOPICS = [
     "یک اشتباه رایج زبان‌آموزان ایرانی در انگلیسی و شکل درست آن",
 ]
 
-# ================== توابع هوش مصنوعی ==================
+# ================== توابع هوش مصنوعی (Groq) ==================
 
 def generate_educational_post() -> str:
     topic = random.choice(TOPICS)
@@ -44,12 +42,15 @@ def generate_educational_post() -> str:
 قوانین: حداکثر ۸ خط باشه، ساده، کاربردی و جذاب بنویس، از ایموجی استفاده کن، در پایان یک سوال کوتاه بپرس، فقط متن نهایی رو بنویس.
 """
     try:
-        response = client.models.generate_content(model=MODEL_NAME, contents=prompt)
-        return response.text.strip() if response and response.text else None
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+        return completion.choices[0].message.content.strip()
     except Exception as e:
-        logger.error(f"خطای جمنای در ساخت پست: {e}")
-        # تغییر مهم: حالا ارور دقیق گوگل در تلگرام برای شما ارسال می‌شود
-        return f"❌ خطای سرور جمنای:\n{str(e)}"
+        logger.error(f"خطای گروق در ساخت پست: {e}")
+        return f"❌ خطای گروق:\n{str(e)}"
 
 def generate_reply(user_text: str) -> str:
     prompt = f"""
@@ -58,11 +59,15 @@ def generate_reply(user_text: str) -> str:
 کوتاه، مفید و تشویق‌کننده باش. پیام کاربر: {user_text}
 """
     try:
-        response = client.models.generate_content(model=MODEL_NAME, contents=prompt)
-        return response.text.strip() if response and response.text else "نتونستم جواب بدم 😔"
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+        return completion.choices[0].message.content.strip()
     except Exception as e:
-        logger.error(f"خطای جمنای در جواب به کاربر: {e}")
-        return f"❌ خطای سرور جمنای در پاسخ:\n{str(e)}"
+        logger.error(f"خطای گروق در پاسخ به کاربر: {e}")
+        return f"❌ خطای گروق در پاسخ:\n{str(e)}"
 
 # ================== تابع پردازش پیام‌های تلگرام ==================
 
@@ -113,14 +118,12 @@ async def process_telegram_update(update_dict: dict):
 
 @app.route("/", methods=["GET"])
 def health():
-    return "Bot is alive and ready!", 200
+    return "Bot is alive and powered by Groq!", 200
 
 @app.route("/post", methods=["GET", "POST"])
 def trigger_post():
     try:
         text = generate_educational_post()
-        if not text:
-            text = "امروز نتونستم محتوای جدید بسازم 😔 کمی بعد دوباره تلاش می‌کنم."
         
         url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
         payload = json.dumps({"chat_id": GROUP_CHAT_ID, "text": text}).encode('utf-8')
