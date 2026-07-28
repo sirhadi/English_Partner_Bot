@@ -51,7 +51,6 @@ def generate_educational_post() -> str:
         return response.text.strip()
     except Exception as e:
         logger.error(f"خطای دقیق Gemini: {type(e).__name__} - {e}")
-      %%  logger.error(f"خطا در تولید محتوا: {e}")
         return "امروز یه مشکل فنی پیش اومد 😔 فردا دوباره مطالب آموزشی میاد!"
 
 async def send_educational_post():
