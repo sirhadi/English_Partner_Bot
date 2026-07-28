@@ -18,7 +18,7 @@ WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 # مشکل اصلی اینجا بود: مدل 2.5 وجود ندارد! به نسخه پایدار تغییر یافت
-MODEL_NAME = "gemini-2.5-flash" 
+MODEL_NAME = "gemini-2.0-flash" 
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
