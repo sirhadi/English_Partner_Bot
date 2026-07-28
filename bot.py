@@ -13,7 +13,7 @@ GROUP_CHAT_ID = int(os.getenv("GROUP_CHAT_ID", "0"))
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
-# کلاینت جدید جمنای
+# کلاینت جمنای
 client = genai.Client(api_key=GEMINI_API_KEY)
 MODEL_NAME = "gemini-2.5-flash"
 
@@ -70,6 +70,8 @@ async def send_educational_post():
         return False
 
 async def welcome_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not update.chat_member or not update.chat_member.new_chat_members:
+        return
     for member in update.chat_member.new_chat_members:
         if member.is_bot:
             continue
@@ -115,15 +117,20 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logger.error(f"خطا در جواب Gemini: {e}")
         await update.message.reply_text("متأسفانه الان نتونستم جواب بدم 😔 کمی بعد دوباره امتحان کن.")
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "سلام! من ربات گروه پارتنر‌یابی و یادگیری زبان انگلیسی هستم 🌟\n"
-        "می‌تونی ازم سوال بپرسی یا تو گروه منشنم کنی."
-    )
-
+# ثبت هندلرها
 application.add_handler(CommandHandler("start", start))
 application.add_handler(ChatMemberHandler(welcome_new_member, ChatMemberHandler.CHAT_MEMBER))
 application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+
+# تابع کمکی برای راه‌اندازی اولیه اپلیکیشن تلگرام به صورت ناهمگام (Async)
+async def initialize_application():
+    await application.initialize()
+    if WEBHOOK_URL and BOT_TOKEN:
+        await application.bot.set_webhook(url=f"{WEBHOOK_URL}/{BOT_TOKEN}")
+        logger.info("Webhook تنظیم شد و اپلیکیشن Initialize گردید")
+
+# اجرای تابع مقداردهی اولیه در شروع برنامه
+asyncio.run(initialize_application())
 
 @app.route("/", methods=["GET"])
 def health():
@@ -141,23 +148,17 @@ def trigger_post():
 @app.route(f"/{BOT_TOKEN}", methods=["POST"])
 def webhook():
     try:
-        update = Update.de_json(request.get_json(force=True), application.bot)
-        asyncio.run(application.process_update(update))
+        json_data = request.get_json(force=True)
+        update = Update.de_json(json_data, application.bot)
+        
+        async def process():
+            await application.process_update(update)
+
+        asyncio.run(process())
         return "ok", 200
     except Exception as e:
         logger.error(f"خطا در webhook: {e}")
         return "error", 500
-
-def setup_webhook():
-    try:
-        bot = Bot(token=BOT_TOKEN)
-        asyncio.run(bot.set_webhook(url=f"{WEBHOOK_URL}/{BOT_TOKEN}"))
-        logger.info("Webhook تنظیم شد")
-    except Exception as e:
-        logger.error(f"خطا در تنظیم webhook: {e}")
-
-if WEBHOOK_URL and BOT_TOKEN:
-    setup_webhook()
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
