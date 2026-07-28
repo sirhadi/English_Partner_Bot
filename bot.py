@@ -6,14 +6,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, ChatMemberHandler, filters, ContextTypes
 import google.generativeai as genai
 
-# ================== تنظیمات ==================
-BOT_TOKEN = os.getenv("6756204974:AAG_FOKPBLfwcTHK3rpRrBKcatYNRx90SKE")
-GROUP_CHAT_ID = int(os.getenv("-1002093824468"))
-GEMINI_API_KEY = os.getenv("AQ.Ab8RN6Iw27-MBG19f5UA63NDQLxU_NPGYnK4hcNHiLRZHwYxzg")
-WEBHOOK_URL = os.getenv("https://english-partner-bot.onrender.com")  # مثلاً https://your-app.onrender.com
 
-genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-2.0-flash")
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
