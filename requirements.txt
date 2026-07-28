@@ -1,4 +1,4 @@
 flask
 gunicorn
-telegram
+python-telegram-bot
 groq
