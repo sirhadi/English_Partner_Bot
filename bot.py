@@ -5,23 +5,22 @@ import asyncio
 from flask import Flask, request
 from telegram import Update, Bot
 from telegram.ext import Application, CommandHandler, MessageHandler, ChatMemberHandler, filters, ContextTypes
-import google.generativeai as genai
+from google import genai
 
 # ================== تنظیمات ==================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 GROUP_CHAT_ID = int(os.getenv("GROUP_CHAT_ID", "0"))
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-WEBHOOK_URL = os.getenv("WEBHOOK_URL")  # باید https://english-partner-bot.onrender.com باشه
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
-genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-2.5-flash")
+# کلاینت جدید جمنای
+client = genai.Client(api_key=GEMINI_API_KEY)
+MODEL_NAME = "gemini-2.5-flash"
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-
-# ساخت Application
 application = Application.builder().token(BOT_TOKEN).build()
 
 TOPICS = [
@@ -47,18 +46,24 @@ def generate_educational_post() -> str:
 - فقط متن نهایی رو بنویس، هیچ توضیح اضافه‌ای نده
 """
     try:
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model=MODEL_NAME,
+            contents=prompt
+        )
         return response.text.strip()
     except Exception as e:
-        logger.error(f"خطای دقیق Gemini: {type(e).__name__} - {e}")
-        return "امروز یه مشکل فنی پیش اومد 😔 فردا دوباره مطالب آموزشی میاد!"
+        logger.error(f"خطای Gemini: {type(e).__name__} - {e}")
+        return None
 
 async def send_educational_post():
     try:
         text = generate_educational_post()
+        if not text:
+            text = "امروز نتونستم محتوای جدید بسازم 😔 کمی بعد دوباره تلاش می‌کنم."
+        
         bot = Bot(token=BOT_TOKEN)
         await bot.send_message(chat_id=GROUP_CHAT_ID, text=text)
-        logger.info("پست آموزشی با موفقیت ارسال شد")
+        logger.info("پست آموزشی ارسال شد")
         return True
     except Exception as e:
         logger.error(f"خطا در ارسال پست: {e}")
@@ -100,11 +105,14 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 پیام کاربر: {user_text}
 """
     try:
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model=MODEL_NAME,
+            contents=prompt
+        )
         answer = response.text.strip()
         await update.message.reply_text(answer)
     except Exception as e:
-        logger.error(f"خطا در جواب: {e}")
+        logger.error(f"خطا در جواب Gemini: {e}")
         await update.message.reply_text("متأسفانه الان نتونستم جواب بدم 😔 کمی بعد دوباره امتحان کن.")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -113,7 +121,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "می‌تونی ازم سوال بپرسی یا تو گروه منشنم کنی."
     )
 
-# ثبت هندلرها
 application.add_handler(CommandHandler("start", start))
 application.add_handler(ChatMemberHandler(welcome_new_member, ChatMemberHandler.CHAT_MEMBER))
 application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
@@ -126,10 +133,7 @@ def health():
 def trigger_post():
     try:
         success = asyncio.run(send_educational_post())
-        if success:
-            return "Posted successfully!", 200
-        else:
-            return "Failed to post", 500
+        return ("Posted successfully!" if success else "Failed"), 200 if success else 500
     except Exception as e:
         logger.error(f"خطا در /post: {e}")
         return f"Error: {str(e)}", 500
@@ -144,16 +148,14 @@ def webhook():
         logger.error(f"خطا در webhook: {e}")
         return "error", 500
 
-# تنظیم webhook موقع استارت (فقط یک‌بار)
 def setup_webhook():
     try:
         bot = Bot(token=BOT_TOKEN)
         asyncio.run(bot.set_webhook(url=f"{WEBHOOK_URL}/{BOT_TOKEN}"))
-        logger.info(f"Webhook set to: {WEBHOOK_URL}/{BOT_TOKEN}")
+        logger.info("Webhook تنظیم شد")
     except Exception as e:
         logger.error(f"خطا در تنظیم webhook: {e}")
 
-# این قسمت موقع لود ماژول اجرا می‌شه
 if WEBHOOK_URL and BOT_TOKEN:
     setup_webhook()
 
