@@ -32,6 +32,8 @@ TOPICS = [
     "یک اشتباه رایج زبان‌آموزان ایرانی در انگلیسی و شکل درست آن",
 ]
 
+# ================== تعریف توابع ربات ==================
+
 def generate_educational_post() -> str:
     topic = random.choice(TOPICS)
     prompt = f"""
@@ -68,6 +70,12 @@ async def send_educational_post():
     except Exception as e:
         logger.error(f"خطا در ارسال پست: {e}")
         return False
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "سلام! من ربات گروه پارتنر‌یابی و یادگیری زبان انگلیسی هستم 🌟\n"
+        "می‌تونی ازم سوال بپرسی یا تو گروه منشنم کنی."
+    )
 
 async def welcome_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not update.chat_member or not update.chat_member.new_chat_members:
@@ -117,12 +125,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logger.error(f"خطا در جواب Gemini: {e}")
         await update.message.reply_text("متأسفانه الان نتونستم جواب بدم 😔 کمی بعد دوباره امتحان کن.")
 
-# ثبت هندلرها
+# ================== ثبت هندلرها (حالا توابع بالا تعریف شده‌اند) ==================
 application.add_handler(CommandHandler("start", start))
 application.add_handler(ChatMemberHandler(welcome_new_member, ChatMemberHandler.CHAT_MEMBER))
 application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-# تابع کمکی برای راه‌اندازی اولیه اپلیکیشن تلگرام به صورت ناهمگام (Async)
+# تابع کمکی برای راه‌اندازی اولیه اپلیکیشن تلگرام
 async def initialize_application():
     await application.initialize()
     if WEBHOOK_URL and BOT_TOKEN:
@@ -132,6 +140,7 @@ async def initialize_application():
 # اجرای تابع مقداردهی اولیه در شروع برنامه
 asyncio.run(initialize_application())
 
+# ================== روترهای Flask ==================
 @app.route("/", methods=["GET"])
 def health():
     return "Bot is alive!", 200
