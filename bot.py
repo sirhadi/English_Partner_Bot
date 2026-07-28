@@ -16,7 +16,9 @@ WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
 # کلاینت جمنای
 client = genai.Client(api_key=GEMINI_API_KEY)
-MODEL_NAME = "gemini-2.5-flash"
+
+# مشکل اصلی اینجا بود: مدل 2.5 وجود ندارد! به نسخه پایدار تغییر یافت
+MODEL_NAME = "gemini-1.5-flash" 
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -42,12 +44,12 @@ def generate_educational_post() -> str:
 قوانین: حداکثر ۸ خط باشه، ساده، کاربردی و جذاب بنویس، از ایموجی استفاده کن، در پایان یک سوال کوتاه بپرس، فقط متن نهایی رو بنویس.
 """
     try:
-        # فراخوانی جمنای به ساده‌ترین شکل ممکن
         response = client.models.generate_content(model=MODEL_NAME, contents=prompt)
         return response.text.strip() if response and response.text else None
     except Exception as e:
         logger.error(f"خطای جمنای در ساخت پست: {e}")
-        return None
+        # تغییر مهم: حالا ارور دقیق گوگل در تلگرام برای شما ارسال می‌شود
+        return f"❌ خطای سرور جمنای:\n{str(e)}"
 
 def generate_reply(user_text: str) -> str:
     prompt = f"""
@@ -60,7 +62,7 @@ def generate_reply(user_text: str) -> str:
         return response.text.strip() if response and response.text else "نتونستم جواب بدم 😔"
     except Exception as e:
         logger.error(f"خطای جمنای در جواب به کاربر: {e}")
-        return "متأسفانه الان نتونستم جواب بدم 😔 کمی بعد دوباره امتحان کن."
+        return f"❌ خطای سرور جمنای در پاسخ:\n{str(e)}"
 
 # ================== تابع پردازش پیام‌های تلگرام ==================
 
@@ -74,7 +76,6 @@ async def process_telegram_update(update_dict: dict):
     chat_id = update.message.chat.id
     msg_text = update.message.text or ""
 
-    # ۱. پاسخ به دستور /start
     if msg_text.startswith("/start"):
         await bot.send_message(
             chat_id=chat_id,
@@ -82,7 +83,6 @@ async def process_telegram_update(update_dict: dict):
         )
         return
 
-    # ۲. خوش‌آمدگویی به اعضای جدید
     if update.message.new_chat_members:
         for member in update.message.new_chat_members:
             if member.is_bot:
@@ -92,7 +92,6 @@ async def process_telegram_update(update_dict: dict):
             await bot.send_message(chat_id=chat_id, text=text)
         return
 
-    # ۳. پاسخ به پیام‌های خصوصی یا منشن شده
     is_private = update.message.chat.type == "private"
     bot_info = await bot.get_me()
     bot_username = bot_info.username
@@ -116,7 +115,6 @@ async def process_telegram_update(update_dict: dict):
 def health():
     return "Bot is alive and ready!", 200
 
-# این مسیر توسط Cron-Job صدا زده می‌شود
 @app.route("/post", methods=["GET", "POST"])
 def trigger_post():
     try:
@@ -124,7 +122,6 @@ def trigger_post():
         if not text:
             text = "امروز نتونستم محتوای جدید بسازم 😔 کمی بعد دوباره تلاش می‌کنم."
         
-        # ارسال مستقیم پیام به API تلگرام (بدون درگیری با کدهای Async)
         url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
         payload = json.dumps({"chat_id": GROUP_CHAT_ID, "text": text}).encode('utf-8')
         req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'})
@@ -138,31 +135,15 @@ def trigger_post():
         logger.error(f"خطا در ارسال پست زمان‌بندی شده: {e}")
         return f"Error: {e}", 500
 
-# این مسیر پیام‌های تلگرام را دریافت می‌کند
 @app.route(f"/{BOT_TOKEN}", methods=["POST"])
 def webhook():
     try:
         update_dict = request.get_json(force=True)
-        # اجرای ایزوله و امن پیام در لحظه
         asyncio.run(process_telegram_update(update_dict))
         return "ok", 200
     except Exception as e:
         logger.error(f"خطا در وب‌هوک: {e}")
         return "error", 500
-
-# مسیر کمکی برای تنظیم راحت وب‌هوک
-@app.route("/set_webhook", methods=["GET"])
-def set_webhook():
-    if not WEBHOOK_URL or not BOT_TOKEN:
-        return "WEBHOOK_URL or BOT_TOKEN is missing!", 400
-    
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/setWebhook?url={WEBHOOK_URL}/{BOT_TOKEN}"
-    req = urllib.request.Request(url)
-    try:
-        with urllib.request.urlopen(req) as response:
-            return response.read().decode('utf-8'), 200
-    except Exception as e:
-        return f"Failed to set webhook: {e}", 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
