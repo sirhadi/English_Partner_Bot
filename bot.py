@@ -1,17 +1,27 @@
 import os
 import random
 import logging
+import asyncio
 from flask import Flask, request
-from telegram import Update
+from telegram import Update, Bot
 from telegram.ext import Application, CommandHandler, MessageHandler, ChatMemberHandler, filters, ContextTypes
 import google.generativeai as genai
 
+# ================== تنظیمات ==================
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+GROUP_CHAT_ID = int(os.getenv("GROUP_CHAT_ID", "0"))
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")  # باید https://english-partner-bot.onrender.com باشه
 
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel("gemini-2.0-flash")
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+
+# ساخت Application
 application = Application.builder().token(BOT_TOKEN).build()
 
 TOPICS = [
@@ -23,7 +33,7 @@ TOPICS = [
     "یک اشتباه رایج زبان‌آموزان ایرانی در انگلیسی و شکل درست آن",
 ]
 
-async def generate_educational_post() -> str:
+def generate_educational_post() -> str:
     topic = random.choice(TOPICS)
     prompt = f"""
 تو یک معلم دوستانه و باحال زبان انگلیسی هستی که برای گروه پارتنر‌یابی محتوا می‌سازی.
@@ -43,11 +53,12 @@ async def generate_educational_post() -> str:
         logger.error(f"خطا در تولید محتوا: {e}")
         return "امروز یه مشکل فنی پیش اومد 😔 فردا دوباره مطالب آموزشی میاد!"
 
-async def post_educational():
+async def send_educational_post():
     try:
-        text = await generate_educational_post()
-        await application.bot.send_message(chat_id=GROUP_CHAT_ID, text=text)
-        logger.info("پست آموزشی ارسال شد")
+        text = generate_educational_post()
+        bot = Bot(token=BOT_TOKEN)
+        await bot.send_message(chat_id=GROUP_CHAT_ID, text=text)
+        logger.info("پست آموزشی با موفقیت ارسال شد")
         return True
     except Exception as e:
         logger.error(f"خطا در ارسال پست: {e}")
@@ -112,24 +123,40 @@ def health():
     return "Bot is alive!", 200
 
 @app.route("/post", methods=["GET", "POST"])
-async def trigger_post():
-    # برای امنیت ساده می‌تونی یه secret اضافه کنی
-    success = await post_educational()
-    return ("Posted!" if success else "Failed"), 200 if success else 500
+def trigger_post():
+    try:
+        success = asyncio.run(send_educational_post())
+        if success:
+            return "Posted successfully!", 200
+        else:
+            return "Failed to post", 500
+    except Exception as e:
+        logger.error(f"خطا در /post: {e}")
+        return f"Error: {str(e)}", 500
 
 @app.route(f"/{BOT_TOKEN}", methods=["POST"])
-async def webhook():
-    update = Update.de_json(request.get_json(force=True), application.bot)
-    await application.process_update(update)
-    return "ok", 200
+def webhook():
+    try:
+        update = Update.de_json(request.get_json(force=True), application.bot)
+        asyncio.run(application.process_update(update))
+        return "ok", 200
+    except Exception as e:
+        logger.error(f"خطا در webhook: {e}")
+        return "error", 500
+
+# تنظیم webhook موقع استارت (فقط یک‌بار)
+def setup_webhook():
+    try:
+        bot = Bot(token=BOT_TOKEN)
+        asyncio.run(bot.set_webhook(url=f"{WEBHOOK_URL}/{BOT_TOKEN}"))
+        logger.info(f"Webhook set to: {WEBHOOK_URL}/{BOT_TOKEN}")
+    except Exception as e:
+        logger.error(f"خطا در تنظیم webhook: {e}")
+
+# این قسمت موقع لود ماژول اجرا می‌شه
+if WEBHOOK_URL and BOT_TOKEN:
+    setup_webhook()
 
 if __name__ == "__main__":
-    # تنظیم webhook موقع استارت
-    import asyncio
-    async def setup():
-        await application.bot.set_webhook(url=f"{WEBHOOK_URL}/{BOT_TOKEN}")
-        logger.info(f"Webhook set to {WEBHOOK_URL}/{BOT_TOKEN}")
-    
-    asyncio.get_event_loop().run_until_complete(setup())
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
