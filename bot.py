@@ -1,28 +1,25 @@
 import os
 import random
 import logging
-from datetime import time
+from flask import Flask, request
 from telegram import Update
-from telegram.ext import (
-    Application,
-    CommandHandler,
-    MessageHandler,
-    ChatMemberHandler,
-    filters,
-    ContextTypes,
-)
+from telegram.ext import Application, CommandHandler, MessageHandler, ChatMemberHandler, filters, ContextTypes
 import google.generativeai as genai
 
 # ================== تنظیمات ==================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-GROUP_CHAT_ID = int(os.getenv("GROUP_CHAT_ID"))  # مثال: -1001234567890
+GROUP_CHAT_ID = int(os.getenv("GROUP_CHAT_ID"))
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")  # مثلاً https://your-app.onrender.com
 
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-2.0-flash")  # یا gemini-1.5-flash
+model = genai.GenerativeModel("gemini-2.0-flash")
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+app = Flask(__name__)
+application = Application.builder().token(BOT_TOKEN).build()
 
 TOPICS = [
     "یک کلمه یا اصطلاح انگلیسی روزمره با معنی فارسی، مثال و تلفظ تقریبی",
@@ -53,13 +50,15 @@ async def generate_educational_post() -> str:
         logger.error(f"خطا در تولید محتوا: {e}")
         return "امروز یه مشکل فنی پیش اومد 😔 فردا دوباره مطالب آموزشی میاد!"
 
-async def post_educational(context: ContextTypes.DEFAULT_TYPE):
+async def post_educational():
     try:
         text = await generate_educational_post()
-        await context.bot.send_message(chat_id=GROUP_CHAT_ID, text=text)
+        await application.bot.send_message(chat_id=GROUP_CHAT_ID, text=text)
         logger.info("پست آموزشی ارسال شد")
+        return True
     except Exception as e:
         logger.error(f"خطا در ارسال پست: {e}")
+        return False
 
 async def welcome_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
     for member in update.chat_member.new_chat_members:
@@ -110,24 +109,34 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "می‌تونی ازم سوال بپرسی یا تو گروه منشنم کنی."
     )
 
-def main():
-    if not all([BOT_TOKEN, GROUP_CHAT_ID, GEMINI_API_KEY]):
-        raise ValueError("یکی از متغیرهای محیطی تنظیم نشده!")
+# ثبت هندلرها
+application.add_handler(CommandHandler("start", start))
+application.add_handler(ChatMemberHandler(welcome_new_member, ChatMemberHandler.CHAT_MEMBER))
+application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    app = Application.builder().token(BOT_TOKEN).build()
+@app.route("/", methods=["GET"])
+def health():
+    return "Bot is alive!", 200
 
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(ChatMemberHandler(welcome_new_member, ChatMemberHandler.CHAT_MEMBER))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+@app.route("/post", methods=["GET", "POST"])
+async def trigger_post():
+    # برای امنیت ساده می‌تونی یه secret اضافه کنی
+    success = await post_educational()
+    return ("Posted!" if success else "Failed"), 200 if success else 500
 
-    # پست آموزشی در ساعات مشخص (به وقت سرور — معمولاً UTC)
-    # برای ایران تقریباً ۳.۵ ساعت جلوتر حساب کن
-    job_queue = app.job_queue
-    for hour in [5, 9, 13, 17]:  # معادل تقریبی ۸:۳۰، ۱۲:۳۰، ۱۶:۳۰، ۲۰:۳۰ ایران
-        job_queue.run_daily(post_educational, time=time(hour=hour, minute=30))
-
-    logger.info("ربات شروع به کار کرد...")
-    app.run_polling(allowed_updates=Update.ALL_TYPES)
+@app.route(f"/{BOT_TOKEN}", methods=["POST"])
+async def webhook():
+    update = Update.de_json(request.get_json(force=True), application.bot)
+    await application.process_update(update)
+    return "ok", 200
 
 if __name__ == "__main__":
-    main()
+    # تنظیم webhook موقع استارت
+    import asyncio
+    async def setup():
+        await application.bot.set_webhook(url=f"{WEBHOOK_URL}/{BOT_TOKEN}")
+        logger.info(f"Webhook set to {WEBHOOK_URL}/{BOT_TOKEN}")
+    
+    asyncio.get_event_loop().run_until_complete(setup())
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
