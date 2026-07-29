@@ -78,7 +78,7 @@ You MUST follow these rules:
    - 💡 **Famous Quote:** Include a short, inspiring quote by a famous figure that uses or relates to advanced English expression.
    - 🎯 **Advanced Quiz:** A multiple-choice or fill-in-the-blank question suitable for B2-C1 levels to test members.
 
-Output ONLY the final post text in Persian/English mix. Do not add introductory or conversational filler text.
+
 """
     try:
         completion = client.chat.completions.create(
