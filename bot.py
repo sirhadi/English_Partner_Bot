@@ -65,7 +65,7 @@ Output ONLY the final post text.
         return None
 # ================== هوش مصنوعی: ساخت سوال کوئیز (به صورت ساختاریافته) ==================
 def generate_quiz_data() -> dict:
-    prompt = """
+    prompt = """
 Generate a multiple-choice English grammar or vocabulary quiz question suitable for B2-C1 levels.
 You must return a valid JSON object ONLY (no extra text, no markdown code blocks like ```json) with this exact structure:
 {
@@ -76,7 +76,7 @@ You must return a valid JSON object ONLY (no extra text, no markdown code blocks
 }
 Note: "correct_option_index" must be an integer from 0 to 3 indicating the correct choice.
 """
-    try:
+    try:
         completion = client.chat.completions.create(
             model=MODEL_NAME,
             messages=[{"role": "user", "content": prompt}],
@@ -86,7 +86,7 @@ Note: "correct_option_index" must be an integer from 0 to 3 indicating the corre
         # پاکسازی اضافی برای جلوگیری از خطای فرمت
         text = text.replace("```json", "").replace("```", "").strip()
         return json.loads(text)
-    except Exception as e:
+except Exception as e:
         logger.error(f"خطای ساخت کوئیز: {e}")
         return None
 
