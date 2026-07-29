@@ -103,7 +103,7 @@ You are an inspiring English teacher creating a beautifully formatted Telegram p
 
 Generate a quote post following this EXACT layout:
 
-🌟 <b>جمله انگیزشی و نقل‌قول روز | Quote of the Day</b>
+🌟 <b> نقل‌قول روز | Quote of the Day</b>
 
 <blockquote>"English quote here"
 — <i>Author Name</i></blockquote>
@@ -119,22 +119,28 @@ Generate a quote post following this EXACT layout:
 🟣 [ترجمه فارسی سوال]
 
 CRITICAL RULES:
-1. Formatting: Use <b> for bold, <i> for italics, and <blockquote> and </blockquote> for Telegram quote blocks. DO NOT use asterisks (*).
-2. Select inspiring, memorable quotes from famous figures (scientists, thinkers, authors, leaders).
-3. Keep it clear, elegant, and engaging for learners.
+1. STRICT SCRIPT RULE: All Persian text MUST be written strictly using the standard Persian alphabet. Absolutely NO Russian, Cyrillic, Chinese, or foreign scripts/characters allowed in Persian sentences.
+2. Formatting: Use <b> for bold, <i> for italics, and <blockquote> and </blockquote> for Telegram quote blocks. DO NOT use asterisks (*).
+3. Select inspiring, memorable quotes from famous figures (scientists, thinkers, authors, leaders).
 Output ONLY the final Telegram post text.
 """
     try:
         completion = client.chat.completions.create(
             model=MODEL_NAME,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.7,
+            messages=[
+                {
+                    "role": "system", 
+                    "content": "You are a professional English-Persian translator. You MUST generate Persian text using standard Persian alphabet ONLY. Never use Cyrillic, Russian, or Chinese characters."
+                },
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.4,  # درجه خلاقیت کمتر برای جلوگیری از خطای توکن‌های روسی
         )
         return completion.choices[0].message.content.strip()
     except Exception as e:
         logger.error(f"Quote Error: {e}")
         return None
-
+        
 #============= تابع کوئیز ===============
 def generate_quiz_data() -> dict:
     prompt = """
