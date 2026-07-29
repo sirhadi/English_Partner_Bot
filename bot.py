@@ -58,6 +58,7 @@ Rules:
    - after each section let a blank line (to be clearly redable).
    - use other colorful icons for their translation
    - never use other alphabet letters except Persian and English letters.
+   - don't write "Translate to Persian:"  expression in text. because you added "Translation:" in the past line and it is enough.
 Output ONLY the final post text.
 """
     try:
