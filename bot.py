@@ -47,6 +47,8 @@ Topic: {chosen_topic}
 Generate a complete educational post following this EXACT layout and emoji style:
 
 -add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level: A2</b>)
+-add a blank line for clear view.
+
 🌟 <b>Good day learners!</b> and other famous phrases.
 
 📌 <b>[Topic Title in English & Persian]</b>
@@ -93,6 +95,8 @@ Output ONLY the final post text.
     except Exception as e:
         logger.error(f"Post Error: {e}")
         return None
+
+#======== تایع نقل قول ============
 def generate_quote_post() -> str:
     prompt = """
 You are an inspiring English teacher creating a beautifully formatted Telegram post featuring a famous quote for English learners (B2-C1 level).
@@ -131,11 +135,13 @@ Output ONLY the final Telegram post text.
         logger.error(f"Quote Error: {e}")
         return None
 
+#============= تابع کوئیز ===============
 def generate_quiz_data() -> dict:
     prompt = """
-Generate a multiple-choice English grammar or vocabulary quiz question suitable for levels A2 to C1, add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level A2- Intermediate</b>). then (add a blank line after it)
+Generate a multiple-choice English grammar or vocabulary quiz question suitable for various proficiency levels (Intermediate B1, Upper-Intermediate B2, or Advanced C1).
 Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact structure:
 {
+  "level": "سطح زبانی به فارسی همراه با سطح CEFR (مثلاً: سطح متوسط B1 یا سطح پیشرفته C1)",
   "question": "متن سوال چهارگزینه ای به انگلیسی",
   "options": ["گزینه اول", "گزینه دوم", "گزینه سوم", "گزینه چهارم"],
   "correct_option_index": 0,
@@ -146,7 +152,7 @@ Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact 
         completion = client.chat.completions.create(
             model=MODEL_NAME,
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.5,
+            temperature=0.7,
         )
         text = completion.choices[0].message.content.strip()
         text = text.replace("```json", "").replace("```", "").strip()
@@ -245,8 +251,7 @@ def trigger_quote():
     except Exception as e:
         return f"Error: {e}", 500
 
-# مسیر 3 ارسال کوئیز به صورت نظرسنجی
-
+# مسیر ۳: ارسال کوئیز به صورت نظرسنجی
 @app.route("/quiz", methods=["GET", "POST"])
 def trigger_quiz():
     try:
@@ -254,10 +259,13 @@ def trigger_quiz():
         if not quiz_data:
             return "Failed", 500
         
+        # دریافت سطح زبانی تعیین‌شده از هوش مصنوعی
+        quiz_level = quiz_data.get("level", "متوسط / پیشرفته")
+        
         url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPoll"
         payload = json.dumps({
             "chat_id": GROUP_CHAT_ID,
-            "question": f"🎯 کوئیز:\n{quiz_data['question']}",
+            "question": f"🎯 کوئیز ({quiz_level}):\n{quiz_data['question']}",
             "options": quiz_data['options'],
             "type": "quiz",
             "correct_option_id": quiz_data['correct_option_index'],
@@ -270,6 +278,7 @@ def trigger_quiz():
     except Exception as e:
         return f"Error: {e}", 500
 
+#======================
 @app.route(f"/{BOT_TOKEN}", methods=["POST"])
 def webhook():
     try:
