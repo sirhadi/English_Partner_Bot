@@ -57,7 +57,7 @@ Rules:
    - write the translation
    - after each section let a blank line (to be clearly redable).
    - use other colorful icons for their translation
-   - never use Chinese or Japanese letters in the text
+   - never use other alphabet letters except Persian and English letters.
 Output ONLY the final post text.
 """
     try:
