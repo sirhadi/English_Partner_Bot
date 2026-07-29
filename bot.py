@@ -28,11 +28,9 @@ TOPICS = [
     "یک دیالوگ انگلیسی کوتاه دو نفره مناسب تمرین مکالمه و پارتنریابی",
     "یک اصطلاح idiom انگلیسی با معنی و مثال",
     "یک سوال جالب انگلیسی برای شروع مکالمه بین پارتنرهای زبانی به همراه مثال و ترجمه فارسی",
-    "یک کوئیز انگلیسی برای سطح زبانی متوسط و پیشرفته",
     "یک جوک یا عبارت طنز انگلیسی",
-    "یک اصطلاح پیشرفته Advanced Idiom یا Phrasal Verb با معنی دقیق، مثال و مترادف",
-    "یک ساختار گرامری سطح بالا C1 با فرمول و مثال کاربردی",
-    "یک ساختار گرامری سطح بالا B2 با فرمول و مثال کاربردی",
+    "یک اصطلاح مبتدی، متوسط یا پیشرفته Idiom یا Phrasal Verb با معنی دقیق، مثال و مترادف",
+    "یک ساختار گرامری سطح متوسط، متوسط به بالا و بالا تا C1 با فرمول و مثال کاربردی",
     "یک عبارت کاربردی برای بحث های آکادمیک و بیزینس Professional English",
     "یک اشتباه رایج زبان آموزان ایرانی در انگلیسی و شکل درست آن"
 ]
@@ -42,23 +40,47 @@ def generate_educational_post() -> str:
     chosen_topic = random.choice(TOPICS)
     
     prompt = f"""
-You are an expert English teacher for an intermediate and an upper-intermediate and advanced (B2-C1) level group. 
-Create an educational post in Persian and English by using 1100 Essential Words and 4000 Essential Words based on this topic: {chosen_topic}.
+You are a warm, friendly, and expert English teacher creating a beautifully formatted Telegram post for an upper-intermediate/advanced (B2-C1) Iranian group.
 
-Rules:
-1. Level: Intermediate to Upper-Intermediate to Advanced (A1-C1).
-2. Formatting: Use HTML tags for bold text. Wrap bold texts strictly with <b> and </b>. Do not use asterisks (*).
-3. Emojis: Use max one clean emoji per line. Do not stack emojis.
-4. Structure:
-    - add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level A2- Intermediate</b>)
-   - 🌟 <b>Topic Title</b> in third line (add a blank line after first line)
-   - 📖 <b>Explanation & Context</b>
-   - 💡 <b>Famous Quote:</b> in the next line write A short inspiring quote by a famous figure related to Topic Title.
+Topic: {chosen_topic}
+
+Generate a complete educational post following this EXACT layout and emoji style:
+
+-add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level: A2</b>)
+🌟 <b>Good day learners!</b> and other famous phrases.
+
+📌 <b>[Topic Title in English & Persian]</b>
+
+🔴 <b>[Main Phrase / Word / Structure]</b> [phonetic pronunciation in brackets if applicable]
+🔹 <b>معنی:</b> [Short explanation in Persian]
+
+🟢 <b>مثال اول:</b>
+📣 [English sentence with the target phrase wrapped in <b>tags</b>]
+🔹 <b>ترجمه:</b> [Persian translation]
+
+🟡 <b>مثال دوم:</b>
+🔔 [English sentence with the target phrase wrapped in <b>tags</b>]
+🔸 <b>ترجمه:</b> [Persian translation]
+
+💡 <b>نقل‌قول انگیزشی / نکته طلایی:</b>
+"A short English quote related to learning or life"
+💬 <b>ترجمه:</b> "ترجمه فارسی نقل‌قول"
+
+🔵 <b>سوال برای چت و تمرین در گروه:</b>
+❓ [An engaging question in English related to the topic]
+🟣 [ترجمه فارسی سوال برای شروع بحث در کامنت‌ها]
+
+CRITICAL RULES:
+1. Formatting: ALL bold texts MUST be wrapped in <b> and </b> HTML tags. DO NOT use asterisks (*).
+2. Content: Give actual, practical, bite-sized teaching content with clear Persian translations.
+3. Keep it visually engaging, friendly, and well-spaced.
+4. Level: Intermediate to Upper-Intermediate to Advanced (A1-C1).
+5. other ruls:
+    - do not mix persian and english text together. write them in seprate lines for being readable.
    - write the translation
    - after each section let a blank line (to be clearly redable).
    - use other colorful icons for their translation
    - never use other alphabet letters except Persian and English letters.
-   - don't write "Translate to Persian:"  expression in text. because you added "Translation:" in the past line and it is enough.
 Output ONLY the final post text.
 """
     try:
@@ -70,6 +92,43 @@ Output ONLY the final post text.
         return completion.choices[0].message.content.strip()
     except Exception as e:
         logger.error(f"Post Error: {e}")
+        return None
+def generate_quote_post() -> str:
+    prompt = """
+You are an inspiring English teacher creating a beautifully formatted Telegram post featuring a famous quote for English learners (B2-C1 level).
+
+Generate a quote post following this EXACT layout:
+
+🌟 <b>جمله انگیزشی و نقل‌قول روز | Quote of the Day</b>
+
+<blockquote>"English quote here"
+— <i>Author Name</i></blockquote>
+
+🇮🇷 <b>ترجمه فارسی:</b>
+<blockquote>"Persian translation here"</blockquote>
+
+💡 <b>نکته زبانی (Vocabulary & Structure):</b>
+🔹 Explain 1-2 interesting vocabulary words, idioms, or grammar structures used in this quote (in Persian).
+
+❓ <b>نظر شما چیه؟ | What do you think?</b>
+[An open-ended question in English about the quote's theme]
+🟣 [ترجمه فارسی سوال]
+
+CRITICAL RULES:
+1. Formatting: Use <b> for bold, <i> for italics, and <blockquote> and </blockquote> for Telegram quote blocks. DO NOT use asterisks (*).
+2. Select inspiring, memorable quotes from famous figures (scientists, thinkers, authors, leaders).
+3. Keep it clear, elegant, and engaging for learners.
+Output ONLY the final Telegram post text.
+"""
+    try:
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+        return completion.choices[0].message.content.strip()
+    except Exception as e:
+        logger.error(f"Quote Error: {e}")
         return None
 
 def generate_quiz_data() -> dict:
@@ -140,6 +199,7 @@ async def process_telegram_update(update_dict: dict):
             logger.error(f"Reply Error: {e}")
 
 # ================== Web Routes ==================
+#مسیر 1 ارسال پست
 @app.route("/", methods=["GET"])
 def health():
     return "Bot is alive!", 200
@@ -163,6 +223,29 @@ def trigger_post():
             return "Post sent!", 200
     except Exception as e:
         return f"Error: {e}", 500
+
+# مسیر ۲: ارسال نقل‌قول روز
+@app.route("/quote", methods=["GET", "POST"])
+def trigger_quote():
+    try:
+        text = generate_quote_post()
+        if not text:
+            return "Failed", 500
+        
+        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+        payload = json.dumps({
+            "chat_id": GROUP_CHAT_ID, 
+            "text": text,
+            "parse_mode": "HTML"
+        }).encode('utf-8')
+        
+        req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'})
+        with urllib.request.urlopen(req, timeout=15):
+            return "Quote sent!", 200
+    except Exception as e:
+        return f"Error: {e}", 500
+
+# مسیر 3 ارسال کوئیز به صورت نظرسنجی
 
 @app.route("/quiz", methods=["GET", "POST"])
 def trigger_quiz():
