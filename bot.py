@@ -49,8 +49,7 @@ Generate a complete educational post following this EXACT layout and emoji style
 -add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level: A2</b>)
 -add a blank line for clear view.
 
-😍 <b>Good day learners!</b> and other famous phrases.
-
+😍 <b>Good day learners!</b> 
 📌 <b>[Topic Title in English & Persian]</b>
 
 🔴 <b>[Main Phrase / Word / Structure]</b> [phonetic pronunciation in brackets if applicable]
@@ -64,12 +63,12 @@ Generate a complete educational post following this EXACT layout and emoji style
 🔔 [English sentence with the target phrase wrapped in <b>tags</b>]
 🔸 <b>ترجمه:</b> [Persian translation]
 
-👨‍🏫 <b>نقل‌قول انگیزشی / نکته طلایی:</b>
+👨‍🏫 <b>نقل‌قول / نکته طلایی:</b>
 "A short English quote related to learning or life"
 💬 <b>ترجمه:</b> "ترجمه فارسی نقل‌قول"
 
 👩‍🏫 <b>سوال برای چت و تمرین در گروه:</b>
-❓ [An engaging question in English related to the topic]
+[An engaging question in English related to the topic]
 🟣 [ترجمه فارسی سوال برای شروع بحث در کامنت‌ها]
 
 CRITICAL RULES:
@@ -108,7 +107,7 @@ Generate a quote post following this EXACT layout:
 <blockquote>"English quote here"
 — <i>Author Name</i></blockquote>
 
-🇮🇷 <b>ترجمه</b>
+<b>ترجمه</b> 🇮🇷 
 <blockquote>"Persian translation here"</blockquote>
 
 ✍️ <b>نکته زبانی (Vocabulary & Structure):</b>
