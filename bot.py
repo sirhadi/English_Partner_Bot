@@ -73,7 +73,7 @@ Output ONLY the final post text.
 
 def generate_quiz_data() -> dict:
     prompt = """
-Generate a multiple-choice English grammar or vocabulary quiz question suitable for A2-C1 levels, add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level A2- Intermediate</b>).
+Generate a multiple-choice English grammar or vocabulary quiz question suitable for levels A2 to C1, add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level A2- Intermediate</b>).
 Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact structure:
 {
   "question": "متن سوال چهارگزینه ای به انگلیسی",
