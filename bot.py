@@ -24,7 +24,7 @@ app = Flask(__name__)
 
 # ================== هوش مصنوعی: ساخت پست آموزشی ==================
 def generate_educational_post() -> str:
-        topics = [
+    topics = [
         "یک کلمه یا اصطلاح انگلیسی روزمره با معنی فارسی، مثال و تلفظ فونتیک آن",
         "یک نکته گرامری کوتاه و کاربردی انگلیسی",
         "یک دیالوگ انگلیسی کوتاه دو نفره مناسب تمرین مکالمه و پارتنریابی",
@@ -36,11 +36,11 @@ def generate_educational_post() -> str:
         "یک ساختار گرامری سطح بالا C1 با فرمول و مثال کاربردی",
         "یک عبارت کاربردی برای بحث های آکادمیک و بیزینس Professional English",
         "یک اشتباه رایج زبان آموزان ایرانی در انگلیسی و شکل درست آن"
-        ]
-    chosen_topic = random.choice(topics)
-    
-    prompt = f"""
-You are an expert English teacher for an upper-intermediate and advanced (B2-C1) level group. 
+    ]
+    chosen_topic = random.choice(topics)
+    
+    prompt = f"""
+You are an expert English teacher for an upper-intermediate and advanced (B2-C1) level group. 
 Create an educational post in Persian and English based on this topic: {chosen_topic}.
 
 Rules:
@@ -48,22 +48,21 @@ Rules:
 2. Formatting: Use standard Markdown (wrap bold texts with **).
 3. Emojis: Use max one clean emoji per line. Do not stack emojis.
 4. Structure:
-   - 🌟 **Topic Title**
-   - 📖 **Explanation & Context**
-   - 💡 **Famous Quote:** A short inspiring quote by a famous figure.
+   - 🌟 **Topic Title**
+   - 📖 **Explanation & Context**
+   - 💡 **Famous Quote:** A short inspiring quote by a famous figure.
 Output ONLY the final post text.
 """
-    try:
-        completion = client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.7,
-        )
-        return completion.choices[0].message.content.strip()
-    except Exception as e:
-        logger.error(f"خطای گروق در ساخت پست: {e}")
-        return None
-
+    try:
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+        return completion.choices[0].message.content.strip()
+    except Exception as e:
+        logger.error(f"خطای گروق در ساخت پست: {e}")
+        return None
 # ================== هوش مصنوعی: ساخت سوال کوئیز (به صورت ساختاریافته) ==================
 def generate_quiz_data() -> dict:
     prompt = """
