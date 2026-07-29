@@ -42,9 +42,17 @@ TOPICS = [
 
 def generate_educational_post() -> str:
 post_types = [
-        "یک اصطلاح پیشرفته (Advanced Idiom یا Phrasal Verb) با معنی دقیق، مثال و مترادف",
+    "یک کلمه یا اصطلاح انگلیسی روزمره با معنی فارسی، مثال و تلفظ اون به صورت فونتیک",
+    "یک نکته گرامری کوتاه و کاربردی انگلیسی",
+    "یک دیالوگ انگلیسی کوتاه ۲ نفره مناسب تمرین مکالمه یا پارتنر‌یابی",
+    "یک اصطلاح (idiom) انگلیسی با معنی و مثال",
+    "یک سوال جالب انگلیسی برای شروع مکالمه بین پارتنرهای زبانی به همراه مثال انگلیسی و با ترجمه فارسی",
+      " یک کوئیز انگلیسی واسه سطح زبانی متوسط و پیشرفته",
+      "یک جوک یا عبارت طنز انگلیسی",
+    "یک اصطلاح پیشرفته (Advanced Idiom یا Phrasal Verb) با معنی دقیق، مثال و مترادف",
         "یک ساختار گرامری سطح بالا (C1) با فرمول و مثال کاربردی",
-        "یک عبارت کاربردی برای بحث‌های آکادمیک یا بیزینس (Professional English)"
+        "یک عبارت کاربردی برای بحث‌های آکادمیک یا بیزینس (Professional English)",
+    "یک اشتباه رایج زبان‌آموزان ایرانی در انگلیسی و شکل درست آن",
     ]
     chosen_topic = random.choice(post_types)
     
@@ -59,7 +67,7 @@ You MUST strictly follow these rules:
 4. **Structure of the Post:** Your output must include these exact sections with clear spacing:
    - 🌟 **Topic Title** (Bold the title)
    - 📖 **Explanation & Context** (Explain the advanced concept clearly)
-   - 💡 **Famous Quote:** Include a short, inspiring quote by a famous figure that uses or relates to advanced English expression.
+   - 💡 **Famous Quote:** Include a short, inspiring quote by a famous figure that uses or relates to Advanced Quiz or Topic Title.
    - 🎯 **Advanced Quiz:** A multiple-choice or fill-in-the-blank question suitable for B2-C1 levels to test members.
 
 Output ONLY the final post text in Persian/English mix. Do not add introductory or conversational filler text.
