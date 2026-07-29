@@ -41,34 +41,18 @@ TOPICS = [
 # ================== توابع هوش مصنوعی (Groq) ==================
 
 def generate_educational_post() -> str:
-    topic = random.choice(TOPICS)
+post_types = [
+        "یک اصطلاح پیشرفته (Advanced Idiom یا Phrasal Verb) با معنی دقیق، مثال و مترادف",
+        "یک ساختار گرامری سطح بالا (C1) با فرمول و مثال کاربردی",
+        "یک عبارت کاربردی برای بحث‌های آکادمیک یا بیزینس (Professional English)"
+    ]
+    chosen_topic = random.choice(post_types)
+    
     prompt = f"""
-تو یک معلم دوستانه و باسواد و باحال زبان انگلیسی هستی که برای گروه پارتنر‌یابی محتوا می‌سازی.
-موضوع: {topic}
-قوانین:
-حداکثر 25 خط باشه، 
-ساده، کاربردی و جذاب بنویس ، 
-از ایموجی و آیکون های خود تلگرام که مرتبط با متنت باشه (مثلا آیکون های دایره، مربع، آیکون نمودار، دلار خودرو و ...) در حد نرمال استفاده کن و متن رو زیبا و خوانا کن،
-بهتره اول هر خطت از یک آیکون یا ایموجی زیبا و رنگی استفاده کنی،
-تا جاییکه به زیبایی متن آسیب وارد نکنه سعی کن متن های انگلیسی رو قاطی با متن های پارسی ننویسی (سعی کن متن انگلیسی تو خط جدید باشه)،
-سعی کن متناسب با زمانی که پست میفرستی اول پیامت رو با یه عبارت کوتاه انگلیسی مثلا (good evenin- howdy folks- hello buddies ) شروع کنی، دقت کن که متن شروع بلد شده باشه (داکیومنت های خود تلگرام رو بخون تا بتونی متن رو بلد Bold کنی ) و حتما از یک آیکون هم (دقت کن اول آیکون رو باید بذاری و بعد متن فارسی یا انگلیسی رو بنویسی) استفاده کن
-دقت کن که جملات و نکات گرامی رو تکراری نفرستی و تو گرامر واسه همه سطوح (بیشتر واسه سطح متوسط به بالا) متن و کوئیز بذاری،
-در آموزش و متن هایی که میفرستی حتما از لغات و گرامرهای کتاب های 4000 واژه و 1100 واژه هم استفاده کن،
-حتما سعی کن بیشتر مطالبت مربوط به سطح زبان متوسط به بالا باشه،
-واسه جملات معروف می تونی از این سایت که رایگان هم هست استفاده کنی https://quotes.toscrape.com/ ،
-اگه توانایی تولید عکس داری یک سری آموزش هات رو میتونی به صورت عکس تو گروه بذاری،
-متن هات رو خوانا بنویس و هرجا که لازمه به خط جدید برو تا از بهم ریختگی و شلوغی که بخاطر ترکیب متن های فارسی و انگلیسی هست جلوگیری کنی،
-اگه  یک کلمه جدید انگلیسی رو میخوای آموزش بدی، حتما تلفظ فنوتیک اون کلمه رو با فونتی که تو تلگرام خونده میشه بنویس و اینکه حداقل 2 تا مثال به زبان انگلیسی واسش بزن و تو خط بعدیش ترجمش رو هم بنویس، واسه زیبایی میتونی اول خط هر مثال رو یک آیکون لوزی رنگی(از آیکون های تلگرام) بذاری،
-من داخل  این پرانتز (🔴🟠🟡🟢🔵🟣⚫️⚪️🟤🔺🔻🔸🔹🔶🔷▪️▫️◾️◼️🟥🟧🟨🟦🟦🟪⬛️⬜️🟫♦️♥️📍🆘🚫⛔️✅🕙🕘🕞🩷❤️💛🧡💚🩵💙💜🖤🩶🤍🤎💔📝🌹🌙⭐️☀️🌈⛄️📣🔔🔘☑️) یه لیست از آیکون های خود تلگرام واست آماده کردم از این آیکون ها و سایر آیکون های تلگرام میتونی استفاده کنی،
-تو مثال های آموزشی که میزنی اون کلمه یا عبارت مورد آموزش رو بلد (Bold ضخیم) کن،
-دقت کن که از حروف چینی و ژاپنی تو متن استفاده نکنی،
-کلمه انگلیسی جدیدی که توی متن میخوای آموزش بدی رو تو یه خط جدید به صورت بلد (بولد Bold یا ضخیم) شده بنویس (Bold)، اولش یه آیکون رنگی زیبا استفاده کن و با فاصله و داخل کروشه تلفظ فنوتیک اون رو بنویس
-خیلی دقت کن که گرامر انگلیسی رو در متن هایی که میفرستی درست رعایت کرده باشی،
-در پایان یک سوال کوتاه بپرس، فقط متن نهایی رو بنویس و دقت کن که متن فارسی و انگلیسی تو خطوط مجزا باشند. اول سوال فارسی و در خط جدید همون سوال و  به انگلیسی بنویس، از آیکون و ایموجی های رنگی که فرستادم در اول سوالت هم استفاده کن.
 You are an expert, professional English teacher for an upper-intermediate and advanced (B2-C1) level partner-learning group. 
-Create an engaging, clean, and well-structured educational post in Persian and English based on this topic: {topic}.
+Create an engaging, clean, and well-structured educational post in Persian and English based on this topic: {chosen_topic}.
 
-You MUST follow these rules:
+You MUST strictly follow these rules:
 1. **Target Audience:** The language level must strictly be **Upper-Intermediate to Advanced (B2-C1)**. Avoid basic words like "hello", "good", "happy". Use sophisticated vocabulary.
 2. **Formatting & Bold Text:** Use standard Telegram Markdown. To make text bold, wrap it strictly with double asterisks like **this**. Do NOT use HTML tags like <b>.
 3. **Emojis:** Use emojis neatly and cleanly. Maximum ONE relevant emoji per line or section heading. Never stack multiple emojis together.
@@ -78,6 +62,7 @@ You MUST follow these rules:
    - 💡 **Famous Quote:** Include a short, inspiring quote by a famous figure that uses or relates to advanced English expression.
    - 🎯 **Advanced Quiz:** A multiple-choice or fill-in-the-blank question suitable for B2-C1 levels to test members.
 
+Output ONLY the final post text in Persian/English mix. Do not add introductory or conversational filler text.
 
 """
     try:
