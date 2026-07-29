@@ -49,7 +49,7 @@ Generate a complete educational post following this EXACT layout and emoji style
 -add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level: A2</b>)
 -add a blank line for clear view.
 
-🌟 <b>Good day learners!</b> and other famous phrases.
+😍 <b>Good day learners!</b> and other famous phrases.
 
 📌 <b>[Topic Title in English & Persian]</b>
 
@@ -64,11 +64,11 @@ Generate a complete educational post following this EXACT layout and emoji style
 🔔 [English sentence with the target phrase wrapped in <b>tags</b>]
 🔸 <b>ترجمه:</b> [Persian translation]
 
-💡 <b>نقل‌قول انگیزشی / نکته طلایی:</b>
+👨‍🏫 <b>نقل‌قول انگیزشی / نکته طلایی:</b>
 "A short English quote related to learning or life"
 💬 <b>ترجمه:</b> "ترجمه فارسی نقل‌قول"
 
-🔵 <b>سوال برای چت و تمرین در گروه:</b>
+👩‍🏫 <b>سوال برای چت و تمرین در گروه:</b>
 ❓ [An engaging question in English related to the topic]
 🟣 [ترجمه فارسی سوال برای شروع بحث در کامنت‌ها]
 
@@ -103,18 +103,18 @@ You are an inspiring English teacher creating a beautifully formatted Telegram p
 
 Generate a quote post following this EXACT layout:
 
-🌟 <b> نقل‌قول روز | Quote of the Day</b>
+🐣<b>Quote of the Day</b>
 
 <blockquote>"English quote here"
 — <i>Author Name</i></blockquote>
 
-🇮🇷 <b>ترجمه فارسی:</b>
+🇮🇷 <b>ترجمه</b>
 <blockquote>"Persian translation here"</blockquote>
 
-💡 <b>نکته زبانی (Vocabulary & Structure):</b>
+✍️ <b>نکته زبانی (Vocabulary & Structure):</b>
 🔹 Explain 1-2 interesting vocabulary words, idioms, or grammar structures used in this quote (in Persian).
 
-❓ <b>نظر شما چیه؟ | What do you think?</b>
+🤔 <b>What do you think?</b>
 [An open-ended question in English about the quote's theme]
 🟣 [ترجمه فارسی سوال]
 
