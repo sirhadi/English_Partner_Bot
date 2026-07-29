@@ -14,7 +14,7 @@ GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID", "0")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
-client = Groq(api_key=GROQ_API_KEY)
+client = Groq(api_key=GROQ_API_KEY, timeout=20.0)
 MODEL_NAME = "llama-3.3-70b-versatile"
 
 logging.basicConfig(level=logging.INFO)
@@ -159,7 +159,7 @@ def trigger_post():
         }).encode('utf-8')
         
         req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'})
-        with urllib.request.urlopen(req):
+        with urllib.request.urlopen(req, timeout=15):
             return "Post sent!", 200
     except Exception as e:
         return f"Error: {e}", 500
@@ -174,7 +174,7 @@ def trigger_quiz():
         url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPoll"
         payload = json.dumps({
             "chat_id": GROUP_CHAT_ID,
-            "question": f"🎯 کوئیز سطح پیشرفته:\n{quiz_data['question']}",
+            "question": f"🎯 کوئیز:\n{quiz_data['question']}",
             "options": quiz_data['options'],
             "type": "quiz",
             "correct_option_id": quiz_data['correct_option_index'],
@@ -182,7 +182,7 @@ def trigger_quiz():
         }).encode('utf-8')
         
         req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'})
-        with urllib.request.urlopen(req):
+        with urllib.request.urlopen(req, timeout=15):
             return "Quiz sent!", 200
     except Exception as e:
         return f"Error: {e}", 500
