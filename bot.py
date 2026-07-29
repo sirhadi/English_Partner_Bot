@@ -77,7 +77,7 @@ You must return a valid JSON object ONLY (no extra text, no markdown code blocks
 Note: "correct_option_index" must be an integer from 0 to 3 indicating the correct choice.
 """
     try:
-        completion = client.chat.completions.create(
+        completion = client.chat.completions.create(
             model=MODEL_NAME,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.5,
