@@ -53,11 +53,11 @@ Rules:
    - 🌟 <b>Topic Title</b>
    - 📖 <b>Explanation & Context</b>
    - 💡 <b>Famous Quote:</b> in the next line write A short inspiring quote by a famous figure related to Topic Title.
-   - write the level of topic
    - write the translation
    - after each section let a blank line (to be clearly redable).
    - use other colorful icons for their translation
-   
+   - add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level A2- Intermediate</b>)
+   - never use Chinese or Japanese letters in the text
 Output ONLY the final post text.
 """
     try:
@@ -73,7 +73,7 @@ Output ONLY the final post text.
 
 def generate_quiz_data() -> dict:
     prompt = """
-Generate a multiple-choice English grammar or vocabulary quiz question suitable for A2-C1 levels, show the level by an icon and writing the level.
+Generate a multiple-choice English grammar or vocabulary quiz question suitable for A2-C1 levels, add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level A2- Intermediate</b>).
 Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact structure:
 {
   "question": "متن سوال چهارگزینه ای به انگلیسی",
