@@ -32,6 +32,7 @@ TOPICS = [
     "یک جوک یا عبارت طنز انگلیسی",
     "یک اصطلاح پیشرفته Advanced Idiom یا Phrasal Verb با معنی دقیق، مثال و مترادف",
     "یک ساختار گرامری سطح بالا C1 با فرمول و مثال کاربردی",
+    "یک ساختار گرامری سطح بالا B2 با فرمول و مثال کاربردی",
     "یک عبارت کاربردی برای بحث های آکادمیک و بیزینس Professional English",
     "یک اشتباه رایج زبان آموزان ایرانی در انگلیسی و شکل درست آن"
 ]
@@ -41,17 +42,22 @@ def generate_educational_post() -> str:
     chosen_topic = random.choice(TOPICS)
     
     prompt = f"""
-You are an expert English teacher for an upper-intermediate and advanced (B2-C1) level group. 
-Create an educational post in Persian and English based on this topic: {chosen_topic}.
+You are an expert English teacher for an intermediate and an upper-intermediate and advanced (B2-C1) level group. 
+Create an educational post in Persian and English by using 1100 Essential Words and 4000 Essential Words based on this topic: {chosen_topic}.
 
 Rules:
-1. Level: Upper-Intermediate to Advanced (B2-C1).
+1. Level: Intermediate to Upper-Intermediate to Advanced (A1-C1).
 2. Formatting: Use HTML tags for bold text. Wrap bold texts strictly with <b> and </b>. Do not use asterisks (*).
 3. Emojis: Use max one clean emoji per line. Do not stack emojis.
 4. Structure:
    - 🌟 <b>Topic Title</b>
    - 📖 <b>Explanation & Context</b>
-   - 💡 <b>Famous Quote:</b> A short inspiring quote by a famous figure.
+   - 💡 <b>Famous Quote:</b> in the next line write A short inspiring quote by a famous figure related to Topic Title.
+   - write the level of topic
+   - write the translation
+   - after each section let a blank line (to be clearly redable).
+   - use other colorful icons for their translation
+   
 Output ONLY the final post text.
 """
     try:
@@ -67,7 +73,7 @@ Output ONLY the final post text.
 
 def generate_quiz_data() -> dict:
     prompt = """
-Generate a multiple-choice English grammar or vocabulary quiz question suitable for B2-C1 levels.
+Generate a multiple-choice English grammar or vocabulary quiz question suitable for A2-C1 levels, show the level by an icon and writing the level.
 Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact structure:
 {
   "question": "متن سوال چهارگزینه ای به انگلیسی",
