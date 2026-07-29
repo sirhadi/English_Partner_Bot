@@ -50,13 +50,13 @@ Rules:
 2. Formatting: Use HTML tags for bold text. Wrap bold texts strictly with <b> and </b>. Do not use asterisks (*).
 3. Emojis: Use max one clean emoji per line. Do not stack emojis.
 4. Structure:
-   - 🌟 <b>Topic Title</b>
+    - add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level A2- Intermediate</b>)
+   - 🌟 <b>Topic Title</b> in third line (add a blank line after first line)
    - 📖 <b>Explanation & Context</b>
    - 💡 <b>Famous Quote:</b> in the next line write A short inspiring quote by a famous figure related to Topic Title.
    - write the translation
    - after each section let a blank line (to be clearly redable).
    - use other colorful icons for their translation
-   - add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level A2- Intermediate</b>)
    - never use Chinese or Japanese letters in the text
 Output ONLY the final post text.
 """
@@ -73,7 +73,7 @@ Output ONLY the final post text.
 
 def generate_quiz_data() -> dict:
     prompt = """
-Generate a multiple-choice English grammar or vocabulary quiz question suitable for levels A2 to C1, add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level A2- Intermediate</b>).
+Generate a multiple-choice English grammar or vocabulary quiz question suitable for levels A2 to C1, add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level A2- Intermediate</b>). then (add a blank line after it)
 Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact structure:
 {
   "question": "متن سوال چهارگزینه ای به انگلیسی",
