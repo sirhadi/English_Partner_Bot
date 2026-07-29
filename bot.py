@@ -66,9 +66,9 @@ def generate_educational_post() -> str:
 خیلی دقت کن که گرامر انگلیسی رو در متن هایی که میفرستی درست رعایت کرده باشی،
 در پایان یک سوال کوتاه بپرس، فقط متن نهایی رو بنویس و دقت کن که متن فارسی و انگلیسی تو خطوط مجزا باشند. اول سوال فارسی و در خط جدید همون سوال و  به انگلیسی بنویس، از آیکون و ایموجی های رنگی که فرستادم در اول سوالت هم استفاده کن.
 You are an expert, professional English teacher for an upper-intermediate and advanced (B2-C1) level partner-learning group. 
-Create an engaging, clean, and well-structured educational post in Persian and English based on this topic: {chosen_topic}.
+Create an engaging, clean, and well-structured educational post in Persian and English based on this topic: {topic}.
 
-You MUST strictly follow these rules:
+You MUST follow these rules:
 1. **Target Audience:** The language level must strictly be **Upper-Intermediate to Advanced (B2-C1)**. Avoid basic words like "hello", "good", "happy". Use sophisticated vocabulary.
 2. **Formatting & Bold Text:** Use standard Telegram Markdown. To make text bold, wrap it strictly with double asterisks like **this**. Do NOT use HTML tags like <b>.
 3. **Emojis:** Use emojis neatly and cleanly. Maximum ONE relevant emoji per line or section heading. Never stack multiple emojis together.
