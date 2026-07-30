@@ -24,6 +24,14 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
+#=========== حذف حروف عجیب و غریب =========
+def clean_text(text: str) -> str:
+    if not text:
+        return text
+    # حذف تمام حروف الفبای سیریلیک (روسی) از متن
+    return re.sub(r'[\u0400-\u04FF]', '', text)
+
+#=========== تابع زمان به وقت تهران ==========
 def get_time_context() -> str:
     tehran_time = datetime.now(timezone.utc) + timedelta(hours=3, minutes=30)
     hour = tehran_time.hour
