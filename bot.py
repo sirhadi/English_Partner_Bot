@@ -153,10 +153,10 @@ Generate the post following this EXACT layout:
 <blockquote><b>"English quote here"</b>
 — <i>Author Name</i></blockquote>
 
-<b>ترجمه</b> 🇮🇷 
+<b>ترجمه</b>🇮🇷 
 <blockquote>"Persian translation here"</blockquote>
 
-✍️ <b>نکته زبانی (Vocabulary & Structure):</b>
+✍️ <b>نکته زبانی:</b>
 🔹 Explain 1-2 interesting vocabulary words, idioms, or grammar structures used in this quote (in Persian).
 
 🤔 <b>What do you think?</b>
@@ -206,7 +206,8 @@ def generate_quiz_data() -> dict:
     time_seed = datetime.now().strftime("%Y%m%d%H%M%S%f")
 
     prompt = f"""
-Generate a completely original, unique multiple-choice English grammar or vocabulary quiz question.
+Generate a completely original, unique multiple-choice English grammar quiz or vocabulary quiz question.
+- be careful to let a blank (or ....... or ----- or ther things) in your qustion for answer.
 - Grammar/Vocabulary Focus: {chosen_topic}
 - Sentence Context/Theme: {chosen_context}
 - Unique Request Hash: {time_seed}
@@ -217,7 +218,7 @@ Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact 
   "question": "متن سوال چهارگزینه ای به انگلیسی (حتما یک جمله داستانی مرتبط با {chosen_context} باشد و از جملات تکراری کتابی استفاده نکن)",
   "options": ["گزینه اول", "گزینه دوم", "گزینه سوم", "گزینه چهارم"],
   "correct_option_index": 0,
-  "explanation": "توضیح کوتاه پاسخ صحیح به فارسی"
+  "explanation": "توضیح پاسخ صحیح به فارسی"
 }}
 """
     try:
