@@ -25,11 +25,12 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 #=========== حذف حروف عجیب و غریب =========
-def clean_text(text: str) -> str:
+ddef clean_text(text: str) -> str:
     if not text:
         return text
-    # حذف تمام حروف الفبای سیریلیک (روسی) از متن
-    return re.sub(r'[\u0400-\u04FF]', '', text)
+    # الگوی منظم برای شناسایی حروف سیریلیک (روسی) و حروف چینی/ژاپنی/کره‌ای
+    bad_chars_pattern = r'[\u0400-\u04FF\u4E00-\u9FFF\u3400-\u4DBF\u3000-\u303F]'
+    return re.sub(bad_chars_pattern, '', text)
 
 #=========== تابع زمان به وقت تهران ==========
 def get_time_context() -> str:
@@ -126,19 +127,27 @@ Output ONLY the final post text.
 #======== تایع نقل قول ============
 def generate_quote_post() -> str:
     time_context = get_time_context()
-    # انتخاب تصادفی موضوع نقل‌قول برای تنوع بالا
-    quote_themes = ["success and growth", "learning and wisdom", "courage and perseverance", "life and mindset", "discipline and effort"]
-    chosen_theme = random.choice(quote_themes)
-    random_seed = random.randint(1000, 9999)
     
-    prompt = """
-# You are an inspiring English teacher creating a beautifully formatted Telegram post featuring a famous quote for English learners (B2-C1 level).
-You are an inspiring English teacher creating a beautifully formatted Telegram post featuring a famous quote for English learners (B2-C1 level). Current time context: {time_context}.
-Theme: {chosen_theme}.
-Unique ID: {random_seed} (Do NOT repeat famous quotes from previous calls).
+    # دسته‌بندی‌های بسیار متنوع برای نقل‌قول
+    categories = [
+        "Philosophy & Deep Thinking", "Science & Astronomy", "Literature & Writing", 
+        "Leadership & Courage", "Art & Creativity", "Mindfulness & Peace", 
+        "Perseverance & Resilience", "Technology & Future", "Friendship & Human Nature",
+        "Habits & Time Management", "Success & Ambition"
+    ]
+    
+    chosen_category = random.choice(categories)
+    time_seed = datetime.now().strftime("%Y%m%d%H%M%S%f")
 
-Generate a quote post following this EXACT layout:
+    prompt = f"""
+You are an inspiring English teacher creating a Telegram post featuring a famous quote.
+- Category: {chosen_category}
+- Current time context: {time_context}
+- Unique Request Hash: {time_seed}
 
+Select a meaningful quote strictly from the field of "{chosen_category}". Avoid clichés if possible.
+
+Generate the post following this EXACT layout:
 🐣<b>Quote of the Day</b>
 
 <blockquote><b>"English quote here"</b>
@@ -155,9 +164,8 @@ Generate a quote post following this EXACT layout:
 🟣 [ترجمه فارسی سوال]
 
 CRITICAL RULES:
-1. STRICT SCRIPT RULE: All Persian text MUST be written strictly using the standard Persian alphabet. Absolutely NO Russian, Cyrillic, Chinese, or foreign scripts/characters allowed in Persian sentences.
+1. STRICT SCRIPT RULE: All Persian text MUST be written strictly using the standard Persian alphabet.
 2. Formatting: Use <b> for bold, <i> for italics, and <blockquote> and </blockquote> for Telegram quote blocks. DO NOT use asterisks (*).
-3. Select inspiring, memorable quotes from famous figures (scientists, thinkers, authors, leaders).
 Output ONLY the final Telegram post text.
 """
     try:
@@ -166,11 +174,11 @@ Output ONLY the final Telegram post text.
             messages=[
                 {
                     "role": "system", 
-                    "content": "You are a professional English-Persian translator. You MUST generate Persian text using standard Persian alphabet ONLY. Never use Cyrillic, Russian, or Chinese characters."
+                    "content": "You are a professional English-Persian translator. Generate Persian text strictly using standard Persian alphabet."
                 },
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.4,  # درجه خلاقیت کمتر برای جلوگیری از خطای توکن‌های روسی
+            temperature=0.7, # دمای بالاتر برای تضمین تنوع زیاد
         )
         return clean_text(completion.choices[0].message.content.strip())
     except Exception as e:
@@ -181,32 +189,48 @@ Output ONLY the final Telegram post text.
 def generate_quiz_data() -> dict:
     # انتخاب یک موضوع گرامری یا لغوی تصادفی برای جلوگیری از سوال تکراری
     quiz_topics = [
-        "Phrasal Verbs", "Conditionals (Type 1, 2, or 3)", "Advanced Prepositions", 
-        "Vocabulary from 1100 Words", "Inversion & Advanced Grammar", "Idioms & Expressions", 
-        "Passive Voice vs Active Voice", "Relative Clauses", "Vocabulary from 4000 Words"
+        "Phrasal Verbs", "Conditionals (1st, 2nd, 3rd, or Mixed)", "Advanced Prepositions", 
+        "Synonyms and Antonyms", "Inversion in English", "Idioms & Expressions", 
+        "Passive Voice", "Relative Clauses", "Past Modal Verbs (must have, should have)", 
+        "Collocations", "Reported Speech", "Subject-Verb Agreement", "Vocabulary from 4000 Words or 1100 words"
     ]
+    # افزودن زمینه داستانی تصادفی برای تنوع ۱۰۰٪ جملات
+    contexts = [
+        "Business & Job Interview", "Travel & Airport", "Daily Casual Conversation", 
+        "University & Academic", "Technology & AI", "Sports & Fitness", "Movies & Entertainment"
+    ]
+    
     chosen_topic = random.choice(quiz_topics)
     random_seed = random.randint(1000, 9999)
     
     prompt = """
 # Generate a multiple-choice English grammar or vocabulary quiz question suitable for various proficiency levels (Intermediate B1, Upper-Intermediate B2, or Advanced C1).
 
-Generate a unique multiple-choice English quiz question about: {chosen_topic} for various proficiency levels (Intermediate B1, Upper-Intermediate B2, or Advanced C1).
-Unique ID: {random_seed} (Must be completely different from standard basic questions).
+chosen_topic = random.choice(topics)
+    chosen_context = random.choice(contexts)
+    # استفاده از دقیق‌ترین زمان ممکن (حتی میلی‌ثانیه) به عنوان کد یکتا
+    time_seed = datetime.now().strftime("%Y%m%d%H%M%S%f")
+
+    prompt = f"""
+Generate a completely original, unique multiple-choice English grammar or vocabulary quiz question.
+- Grammar/Vocabulary Focus: {chosen_topic}
+- Sentence Context/Theme: {chosen_context}
+- Unique Request Hash: {time_seed}
+
 Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact structure:
-{
+{{
   "level": "سطح زبانی به فارسی همراه با سطح CEFR (مثلاً: سطح متوسط B1 یا سطح پیشرفته C1)",
-  "question": "متن سوال چهارگزینه ای به انگلیسی",
+  "question": "متن سوال چهارگزینه ای به انگلیسی (حتما یک جمله داستانی مرتبط با {chosen_context} باشد و از جملات تکراری کتابی استفاده نکن)",
   "options": ["گزینه اول", "گزینه دوم", "گزینه سوم", "گزینه چهارم"],
   "correct_option_index": 0,
-  "explanation": "توضیح پاسخ صحیح به فارسی"
-}
+  "explanation": "توضیح کوتاه پاسخ صحیح به فارسی"
+}}
 """
     try:
         completion = client.chat.completions.create(
             model=MODEL_NAME,
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.7,
+            temperature=0.7,  # برای هیچ‌وقت تکراری نشدن سوالات
         )
         text = completion.choices[0].message.content.strip()
         text = text.replace("```json", "").replace("```", "").strip()
@@ -215,7 +239,6 @@ Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact 
     except Exception as e:
         logger.error(f"Quiz Error: {e}")
         return None
-
 # ================== Telegram Processing ==================
 async def process_telegram_update(update_dict: dict):
     bot = Bot(token=BOT_TOKEN)
