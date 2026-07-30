@@ -200,13 +200,7 @@ def generate_quiz_data() -> dict:
         "University & Academic", "Technology & AI", "Sports & Fitness", "Movies & Entertainment"
     ]
     
-    chosen_topic = random.choice(quiz_topics)
-    random_seed = random.randint(1000, 9999)
-    
-    prompt = """
-# Generate a multiple-choice English grammar or vocabulary quiz question suitable for various proficiency levels (Intermediate B1, Upper-Intermediate B2, or Advanced C1).
-
-chosen_topic = random.choice(topics)
+    chosen_topic = random.choice(topics)
     chosen_context = random.choice(contexts)
     # استفاده از دقیق‌ترین زمان ممکن (حتی میلی‌ثانیه) به عنوان کد یکتا
     time_seed = datetime.now().strftime("%Y%m%d%H%M%S%f")
@@ -239,6 +233,8 @@ Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact 
     except Exception as e:
         logger.error(f"Quiz Error: {e}")
         return None
+
+        
 # ================== Telegram Processing ==================
 async def process_telegram_update(update_dict: dict):
     bot = Bot(token=BOT_TOKEN)
