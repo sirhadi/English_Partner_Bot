@@ -7,6 +7,8 @@ import urllib.request
 from flask import Flask, request
 from telegram import Update, Bot
 from groq import Groq
+import re
+from datetime import datetime, timezone, timedelta
 
 # ================== Settings ==================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -38,18 +40,23 @@ TOPICS = [
 # ================== AI Functions ==================
 def generate_educational_post() -> str:
     chosen_topic = random.choice(TOPICS)
+    time_context = get_time_context()
+    random_seed = random.randint(1000, 9999) # برای شکستن حافظه پنهان و جلوگیری از تکرار
     
     prompt = f"""
-You are a warm, friendly, and expert English teacher creating a beautifully formatted Telegram post for an upper-intermediate/advanced (B2-C1) Iranian group.
+# You are a warm, friendly, and expert English teacher creating a beautifully formatted Telegram post for an upper-intermediate/advanced (B2-C1) Iranian group.
+You are a warm and expert English teacher creating a usefull and beautifully formatted Telegram post for an Iranian Telegran group. the level of this group is from intermediate to advance (B2-C1). Current time of day context: {time_context}.
+Unique Request ID: {random_seed} (Generate completely original content).
 
 Topic: {chosen_topic}
 
-Generate a complete educational post following this EXACT layout and emoji style:
+Generate a Telegram post with this structure:
+# Generate a complete educational post following this EXACT layout and emoji style:
 
 -add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level: A2</b>)
 -add a blank line for clear view.
 
-😍 <b>Good day learners!</b> 
+😍 <b>[A natural, varied greeting matching {time_context} in English]</b> 
 📌 <b>[Topic Title in English & Persian]</b>
 
 🔴 <b>[Main Phrase / Word / Structure]</b> [phonetic pronunciation in brackets if applicable]
@@ -67,7 +74,7 @@ Generate a complete educational post following this EXACT layout and emoji style
 "A short English quote related to learning or life"
 💬 <b>ترجمه:</b> "ترجمه فارسی نقل‌قول"
 
-👩‍🏫 <b>سوال برای چت و تمرین در گروه:</b>
+👩‍🏫 <b>حالا جواب این سوال و تو بده:</b>
 [An engaging question in English related to the topic]
 🟣 [ترجمه فارسی سوال برای شروع بحث در کامنت‌ها]
 
@@ -90,21 +97,30 @@ Output ONLY the final post text.
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7,
         )
-        return completion.choices[0].message.content.strip()
+        return clean_text(completion.choices[0].message.content.strip())
     except Exception as e:
         logger.error(f"Post Error: {e}")
         return None
 
 #======== تایع نقل قول ============
 def generate_quote_post() -> str:
+    time_context = get_time_context()
+    # انتخاب تصادفی موضوع نقل‌قول برای تنوع بالا
+    quote_themes = ["success and growth", "learning and wisdom", "courage and perseverance", "life and mindset", "discipline and effort"]
+    chosen_theme = random.choice(quote_themes)
+    random_seed = random.randint(1000, 9999)
+    
     prompt = """
-You are an inspiring English teacher creating a beautifully formatted Telegram post featuring a famous quote for English learners (B2-C1 level).
+# You are an inspiring English teacher creating a beautifully formatted Telegram post featuring a famous quote for English learners (B2-C1 level).
+You are an inspiring English teacher creating a beautifully formatted Telegram post featuring a famous quote for English learners (B2-C1 level). Current time context: {time_context}.
+Theme: {chosen_theme}.
+Unique ID: {random_seed} (Do NOT repeat famous quotes from previous calls).
 
 Generate a quote post following this EXACT layout:
 
 🐣<b>Quote of the Day</b>
 
-<blockquote>"English quote here"
+<blockquote><b>"English quote here"</b>
 — <i>Author Name</i></blockquote>
 
 <b>ترجمه</b> 🇮🇷 
@@ -135,22 +151,34 @@ Output ONLY the final Telegram post text.
             ],
             temperature=0.4,  # درجه خلاقیت کمتر برای جلوگیری از خطای توکن‌های روسی
         )
-        return completion.choices[0].message.content.strip()
+        return clean_text(completion.choices[0].message.content.strip())
     except Exception as e:
         logger.error(f"Quote Error: {e}")
         return None
         
 #============= تابع کوئیز ===============
 def generate_quiz_data() -> dict:
+    # انتخاب یک موضوع گرامری یا لغوی تصادفی برای جلوگیری از سوال تکراری
+    quiz_topics = [
+        "Phrasal Verbs", "Conditionals (Type 1, 2, or 3)", "Advanced Prepositions", 
+        "Vocabulary from 1100 Words", "Inversion & Advanced Grammar", "Idioms & Expressions", 
+        "Passive Voice vs Active Voice", "Relative Clauses", "Vocabulary from 4000 Words"
+    ]
+    chosen_topic = random.choice(quiz_topics)
+    random_seed = random.randint(1000, 9999)
+    
     prompt = """
-Generate a multiple-choice English grammar or vocabulary quiz question suitable for various proficiency levels (Intermediate B1, Upper-Intermediate B2, or Advanced C1).
+# Generate a multiple-choice English grammar or vocabulary quiz question suitable for various proficiency levels (Intermediate B1, Upper-Intermediate B2, or Advanced C1).
+
+Generate a unique multiple-choice English quiz question about: {chosen_topic} for various proficiency levels (Intermediate B1, Upper-Intermediate B2, or Advanced C1).
+Unique ID: {random_seed} (Must be completely different from standard basic questions).
 Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact structure:
 {
   "level": "سطح زبانی به فارسی همراه با سطح CEFR (مثلاً: سطح متوسط B1 یا سطح پیشرفته C1)",
   "question": "متن سوال چهارگزینه ای به انگلیسی",
   "options": ["گزینه اول", "گزینه دوم", "گزینه سوم", "گزینه چهارم"],
   "correct_option_index": 0,
-  "explanation": "توضیح کوتاه پاسخ صحیح به فارسی"
+  "explanation": "توضیح پاسخ صحیح به فارسی"
 }
 """
     try:
@@ -161,6 +189,7 @@ Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact 
         )
         text = completion.choices[0].message.content.strip()
         text = text.replace("```json", "").replace("```", "").strip()
+        text = clean_text(text)
         return json.loads(text)
     except Exception as e:
         logger.error(f"Quiz Error: {e}")
