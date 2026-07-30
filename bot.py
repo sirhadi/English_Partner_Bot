@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 #=========== حذف حروف عجیب و غریب =========
-ddef clean_text(text: str) -> str:
+def clean_text(text: str) -> str:
     if not text:
         return text
     # الگوی منظم برای شناسایی حروف سیریلیک (روسی) و حروف چینی/ژاپنی/کره‌ای
