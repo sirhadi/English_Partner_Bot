@@ -188,7 +188,7 @@ Output ONLY the final Telegram post text.
 #============= تابع کوئیز ===============
 def generate_quiz_data() -> dict:
     # انتخاب یک موضوع گرامری یا لغوی تصادفی برای جلوگیری از سوال تکراری
-    quiz_topics = [
+    topics = [
         "Phrasal Verbs", "Conditionals (1st, 2nd, 3rd, or Mixed)", "Advanced Prepositions", 
         "Synonyms and Antonyms", "Inversion in English", "Idioms & Expressions", 
         "Passive Voice", "Relative Clauses", "Past Modal Verbs (must have, should have)", 
