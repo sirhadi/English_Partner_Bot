@@ -24,6 +24,19 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
+def get_time_context() -> str:
+    tehran_time = datetime.now(timezone.utc) + timedelta(hours=3, minutes=30)
+    hour = tehran_time.hour
+    if 5 <= hour < 12:
+        return "Morning"
+    elif 12 <= hour < 17:
+        return "Afternoon"
+    elif 17 <= hour < 22:
+        return "Evening"
+    else:
+        return "Night"
+        
+
 TOPICS = [
     "یک کلمه یا اصطلاح انگلیسی روزمره با معنی فارسی، مثال و تلفظ فونتیک آن",
     "یک نکته گرامری کوتاه و کاربردی انگلیسی",
@@ -56,7 +69,7 @@ Generate a Telegram post with this structure:
 -add the level with an emoji in the first line in <b> and </b> html tag (for example: <b>🟢level: A2</b>)
 -add a blank line for clear view.
 
-😍 <b>[A natural, varied greeting matching {time_context} in English]</b> 
+😍 <b>[Use a highly creative, unique, and dynamic native English greeting (e.g., "Mornings!", "Howdy folks!", "What's cracking, team?", "Hope you're having a blast!", "Hey language enthusiasts!", "How's it going?") loosely matching {time_context} + natural Persian translation]</b>
 📌 <b>[Topic Title in English & Persian]</b>
 
 🔴 <b>[Main Phrase / Word / Structure]</b> [phonetic pronunciation in brackets if applicable]
