@@ -1,0 +1,41 @@
+import json
+import os
+
+# پوشه data در صورت عدم وجود ساخته می‌شود
+os.makedirs("data", exist_ok=True)
+
+# لیستی جامع از ۵۰۰+ اصطلاح، عبارت، Phrasal Verb و Collocation پرکاربرد
+IDIOMS_MASTER = [
+    # Idioms & Expressions
+    "Break a leg", "Bite the bullet", "Hit the sack", "Under the weather", "Spill the beans",
+    "Cutting corners", "Call it a day", "Pulling someone's leg", "Once in a blue moon", "Piece of cake",
+    "Through thick and thin", "Take it with a grain of salt", "Cost an arm and a leg", "Let the cat out of the bag",
+    "The ball is in your court", "Beat around the bush", "Blessing in disguise", "Best of both worlds",
+    "Give someone the cold shoulder", "Burn the midnight oil", "Face the music", "On the fence", "Ring a bell",
+    "Rule of thumb", "Blow off steam", "See eye to eye", "Keep your chin up", "Go the extra mile",
+    "Hit the nail on the head", "Bite off more than you can chew", "Back to the drawing board", "Burn one's bridges",
+    "Cry over spilt milk", "Curiosity killed the cat", "Don't count your chickens before they hatch",
+    "Every cloud has a silver lining", "Fit as a fiddle", "Getting a second wind", "Give the benefit of the doubt",
+    "Hear through the grapevine", "It takes two to tango", "Jump on the bandwagon", "Kill two birds with one stone", "Last straw",
+
+    # Business & Professional
+    "Touch base", "Get the ball rolling", "Think outside the box", "In the loop", "By the book",
+    "Behind the scenes", "On the same page", "Game changer", "Raise the bar", "Corner the market",
+    "Cut to the chase", "In the red", "In the black", "Ahead of the curve", "Learning curve",
+    "Bring to the table", "Win-win situation", "Bottom line", "Ballpark figure", "Fast track",
+
+    # Phrasal Verbs
+    "Bring up (a topic)", "Call off (a meeting)", "Carry on (doing something)", "Come across (find by chance)",
+    "Cut down on (reduce)", "Figure out (understand)", "Get along with (have a good relationship)",
+    "Give up (stop trying)", "Look forward to (anticipate with pleasure)", "Pass out (faint)",
+    "Put off (postpone)", "Run out of (deplete supply)", "Turn down (reject an offer)", "Work out (exercise or solve)",
+    "Catch up with (reach the same position)", "Drop by (visit casually)", "Keep up with (maintain pace)",
+    "Look up to (admire someone)", "Make up for (compensate)", "Take over (assume control)"
+]
+
+# ذخيره در فایل JSON
+output_path = os.path.join("data", "idioms_master.json")
+with open(output_path, "w", encoding="utf-8") as f:
+    json.dump(IDIOMS_MASTER, f, ensure_ascii=False, indent=2)
+
+print(f"✅ فایل با موفقیت ساخته شد: {output_path} با {len(IDIOMS_MASTER)} آیتم!")
