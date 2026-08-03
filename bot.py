@@ -118,44 +118,64 @@ CRITICAL RULES:
         logger.error(f"Post Error: {e}")
         return None
 
-def generate_educational_post_vocab(vocab_item: dict) -> str:
-    if not vocab_item or not isinstance(vocab_item, dict):
-        logger.error(f"Invalid vocab_item: {vocab_item}")
+##=== تابع آموزشی
+def generate_educational_post_vocab(vocab_item) -> str:
+    if not vocab_item:
+        logger.error("vocab_item is empty!")
+        return None
+
+    word = ""
+    phonetic = ""
+    translation = ""
+    definition = ""
+    book = 1
+    unit = 1
+
+    # پشتیبانی همزمان از String و Dict
+    if isinstance(vocab_item, str):
+        word = vocab_item.strip()
+    elif isinstance(vocab_item, dict):
+        word = vocab_item.get("word") or vocab_item.get("vocab") or vocab_item.get("text") or vocab_item.get("phrase") or ""
+        phonetic = vocab_item.get("phonetic") or vocab_item.get("pronunciation") or ""
+        translation = vocab_item.get("translation_fa") or vocab_item.get("meaning") or vocab_item.get("translation") or ""
+        definition = vocab_item.get("definition_en") or vocab_item.get("definition") or ""
+        book = vocab_item.get("book", 1)
+        unit = vocab_item.get("unit", 1)
+    else:
+        logger.error(f"Unexpected vocab_item structure: {type(vocab_item)}")
+        return None
+
+    if not word:
+        logger.error("Extracted word is empty!")
         return None
 
     time_context = get_time_context()
-    word = vocab_item.get("word") or vocab_item.get("vocab") or ""
-    phonetic = vocab_item.get("phonetic") or vocab_item.get("pronunciation") or ""
-    translation = vocab_item.get("translation_fa") or vocab_item.get("meaning") or vocab_item.get("translation") or ""
-    definition = vocab_item.get("definition_en") or vocab_item.get("definition") or ""
-    book = vocab_item.get("book", 1)
-    unit = vocab_item.get("unit", 1)
     
     prompt = f"""
-You are an expert English teacher creating a Telegram post to teach a specific word from Book {book}, Unit {unit}:
+You are an expert English teacher creating a Telegram post to teach a specific word or phrase for Book {book}, Unit {unit}.
 
-Target Word: {word}
-Phonetic: {phonetic}
-Persian Meaning: {translation}
-English Definition: {definition}
+Target Word/Phrase: {word}
+Phonetic: {phonetic if phonetic else "Provide accurate IPA phonetic pronunciation in brackets"}
+Persian Meaning: {translation if translation else "Provide accurate fluent Persian translation"}
+English Definition: {definition if definition else "Provide a short clear English definition"}
 
 Format the post EXACTLY using HTML tags (NO asterisks *):
 
 <b>🟢 Book {book} - Unit {unit}</b>
 
 😍 <b>[Greeting in Persian matching {time_context}]</b>
-📌 <b>واژه روز: {word}</b>
+📌 <b>واژه / اصطلاح روز: {word}</b>
 
-🔴 <b>{word}</b> {phonetic}
-🔹 <b>معنی:</b> {translation}
-📖 <b>تعریف انگلیسی:</b> {definition}
+🔴 <b>{word}</b> {phonetic if phonetic else ""}
+🔹 <b>معنی:</b> {translation if translation else "[Persian translation]"}
+📖 <b>تعریف انگلیسی:</b> {definition if definition else "[English definition]"}
 
 🟢 <b>مثال اول:</b>
-📣 [English sentence with <b>{word}</b>]
+📣 [English sentence using <b>{word}</b>]
 🔹 <b>ترجمه:</b> [Persian translation]
 
 🟡 <b>مثال دوم:</b>
-🔔 [Another English sentence with <b>{word}</b>]
+🔔 [Another English sentence using <b>{word}</b>]
 🔸 <b>ترجمه:</b> [Persian translation]
 
 👩‍🏫 <b>حالا تو بگو:</b>
@@ -165,6 +185,7 @@ Format the post EXACTLY using HTML tags (NO asterisks *):
 CRITICAL RULES:
 1. Use ONLY <b> tags for bold text. Do NOT use asterisks (*).
 2. Write English and Persian on separate lines.
+3. Complete any missing translations or definitions accurately.
 """
     try:
         completion = client.chat.completions.create(
@@ -177,6 +198,58 @@ CRITICAL RULES:
         logger.error(f"Post Vocab Error: {e}")
         return None
 
+
+#============ تابع کوئیز
+def generate_quiz_from_vocab_item(vocab_item) -> dict:
+    if not vocab_item:
+        return None
+
+    word = ""
+    translation = ""
+    book = 1
+    unit = 1
+
+    if isinstance(vocab_item, str):
+        word = vocab_item.strip()
+    elif isinstance(vocab_item, dict):
+        word = vocab_item.get("word") or vocab_item.get("vocab") or vocab_item.get("text") or ""
+        translation = vocab_item.get("translation_fa") or vocab_item.get("meaning") or ""
+        book = vocab_item.get("book", 1)
+        unit = vocab_item.get("unit", 1)
+    else:
+        return None
+
+    if not word:
+        return None
+
+    prompt = f"""
+Create a Telegram multiple-choice quiz question to test this word/phrase:
+Word/Phrase: {word}
+Persian Meaning: {translation if translation else "Auto-generate accurate Persian meaning"}
+
+Return ONLY a raw JSON object with this EXACT structure (no markdown, no code blocks):
+{{
+  "level": "کتاب {book} - درس {unit}",
+  "question": "A fill-in-the-blank English sentence where '{word}' fits correctly.",
+  "options": ["{word}", "WrongOption1", "WrongOption2", "WrongOption3"],
+  "correct_option_index": 0,
+  "explanation": "توضیح پاسخ و معنی اصطلاح/واژه {word} به فارسی"
+}}
+"""
+    try:
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+        text = completion.choices[0].message.content.strip().replace("```json", "").replace("```", "").strip()
+        return json.loads(clean_text(text))
+    except Exception as e:
+        logger.error(f"Quiz Generation Error: {e}")
+        return None
+
+
+#============ تابع نقل قول
 def generate_quote_post_vocab(quote_item) -> str:
     if not quote_item:
         logger.error("Quote item is empty!")
