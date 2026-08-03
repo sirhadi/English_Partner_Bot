@@ -1,7 +1,13 @@
 import os
+# تعیین مسیر دقیق پوشه جاری فایل content_manager.py
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# متصل کردن آن به پوشه data
+DATA_DIR = os.path.join(BASE_DIR, "data")
 import json
 import random
 import logging
+
+
 
 logger = logging.getLogger(__name__)
 
