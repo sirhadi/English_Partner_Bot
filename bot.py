@@ -9,7 +9,8 @@ from telegram import Update, Bot
 from groq import Groq
 import re
 from datetime import datetime, timezone, timedelta
-from vocab_manager import get_quiz_from_data, get_vocab_for_post, get_quote_from_data
+import xml.etree.ElementTree as ET
+from vocab_manager import get_quiz_from_data, get_vocab_for_post, get_quote_from_data, get_grammar_from_data
 
 # ================== Settings ==================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -401,7 +402,60 @@ Output ONLY final Telegram post text.
         logger.error(f"News Generation Error: {e}")
         return None
 
+# ================== Grammar Functions ==================
+def generate_grammar_post_vocab(grammar_item: dict) -> str:
+    level = grammar_item.get("level", "A1-A2")
+    title = grammar_item.get("title", "")
+    structure = grammar_item.get("structure", "")
+    explanation = grammar_item.get("explanation_fa", "")
+    examples = grammar_item.get("examples", [])
+    
+    examples_text = "\n".join([f"• {ex}" for ex in examples])
+    
+    prompt = f"""
+You are an expert English teacher creating an engaging, simple grammar lesson post for Telegram.
 
+Target Level: {level}
+Grammar Topic: {title}
+Structure/Formula: {structure}
+Persian Explanation: {explanation}
+Raw Examples: {examples_text}
+
+Format the post EXACTLY using standard HTML tags (NO asterisks *):
+
+📘 <b>Grammar Lesson ({level})</b>
+📌 <b>موضوع: {title}</b>
+
+🔹 <b>ساختار / فرمول:</b>
+<code>{structure}</code>
+
+💡 <b>توضیح به زبان ساده:</b>
+{explanation}
+
+🟢 <b>مثال‌های کاربردی:</b>
+[Reformatted examples with the grammar target wrapped in <b> tags + Persian translation for each example]
+
+✍️ <b>تمرین کوتاه:</b>
+[Write 1 short sentence with a blank for members to complete in group comments]
+🟣 [ترجمه فارسی سوال تمرین]
+
+CRITICAL RULES:
+1. ALL bold tags must be <b> and </b>. Use <code> for formulas.
+2. Separate English and Persian text clearly into separate lines.
+3. Output ONLY final Telegram post text.
+"""
+    try:
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+        return clean_text(completion.choices[0].message.content.strip())
+    except Exception as e:
+        logger.error(f"Grammar Vocab Error: {e}")
+        return None
+
+    
 # ================== Telegram Processing ==================
 async def process_telegram_update(update_dict: dict):
     bot = Bot(token=BOT_TOKEN)
@@ -444,6 +498,7 @@ async def process_telegram_update(update_dict: dict):
             )
         except Exception as e:
             logger.error(f"Reply Error: {e}")
+            
 
 # ================== Helper Telegram Sender ==================
 def send_telegram_message(text: str) -> bool:
@@ -560,12 +615,24 @@ def trigger_story():
         return "Story sent!", 200
     return "Failed", 500
 
-# مسیر اخبار
+# مسیر اخبار========
 app.route("/news", methods=["GET", "POST"])
 def trigger_news():
     text = generate_news_post()
     if text and send_telegram_message(text):
         return "News sent!", 200
+    return "Failed", 500
+
+#======= مسیر گرامر
+@app.route("/grammar_vocab", methods=["GET", "POST"])
+def trigger_grammar_vocab():
+    grammar_item = get_grammar_from_data()
+    if not grammar_item:
+        return "No JSON grammar data found", 404
+        
+    text = generate_grammar_post_vocab(grammar_item)
+    if text and send_telegram_message(text):
+        return "Grammar Vocab sent!", 200
     return "Failed", 500
     
 #======================
