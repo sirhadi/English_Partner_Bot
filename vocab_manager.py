@@ -5,13 +5,9 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# مسیر پوشه data در کنار فایل‌های پروژه
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 
 def load_all_vocab_data() -> list:
-    """
-    تمام فایل‌های JSON موجود در پوشه data (مثل book_3.json) را می‌خواند
-    """
     all_items = []
     if not os.path.exists(DATA_DIR):
         logger.warning(f"پوشه {DATA_DIR} یافت نشد.")
@@ -30,15 +26,40 @@ def load_all_vocab_data() -> list:
                 
     return all_items
 
-def get_quiz_from_data() -> dict:
+def get_vocab_for_post() -> dict:
     """
-    انتخاب یک کوییز از فایل‌های JSON آماده در پوشه data
+    انتخاب یک واژه از فایل‌های JSON برای ساخت پست آموزشی
     """
     items = load_all_vocab_data()
     if not items:
         return None
         
-    # فیلتر کردن آیتم‌های معتبر که حاوی کوییز و واژه هستند
+    valid_items = [item for item in items if "vocabulary" in item]
+    if not valid_items:
+        return None
+        
+    chosen = random.choice(valid_items)
+    vocab = chosen["vocabulary"]
+    
+    return {
+        "word": vocab.get("word"),
+        "phonetic": vocab.get("phonetic", ""),
+        "part_of_speech": vocab.get("part_of_speech", ""),
+        "translation_fa": vocab.get("translation_fa", ""),
+        "definition_en": vocab.get("definition_en", ""),
+        "examples": vocab.get("examples", []),
+        "book": chosen.get("book", 3),
+        "unit": chosen.get("unit", 1)
+    }
+
+def get_quiz_from_data() -> dict:
+    """
+    انتخاب یک کوییز از فایل‌های JSON
+    """
+    items = load_all_vocab_data()
+    if not items:
+        return None
+        
     valid_items = [item for item in items if "quiz" in item and "vocabulary" in item]
     if not valid_items:
         return None
