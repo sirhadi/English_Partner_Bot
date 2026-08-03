@@ -94,3 +94,19 @@ def get_quote_from_data() -> dict:
             except Exception as e:
                 logger.error(f"خطا در خواندن نقل‌قول: {e}")
     return None
+
+#================== استخراج اصطلاحات =============
+def get_idiom_from_data():
+    try:
+        file_path = os.path.join("data", "idioms_master.json")
+        if not os.path.exists(file_path):
+            # اگر در پوشه اصلی بود
+            file_path = "idioms_master.json"
+
+        with open(file_path, "r", encoding="utf-8") as f:
+            idioms = json.load(f)
+            if idioms and isinstance(idioms, list):
+                return random.choice(idioms)
+    except Exception as e:
+        print(f"Error loading idiom: {e}")
+    return None
