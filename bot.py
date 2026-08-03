@@ -291,6 +291,69 @@ Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact 
         logger.error(f"Quiz Error: {e}")
         return None
 
+#======== کوئیز از روی لغات
+def generate_quiz_from_vocab_item(vocab_item: dict) -> dict:
+    word = vocab_item.get("word")
+    translation = vocab_item.get("translation_fa", "")
+    definition = vocab_item.get("definition_en", "")
+    book = vocab_item.get("book", 1)
+    unit = vocab_item.get("unit", 1)
+
+    prompt = f"""
+Create a Telegram multiple-choice quiz question to test this word:
+Word: {word}
+Persian Meaning: {translation}
+Definition: {definition}
+
+Return ONLY a raw JSON object with this EXACT structure (no markdown, no code blocks):
+{{
+  "level": "کتاب {book} - درس {unit}",
+  "question": "A fill-in-the-blank English sentence where '{word}' fits correctly.",
+  "options": ["{word}", "WrongOption1", "WrongOption2", "WrongOption3"],
+  "correct_option_index": 0,
+  "explanation": "توضیح پاسخ و معنی کلمه {word} به فارسی"
+}}
+
+CRITICAL RULES:
+1. Shuffle the correct answer position dynamically by setting correct_option_index appropriately (0 to 3).
+2. The question must be a complete fill-in-the-blank sentence using '___'.
+"""
+    try:
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+        text = completion.choices[0].message.content.strip().replace("```json", "").replace("```", "").strip()
+        return json.loads(clean_text(text))
+    except Exception as e:
+        logger.error(f"Quiz Generation Error: {e}")
+        return None
+
+@app.route("/quiz_vocab", methods=["GET", "POST"])
+def trigger_quiz_vocab():
+    vocab_item = get_vocab_for_post()
+    if not vocab_item:
+        return "No JSON vocab data found. Please add book_1.json to data folder.", 404
+        
+    quiz_data = generate_quiz_from_vocab_item(vocab_item)
+    if not quiz_data:
+        return "Failed to generate quiz", 500
+        
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPoll"
+    payload = json.dumps({
+        "chat_id": GROUP_CHAT_ID,
+        "question": f"🎯 کوئیز واژگان ({quiz_data.get('level')}):\n{quiz_data['question']}",
+        "options": quiz_data['options'],
+        "type": "quiz",
+        "correct_option_id": quiz_data['correct_option_index'],
+        "explanation": quiz_data['explanation']
+    }).encode('utf-8')
+    
+    req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'})
+    with urllib.request.urlopen(req, timeout=15):
+        return "Quiz Vocab sent!", 200
+
 # ================== 2. Short Story Functions ==================
 def generate_story_post() -> str:
     levels = ["A2 (Elementary)", "B1 (Intermediate)", "B2 (Upper-Intermediate)", "C2 (Advance)"]
@@ -410,43 +473,38 @@ Output ONLY final Telegram post text.
 # ================== Grammar Functions ==================
 def generate_grammar_post_vocab(grammar_item: dict) -> str:
     level = grammar_item.get("level", "A1-A2")
-    title = grammar_item.get("title", "")
-    structure = grammar_item.get("structure", "")
-    explanation = grammar_item.get("explanation_fa", "")
-    examples = grammar_item.get("examples", [])
-    
-    examples_text = "\n".join([f"• {ex}" for ex in examples])
+    topic = grammar_item.get("topic", "")
     
     prompt = f"""
-You are an expert English teacher creating an engaging, simple grammar lesson post for Telegram.
+You are an expert English teacher creating an engaging Telegram lesson.
 
+Target Grammar Topic: {topic}
 Target Level: {level}
-Grammar Topic: {title}
-Structure/Formula: {structure}
-Persian Explanation: {explanation}
-Raw Examples: {examples_text}
 
 Format the post EXACTLY using standard HTML tags (NO asterisks *):
 
 📘 <b>Grammar Lesson ({level})</b>
-📌 <b>موضوع: {title}</b>
+📌 <b>موضوع: {topic}</b>
 
 🔹 <b>ساختار / فرمول:</b>
-<code>{structure}</code>
+<code>[Write the main formula/structure here]</code>
 
-💡 <b>توضیح به زبان ساده:</b>
-{explanation}
+💡 <b>توضیح به زبان ساده (فارسی):</b>
+[Explain when and how to use this grammar structure clearly in Persian]
 
 🟢 <b>مثال‌های کاربردی:</b>
-[Reformatted examples with the grammar target wrapped in <b> tags + Persian translation for each example]
+• [Example sentence 1 with target grammar wrapped in <b> tags]
+🔹 <b>ترجمه:</b> [Persian translation]
+• [Example sentence 2 with target grammar wrapped in <b> tags]
+🔹 <b>ترجمه:</b> [Persian translation]
 
 ✍️ <b>تمرین کوتاه:</b>
-[Write 1 short sentence with a blank for members to complete in group comments]
-🟣 [ترجمه فارسی سوال تمرین]
+[Write 1 short completion sentence with a blank for members]
+🟣 [ترجمه سوال به فارسی]
 
 CRITICAL RULES:
 1. ALL bold tags must be <b> and </b>. Use <code> for formulas.
-2. Separate English and Persian text clearly into separate lines.
+2. Separate English and Persian text clearly onto new lines.
 3. Output ONLY final Telegram post text.
 """
     try:
@@ -459,7 +517,6 @@ CRITICAL RULES:
     except Exception as e:
         logger.error(f"Grammar Vocab Error: {e}")
         return None
-
     
 # ================== Telegram Processing ==================
 async def process_telegram_update(update_dict: dict):
@@ -592,25 +649,7 @@ def trigger_quiz():
         return f"Error: {e}", 500
 
 # مسیر ۵: کوییز مستخرج از JSON کتاب
-@app.route("/quiz_vocab", methods=["GET", "POST"])
-def trigger_quiz_vocab():
-    quiz_data = get_quiz_from_data()
-    if not quiz_data:
-        return "No JSON quiz data found", 404
-    
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPoll"
-    payload = json.dumps({
-        "chat_id": GROUP_CHAT_ID,
-        "question": f"🎯 کوئیز ({quiz_data['level']}):\n{quiz_data['question']}",
-        "options": quiz_data['options'],
-        "type": "quiz",
-        "correct_option_id": quiz_data['correct_option_index'],
-        "explanation": quiz_data['explanation']
-    }).encode('utf-8')
-    
-    req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'})
-    with urllib.request.urlopen(req, timeout=15):
-        return "Quiz Vocab sent!", 200
+#===========
 
 #========= مسیر داستان- این مسیرها رو زیر خود توابع هم میشه نوشت و مشکلی نداره
 @app.route("/story", methods=["GET", "POST"])
