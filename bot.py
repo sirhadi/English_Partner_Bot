@@ -14,7 +14,8 @@ import xml.etree.ElementTree as ET
 from content_manager import (
     get_vocab_for_post,
     get_quote_from_data,
-    get_grammar_from_data
+    get_grammar_from_data,
+    get_idiom_from_data
 )
 
 # ================== Settings ==================
@@ -118,7 +119,7 @@ CRITICAL RULES:
         logger.error(f"Post Error: {e}")
         return None
 
-##=== تابع آموزشی
+##============== تابع آموزشی =========================
 def generate_educational_post_vocab(vocab_item) -> str:
     if not vocab_item:
         logger.error("vocab_item is empty!")
@@ -199,7 +200,7 @@ CRITICAL RULES:
         return None
 
 
-#============ تابع کوئیز
+#============ تابع کوئیز =================
 def generate_quiz_from_vocab_item(vocab_item) -> dict:
     if not vocab_item:
         return None
@@ -249,7 +250,7 @@ Return ONLY a raw JSON object with this EXACT structure (no markdown, no code bl
         return None
 
 
-#============ تابع نقل قول
+#============ تابع نقل قول ==========================
 def generate_quote_post_vocab(quote_item) -> str:
     if not quote_item:
         logger.error("Quote item is empty!")
@@ -359,6 +360,7 @@ Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact 
         logger.error(f"Quiz Error: {e}")
         return None
 
+#=================== تابع کوئیز ====================
 def generate_quiz_from_vocab_item(vocab_item: dict) -> dict:
     if not vocab_item or not isinstance(vocab_item, dict):
         return None
@@ -396,6 +398,7 @@ Return ONLY a raw JSON object with this EXACT structure (no markdown, no code bl
         logger.error(f"Quiz Generation Error: {e}")
         return None
 
+#====================== تابع داستان ===================
 def generate_story_post() -> str:
     levels = ["A2 (Elementary)", "B1 (Intermediate)", "B2 (Upper-Intermediate)", "C1 (Advanced)"]
     chosen_level = random.choice(levels)
@@ -437,7 +440,8 @@ CRITICAL RULES:
     except Exception as e:
         logger.error(f"Story Error: {e}")
         return None
-
+        
+#==================== تابع اخبار ===============================
 def fetch_latest_world_news_rss() -> list:
     rss_url = "http://feeds.bbci.co.uk/news/world/rss.xml"
     news_items = []
@@ -509,6 +513,7 @@ Output ONLY final Telegram post text.
         logger.error(f"News Generation Error: {e}")
         return None
 
+#================= تابع گرامر ======================
 def generate_grammar_post_vocab(grammar_item: dict) -> str:
     if not grammar_item or not isinstance(grammar_item, dict):
         return None
@@ -559,6 +564,70 @@ CRITICAL RULES:
         logger.error(f"Grammar Vocab Error: {e}")
         return None
 
+#=========== تابع اصطلاحات ======================
+def generate_idiom_post(idiom_item) -> str:
+    if not idiom_item:
+        logger.error("idiom_item is empty!")
+        return None
+
+    idiom_text = ""
+    if isinstance(idiom_item, str):
+        idiom_text = idiom_item.strip()
+    elif isinstance(idiom_item, dict):
+        idiom_text = idiom_item.get("idiom") or idiom_item.get("phrase") or idiom_item.get("text") or ""
+    
+    if not idiom_text:
+        logger.error("Extracted idiom_text is empty!")
+        return None
+
+    time_context = get_time_context()
+
+    prompt = f"""
+You are an expert, encouraging English teacher creating a high-quality Telegram post to teach a popular English idiom.
+
+Target Idiom: "{idiom_text}"
+
+Generate the post following this EXACT layout using standard HTML tags (NO asterisks *):
+
+🎭 <b>اصطلاح روز (Idiom of the Day)</b>
+
+😍 <b>[Greeting in Persian matching {time_context}]</b>
+📌 <b>اصطلاح: {idiom_text}</b>
+
+🔴 <b>"{idiom_text}"</b>
+🔹 <b>معنی و مفهوم:</b> [Clear Persian explanation and equivalent Persian idiom if applicable]
+
+🟢 <b>مثال اول:</b>
+📣 [Natural English sentence using <b>{idiom_text}</b>]
+🔹 <b>ترجمه:</b> [Persian translation]
+
+🟡 <b>مثال دوم:</b>
+🔔 [Another English sentence using <b>{idiom_text}</b>]
+🔸 <b>ترجمه:</b> [Persian translation]
+
+💡 <b>نکته کاربردی:</b>
+[A brief tip in Persian on when or how to use this idiom natively]
+
+👩‍🏫 <b>حالا تو بگو:</b>
+[An engaging question in English asking members to write a sentence with <b>{idiom_text}</b>]
+🟣 [ترجمه سوال به فارسی]
+
+CRITICAL RULES:
+1. Use ONLY <b> tags for bold text. DO NOT use asterisks (*).
+2. Write English and Persian on separate lines.
+3. Output ONLY the final Telegram post text.
+"""
+    try:
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+        return clean_text(completion.choices[0].message.content.strip())
+    except Exception as e:
+        logger.error(f"Idiom Error: {e}")
+        return None
+        
 # ================== Telegram Processing ==================
 async def process_telegram_update(update_dict: dict):
     bot = Bot(token=BOT_TOKEN)
@@ -769,6 +838,23 @@ def trigger_grammar_vocab():
     except Exception as e:
         logger.error(f"Route /grammar_data Error: {e}")
         return f"Error: {e}", 500
+
+@app.route("/idiom", methods=["GET", "POST"])
+def trigger_idiom():
+    try:
+        idiom_item = get_idiom_from_data()
+        if not idiom_item:
+            return "No JSON idiom data found", 404
+            
+        text = generate_idiom_post(idiom_item)
+        if text and send_telegram_message(text):
+            return "Idiom post sent!", 200
+        return "Failed to send idiom post", 500
+    except Exception as e:
+        logger.error(f"Route /idiom Error: {e}")
+        return f"Error: {e}", 500
+
+#================== تلگرام روتز ==================
 
 @app.route(f"/{BOT_TOKEN}", methods=["POST"])
 def webhook():
