@@ -11,7 +11,6 @@ import re
 from datetime import datetime, timezone, timedelta
 import xml.etree.ElementTree as ET
 from content_manager import (
-    get_quiz_from_data,
     get_vocab_for_post,
     get_quote_from_data,
     get_grammar_from_data
@@ -660,7 +659,7 @@ def trigger_story():
     return "Failed", 500
 
 # مسیر اخبار========
-app.route("/news", methods=["GET", "POST"])
+@app.route("/news", methods=["GET", "POST"])
 def trigger_news():
     text = generate_news_post()
     if text and send_telegram_message(text):
