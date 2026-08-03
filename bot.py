@@ -629,7 +629,7 @@ def trigger_news():
     return "Failed", 500
 
 #======= مسیر گرامر
-@app.route("/grammar_vocab", methods=["GET", "POST"])
+@app.route("/grammar_data", methods=["GET", "POST"])
 def trigger_grammar_vocab():
     grammar_item = get_grammar_from_data()
     if not grammar_item:
