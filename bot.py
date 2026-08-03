@@ -552,7 +552,7 @@ def trigger_post_vocab():
 
 #========== مسیر نقل قول ===========
 # مسیر  3نقل‌قول مستخرج از فایل‌های JSON
-@app.route("/quote_vocab", methods=["GET", "POST"])
+@app.route("/quote", methods=["GET", "POST"])
 def trigger_quote_vocab():
     quote_item = get_quote_from_data()
     if not quote_item:
@@ -560,7 +560,7 @@ def trigger_quote_vocab():
         
     text = generate_quote_post_vocab(quote_item)
     if text and send_telegram_message(text):
-        return "Quote Vocab sent!", 200
+        return "Quote sent!", 200
     return "Failed", 500
     
 #======= مسیر کوئیز =========
