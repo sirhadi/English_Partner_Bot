@@ -77,3 +77,58 @@ def get_quiz_from_data() -> dict:
         "correct_option_index": quiz.get("correct_option_index", 0),
         "explanation": quiz.get("explanation", f"معنی: {vocab.get('translation_fa')}")
     }
+
+def get_quote_from_data() -> dict:
+    """
+    انتخاب یک نقل‌قول از فایل‌های JSON موجود در پوشه data
+    (چه از فایل اختصاصی quotes.json باشد یا کلید quote درون بقیه فایل‌ها)
+    """
+    items = load_all_vocab_data()
+    if not items:
+        return None
+        
+    valid_quotes = []
+    for item in items:
+        # پشتیبانی از ساختارهای مختلف ذخیره‌سازی نقل‌قول در JSON
+        if "quote" in item:
+            valid_quotes.append(item["quote"])
+        elif "quote_text" in item:
+            valid_quotes.append(item)
+            
+    if not valid_quotes:
+        return None
+        
+    chosen = random.choice(valid_quotes)
+    
+    # خروجی استاندارد شده
+    if isinstance(chosen, dict):
+        return {
+            "text": chosen.get("text") or chosen.get("quote_text"),
+            "author": chosen.get("author", "Unknown"),
+            "category": chosen.get("category", "Wisdom")
+        }
+    return None
+
+def get_grammar_from_data() -> dict:
+    """
+    استخراج یک مبحث گرامری از فایل‌های JSON
+    """
+    items = load_all_vocab_data()
+    if not items:
+        return None
+        
+    valid_grammar = [item for item in items if "grammar" in item]
+    if not valid_grammar:
+        return None
+        
+    chosen = random.choice(valid_grammar)
+    grammar = chosen["grammar"]
+    
+    return {
+        "title": grammar.get("title", ""),
+        "structure": grammar.get("structure", ""),
+        "explanation_fa": grammar.get("explanation_fa", ""),
+        "examples": grammar.get("examples", []),
+        "book": chosen.get("book", 3),
+        "unit": chosen.get("unit", 1)
+    }
