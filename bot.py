@@ -10,7 +10,12 @@ from groq import Groq
 import re
 from datetime import datetime, timezone, timedelta
 import xml.etree.ElementTree as ET
-from vocab_manager import get_quiz_from_data, get_vocab_for_post, get_quote_from_data, get_grammar_from_data
+from content_manager import (
+    get_quiz_from_data,
+    get_vocab_for_post,
+    get_quote_from_data,
+    get_grammar_from_data
+)
 
 # ================== Settings ==================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
