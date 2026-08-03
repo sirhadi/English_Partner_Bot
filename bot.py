@@ -285,7 +285,123 @@ Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact 
         logger.error(f"Quiz Error: {e}")
         return None
 
-        
+# ================== 2. Short Story Functions ==================
+def generate_story_post() -> str:
+    levels = ["A2 (Elementary)", "B1 (Intermediate)", "B2 (Upper-Intermediate)", "C2 (Advance)"]
+    chosen_level = random.choice(levels)
+    time_seed = datetime.now().strftime("%Y%m%d%H%M%S%f")
+
+    prompt = f"""
+Write an original, short, engaging English story for language learners.
+- Level: {chosen_level}
+- Length: 6 to 8 sentences.
+- Seed: {time_seed}
+
+Format the post EXACTLY using HTML tags (NO asterisks *):
+
+📖 <b>Short Story ({chosen_level})</b>
+
+[Write the English story here. Wrap 3-4 key/advanced vocabulary words in <b> tags]
+
+✍️ <b>واژگان کلیدی:</b>
+🔹 <b>word1</b>: معنی فارسی
+🔹 <b>word2</b>: معنی فارسی
+🔹 <b>word3</b>: معنی فارسی
+
+🇮🇷 <b>ترجمه داستان (برای خواندن لمس کنید):</b>
+<blockquote expandable>
+[Full fluent Persian translation of the story here]
+</blockquote>
+
+CRITICAL RULES:
+1. Wrap the Persian translation strictly inside <blockquote expandable> and </blockquote>.
+2. Output ONLY the final Telegram post text.
+"""
+    try:
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+        return clean_text(completion.choices[0].message.content.strip())
+    except Exception as e:
+        logger.error(f"Story Error: {e}")
+        return None
+
+# ================== 3. World News Functions ==================
+def fetch_latest_world_news_rss() -> list:
+    """دریافت آخرین تیترهای خبری جهان از فید RSS بی‌بی‌سی"""
+    rss_url = "http://feeds.bbci.co.uk/news/world/rss.xml"
+    news_items = []
+    try:
+        req = urllib.request.Request(rss_url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=10) as response:
+            xml_data = response.read()
+            root = ET.fromstring(xml_data)
+            
+            for item in root.findall('./channel/item')[:3]:  # ۳ خبر برتر
+                title = item.find('title').text if item.find('title') is not None else ""
+                desc = item.find('description').text if item.find('description') is not None else ""
+                news_items.append({"title": title, "summary": desc})
+    except Exception as e:
+        logger.error(f"RSS Fetch Error: {e}")
+    return news_items
+
+def generate_news_post() -> str:
+    news_list = fetch_latest_world_news_rss()
+    if not news_list:
+        return None
+
+    raw_news_text = "\n\n".join([f"News {i+1}:\nTitle: {n['title']}\nSummary: {n['summary']}" for i, n in enumerate(news_list)])
+
+    prompt = f"""
+You are an English news reporter and teacher. Turn these 3 recent world news items into an educational Telegram post:
+
+{raw_news_text}
+
+Format the post EXACTLY using standard HTML tags:
+
+🌍 <b>World News Brief / اخبار مهم جهان</b>
+
+1️⃣ <b>[Headline 1 in English]</b>
+[Short 1-2 sentence simplified English summary]
+<blockquote expandable>
+🇮🇷 <b>ترجمه:</b> [Persian translation of news 1]
+</blockquote>
+
+2️⃣ <b>[Headline 2 in English]</b>
+[Short 1-2 sentence simplified English summary]
+<blockquote expandable>
+🇮🇷 <b>ترجمه:</b> [Persian translation of news 2]
+</blockquote>
+
+3️⃣ <b>[Headline 3 in English]</b>
+[Short 1-2 sentence simplified English summary]
+<blockquote expandable>
+🇮🇷 <b>ترجمه:</b> [Persian translation of news 3]
+</blockquote>
+
+🔑 <b>Key News Vocabulary / کلمات کلیدی خبری:</b>
+🔹 <b>word1</b>: معنی فارسی
+🔹 <b>word2</b>: معنی فارسی
+
+CRITICAL RULES:
+1. Always put Persian translations inside <blockquote expandable>...</blockquote> tags.
+2. DO NOT use asterisks (*). Use ONLY <b> tags for bold text.
+Output ONLY final Telegram post text.
+"""
+    try:
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.5,
+        )
+        return clean_text(completion.choices[0].message.content.strip())
+    except Exception as e:
+        logger.error(f"News Generation Error: {e}")
+        return None
+
+
 # ================== Telegram Processing ==================
 async def process_telegram_update(update_dict: dict):
     bot = Bot(token=BOT_TOKEN)
@@ -435,7 +551,23 @@ def trigger_quiz_vocab():
     req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'})
     with urllib.request.urlopen(req, timeout=15):
         return "Quiz Vocab sent!", 200
-        
+
+#========= مسیر داستان- این مسیرها رو زیر خود توابع هم میشه نوشت و مشکلی نداره
+@app.route("/story", methods=["GET", "POST"])
+def trigger_story():
+    text = generate_story_post()
+    if text and send_telegram_message(text):
+        return "Story sent!", 200
+    return "Failed", 500
+
+# مسیر اخبار
+app.route("/news", methods=["GET", "POST"])
+def trigger_news():
+    text = generate_news_post()
+    if text and send_telegram_message(text):
+        return "News sent!", 200
+    return "Failed", 500
+    
 #======================
 @app.route(f"/{BOT_TOKEN}", methods=["POST"])
 def webhook():
