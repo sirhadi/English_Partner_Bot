@@ -9,6 +9,7 @@ from telegram import Update, Bot
 from groq import Groq
 import re
 from datetime import datetime, timezone, timedelta
+from vocab_manager import get_quiz_from_data, get_vocab_for_post, get_quote_from_data
 
 # ================== Settings ==================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -60,6 +61,8 @@ TOPICS = [
 ]
 
 # ================== AI Functions ==================
+# 1. پست آموزشی عمومی با هوش مصنوعی
+
 def generate_educational_post() -> str:
     chosen_topic = random.choice(TOPICS)
     time_context = get_time_context()
@@ -71,6 +74,7 @@ You are a warm and expert English teacher creating a usefull and beautifully for
 Unique Request ID: {random_seed} (Generate completely original content).
 
 Topic: {chosen_topic}
+
 
 Generate a Telegram post with this structure:
 # Generate a complete educational post following this EXACT layout and emoji style:
@@ -124,37 +128,86 @@ Output ONLY the final post text.
         logger.error(f"Post Error: {e}")
         return None
 
-#======== تایع نقل قول ============
-def generate_quote_post() -> str:
+#تابع آموزشی به کمک واژگان فایل وکب. این کد رو میشه داخل همین تابع آموزشی بالا نوشت و بقیه قوانینش یکسانه. ولی واسه راحتی من جداگانه مینویسم
+
+# 2. پست آموزشی بر اساس کلمه مشخص JSON
+def generate_educational_post_vocab(vocab_item: dict) -> str:
     time_context = get_time_context()
+    word = vocab_item.get("word")
+    phonetic = vocab_item.get("phonetic", "")
+    translation = vocab_item.get("translation_fa", "")
+    definition = vocab_item.get("definition_en", "")
+    book = vocab_item.get("book", 3)
+    unit = vocab_item.get("unit", 1)
     
-    # دسته‌بندی‌های بسیار متنوع برای نقل‌قول
-    categories = [
-        "Philosophy & Deep Thinking", "Science & Astronomy", "Literature & Writing", 
-        "Leadership & Courage", "Art & Creativity", "Mindfulness & Peace", 
-        "Perseverance & Resilience", "Technology & Future", "Friendship & Human Nature",
-        "Habits & Time Management", "Success & Ambition"
-    ]
-    
-    chosen_category = random.choice(categories)
-    time_seed = datetime.now().strftime("%Y%m%d%H%M%S%f")
-
     prompt = f"""
-You are an inspiring English teacher creating a Telegram post featuring a famous quote.
-- Category: {chosen_category}
-- Current time context: {time_context}
-- Unique Request Hash: {time_seed}
+You are an expert English teacher creating a Telegram post to teach a specific word from Book {book}, Unit {unit}:
 
-Select a meaningful quote strictly from the field of "{chosen_category}". Avoid clichés if possible.
+Target Word: {word}
+Phonetic: {phonetic}
+Persian Meaning: {translation}
+English Definition: {definition}
 
-Generate the post following this EXACT layout:
-🐣<b>Quote of the Day</b>
+Format the post EXACTLY using HTML tags (NO asterisks *):
 
-<blockquote><b>"English quote here"</b>
-— <i>Author Name</i></blockquote>
+<b>🟢 Book {book} - Unit {unit}</b>
+
+😍 <b>[Greeting in Persian matching {time_context}]</b>
+📌 <b>واژه روز: {word}</b>
+
+🔴 <b>{word}</b> {phonetic}
+🔹 <b>معنی:</b> {translation}
+📖 <b>تعریف انگلیسی:</b> {definition}
+
+🟢 <b>مثال اول:</b>
+📣 [English sentence with <b>{word}</b>]
+🔹 <b>ترجمه:</b> [Persian translation]
+
+🟡 <b>مثال دوم:</b>
+🔔 [Another English sentence with <b>{word}</b>]
+🔸 <b>ترجمه:</b> [Persian translation]
+
+👩‍🏫 <b>حالا تو بگو:</b>
+[An interactive question asking members to use <b>{word}</b> in a sentence]
+🟣 [ترجمه سوال به فارسی]
+"""
+    try:
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+        return clean_text(completion.choices[0].message.content.strip())
+    except Exception as e:
+        logger.error(f"Post Vocab Error: {e}")
+        return None
+
+
+#======== تایع نقل قول ============
+# ۱. نقل‌قول بر اساس دیتای JSON + قالب‌بندی با هوش مصنوعی
+def generate_quote_post_vocab(quote_item: dict) -> str:
+    time_context = get_time_context()
+    quote_text = quote_item.get("text")
+    author = quote_item.get("author", "Unknown")
+    category = quote_item.get("category", "Wisdom")
+    
+    prompt = f"""
+You are an inspiring English teacher creating a Telegram post featuring a quote.
+
+Use this EXACT English quote from our database:
+Quote: "{quote_text}"
+Author: {author}
+Category: {category}
+
+Generate the post following this EXACT layout using standard HTML tags:
+
+🐣 <b>Quote of the Day</b>
+
+<blockquote><b>"{quote_text}"</b>
+— <i>{author}</i></blockquote>
 
 <b>ترجمه</b>🇮🇷 
-<blockquote>"Persian translation here"</blockquote>
+<blockquote>[Fluent Persian translation of the quote]</blockquote>
 
 ✍️ <b>نکته زبانی:</b>
 🔹 Explain 1-2 interesting vocabulary words, idioms, or grammar structures used in this quote (in Persian).
@@ -164,25 +217,22 @@ Generate the post following this EXACT layout:
 🟣 [ترجمه فارسی سوال]
 
 CRITICAL RULES:
-1. STRICT SCRIPT RULE: All Persian text MUST be written strictly using the standard Persian alphabet.
-2. Formatting: Use <b> for bold, <i> for italics, and <blockquote> and </blockquote> for Telegram quote blocks. DO NOT use asterisks (*).
+1. Use <b> for bold, <i> for italics, and <blockquote> and </blockquote> for Telegram quote blocks. DO NOT use asterisks (*).
+2. Write English and Persian on separate lines for readability.
 Output ONLY the final Telegram post text.
 """
     try:
         completion = client.chat.completions.create(
             model=MODEL_NAME,
             messages=[
-                {
-                    "role": "system", 
-                    "content": "You are a professional English-Persian translator. Generate Persian text strictly using standard Persian alphabet."
-                },
+                {"role": "system", "content": "You are a professional English-Persian translator."},
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.7, # دمای بالاتر برای تضمین تنوع زیاد
+            temperature=0.7,
         )
         return clean_text(completion.choices[0].message.content.strip())
     except Exception as e:
-        logger.error(f"Quote Error: {e}")
+        logger.error(f"Quote Vocab Error: {e}")
         return None
         
 #============= تابع کوئیز ===============
@@ -279,8 +329,16 @@ async def process_telegram_update(update_dict: dict):
         except Exception as e:
             logger.error(f"Reply Error: {e}")
 
+# ================== Helper Telegram Sender ==================
+def send_telegram_message(text: str) -> bool:
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    payload = json.dumps({"chat_id": GROUP_CHAT_ID, "text": text, "parse_mode": "HTML"}).encode('utf-8')
+    req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'})
+    with urllib.request.urlopen(req, timeout=15):
+        return True
+
 # ================== Web Routes ==================
-#مسیر 1 ارسال پست
+## مسیر ۱: پست عمومی هوش مصنوعی
 @app.route("/", methods=["GET"])
 def health():
     return "Bot is alive!", 200
@@ -304,29 +362,33 @@ def trigger_post():
             return "Post sent!", 200
     except Exception as e:
         return f"Error: {e}", 500
-
-# مسیر ۲: ارسال نقل‌قول روز
-@app.route("/quote", methods=["GET", "POST"])
-def trigger_quote():
-    try:
-        text = generate_quote_post()
-        if not text:
-            return "Failed", 500
         
-        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-        payload = json.dumps({
-            "chat_id": GROUP_CHAT_ID, 
-            "text": text,
-            "parse_mode": "HTML"
-        }).encode('utf-8')
-        
-        req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'})
-        with urllib.request.urlopen(req, timeout=15):
-            return "Quote sent!", 200
-    except Exception as e:
-        return f"Error: {e}", 500
+# مسیر ۲: پست آموزشی بر اساس JSON کتاب
+@app.route("/post_vocab", methods=["GET", "POST"])
+def trigger_post_vocab():
+    vocab_item = get_vocab_for_post()
+    if not vocab_item:
+        return "No JSON data found", 404
+    text = generate_educational_post_vocab(vocab_item)
+    if text and send_telegram_message(text):
+        return "Post Vocab sent!", 200
+    return "Failed", 500
 
-# مسیر ۳: ارسال کوئیز به صورت نظرسنجی
+#========== مسیر نقل قول ===========
+# مسیر  3نقل‌قول مستخرج از فایل‌های JSON
+@app.route("/quote_vocab", methods=["GET", "POST"])
+def trigger_quote_vocab():
+    quote_item = get_quote_from_data()
+    if not quote_item:
+        return "No JSON quote data found", 404
+        
+    text = generate_quote_post_vocab(quote_item)
+    if text and send_telegram_message(text):
+        return "Quote Vocab sent!", 200
+    return "Failed", 500
+    
+#======= مسیر کوئیز =========
+# مسیر 4: ارسال کوئیز به صورت نظرسنجی
 @app.route("/quiz", methods=["GET", "POST"])
 def trigger_quiz():
     try:
@@ -353,6 +415,27 @@ def trigger_quiz():
     except Exception as e:
         return f"Error: {e}", 500
 
+# مسیر ۵: کوییز مستخرج از JSON کتاب
+@app.route("/quiz_vocab", methods=["GET", "POST"])
+def trigger_quiz_vocab():
+    quiz_data = get_quiz_from_data()
+    if not quiz_data:
+        return "No JSON quiz data found", 404
+    
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPoll"
+    payload = json.dumps({
+        "chat_id": GROUP_CHAT_ID,
+        "question": f"🎯 کوئیز ({quiz_data['level']}):\n{quiz_data['question']}",
+        "options": quiz_data['options'],
+        "type": "quiz",
+        "correct_option_id": quiz_data['correct_option_index'],
+        "explanation": quiz_data['explanation']
+    }).encode('utf-8')
+    
+    req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'})
+    with urllib.request.urlopen(req, timeout=15):
+        return "Quiz Vocab sent!", 200
+        
 #======================
 @app.route(f"/{BOT_TOKEN}", methods=["POST"])
 def webhook():
