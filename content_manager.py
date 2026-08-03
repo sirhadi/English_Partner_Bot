@@ -132,3 +132,44 @@ def get_grammar_from_data() -> dict:
         "book": chosen.get("book", 3),
         "unit": chosen.get("unit", 1)
     }
+
+def get_grammar_from_data() -> dict:
+    """
+    استخراج یک مبحث گرامری از فایل‌های اختصاصی گرامر (مانند grammar_a1_a2.json)
+    """
+    if not os.path.exists(DATA_DIR):
+        return None
+        
+    all_grammar_items = []
+    
+    for filename in os.listdir(DATA_DIR):
+        # بررسی اختصاصی فایل‌های گرامر
+        if filename.startswith("grammar_") and filename.endswith(".json"):
+            file_path = os.path.join(DATA_DIR, filename)
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    if isinstance(data, list):
+                        for item in data:
+                            # استخراج سطح از نام فایل (مثلاً grammar_a1_a2.json -> A1-A2)
+                            level_from_filename = filename.replace("grammar_", "").replace(".json", "").upper().replace("_", "-")
+                            
+                            # اگر داخل خود JSON سطح بود از آن استفاده می‌کند، وگرنه از اسم فایل
+                            item_level = item.get("level", level_from_filename)
+                            grammar_obj = item.get("grammar", item)
+                            
+                            if "title" in grammar_obj or "structure" in grammar_obj:
+                                all_grammar_items.append({
+                                    "level": item_level,
+                                    "title": grammar_obj.get("title", ""),
+                                    "structure": grammar_obj.get("structure", ""),
+                                    "explanation_fa": grammar_obj.get("explanation_fa", ""),
+                                    "examples": grammar_obj.get("examples", [])
+                                })
+            except Exception as e:
+                logger.error(f"خطا در خواندن فایل گرامر {filename}: {e}")
+                
+    if not all_grammar_items:
+        return None
+        
+    return random.choice(all_grammar_items)
