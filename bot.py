@@ -864,6 +864,15 @@ def trigger_idiom():
         return f"Error: {e}", 500
 
 
+import os
+import re
+import json
+from flask import request, send_file
+
+# مطمئن شوید متغیر BASE_DIR در بالای فایل bot.py تعریف شده باشد:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
 # ==============================================================================
 # 📘 راهنمای مسیر: /build_book
 # 🎯 هدف: ساخت خودکار فایل‌های JSON لغات کتاب (Paul Nation) توسط هوش مصنوعی
@@ -877,8 +886,9 @@ def build_book_route():
     if book_num < 1 or book_num > 6:
         return "شماره کتاب باید بین ۱ تا ۶ باشد.", 400
 
-    os.makedirs("data", exist_ok=True)
-    file_path = os.path.join("data", f"book_{book_num}.json")
+    data_dir = os.path.join(BASE_DIR, "data")
+    os.makedirs(data_dir, exist_ok=True)
+    file_path = os.path.join(data_dir, f"book_{book_num}.json")
 
     existing_words = []
     if os.path.exists(file_path):
@@ -912,47 +922,58 @@ Return ONLY a valid JSON array of objects with this EXACT structure (no markdown
             max_tokens=4000
         )
         raw_res = completion.choices[0].message.content.strip()
-        cleaned_res = raw_res.replace("```json", "").replace("```", "").strip()
-        
+
+        # استخراج هوشمند و مقاوم آرایه JSON حتی در صورت وجود متن اضافه
+        match = re.search(r'\[.*\]', raw_res, re.DOTALL)
+        if match:
+            cleaned_res = match.group(0)
+        else:
+            cleaned_res = raw_res.replace("```json", "").replace("```", "").strip()
+
         new_words = json.loads(cleaned_res, strict=False)
 
         if isinstance(new_words, list):
+            # حذف لغات قبلی همین درس برای جلوگیری از تکرار و بروزرسانی داده‌ها
             existing_words = [w for w in existing_words if not (isinstance(w, dict) and w.get("unit") == start_unit)]
             existing_words.extend(new_words)
 
+            # ذخیره فوری و آنی فایل روی دیسک
             with open(file_path, "w", encoding="utf-8") as f:
                 json.dump(existing_words, f, ensure_ascii=False, indent=2)
 
             next_unit = start_unit + 1
+            download_url = f"/download_book?book={book_num}"
 
-            msg = f"<h3>✅ درس {start_unit} از کتاب {book_num} با موفقیت ساخته شد.</h3>"
+            msg = f"<h3>✅ درس {start_unit} از کتاب {book_num} با موفقیت ساخته و ذخیره شد.</h3>"
             msg += f"<p>تعداد کل واژگان ذخیره‌شده تا اکنون: <b>{len(existing_words)}</b></p>"
+            msg += f"<p>📥 <a href='{download_url}' target='_blank'><b>[برای دانلود مستقیم فایل JSON تا این لحظه اینجا کلیک کنید]</b></a></p>"
+            msg += "<hr>"
 
             if start_unit < 30:
                 next_url = f"/build_book?book={book_num}&start_unit={next_unit}"
                 msg += f"<p>👉 <a href='{next_url}'><b>برای ساخت درس بعدی (درس {next_unit}) اینجا کلیک کنید</b></a></p>"
             else:
-                download_url = f"/download_book?book={book_num}"
                 msg += f"<h2>🎉 ساخت کتاب {book_num} کامل شد!</h2>"
-                msg += f"<p>📥 <a href='{download_url}'><b>برای دانلود فایل JSON کامل کتاب {book_num} اینجا کلیک کنید</b></a></p>"
+                msg += f"<p>📥 <a href='{download_url}'><b>برای دانلود فایل JSON نهایی و کامل کتاب {book_num} اینجا کلیک کنید</b></a></p>"
 
             return msg, 200
 
     except Exception as e:
         logger.error(f"Error generating unit {start_unit}: {e}")
-        return f"خطا در ساخت: {e}", 500
+        return f"خطا در ساخت درس {start_unit}: {e}", 500
 
     return "خطای نامشخص", 500
 
 
 # ==============================================================================
 # 📘 راهنمای مسیر: /download_book
-# 🎯 هدف: لینک دانلود مستقیم فایل JSON ساخته‌شده
+# 🎯 هدف: لینک دانلود مستقیم فایل JSON ساخته‌شده در هر مرحله
 # ==============================================================================
 @app.route("/download_book", methods=["GET"])
 def download_book_route():
     book_num = request.args.get("book", default=3, type=int)
-    file_path = os.path.join("data", f"book_{book_num}.json")
+    file_path = os.path.join(BASE_DIR, "data", f"book_{book_num}.json")
+    
     if os.path.exists(file_path):
         return send_file(
             file_path,
@@ -960,9 +981,8 @@ def download_book_route():
             as_attachment=True,
             download_name=f"book_{book_num}.json"
         )
-    return "فایل مورد نظر یافت نشد.", 404
-
-
+    return f"فایل book_{book_num}.json هنوز وجود ندارد یا پیدا نشد.", 404
+    
 # ==============================================================================
 # 📘 راهنمای مسیر: /<BOT_TOKEN>
 # 🎯 هدف: اندپوینت دریافت رویدادها و وب‌هوک تلگرام
