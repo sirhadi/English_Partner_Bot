@@ -168,11 +168,11 @@ Format the post EXACTLY using HTML tags (NO asterisks *):
 <b>🟢 Book {book} - Unit {unit}</b>
 
 😍 <b>[Greeting in Persian matching {time_context}]</b>
-📌 <b>واژه / اصطلاح روز: {word}</b>
+📌 <b>واژه / اصطلاح روز: /n {word}</b>
 
 🔴 <b>{word}</b> {phonetic if phonetic else ""}
 🔹 <b>معنی:</b> {translation if translation else "[Persian translation]"}
-📖 <b>تعریف انگلیسی:</b> {definition if definition else "[English definition]"}
+📖 <b>تعریف انگلیسی:/n </b> {definition if definition else "[English definition]"}
 
 🟢 <b>مثال اول:</b>
 📣 [English sentence using <b>{word}</b>]
@@ -533,7 +533,7 @@ Target Level: {level}
 Format the post EXACTLY using standard HTML tags (NO asterisks *):
 
 📘 <b>Grammar Lesson ({level})</b>
-📌 <b>موضوع: {topic}</b>
+📌 <b>موضوع:/n {topic}</b>
 
 🔹 <b>ساختار / فرمول:</b>
 <code>[Write the main formula/structure here]</code>
@@ -952,7 +952,7 @@ def download_book_route():
             as_attachment=True,
             download_name=f"book_{book_num}.json"
         )
-    return "فایل مورد نظر یافت نشد.", 404 )
+    return "فایل مورد نظر یافت نشد.", 404
 
 #================== تلگرام روتز ==================
 
