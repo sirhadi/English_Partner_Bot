@@ -151,7 +151,9 @@ def get_quote_from_data() -> dict:
 # 📤 خروجی: دیکشنری اطلاعات اصطلاح انتخاب‌شده (اصطلاح، معنی، مثال و...)
 # 🔗 کاربرد: فراخوانی توسط مسیر /idiom
 # ==============================================================================
-def get_idiom_from_data() -> dict:
+# در فایل content_manager.py
+
+def get_idiom_from_data() -> str:
     """
     خواندن فایل کلی اصطلاحات و انتخاب یک مورد به صورت کاملاً تصادفی.
     """
@@ -164,5 +166,5 @@ def get_idiom_from_data() -> dict:
     if not idioms_list:
         raise ValueError("فایل idioms_master.json خالی است.")
 
-    # انتخاب تصادفی یک اصطلاح از بین تمام اعضای لیست
+    # انتخاب تصادفی یک اصطلاح (رشته متنی) از بین تمام اعضای لیست
     return random.choice(idioms_list)
