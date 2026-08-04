@@ -12,6 +12,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")        # پوشه قرارگیری فایل‌های JSON
 STATE_FILE = os.path.join(BASE_DIR, "state.json") # فایل ذخیره آخرین وضعیت ارسال لغات (Index)
 
+# آدرس‌دهی مطلق جهت جلوگیری از خطای آدرس در سرور Render
+IDIOMS_FILE = os.path.join(BASE_DIR, "data", "idioms_master.json")
 
 # ==============================================================================
 # 📘 راهنمای تابع: load_all_book_words
@@ -141,23 +143,26 @@ def get_quote_from_data() -> dict:
     return random.choice(all_quotes) if all_quotes else None
 
 
+
 # ==============================================================================
 # 📘 راهنمای تابع: get_idiom_from_data
-# 🎯 هدف: بارگذاری یک اصطلاح تصادفی از فایل idioms_master.json
+# 🎯 هدف: خواندن فایل idioms_master.json و انتخاب تصادفی یک اصطلاح از لیست
 # 📥 ورودی: ندارد
-# 📤 خروجی: دیکشنری (dict) شامل اصطلاح و معنی
+# 📤 خروجی: دیکشنری اطلاعات اصطلاح انتخاب‌شده (اصطلاح، معنی، مثال و...)
 # 🔗 کاربرد: فراخوانی توسط مسیر /idiom
 # ==============================================================================
 def get_idiom_from_data() -> dict:
-    file_path = os.path.join(DATA_DIR, "idioms_master.json")
-    if not os.path.exists(file_path):
-        return None
+    """
+    خواندن فایل کلی اصطلاحات و انتخاب یک مورد به صورت کاملاً تصادفی.
+    """
+    if not os.path.exists(IDIOMS_FILE):
+        raise FileNotFoundError(f"فایل اصطلاحات پیدا نشد: {IDIOMS_FILE}")
 
-    try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            idioms = json.load(f)
-            if idioms and isinstance(idioms, list):
-                return random.choice(idioms)
-    except Exception as e:
-        logger.error(f"خطا در بارگذاری اصطلاحات: {e}")
-    return None
+    with open(IDIOMS_FILE, "r", encoding="utf-8") as f:
+        idioms_list = json.load(f)
+
+    if not idioms_list:
+        raise ValueError("فایل idioms_master.json خالی است.")
+
+    # انتخاب تصادفی یک اصطلاح از بین تمام اعضای لیست
+    return random.choice(idioms_list)
