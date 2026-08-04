@@ -538,7 +538,7 @@ Format the post EXACTLY using standard HTML tags (NO asterisks *):
 🔹 <b>ساختار / فرمول:</b>
 <code>[Write the main formula/structure here]</code>
 
-💡 <b>توضیح به زبان ساده (فارسی):</b>
+💡 <b>توضیح:</b>
 [Explain when and how to use this grammar structure clearly in Persian]
 
 🟢 <b>مثال‌های کاربردی:</b>
