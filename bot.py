@@ -618,7 +618,7 @@ def trigger_vocab():
 # 📘 راهنمای مسیر: /send_general_post
 # 🎯 هدف: ساخت و ارسال یک پست عمومی آموزشی در تلگرام
 # ==============================================================================
-@app.route("/send_general_post", methods=["GET", "POST"])
+@app.route("/post", methods=["GET", "POST"])
 def trigger_general_post():
     post_text = generate_educational_post()
     sent = send_telegram_message(post_text)
@@ -629,7 +629,7 @@ def trigger_general_post():
 # 📘 راهنمای مسیر: /send_quiz
 # 🎯 هدف: ساخت و ارسال کوییز عمومی ۴ گزینه‌ای
 # ==============================================================================
-@app.route("/send_quiz", methods=["GET", "POST"])
+@app.route("/quiz", methods=["GET", "POST"])
 def trigger_quiz():
     quiz_data = generate_quiz_data()
     sent = send_telegram_poll(quiz_data)
@@ -640,7 +640,7 @@ def trigger_quiz():
 # 📘 راهنمای مسیر: /send_story
 # 🎯 هدف: ساخت و ارسال داستان کوتاه آموزشی
 # ==============================================================================
-@app.route("/send_story", methods=["GET", "POST"])
+@app.route("/story", methods=["GET", "POST"])
 def trigger_story():
     post_text = generate_story_post()
     sent = send_telegram_message(post_text)
@@ -651,7 +651,7 @@ def trigger_story():
 # 📘 راهنمای مسیر: /send_quote
 # 🎯 هدف: ساخت و ارسال نقل‌قول روزانه
 # ==============================================================================
-@app.route("/send_quote", methods=["GET", "POST"])
+@app.route("/quote", methods=["GET", "POST"])
 def trigger_quote():
     post_text = generate_quote_post_vocab()
     sent = send_telegram_message(post_text)
