@@ -17,6 +17,7 @@ from content_manager import (
     get_grammar_from_data,
     get_idiom_from_data
 )
+from flask import Flask, request, jsonify, send_file
 
 # ================== Settings ==================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -66,6 +67,8 @@ TOPICS = [
 ]
 
 # ================== AI Functions ==================
+
+#================ تابع ساخت پست ==
 def generate_educational_post() -> str:
     chosen_topic = random.choice(TOPICS)
     time_context = get_time_context()
@@ -733,6 +736,7 @@ def trigger_post_vocab():
         logger.error(f"Route /post_vocab Error: {e}")
         return f"Error: {e}", 500
 
+#============ quote ==========
 @app.route("/quote", methods=["GET", "POST"])
 def trigger_quote_vocab():
     try:
@@ -748,6 +752,7 @@ def trigger_quote_vocab():
         logger.error(f"Route /quote Error: {e}")
         return f"Error: {e}", 500
 
+#================ quiz ===========
 @app.route("/quiz", methods=["GET", "POST"])
 def trigger_quiz():
     try:
@@ -774,6 +779,7 @@ def trigger_quiz():
         logger.error(f"Route /quiz Error: {e}")
         return f"Error: {e}", 500
 
+#============ quiz_vocab ============
 @app.route("/quiz_vocab", methods=["GET", "POST"])
 def trigger_quiz_vocab():
     try:
@@ -802,6 +808,7 @@ def trigger_quiz_vocab():
         logger.error(f"Route /quiz_vocab Error: {e}")
         return f"Error: {e}", 500
 
+#============== story ===========
 @app.route("/story", methods=["GET", "POST"])
 def trigger_story():
     try:
@@ -813,6 +820,7 @@ def trigger_story():
         logger.error(f"Route /story Error: {e}")
         return f"Error: {e}", 500
 
+#=============== news ==============
 @app.route("/news", methods=["GET", "POST"])
 def trigger_news():
     try:
@@ -824,6 +832,7 @@ def trigger_news():
         logger.error(f"Route /news Error: {e}")
         return f"Error: {e}", 500
 
+#============= grammar_data ============
 @app.route("/grammar_data", methods=["GET", "POST"])
 def trigger_grammar_vocab():
     try:
@@ -839,6 +848,7 @@ def trigger_grammar_vocab():
         logger.error(f"Route /grammar_data Error: {e}")
         return f"Error: {e}", 500
 
+#=================== idiom ===============
 @app.route("/idiom", methods=["GET", "POST"])
 def trigger_idiom():
     try:
@@ -853,6 +863,67 @@ def trigger_idiom():
     except Exception as e:
         logger.error(f"Route /idiom Error: {e}")
         return f"Error: {e}", 500
+
+#================ build_book ================
+@app.route("/build_book", methods=["GET"])
+def build_book_route():
+    book_num = request.args.get("book", default=3, type=int)
+    
+    if book_num < 1 or book_num > 6:
+        return "شماره کتاب باید بین ۱ تا ۶ باشد.", 400
+
+    logger.info(f"شروع تولید فایل برای کتاب جلد {book_num}...")
+    
+    os.makedirs("data", exist_ok=True)
+    file_path = os.path.join("data", f"book_{book_num}.json")
+    all_words = []
+
+    # برای جلوگیری از تایم‌اوت، ۳۰ درس را در ۶ دسته ۵‌تایی دریافت می‌کنیم
+    for batch_start in range(1, 31, 5):
+        batch_end = min(batch_start + 4, 30)
+        
+        prompt = f"""
+You are an expert lexical database creator for Paul Nation's "4000 Essential English Words" (Latest Edition).
+Generate all target words for Book {book_num}, from Unit {batch_start} to Unit {batch_end} inclusive.
+
+Return ONLY a valid JSON array of objects with this EXACT structure (no markdown fences, no explanation):
+[
+  {{
+    "word": "target word",
+    "phonetic": "/IPA pronunciation/",
+    "translation_fa": "ترجمه دقیق فارسی",
+    "definition_en": "Clear English definition from the book",
+    "book": {book_num},
+    "unit": unit_number
+  }}
+]
+"""
+        try:
+            completion = client.chat.completions.create(
+                model=MODEL_NAME,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.2,
+            )
+            raw_res = completion.choices[0].message.content.strip()
+            cleaned_res = raw_res.replace("```json", "").replace("```", "").strip()
+            batch_data = json.loads(cleaned_res)
+            
+            if isinstance(batch_data, list):
+                all_words.extend(batch_data)
+        except Exception as e:
+            logger.error(f"خطا در دریافت دروس {batch_start} تا {batch_end} کتاب {book_num}: {e}")
+
+    # ذخیره فایل روی سرور
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(all_words, f, ensure_ascii=False, indent=2)
+
+    # دانلود مستقیم فایل توسط مرورگر شما
+    return send_file(
+        file_path,
+        mimetype="application/json",
+        as_attachment=True,
+        download_name=f"book_{book_num}.json"
+    )
 
 #================== تلگرام روتز ==================
 
