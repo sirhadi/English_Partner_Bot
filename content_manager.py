@@ -9,6 +9,34 @@ logger = logging.getLogger(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 
+#=========== استخراج همه کتاب ها ======================
+def load_all_book_words():
+    """
+    تمام فایل‌های JSON موجود در پوشه data که با book_ شروع می‌شوند را می‌خواند
+    و به صورت یک لیست واحد برمی‌گرداند.
+    """
+    data_dir = "data"
+    all_words = []
+
+    if not os.path.exists(data_dir):
+        logger.warning(f"پوشه {data_dir} یافت نشد.")
+        return all_words
+
+    # یافتن و مرتب‌سازی تمام فایل‌های کتاب
+    book_files = sorted([f for f in os.listdir(data_dir) if f.startswith("book_") and f.endswith(".json")])
+
+    for file_name in book_files:
+        file_path = os.path.join(data_dir, file_name)
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                words = json.load(f)
+                if isinstance(words, list):
+                    all_words.extend(words)
+                    logger.info(f"فایل {file_name} با {len(words)} واژه بارگذاری شد.")
+        except Exception as e:
+            logger.error(f"خطا در خواندن فایل {file_name}: {e}")
+
+    return all_words
 
 # ================== ۱. استخراج گرامر ==================
 def get_grammar_from_data() -> dict:
