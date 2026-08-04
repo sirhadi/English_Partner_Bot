@@ -578,15 +578,29 @@ Format strictly with HTML:
 # ==============================================================================
 # 📘 راهنمای تابع: generate_idiom_post
 # 🎯 هدف: آموزش یک اصطلاح (Idiom) کاربردی همراه با معنی و مثال
-# 📥 ورودی: idiom_item (اختیاری - اطلاعات اصطلاح)
+# 📥 ورودی: idiom_item (اختیاری - رشته یا دیکشنری اطلاعات اصطلاح)
 # 📤 خروجی: متن آماده ارسال پست اصطلاحات
 # 🔗 کاربرد: استفاده در مسیر /idiom
 # ==============================================================================
 def generate_idiom_post(idiom_item=None) -> str:
+    """
+    تولید متن پست آموزشی اصطلاح. 
+    پشتیبانی از لیست اصطلاحات متنی ساده (String) و دیکشنری (Dict).
+    """
     if not idiom_item:
         idiom_item = get_idiom_from_data()
 
-    idiom_str = idiom_item.get("idiom", "Break a leg") if isinstance(idiom_item, dict) else "Break a leg"
+    # تشخیص اینکه آیتم دریافتی متن ساده است یا دیکشنری
+    if isinstance(idiom_item, str):
+        idiom_str = idiom_item.strip()
+    elif isinstance(idiom_item, dict):
+        idiom_str = idiom_item.get("idiom") or idiom_item.get("phrase") or idiom_item.get("text") or ""
+    else:
+        idiom_str = str(idiom_item)
+
+    # اگر به هر دلیلی مقدار خالی بود
+    if not idiom_str:
+        return None
 
     prompt = f"""
 Teach this idiom for Telegram: {idiom_str}
@@ -600,6 +614,10 @@ Format:
 💬 <b>مثال:</b>
 📣 [English example]
 🔹 <b>ترجمه:</b> [Persian translation]
+
+CRITICAL RULES:
+1. Use ONLY <b> tags for bold text. Do NOT use asterisks (*).
+2. Write English and Persian on separate lines.
 """
     try:
         completion = client.chat.completions.create(
@@ -611,7 +629,6 @@ Format:
     except Exception as e:
         logger.error(f"Idiom Error: {e}")
         return None
-
 
 # ==============================================================================
 # 📘 راهنمای تابع: send_telegram_message
