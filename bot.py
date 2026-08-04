@@ -287,7 +287,81 @@ CRITICAL RULES:
         logger.error(f"Post Vocab Error: {e}")
         return None
 
+# ==============================================================================
+# 📘 راهنمای تابع: generate_quiz_data
+# 🎯 هدف: تولید خودکار آزمون ۴ گزینه‌ای عمومی انگلیسی با هوش مصنوعی در سطوح و موضوعات مختلف
+# 📥 ورودی: ندارد
+# 📤 خروجی: دیکشنری شامل سوال، ۴ گزینه، مشخصه پاسخ صحیح و تحلیل فارسی
+# 🔗 کاربرد: استفاده در مسیر /send_quiz جهت ارسال آزمون‌های عمومی و متنوع گرامری/اصطلاحات
+# ==============================================================================
+def generate_quiz_data() -> dict:
+    """
+    تولید یک آزمون عمومی ۴ گزینه‌ای هوشمند با انتخاب تصادفی سطح (A1 تا C1) 
+    و موضوعات متنوع مانند گرامر، افعال مرکب، حروف اضافه و اصطلاحات.
+    """
+    # لیست موضوعات مختلف زبان برای تنوع در آزمون‌ها
+    topics = [
+        "English Grammar & Tenses",
+        "Prepositions of Time and Place",
+        "Phrasal Verbs & Idioms",
+        "Common Collocations & Expressions",
+        "Articles & Quantifiers",
+        "Vocabulary in Context"
+    ]
+    
+    # لیست سطوح زبان
+    levels = [
+        "مقدماتی (A1-A2)", 
+        "متوسط (B1-B2)", 
+        "پیشرفته (C1)"
+    ]
+    
+    # انتخاب تصادفی یک موضوع و یک سطح در هر بار اجرای تابع
+    selected_topic = random.choice(topics)
+    selected_level = random.choice(levels)
 
+    prompt = f"""
+Create a high-quality English multiple-choice quiz question for Persian learners.
+
+Topic: {selected_topic}
+Level: {selected_level}
+
+CRITICAL INSTRUCTIONS:
+1. Return ONLY a valid JSON object. Do NOT include markdown blocks like ```json ... ``` or any other extra text.
+2. Ensure the correct answer is NOT always in index 0. Shuffle the options conceptually or set correct_option_index correctly.
+3. Write a helpful explanation in Persian.
+
+JSON Format:
+{{
+  "level": "{selected_level} | {selected_topic}",
+  "question": "Clear sentence with a blank (___) testing the topic.",
+  "options": ["Option A", "Option B", "Option C", "Option D"],
+  "correct_option_index": 0,
+  "explanation": "توضیح کامل فارسی درباره علت درستی پاسخ و نکته گرامری یا معنایی آن"
+}}
+"""
+
+    try:
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+
+        raw_text = completion.choices[0].message.content.strip()
+
+        # استخراج دقیق ساختار JSON جهت جلوگیری از خطای فرمت
+        match = re.search(r'\{.*\}', raw_text, re.DOTALL)
+        if match:
+            clean_json_str = match.group(0)
+            return json.loads(clean_json_str)
+        else:
+            logger.error(f"Quiz Data JSON extraction failed. Raw text: {raw_text}")
+            return None
+
+    except Exception as e:
+        logger.error(f"Generate Quiz Data Error: {e}")
+        return None
 
 # ==============================================================================
 # 📘 راهنمای تابع: generate_quiz_from_vocab_item
@@ -575,7 +649,7 @@ def send_telegram_poll(quiz_data: dict) -> bool:
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPoll"
     payload = {
         "chat_id": GROUP_CHAT_ID,
-        "question": f"❓ {quiz_data.get('question')}\n({quiz_data.get('level')})",
+        "question": f"🤔 {quiz_data.get('question')}\n({quiz_data.get('level')})",
         "options": json.dumps(quiz_data.get("options", [])),
         "type": "quiz",
         "correct_option_id": quiz_data.get("correct_option_index", 0),
@@ -664,7 +738,7 @@ def trigger_quiz():
         }), 200
 
     except Exception as e:
-        logger.error(f"Error in /send_quiz: {e}")
+        logger.error(f"Error in /quiz_vocab: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
 
 
