@@ -250,7 +250,7 @@ English Definition: {definition if definition else "Provide a short clear Englis
 
 Format the post EXACTLY using HTML tags (NO asterisks *):
 
-<b>🟢 4000 E. words Book {book} - Unit {unit}</b>
+<b>🟢 4000 E. Words Book {book} - Unit {unit}</b>
 
 😍 <b>[Greeting in Persian matching {time_context}]</b>
 📌 <b>واژه / اصطلاح روز:\n{word}</b>
