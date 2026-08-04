@@ -253,11 +253,10 @@ Format the post EXACTLY using HTML tags (NO asterisks *):
 <b>🟢 4000 E. Words Book {book} - Unit {unit}</b>
 
 😍 <b>[Greeting in Persian matching {time_context}]</b>
-📌 <b>واژه / اصطلاح روز:\n{word}</b>
-
+📌 <b>واژه / اصطلاح روز:</b>
 🔴 <b>{word}</b> {phonetic if phonetic else ""}
 🔹 <b>معنی:</b> {translation if translation else "[Persian translation]"}
-📖 <b>تعریف انگلیسی:\n</b> {definition if definition else "[English definition]"}
+📖 <b>Deffinition:\n</b> {definition if definition else "[English definition]"}
 
 🟢 <b>مثال اول:</b>
 📣 [English sentence using <b>{word}</b>]
@@ -606,14 +605,16 @@ def generate_idiom_post(idiom_item=None) -> str:
 Teach this idiom for Telegram: {idiom_str}
 
 Format:
-✨ <b>اصطلاح روز (Idiom)</b>
+📣 <b>اصطلاح روز (Idiom)</b>
 
 🎯 <b>{idiom_str}</b>
 
-🔹 <b>معنی:</b> [Persian meaning]
+🟩 <b>معنی:</b> [Persian meaning]
 💬 <b>مثال:</b>
-📣 [English example]
-🔹 <b>ترجمه:</b> [Persian translation]
+🟦 [English example]
+🔷 <b>ترجمه:</b> [Persian translation]
+🟧 [English example]
+🔶 <b>ترجمه:</b> [Persian translation]
 
 CRITICAL RULES:
 1. Use ONLY <b> tags for bold text. Do NOT use asterisks (*).
