@@ -162,7 +162,7 @@ Topic: {chosen_topic}
 
 Generate a complete educational post following this EXACT layout and emoji style:
 
-<b>🟢 Level: B2-C1</b>
+🟢 <b>Level: B2-C1</b>
 
 😍 <b>[Creative dynamic native English greeting loosely matching {time_context} + natural Persian translation]</b>
 📌 <b>[Topic Title in English & Persian]</b>
@@ -250,7 +250,7 @@ English Definition: {definition if definition else "Provide a short clear Englis
 
 Format the post EXACTLY using HTML tags (NO asterisks *):
 
-<b>🟢 4000 E. Words Book {book} - Unit {unit}</b>
+🟢 <b>4000 E. Words Book {book} - Unit {unit}</b>
 
 😍 <b>[Greeting in Persian matching {time_context}]</b>
 📌 <b>واژه / اصطلاح روز:</b>
