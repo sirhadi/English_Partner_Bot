@@ -356,7 +356,7 @@ Format strictly using HTML:
 🔹 <b>word1</b>: معنی فارسی
 🔹 <b>word2</b>: معنی فارسی
 
-🇮🇷 <b>ترجمه فارسی (برای مشاهده لمس کنید):</b>
+<b>ترجمه (برای باز شدن لمس کنید):</b>
 <blockquote expandable>
 [Full Persian translation here]
 </blockquote>
@@ -445,7 +445,7 @@ Format:
 <blockquote><b>"{quote_text}"</b>
 — <i>{author}</i></blockquote>
 
-🇮🇷 <b>ترجمه:</b>
+<b>ترجمه:</b>
 <blockquote>[Persian translation]</blockquote>
 
 🤔 <b>نظر شما چیه؟</b>
@@ -469,7 +469,7 @@ Format:
 # 🎯 هدف: ساخت داستان کوتاه سطح متوسط همراه با ترجمه مخفی کشویی
 # 📥 ورودی: ندارد
 # 📤 خروجی: متن کامل داستان با فرمت HTML
-# 🔗 کاربرد: استفاده در مسیر /send_story
+# 🔗 کاربرد: استفاده در مسیر /story
 # ==============================================================================
 def generate_story_post() -> str:
     prompt = """
@@ -477,13 +477,14 @@ Write a short English story for B1 learners (5-7 sentences).
 
 Format strictly with HTML:
 📖 <b>Short Story</b>
-
+[blank line]
+                                             
 [Story text in English with 2 key words in <b> tags]
 
 ✍️ <b>واژگان:</b>
 🔹 <b>word1</b>: معنی
 
-🇮🇷 <b>ترجمه داستان:</b>
+<b>ترجمه داستان:</b>
 <blockquote expandable>
 [Persian translation]
 </blockquote>
@@ -690,7 +691,7 @@ def trigger_ai_quiz():
 
 
 # ==============================================================================
-# 📘 راهنمای مسیر: /send_story
+# 📘 راهنمای مسیر: /story
 # 🎯 هدف: ساخت و ارسال داستان کوتاه آموزشی
 # ==============================================================================
 @app.route("/story", methods=["GET", "POST"])
