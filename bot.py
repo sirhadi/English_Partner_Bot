@@ -562,7 +562,7 @@ Format strictly with HTML:
 
 <b>ترجمه داستان:</b>
 <blockquote expandable>
-[Persian translation]
+[Full Persian translation here]
 </blockquote>
   
 """
