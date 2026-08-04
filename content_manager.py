@@ -5,34 +5,35 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# مسیر مطلق پوشه data
+# تعریف مسیرهای مطلق برای جلوگیری از خطای عدم یافتن پوشه در سرور
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
+STATE_FILE = os.path.join(BASE_DIR, "state.json")
+
 
 # ------------------------------------------------------------------------------
 # 🔹 FUNCTION: load_all_book_words
 # توضیح: خواندن تمام لغات از تمامی فایل‌های book_*.json در پوشه data
 # ------------------------------------------------------------------------------
 def load_all_book_words() -> list:
-    data_dir = "data"
     all_words = []
 
-    if not os.path.exists(data_dir):
-        logger.warning(f"پوشه {data_dir} یافت نشد.")
+    if not os.path.exists(DATA_DIR):
+        logger.warning(f"پوشه {DATA_DIR} یافت نشد.")
         return all_words
 
-    # لیست کردن و مرتب‌سازی تمام فایل‌های کتاب (book_1.json, book_2.json, book_3.json و ...)
-    book_files = sorted([f for f in os.listdir(data_dir) if f.startswith("book_") and f.endswith(".json")])
+    # مرتب‌سازی تمام فایل‌های کتاب (book_1.json, book_2.json, book_3.json و ...)
+    book_files = sorted([f for f in os.listdir(DATA_DIR) if f.startswith("book_") and f.endswith(".json")])
 
     for file_name in book_files:
-        file_path = os.path.join(data_dir, file_name)
+        file_path = os.path.join(DATA_DIR, file_name)
         try:
             with open(file_path, "r", encoding="utf-8") as f:
                 words = json.load(f)
                 if isinstance(words, list):
                     all_words.extend(words)
         except Exception as e:
-            logger.error(f"خطا در خواندن {file_name}: {e}")
+            logger.error(f"خطا در خواندن فایل {file_name}: {e}")
 
     logger.info(f"تعداد کل واژگان بارگذاری شده از تمامی کتاب‌ها: {len(all_words)}")
     return all_words
@@ -40,7 +41,7 @@ def load_all_book_words() -> list:
 
 # ------------------------------------------------------------------------------
 # 🔹 FUNCTION: get_next_vocab_item
-# توضیح: دریافت لغت بعدی بر اساس اندیس ذخیره‌شده یا انتخاب تصادفی
+# توضیح: دریافت لغت بعدی به صورت ترتیبی بر اساس اندیس ذخیره‌شده در state.json
 # ------------------------------------------------------------------------------
 def get_next_vocab_item() -> dict:
     all_words = load_all_book_words()
@@ -48,44 +49,40 @@ def get_next_vocab_item() -> dict:
         logger.error("هیچ لغتی در فایل‌های کتاب پیدا نشد.")
         return None
 
-    # خواندن وضعیت اندیس از فایل state.json
-    state_file = "state.json"
     current_index = 0
-    
-    if os.path.exists(state_file):
+    if os.path.exists(STATE_FILE):
         try:
-            with open(state_file, "r", encoding="utf-8") as f:
+            with open(STATE_FILE, "r", encoding="utf-8") as f:
                 state = json.load(f)
                 current_index = state.get("vocab_index", 0)
         except Exception:
             current_index = 0
 
-    # بررسی فراتر نرفتن اندیس از تعداد کل لغات
+    # در صورت رسیدن به انتهای لیست، بازنشانی به کلمه اول
     if current_index >= len(all_words):
         current_index = 0
 
     vocab_item = all_words[current_index]
 
-    # به‌روزرسانی اندیس برای ارسال بعدی
+    # بروزرسانی اندیس برای فراخوانی بعدی
     try:
-        with open(state_file, "w", encoding="utf-8") as f:
+        with open(STATE_FILE, "w", encoding="utf-8") as f:
             json.dump({"vocab_index": current_index + 1}, f, ensure_ascii=False, indent=2)
     except Exception as e:
         logger.error(f"خطا در به‌روزرسانی state.json: {e}")
 
     return vocab_item
 
-# ================== ۱. استخراج گرامر ==================
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: get_grammar_from_data
+# توضیح: خواندن یک موضوع گرامری تصادفی از فایل‌های grammar_*.json
+# ------------------------------------------------------------------------------
 def get_grammar_from_data() -> dict:
-    """
-    خواندن مباحث گرامری از فایل‌های grammar_*.json
-    فرمت فایل‌ها: ["Present Simple (...)", "Present Continuous (...)"]
-    """
     if not os.path.exists(DATA_DIR):
         return None
         
     all_grammar_topics = []
-    
     for filename in os.listdir(DATA_DIR):
         if filename.startswith("grammar_") and filename.endswith(".json"):
             file_path = os.path.join(DATA_DIR, filename)
@@ -93,7 +90,6 @@ def get_grammar_from_data() -> dict:
                 with open(file_path, "r", encoding="utf-8") as f:
                     data = json.load(f)
                     if isinstance(data, list):
-                        # استخراج سطح از نام فایل (مثلاً grammar_a1_a2.json -> A1-A2)
                         level = filename.replace("grammar_", "").replace(".json", "").upper().replace("_", "-")
                         for topic in data:
                             if isinstance(topic, str):
@@ -110,36 +106,10 @@ def get_grammar_from_data() -> dict:
     return random.choice(all_grammar_topics)
 
 
-# ================== ۲. استخراج واژگان کتاب‌ها ==================
-def load_all_vocab_data() -> list:
-    """خواندن تمام فایل‌های کلمات (book_1.json, book_2.json و...)"""
-    all_words = []
-    if not os.path.exists(DATA_DIR):
-        return all_words
-        
-    for filename in os.listdir(DATA_DIR):
-        # خواندن فایل‌هایی که مربوط به گرامر و نقل‌قول نیستند
-        if filename.endswith(".json") and not filename.startswith("grammar_") and not filename.startswith("quote"):
-            file_path = os.path.join(DATA_DIR, filename)
-            try:
-                with open(file_path, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                    if isinstance(data, list):
-                        all_words.extend(data)
-            except Exception as e:
-                logger.error(f"خطا در خواندن فایل {filename}: {e}")
-                
-    return all_words
-
-def get_vocab_for_post() -> dict:
-    """انتخاب یک کلمه از دیتابیس کلمات برای پست آموزشی یا کوییز"""
-    words = load_all_vocab_data()
-    if not words:
-        return None
-    return random.choice(words)
-
-
-# ================== ۳. استخراج نقل‌قول ==================
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: get_quote_from_data
+# توضیح: خواندن یک نقل‌قول تصادفی از فایل‌های quote_*.json
+# ------------------------------------------------------------------------------
 def get_quote_from_data() -> dict:
     if not os.path.exists(DATA_DIR):
         return None
@@ -157,21 +127,24 @@ def get_quote_from_data() -> dict:
                         elif isinstance(chosen, str):
                             return {"text": chosen, "author": "Unknown"}
             except Exception as e:
-                logger.error(f"خطا در خواندن نقل‌قول: {e}")
+                logger.error(f"خطا در خواندن نقل‌قول {filename}: {e}")
     return None
 
-#================== استخراج اصطلاحات =============
-def get_idiom_from_data():
-    try:
-        file_path = os.path.join("data", "idioms_master.json")
-        if not os.path.exists(file_path):
-            # اگر در پوشه اصلی بود
-            file_path = "idioms_master.json"
 
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: get_idiom_from_data
+# توضیح: خواندن یک اصطلاح تصادفی از فایل idioms_master.json
+# ------------------------------------------------------------------------------
+def get_idiom_from_data() -> dict:
+    file_path = os.path.join(DATA_DIR, "idioms_master.json")
+    if not os.path.exists(file_path):
+        return None
+
+    try:
         with open(file_path, "r", encoding="utf-8") as f:
             idioms = json.load(f)
             if idioms and isinstance(idioms, list):
                 return random.choice(idioms)
     except Exception as e:
-        print(f"Error loading idiom: {e}")
+        logger.error(f"خطا در بارگذاری اصطلاحات: {e}")
     return None
