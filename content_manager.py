@@ -9,12 +9,11 @@ logger = logging.getLogger(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 
-#=========== استخراج همه کتاب ها ======================
-def load_all_book_words():
-    """
-    تمام فایل‌های JSON موجود در پوشه data که با book_ شروع می‌شوند را می‌خواند
-    و به صورت یک لیست واحد برمی‌گرداند.
-    """
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: load_all_book_words
+# توضیح: خواندن تمام لغات از تمامی فایل‌های book_*.json در پوشه data
+# ------------------------------------------------------------------------------
+def load_all_book_words() -> list:
     data_dir = "data"
     all_words = []
 
@@ -22,7 +21,7 @@ def load_all_book_words():
         logger.warning(f"پوشه {data_dir} یافت نشد.")
         return all_words
 
-    # یافتن و مرتب‌سازی تمام فایل‌های کتاب
+    # لیست کردن و مرتب‌سازی تمام فایل‌های کتاب (book_1.json, book_2.json, book_3.json و ...)
     book_files = sorted([f for f in os.listdir(data_dir) if f.startswith("book_") and f.endswith(".json")])
 
     for file_name in book_files:
@@ -32,11 +31,49 @@ def load_all_book_words():
                 words = json.load(f)
                 if isinstance(words, list):
                     all_words.extend(words)
-                    logger.info(f"فایل {file_name} با {len(words)} واژه بارگذاری شد.")
         except Exception as e:
-            logger.error(f"خطا در خواندن فایل {file_name}: {e}")
+            logger.error(f"خطا در خواندن {file_name}: {e}")
 
+    logger.info(f"تعداد کل واژگان بارگذاری شده از تمامی کتاب‌ها: {len(all_words)}")
     return all_words
+
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: get_next_vocab_item
+# توضیح: دریافت لغت بعدی بر اساس اندیس ذخیره‌شده یا انتخاب تصادفی
+# ------------------------------------------------------------------------------
+def get_next_vocab_item() -> dict:
+    all_words = load_all_book_words()
+    if not all_words:
+        logger.error("هیچ لغتی در فایل‌های کتاب پیدا نشد.")
+        return None
+
+    # خواندن وضعیت اندیس از فایل state.json
+    state_file = "state.json"
+    current_index = 0
+    
+    if os.path.exists(state_file):
+        try:
+            with open(state_file, "r", encoding="utf-8") as f:
+                state = json.load(f)
+                current_index = state.get("vocab_index", 0)
+        except Exception:
+            current_index = 0
+
+    # بررسی فراتر نرفتن اندیس از تعداد کل لغات
+    if current_index >= len(all_words):
+        current_index = 0
+
+    vocab_item = all_words[current_index]
+
+    # به‌روزرسانی اندیس برای ارسال بعدی
+    try:
+        with open(state_file, "w", encoding="utf-8") as f:
+            json.dump({"vocab_index": current_index + 1}, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        logger.error(f"خطا در به‌روزرسانی state.json: {e}")
+
+    return vocab_item
 
 # ================== ۱. استخراج گرامر ==================
 def get_grammar_from_data() -> dict:
