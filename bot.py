@@ -147,7 +147,7 @@ def get_random_vocab() -> dict:
 # 🎯 هدف: تولید یک پست آموزشی عمومی انگلیسی با استفاده از مدل Groq
 # 📥 ورودی: ندارد
 # 📤 خروجی: متن کامل پست با فرمت HTML تلگرام
-# 🔗 کاربرد: استفاده در مسیر /send_general_post
+# 🔗 کاربرد: استفاده در مسیر /post
 # ==============================================================================
 def generate_educational_post() -> str:
     chosen_topic = random.choice(TOPICS)
@@ -208,38 +208,11 @@ CRITICAL RULES:
 # 🎯 هدف: ساخت پست کامل آموزشی اختصاصی برای یک لغت مشخص از کتاب‌ها
 # 📥 ورودی: vocab_item (دیکشنری اطلاعات لغت یا رشته)
 # 📤 خروجی: متن کامل پست با رعایت تگ‌های HTML
-# 🔗 کاربرد: استفاده در مسیر /send_vocab -post_vocab
+# 🔗 کاربرد: استفاده در مسیر /post_vocab
 # ==============================================================================
 #== ما دو تا تابع انتخاب تصادفی واژه داریم. که فکر کنم اگه این رو حذف کنیم مشکلی نباشه.
 # چون تابع های پایین همه از vocab_item دارن استفاده می کنن
 
-def get_random_vocab():
-    """
-    تمام فایل‌های book_*.json در پوشه data را می‌شناسد، 
-    یکی را تصادفی انتخاب می‌کند و یک لغت از آن برمی‌گرداند.
-    """
-    if not os.path.exists(DATA_DIR):
-        raise FileNotFoundError(f"پوشه data در مسیر یافت نشد: {DATA_DIR}")
-
-    # لیست کردن تمام فایل‌هایی که نامشان با book_ شروع و به .json ختم می‌شود
-    book_files = [f for f in os.listdir(DATA_DIR) if f.startswith("book_") and f.endswith(".json")]
-
-    if not book_files:
-        raise FileNotFoundError("هیچ فایل کتابی با الگوی book_*.json در پوشه data پیدا نشد.")
-
-    # انتخاب تصادفی یک کتاب (مثلاً book_1.json یا book_3.json)
-    selected_book = random.choice(book_files)
-    file_path = os.path.join(DATA_DIR, selected_book)
-
-    # خواندن فایل انتخابی
-    with open(file_path, "r", encoding="utf-8") as f:
-        words = json.load(f)
-
-    if not words:
-        raise ValueError(f"فایل {selected_book} خالی است.")
-
-    # انتخاب یک کلمه تصادفی از آن کتاب
-    return random.choice(words)
 # ===============
 def generate_educational_post_vocab(vocab_item) -> str:
     if not vocab_item:
@@ -277,7 +250,7 @@ English Definition: {definition if definition else "Provide a short clear Englis
 
 Format the post EXACTLY using HTML tags (NO asterisks *):
 
-<b>🟢 Book {book} - Unit {unit}</b>
+<b>🟢 4000 E. words Book {book} - Unit {unit}</b>
 
 😍 <b>[Greeting in Persian matching {time_context}]</b>
 📌 <b>واژه / اصطلاح روز:\n{word}</b>
@@ -315,21 +288,13 @@ CRITICAL RULES:
         return None
 
 
-# ==============================================================================
-# 📘 راهنمای تابع: generate_quiz_data
-# 🎯 هدف: ساخت یک آزمون ۴ گزینه‌ای عمومی هوش مصنوعی به صورت JSON
-# 📥 ورودی: ندارد
-# 📤 خروجی: دیکشنری شامل سوال، گزینه‌ها، نمایه پاسخ صحیح و توضیحات
-# 🔗 کاربرد: استفاده در مسیر /send_quiz
-# ==============================================================================
-
 
 # ==============================================================================
 # 📘 راهنمای تابع: generate_quiz_from_vocab_item
 # 🎯 هدف: تولید آزمون ۴ گزینه‌ای مرتبط با لغتی که دقیقاً همان لحظه ارسال شده
 # 📥 ورودی: vocab_item (اطلاعات واژه)
 # 📤 خروجی: دیکشنری با فرمت مناسب ساخت نظرسنجی تلگرام (Poll)
-# 🔗 کاربرد: استفاده همزمان در مسیر /send_vocab
+# 🔗 کاربرد: استفاده همزمان در مسیر /quiz_vocab
 # ==============================================================================
 def generate_quiz_from_vocab_item(vocab_item) -> dict:
     """
