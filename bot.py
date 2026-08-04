@@ -1,25 +1,28 @@
 import os
+import re
+import json
 import random
 import logging
 import asyncio
-import json
 import urllib.request
 import urllib.error
-from flask import Flask, request
+import xml.etree.ElementTree as ET
+from datetime import datetime, timezone, timedelta
+
+from flask import Flask, request, jsonify, send_file
 from telegram import Update, Bot
 from groq import Groq
-import re
-from datetime import datetime, timezone, timedelta
-import xml.etree.ElementTree as ET
+
 from content_manager import (
     get_vocab_for_post,
     get_quote_from_data,
     get_grammar_from_data,
     get_idiom_from_data
 )
-from flask import Flask, request, jsonify, send_file
 
-# ================== Settings ==================
+# ==============================================================================
+# ⚙️ تنظیمات اولیه و متغیرهای محیطی (Configuration & Setup)
+# ==============================================================================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID", "0")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -32,26 +35,6 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-
-#=========== حذف حروف غیرمجاز =========
-def clean_text(text: str) -> str:
-    if not text:
-        return text
-    bad_chars_pattern = r'[\u0400-\u04FF\u4E00-\u9FFF\u3400-\u4DBF\u3000-\u303F]'
-    return re.sub(bad_chars_pattern, '', text)
-
-#=========== تابع زمان به وقت تهران ==========
-def get_time_context() -> str:
-    tehran_time = datetime.now(timezone.utc) + timedelta(hours=3, minutes=30)
-    hour = tehran_time.hour
-    if 5 <= hour < 12:
-        return "Morning"
-    elif 12 <= hour < 17:
-        return "Afternoon"
-    elif 17 <= hour < 22:
-        return "Evening"
-    else:
-        return "Night"
 
 TOPICS = [
     "یک کلمه یا اصطلاح انگلیسی روزمره با معنی فارسی، مثال و تلفظ فونتیک آن",
@@ -66,9 +49,47 @@ TOPICS = [
     "یک اشتباه رایج زبان آموزان ایرانی در انگلیسی و شکل درست آن"
 ]
 
-# ================== AI Functions ==================
 
-#================ تابع ساخت پست ==
+# ==============================================================================
+# 🛠️ توابع کمکی (Helper Functions)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: clean_text
+# توضیح: حذف حروف ناخواسته و کاراکترهای غیرمجاز از خروجی مدل
+# ------------------------------------------------------------------------------
+def clean_text(text: str) -> str:
+    if not text:
+        return text
+    bad_chars_pattern = r'[\u0400-\u04FF\u4E00-\u9FFF\u3400-\u4DBF\u3000-\u303F]'
+    return re.sub(bad_chars_pattern, '', text)
+
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: get_time_context
+# توضیح: محاسبه زمان جاری به وقت تهران برای تنظیم لحن سلام و احوال‌پرسی
+# ------------------------------------------------------------------------------
+def get_time_context() -> str:
+    tehran_time = datetime.now(timezone.utc) + timedelta(hours=3, minutes=30)
+    hour = tehran_time.hour
+    if 5 <= hour < 12:
+        return "Morning"
+    elif 12 <= hour < 17:
+        return "Afternoon"
+    elif 17 <= hour < 22:
+        return "Evening"
+    else:
+        return "Night"
+
+
+# ==============================================================================
+# 🤖 توابع تولید محتوا با هوش مصنوعی (AI Content Generators)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: generate_educational_post
+# توضیح: تولید پست آموزشی عمومی براساس موضوعات تصادفی لیست TOPICS
+# ------------------------------------------------------------------------------
 def generate_educational_post() -> str:
     chosen_topic = random.choice(TOPICS)
     time_context = get_time_context()
@@ -122,7 +143,11 @@ CRITICAL RULES:
         logger.error(f"Post Error: {e}")
         return None
 
-##============== تابع آموزشی =========================
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: generate_educational_post_vocab
+# توضیح: تولید پست آموزشی واژگان بر اساس لغت دریافتی از دیتابیس JSON
+# ------------------------------------------------------------------------------
 def generate_educational_post_vocab(vocab_item) -> str:
     if not vocab_item:
         logger.error("vocab_item is empty!")
@@ -135,7 +160,6 @@ def generate_educational_post_vocab(vocab_item) -> str:
     book = 1
     unit = 1
 
-    # پشتیبانی همزمان از String و Dict
     if isinstance(vocab_item, str):
         word = vocab_item.strip()
     elif isinstance(vocab_item, dict):
@@ -168,11 +192,11 @@ Format the post EXACTLY using HTML tags (NO asterisks *):
 <b>🟢 Book {book} - Unit {unit}</b>
 
 😍 <b>[Greeting in Persian matching {time_context}]</b>
-📌 <b>واژه / اصطلاح روز: /n {word}</b>
+📌 <b>واژه / اصطلاح روز:\n{word}</b>
 
 🔴 <b>{word}</b> {phonetic if phonetic else ""}
 🔹 <b>معنی:</b> {translation if translation else "[Persian translation]"}
-📖 <b>تعریف انگلیسی:/n </b> {definition if definition else "[English definition]"}
+📖 <b>تعریف انگلیسی:\n</b> {definition if definition else "[English definition]"}
 
 🟢 <b>مثال اول:</b>
 📣 [English sentence using <b>{word}</b>]
@@ -203,13 +227,17 @@ CRITICAL RULES:
         return None
 
 
-#============ تابع کوئیز =================
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: generate_quiz_from_vocab_item
+# توضیح: ساخت سوال نظرسنجی (Poll) یا کوئیز بر اساس لغت مشخص
+# ------------------------------------------------------------------------------
 def generate_quiz_from_vocab_item(vocab_item) -> dict:
     if not vocab_item:
         return None
 
     word = ""
     translation = ""
+    definition = ""
     book = 1
     unit = 1
 
@@ -218,6 +246,7 @@ def generate_quiz_from_vocab_item(vocab_item) -> dict:
     elif isinstance(vocab_item, dict):
         word = vocab_item.get("word") or vocab_item.get("vocab") or vocab_item.get("text") or ""
         translation = vocab_item.get("translation_fa") or vocab_item.get("meaning") or ""
+        definition = vocab_item.get("definition_en") or vocab_item.get("definition") or ""
         book = vocab_item.get("book", 1)
         unit = vocab_item.get("unit", 1)
     else:
@@ -230,6 +259,7 @@ def generate_quiz_from_vocab_item(vocab_item) -> dict:
 Create a Telegram multiple-choice quiz question to test this word/phrase:
 Word/Phrase: {word}
 Persian Meaning: {translation if translation else "Auto-generate accurate Persian meaning"}
+Definition: {definition}
 
 Return ONLY a raw JSON object with this EXACT structure (no markdown, no code blocks):
 {{
@@ -253,7 +283,10 @@ Return ONLY a raw JSON object with this EXACT structure (no markdown, no code bl
         return None
 
 
-#============ تابع نقل قول ==========================
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: generate_quote_post_vocab
+# توضیح: ساخت پست نقل‌قول (Quote) همراه با ترجمه و نکات زبانی
+# ------------------------------------------------------------------------------
 def generate_quote_post_vocab(quote_item) -> str:
     if not quote_item:
         logger.error("Quote item is empty!")
@@ -319,6 +352,11 @@ Output ONLY the final Telegram post text.
         logger.error(f"Quote Vocab Error: {e}")
         return None
 
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: generate_quiz_data
+# توضیح: تولید سوالات هوشمند چهارگزینه‌ای گرامری/واژگان به صورت تصادفی
+# ------------------------------------------------------------------------------
 def generate_quiz_data() -> dict:
     topics = [
         "Phrasal Verbs", "Conditionals (1st, 2nd, 3rd, or Mixed)", "Advanced Prepositions", 
@@ -363,45 +401,11 @@ Return a valid JSON object ONLY (no extra text, no markdown code blocks). Exact 
         logger.error(f"Quiz Error: {e}")
         return None
 
-#=================== تابع کوئیز ====================
-def generate_quiz_from_vocab_item(vocab_item: dict) -> dict:
-    if not vocab_item or not isinstance(vocab_item, dict):
-        return None
 
-    word = vocab_item.get("word") or vocab_item.get("vocab") or ""
-    translation = vocab_item.get("translation_fa") or vocab_item.get("meaning") or ""
-    definition = vocab_item.get("definition_en") or vocab_item.get("definition") or ""
-    book = vocab_item.get("book", 1)
-    unit = vocab_item.get("unit", 1)
-
-    prompt = f"""
-Create a Telegram multiple-choice quiz question to test this word:
-Word: {word}
-Persian Meaning: {translation}
-Definition: {definition}
-
-Return ONLY a raw JSON object with this EXACT structure (no markdown, no code blocks):
-{{
-  "level": "کتاب {book} - درس {unit}",
-  "question": "A fill-in-the-blank English sentence where '{word}' fits correctly.",
-  "options": ["{word}", "WrongOption1", "WrongOption2", "WrongOption3"],
-  "correct_option_index": 0,
-  "explanation": "توضیح پاسخ و معنی کلمه {word} به فارسی"
-}}
-"""
-    try:
-        completion = client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.7,
-        )
-        text = completion.choices[0].message.content.strip().replace("```json", "").replace("```", "").strip()
-        return json.loads(clean_text(text))
-    except Exception as e:
-        logger.error(f"Quiz Generation Error: {e}")
-        return None
-
-#====================== تابع داستان ===================
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: generate_story_post
+# توضیح: تولید داستان‌های کوتاه انگلیسی با قابلیت اسپویلر (باکس مخفی) برای ترجمه
+# ------------------------------------------------------------------------------
 def generate_story_post() -> str:
     levels = ["A2 (Elementary)", "B1 (Intermediate)", "B2 (Upper-Intermediate)", "C1 (Advanced)"]
     chosen_level = random.choice(levels)
@@ -443,8 +447,12 @@ CRITICAL RULES:
     except Exception as e:
         logger.error(f"Story Error: {e}")
         return None
-        
-#==================== تابع اخبار ===============================
+
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: fetch_latest_world_news_rss
+# توضیح: دریافت جدیدترین اخبار جهان از فید RSS بی‌بی‌سی
+# ------------------------------------------------------------------------------
 def fetch_latest_world_news_rss() -> list:
     rss_url = "http://feeds.bbci.co.uk/news/world/rss.xml"
     news_items = []
@@ -462,6 +470,11 @@ def fetch_latest_world_news_rss() -> list:
         logger.error(f"RSS Fetch Error: {e}")
     return news_items
 
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: generate_news_post
+# توضیح: تبدیل اخبار دریافتی RSS به یک پست آموزشی ساده‌شده
+# ------------------------------------------------------------------------------
 def generate_news_post() -> str:
     news_list = fetch_latest_world_news_rss()
     if not news_list:
@@ -516,7 +529,11 @@ Output ONLY final Telegram post text.
         logger.error(f"News Generation Error: {e}")
         return None
 
-#================= تابع گرامر ======================
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: generate_grammar_post_vocab
+# توضیح: ساخت پست آموزشی گرامر بر اساس موضوع انتخابی از JSON
+# ------------------------------------------------------------------------------
 def generate_grammar_post_vocab(grammar_item: dict) -> str:
     if not grammar_item or not isinstance(grammar_item, dict):
         return None
@@ -533,7 +550,7 @@ Target Level: {level}
 Format the post EXACTLY using standard HTML tags (NO asterisks *):
 
 📘 <b>Grammar Lesson ({level})</b>
-📌 <b>موضوع:/n {topic}</b>
+📌 <b>موضوع:\n{topic}</b>
 
 🔹 <b>ساختار / فرمول:</b>
 <code>[Write the main formula/structure here]</code>
@@ -567,7 +584,11 @@ CRITICAL RULES:
         logger.error(f"Grammar Vocab Error: {e}")
         return None
 
-#=========== تابع اصطلاحات ======================
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: generate_idiom_post
+# توضیح: تولید پست آموزش اصطلاح (Idiom) بر اساس داده JSON
+# ------------------------------------------------------------------------------
 def generate_idiom_post(idiom_item) -> str:
     if not idiom_item:
         logger.error("idiom_item is empty!")
@@ -630,8 +651,16 @@ CRITICAL RULES:
     except Exception as e:
         logger.error(f"Idiom Error: {e}")
         return None
-        
-# ================== Telegram Processing ==================
+
+
+# ==============================================================================
+# 💬 توابع پردازش پیام و ارسال به تلگرام (Telegram Integration)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: process_telegram_update
+# توضیح: پردازش دستورات /start و پاسخگویی منشن‌ها یا پیام‌های خصوصی ربات
+# ------------------------------------------------------------------------------
 async def process_telegram_update(update_dict: dict):
     bot = Bot(token=BOT_TOKEN)
     update = Update.de_json(update_dict, bot)
@@ -674,9 +703,12 @@ async def process_telegram_update(update_dict: dict):
         except Exception as e:
             logger.error(f"Reply Error: {e}")
 
-# ================== Helper Telegram Sender ==================
+
+# ------------------------------------------------------------------------------
+# 🔹 FUNCTION: send_telegram_message
+# توضیح: ارسال پیام متن یا HTML به چت روم تلگرام به‌همراه Fallback متنی
+# ------------------------------------------------------------------------------
 def send_telegram_message(text: str) -> bool:
-    """ارسال امن پیام به تلگرام با قابلیت Fallback در صورت اشکال تگ‌های HTML"""
     if not text or not text.strip():
         logger.error("send_telegram_message was called with empty text.")
         return False
@@ -692,7 +724,7 @@ def send_telegram_message(text: str) -> bool:
         error_body = e.read().decode('utf-8')
         logger.error(f"Telegram HTML Send Error (HTTP {e.code}): {error_body}")
         
-        # اگر تلگرام به تگ HTML ایراد گرفت، تلاش مجدد بدون HTML انجام می‌شود
+        # در صورت اشکال در فرمت HTML، ارسال به حالت متنی ساده تغییر پیدا می‌کند
         try:
             payload_plain = json.dumps({"chat_id": GROUP_CHAT_ID, "text": text}).encode('utf-8')
             req_plain = urllib.request.Request(url, data=payload_plain, headers={'Content-Type': 'application/json'})
@@ -705,11 +737,24 @@ def send_telegram_message(text: str) -> bool:
         logger.error(f"Telegram Network Error: {e}")
         return False
 
-# ================== Web Routes ==================
+
+# ==============================================================================
+# 🌐 مسیرهای وب و اندپاینت‌ها (Flask Web Routes & Endpoints)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET /
+# توضیح: برسی زنده بودن و سلامتی وب‌سرویس (Health Check)
+# ------------------------------------------------------------------------------
 @app.route("/", methods=["GET"])
 def health():
     return "Bot is alive!", 200
 
+
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET/POST /post
+# توضیح: تحریم ماشینی ارسال پست آموزشی عمومی به تلگرام
+# ------------------------------------------------------------------------------
 @app.route("/post", methods=["GET", "POST"])
 def trigger_post():
     try:
@@ -721,6 +766,11 @@ def trigger_post():
         logger.error(f"Route /post Error: {e}")
         return f"Error: {e}", 500
 
+
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET/POST /post_vocab
+# توضیح: ارسال پست واژگان (کتاب‌های 4000 کلمه) به تلگرام
+# ------------------------------------------------------------------------------
 @app.route("/post_vocab", methods=["GET", "POST"])
 def trigger_post_vocab():
     try:
@@ -736,7 +786,11 @@ def trigger_post_vocab():
         logger.error(f"Route /post_vocab Error: {e}")
         return f"Error: {e}", 500
 
-#============ quote ==========
+
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET/POST /quote
+# توضیح: ارسال پست جمله بزرگان و نقل‌قول انگیزشی
+# ------------------------------------------------------------------------------
 @app.route("/quote", methods=["GET", "POST"])
 def trigger_quote_vocab():
     try:
@@ -752,7 +806,11 @@ def trigger_quote_vocab():
         logger.error(f"Route /quote Error: {e}")
         return f"Error: {e}", 500
 
-#================ quiz ===========
+
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET/POST /quiz
+# توضیح: ارسال نظرسنجی و کوییز هوشمند تصادفی گرامری
+# ------------------------------------------------------------------------------
 @app.route("/quiz", methods=["GET", "POST"])
 def trigger_quiz():
     try:
@@ -779,7 +837,11 @@ def trigger_quiz():
         logger.error(f"Route /quiz Error: {e}")
         return f"Error: {e}", 500
 
-#============ quiz_vocab ============
+
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET/POST /quiz_vocab
+# توضیح: ارسال کوییز بر اساس کلماتی که قبلاً در دیتابیس تعریف شده‌اند
+# ------------------------------------------------------------------------------
 @app.route("/quiz_vocab", methods=["GET", "POST"])
 def trigger_quiz_vocab():
     try:
@@ -808,7 +870,11 @@ def trigger_quiz_vocab():
         logger.error(f"Route /quiz_vocab Error: {e}")
         return f"Error: {e}", 500
 
-#============== story ===========
+
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET/POST /story
+# توضیح: ارسال پست داستان کوتاه انگلیسی
+# ------------------------------------------------------------------------------
 @app.route("/story", methods=["GET", "POST"])
 def trigger_story():
     try:
@@ -820,7 +886,11 @@ def trigger_story():
         logger.error(f"Route /story Error: {e}")
         return f"Error: {e}", 500
 
-#=============== news ==============
+
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET/POST /news
+# توضیح: ارسال پست خلاصه اخبار روز انگلیسی به همراه ترجمه مخفی
+# ------------------------------------------------------------------------------
 @app.route("/news", methods=["GET", "POST"])
 def trigger_news():
     try:
@@ -832,7 +902,11 @@ def trigger_news():
         logger.error(f"Route /news Error: {e}")
         return f"Error: {e}", 500
 
-#============= grammar_data ============
+
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET/POST /grammar_data
+# توضیح: ارسال پست گرامری اختصاصی بر اساس فایل JSON
+# ------------------------------------------------------------------------------
 @app.route("/grammar_data", methods=["GET", "POST"])
 def trigger_grammar_vocab():
     try:
@@ -848,7 +922,11 @@ def trigger_grammar_vocab():
         logger.error(f"Route /grammar_data Error: {e}")
         return f"Error: {e}", 500
 
-#=================== idiom ===============
+
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET/POST /idiom
+# توضیح: ارسال پست آموزش اصطلاح زبان انگلیسی
+# ------------------------------------------------------------------------------
 @app.route("/idiom", methods=["GET", "POST"])
 def trigger_idiom():
     try:
@@ -864,7 +942,12 @@ def trigger_idiom():
         logger.error(f"Route /idiom Error: {e}")
         return f"Error: {e}", 500
 
-#================ build_book ================@app.route("/build_book", methods=["GET"])
+
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET /build_book
+# توضیح: تولید خودکار فایل JSON واژگان کتاب‌های 4000 Essential English Words
+# ------------------------------------------------------------------------------
+@app.route("/build_book", methods=["GET"])
 def build_book_route():
     book_num = request.args.get("book", default=3, type=int)
     start_unit = request.args.get("start_unit", default=1, type=int)
@@ -896,7 +979,7 @@ Return ONLY a valid JSON array of objects with this EXACT structure (no markdown
     "translation_fa": "ترجمه دقیق فارسی",
     "definition_en": "Clear English definition from the book",
     "book": {book_num},
-    "unit": unit_number
+    "unit": 1
   }}
 ]
 """
@@ -941,6 +1024,10 @@ Return ONLY a valid JSON array of objects with this EXACT structure (no markdown
     return "خطای نامشخص", 500
 
 
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: GET /download_book
+# توضیح: لینک مستقیم دانلود فایل JSON کلمات کتاب ایجادشده
+# ------------------------------------------------------------------------------
 @app.route("/download_book", methods=["GET"])
 def download_book_route():
     book_num = request.args.get("book", default=3, type=int)
@@ -954,8 +1041,11 @@ def download_book_route():
         )
     return "فایل مورد نظر یافت نشد.", 404
 
-#================== تلگرام روتز ==================
 
+# ------------------------------------------------------------------------------
+# 🌐 ROUTE: POST /<BOT_TOKEN>
+# توضیح: دریافت وکتور داده‌های آپدیت وب‌هوک (Webhook) از سمت سرورهای تلگرام
+# ------------------------------------------------------------------------------
 @app.route(f"/{BOT_TOKEN}", methods=["POST"])
 def webhook():
     try:
@@ -966,6 +1056,10 @@ def webhook():
         logger.error(f"Webhook Error: {e}")
         return "error", 200
 
+
+# ==============================================================================
+# 🚀 نقطه شروع و اجرای برنامه (Application Entry Point)
+# ==============================================================================
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
