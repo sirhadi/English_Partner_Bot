@@ -17,6 +17,9 @@ from content_manager import (
     get_idiom_from_data,
     load_all_book_words
 )
+# آدرس‌دهی مطلق برای جلوگیری از خطای مسیر در سرور Render
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "data")
 
 # ==============================================================================
 # ⚙️ تنظیمات اولیه و متغیرهای محیطی
@@ -98,6 +101,46 @@ async def process_telegram_update(update_dict: dict):
     except Exception as e:
         logger.error(f"Error processing update: {e}")
 
+# =================================
+#   انتخاب تصادفی یک لغت از فایل‌های book_*.json در پوشه data
+#    و استخراج خودکار شماره کتاب از نام فایل.
+# =================================
+def get_random_vocab() -> dict:
+    """
+    انتخاب تصادفی یک لغت از فایل‌های book_*.json در پوشه data
+    و استخراج خودکار شماره کتاب از نام فایل.
+    """
+    if not os.path.exists(DATA_DIR):
+        raise FileNotFoundError(f"پوشه data پیدا نشد: {DATA_DIR}")
+
+    book_files = [f for f in os.listdir(DATA_DIR) if f.startswith("book_") and f.endswith(".json")]
+    if not book_files:
+        raise FileNotFoundError("هیچ فایلی با نام book_*.json در پوشه data وجود ندارد.")
+
+    # انتخاب تصادفی یک فایل کتاب
+    selected_book = random.choice(book_files)
+    file_path = os.path.join(DATA_DIR, selected_book)
+
+    # استخراج شماره کتاب از نام فایل (مثلاً book_3.json -> 3)
+    try:
+        book_number = int(selected_book.replace("book_", "").replace(".json", ""))
+    except ValueError:
+        book_number = 1
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        words = json.load(f)
+
+    if not words:
+        raise ValueError(f"فایل {selected_book} خالی است.")
+
+    vocab_item = random.choice(words)
+
+    # تنظیم شماره کتاب در واژه در صورتی که در JSON وجود نداشته باشد
+    if isinstance(vocab_item, dict):
+        if "book" not in vocab_item or not vocab_item["book"]:
+            vocab_item["book"] = book_number
+
+    return vocab_item
 
 # ==============================================================================
 # 📘 راهنمای تابع: generate_educational_post
@@ -167,6 +210,34 @@ CRITICAL RULES:
 # 📤 خروجی: متن کامل پست با رعایت تگ‌های HTML
 # 🔗 کاربرد: استفاده در مسیر /send_vocab
 # ==============================================================================
+def get_random_vocab():
+    """
+    تمام فایل‌های book_*.json در پوشه data را می‌شناسد، 
+    یکی را تصادفی انتخاب می‌کند و یک لغت از آن برمی‌گرداند.
+    """
+    if not os.path.exists(DATA_DIR):
+        raise FileNotFoundError(f"پوشه data در مسیر یافت نشد: {DATA_DIR}")
+
+    # لیست کردن تمام فایل‌هایی که نامشان با book_ شروع و به .json ختم می‌شود
+    book_files = [f for f in os.listdir(DATA_DIR) if f.startswith("book_") and f.endswith(".json")]
+
+    if not book_files:
+        raise FileNotFoundError("هیچ فایل کتابی با الگوی book_*.json در پوشه data پیدا نشد.")
+
+    # انتخاب تصادفی یک کتاب (مثلاً book_1.json یا book_3.json)
+    selected_book = random.choice(book_files)
+    file_path = os.path.join(DATA_DIR, selected_book)
+
+    # خواندن فایل انتخابی
+    with open(file_path, "r", encoding="utf-8") as f:
+        words = json.load(f)
+
+    if not words:
+        raise ValueError(f"فایل {selected_book} خالی است.")
+
+    # انتخاب یک کلمه تصادفی از آن کتاب
+    return random.choice(words)
+# ===============
 def generate_educational_post_vocab(vocab_item) -> str:
     if not vocab_item:
         return None
@@ -248,27 +319,70 @@ CRITICAL RULES:
 # 📤 خروجی: دیکشنری شامل سوال، گزینه‌ها، نمایه پاسخ صحیح و توضیحات
 # 🔗 کاربرد: استفاده در مسیر /send_quiz
 # ==============================================================================
-def generate_quiz_data() -> dict:
-    topics = [
-        "Phrasal Verbs", "Conditionals", "Advanced Prepositions", 
-        "Synonyms and Antonyms", "Idioms & Expressions", "Passive Voice"
-    ]
-    chosen_topic = random.choice(topics)
-    time_seed = datetime.now().strftime("%Y%m%d%H%M%S%f")
+def generate_educational_post_vocab(vocab_item) -> str:
+    """
+    تولید پست آموزشی تلگرام بر اساس واژه دریافتی
+    """
+    if not vocab_item:
+        return None
 
+    word = ""
+    phonetic = ""
+    translation = ""
+    definition = ""
+    book = 1
+    unit = 1
+
+    if isinstance(vocab_item, str):
+        word = vocab_item.strip()
+    elif isinstance(vocab_item, dict):
+        word = vocab_item.get("word") or vocab_item.get("vocab") or vocab_item.get("text") or ""
+        phonetic = vocab_item.get("phonetic") or vocab_item.get("pronunciation") or ""
+        translation = vocab_item.get("translation_fa") or vocab_item.get("meaning") or ""
+        definition = vocab_item.get("definition_en") or vocab_item.get("definition") or ""
+        book = vocab_item.get("book", 1)
+        unit = vocab_item.get("unit", 1)
+
+    if not word:
+        return None
+
+    time_context = get_time_context()
+    
     prompt = f"""
-Generate a completely original English quiz question.
-Focus: {chosen_topic}
-Seed: {time_seed}
+You are an expert English teacher creating a Telegram post to teach a specific word or phrase for Book {book}, Unit {unit}.
 
-Return a valid JSON object ONLY (no markdown fences):
-{{
-  "level": "سطح زبانی به فارسی (مثلا متوسط B2)",
-  "question": "متن سوال چهارگزینه ای با جای خالی '___'",
-  "options": ["گزینه ۱", "گزینه ۲", "گزینه ۳", "گزینه ۴"],
-  "correct_option_index": 0,
-  "explanation": "توضیح پاسخ صحیح به فارسی"
-}}
+Target Word/Phrase: {word}
+Phonetic: {phonetic if phonetic else "Provide accurate IPA phonetic pronunciation in brackets"}
+Persian Meaning: {translation if translation else "Provide accurate fluent Persian translation"}
+English Definition: {definition if definition else "Provide a short clear English definition"}
+
+Format the post EXACTLY using HTML tags (NO asterisks *):
+
+<b>🟢 Book {book} - Unit {unit}</b>
+
+😍 <b>[{time_context}]</b>
+📌 <b>واژه / اصطلاح روز:\n{word}</b>
+
+🔴 <b>{word}</b> {phonetic if phonetic else ""}
+🔹 <b>معنی:</b> {translation if translation else "[Persian translation]"}
+📖 <b>تعریف انگلیسی:\n</b> {definition if definition else "[English definition]"}
+
+🟢 <b>مثال اول:</b>
+📣 [English sentence using <b>{word}</b>]
+🔹 <b>ترجمه:</b> [Persian translation]
+
+🟡 <b>مثال دوم:</b>
+🔔 [Another English sentence using <b>{word}</b>]
+🔸 <b>ترجمه:</b> [Persian translation]
+
+👩‍🏫 <b>حالا تو بگو:</b>
+[An interactive question asking members to use <b>{word}</b> in a sentence]
+🟣 [ترجمه سوال به فارسی]
+
+CRITICAL RULES:
+1. Use ONLY <b> tags for bold text. Do NOT use asterisks (*).
+2. Write English and Persian on separate lines.
+3. Complete any missing translations or definitions accurately.
 """
     try:
         completion = client.chat.completions.create(
@@ -276,10 +390,9 @@ Return a valid JSON object ONLY (no markdown fences):
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7,
         )
-        text = completion.choices[0].message.content.strip().replace("```json", "").replace("```", "").strip()
-        return json.loads(clean_text(text))
+        return clean_text(completion.choices[0].message.content.strip())
     except Exception as e:
-        logger.error(f"Quiz Error: {e}")
+        logger.error(f"Post Vocab Error: {e}")
         return None
 
 
@@ -291,6 +404,9 @@ Return a valid JSON object ONLY (no markdown fences):
 # 🔗 کاربرد: استفاده همزمان در مسیر /send_vocab
 # ==============================================================================
 def generate_quiz_from_vocab_item(vocab_item) -> dict:
+    """
+    تولید آزمون ۴ گزینه‌ای مرتبط با واژه دریافتی
+    """
     if not vocab_item:
         return None
 
@@ -322,7 +438,6 @@ Return ONLY raw JSON (no code blocks):
     except Exception as e:
         logger.error(f"Quiz Vocab Error: {e}")
         return None
-
 
 # ==============================================================================
 # 📘 راهنمای تابع: generate_news_post
@@ -597,21 +712,66 @@ def home():
 
 # ==============================================================================
 # 📘 راهنمای مسیر: /send_vocab
-# 🎯 هدف: فراخوانی لغت بعدی کتاب‌ها + ارسال پست آموزشی + ارسال کوییز آن لغت
+# 🎯 هدف: دریافت یک واژه تصادفی از کتاب‌ها و ارسال پست آموزشی آن به تلگرام
+# 📥 ورودی: درخواست GET یا POST
+# 📤 خروجی: پاسخ JSON شامل وضعیت ارسال پست و نام واژه
+# 🔗 کاربرد: زمان‌بندی مستقل برای ارسال پست‌های آموزشی لغت
 # ==============================================================================
 @app.route("/send_vocab", methods=["GET", "POST"])
 def trigger_vocab():
-    vocab_item = get_next_vocab_item()
-    if not vocab_item:
-        return jsonify({"status": "error", "message": "No vocab item found"}), 400
+    try:
+        # دریافت یک واژه تصادفی از کتاب‌های موجود با تابع get_random_vocab
+        vocab_item = get_random_vocab()
+        
+        # ساخت متن کامل پست آموزشی
+        post_text = generate_educational_post_vocab(vocab_item)
+        if not post_text:
+            return jsonify({"status": "error", "message": "خطا در ساخت پست آموزشی"}), 500
 
-    post_text = generate_educational_post_vocab(vocab_item)
-    msg_sent = send_telegram_message(post_text)
+        # ارسال به تلگرام
+        msg_sent = send_telegram_message(post_text)
 
-    quiz_data = generate_quiz_from_vocab_item(vocab_item)
-    poll_sent = send_telegram_poll(quiz_data)
+        return jsonify({
+            "status": "ok", 
+            "sent": msg_sent, 
+            "word": vocab_item.get("word")
+        }), 200
 
-    return jsonify({"status": "ok", "message_sent": msg_sent, "poll_sent": poll_sent}), 200
+    except Exception as e:
+        logger.error(f"Error in /send_vocab: {e}")
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+
+# ==============================================================================
+# 📘 راهنمای مسیر: /send_quiz
+# 🎯 هدف: دریافت یک واژه تصادفی از کتاب‌ها و ساخت و ارسال آزمون ۴ گزینه‌ای مستقل
+# 📥 ورودی: درخواست GET یا POST
+# 📤 خروجی: پاسخ JSON شامل وضعیت ارسال نظرسنجی (Poll)
+# 🔗 کاربرد: زمان‌بندی مستقل برای ارسال آزمون‌های ۴ گزینه‌ای
+# ==============================================================================
+@app.route("/send_quiz", methods=["GET", "POST"])
+def trigger_quiz():
+    try:
+        # دریافت یک واژه تصادفی کاملاً مستقل از کتاب‌ها
+        vocab_item = get_random_vocab()
+
+        # ساخت آزمون ۴ گزینه‌ای بر اساس واژه انتخاب‌شده
+        quiz_data = generate_quiz_from_vocab_item(vocab_item)
+        if not quiz_data:
+            return jsonify({"status": "error", "message": "خطا در ساخت داده‌های آزمون"}), 500
+
+        # ارسال آزمون تلگرامی به گروه/کانال
+        poll_sent = send_telegram_poll(quiz_data)
+
+        return jsonify({
+            "status": "ok", 
+            "sent": poll_sent, 
+            "word": vocab_item.get("word")
+        }), 200
+
+    except Exception as e:
+        logger.error(f"Error in /send_quiz: {e}")
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 
 # ==============================================================================
