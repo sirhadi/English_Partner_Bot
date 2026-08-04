@@ -473,13 +473,13 @@ Format:
 # ==============================================================================
 def generate_story_post() -> str:
     prompt = """
-Write a short English story for B1 learners (5-7 sentences).
+Write a short English story for B2-C1 learners (5-7 sentences).
 
 Format strictly with HTML:
-📖 <b>Short Story</b>
+📖 <b>Short Story ([level])</b>
 [blank line]
                                              
-[Story text in English with 2 key words in <b> tags]
+[Story text in English with 2-3 key words in <b> tags]
 
 ✍️ <b>واژگان:</b>
 🔹 <b>word1</b>: معنی
