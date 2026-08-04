@@ -386,7 +386,7 @@ Book {book}, Unit {unit}
 
 Return ONLY raw JSON (no code blocks):
 {{
-  "level": "4000 واژه جلد {book} - یونیت {unit}",
+  "level": "📘4000 واژه جلد {book} - یونیت {unit}",
   "question": "Fill-in-the-blank sentence where '{word}' fits.",
   "options": ["{word}", "WrongOption1", "WrongOption2", "WrongOption3"],
   "correct_option_index": 0,
