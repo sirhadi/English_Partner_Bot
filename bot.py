@@ -17,7 +17,8 @@ from content_manager import (
     get_vocab_for_post,
     get_quote_from_data,
     get_grammar_from_data,
-    get_idiom_from_data
+    get_idiom_from_data,
+    load_all_book_words
 )
 
 # ==============================================================================
