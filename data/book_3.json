@@ -1,0 +1,2394 @@
+[
+  {
+    "word": "accomplish",
+    "phonetic": "/əˈkɒmplɪʃ/",
+    "translation_fa": "به اتمام رساندن",
+    "definition_en": "to finish something successfully",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "achieve",
+    "phonetic": "/əˈtʃiːv/",
+    "translation_fa": "دست یافتن",
+    "definition_en": "to succeed in doing something",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "addict",
+    "phonetic": "/ˈædɪkt/",
+    "translation_fa": "معتاد",
+    "definition_en": "a person who cannot stop doing or using something",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "addicted",
+    "phonetic": "/əˈdɪktɪd/",
+    "translation_fa": "معتاد",
+    "definition_en": "unable to stop doing or using something",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "addiction",
+    "phonetic": "/əˈdɪkʃən/",
+    "translation_fa": "اعتیاد",
+    "definition_en": "a state of being addicted to something",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "advise",
+    "phonetic": "/ədˈvaɪz/",
+    "translation_fa": "پیشنهاد دادن",
+    "definition_en": "to give someone a suggestion or opinion",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "affect",
+    "phonetic": "/əˈfɛkt/",
+    "translation_fa": "تأثیر گذاشتن",
+    "definition_en": "to have an influence on something or someone",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "afford",
+    "phonetic": "/əˈfɔːrd/",
+    "translation_fa": "توانستن",
+    "definition_en": "to have enough money to buy or do something",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "agree",
+    "phonetic": "/əˈɡriː/",
+    "translation_fa": "موافق بودن",
+    "definition_en": "to have the same opinion as someone",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "alert",
+    "phonetic": "/əˈlɜːrt/",
+    "translation_fa": "هشیار",
+    "definition_en": "quick to notice and respond to things",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "allow",
+    "phonetic": "/əˈlaʊ/",
+    "translation_fa": "اجازه دادن",
+    "definition_en": "to give someone permission to do something",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "alone",
+    "phonetic": "/əˈloʊn/",
+    "translation_fa": "تنها",
+    "definition_en": "without anyone or anything else",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "amuse",
+    "phonetic": "/əˈmjuːz/",
+    "translation_fa": "سرگرم کردن",
+    "definition_en": "to entertain someone or make them laugh",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "ancient",
+    "phonetic": "/ˈeɪnʃənt/",
+    "translation_fa": "قدیمی",
+    "definition_en": "very old",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "anger",
+    "phonetic": "/ˈæŋɡər/",
+    "translation_fa": "خشم",
+    "definition_en": "a strong feeling of displeasure or hostility",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "animal",
+    "phonetic": "/ˈænɪməl/",
+    "translation_fa": "جانور",
+    "definition_en": "a living creature that is not human",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "announce",
+    "phonetic": "/əˈnaʊns/",
+    "translation_fa": "اعلام کردن",
+    "definition_en": "to tell people officially about something",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "annual",
+    "phonetic": "/ˈænjuəl/",
+    "translation_fa": "سالانه",
+    "definition_en": "happening or done once a year",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "answer",
+    "phonetic": "/ˈænsər/",
+    "translation_fa": "پاسخ دادن",
+    "definition_en": "to say or write something in response to a question",
+    "book": 3,
+    "unit": 1
+  },
+  {
+    "word": "accomplish",
+    "phonetic": "/əˈkɒmplɪʃ/",
+    "translation_fa": "به اتمام رساندن",
+    "definition_en": "to finish something successfully",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "achieve",
+    "phonetic": "/əˈtʃiːv/",
+    "translation_fa": "دست یافتن",
+    "definition_en": "to succeed in doing something",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "addict",
+    "phonetic": "/ˈædɪkt/",
+    "translation_fa": "معتاد",
+    "definition_en": "someone who cannot stop doing or using something",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "addicted",
+    "phonetic": "/əˈdɪktɪd/",
+    "translation_fa": "معتاد",
+    "definition_en": "unable to stop doing or using something",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "addiction",
+    "phonetic": "/əˈdɪkʃən/",
+    "translation_fa": "اعتیاد",
+    "definition_en": "a state of being unable to stop doing or using something",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "admit",
+    "phonetic": "/ədˈmɪt/",
+    "translation_fa": "پذیرفتن",
+    "definition_en": "to agree that something is true",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "advise",
+    "phonetic": "/ədˈvaɪz/",
+    "translation_fa": "پیشنهاد دادن",
+    "definition_en": "to give someone a suggestion about what to do",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "affect",
+    "phonetic": "/əˈfɛkt/",
+    "translation_fa": "تأثیر گذاشتن",
+    "definition_en": "to have an influence on someone or something",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "afford",
+    "phonetic": "/əˈfɔːrd/",
+    "translation_fa": "توانستن",
+    "definition_en": "to have enough money to buy or do something",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "alert",
+    "phonetic": "/əˈlɜːrt/",
+    "translation_fa": "هشیار",
+    "definition_en": "quick to notice and react to things",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "alleged",
+    "phonetic": "/əˈledʒd/",
+    "translation_fa": "مظنون",
+    "definition_en": "said to have done something, but not proven",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "allow",
+    "phonetic": "/əˈlaʊ/",
+    "translation_fa": "اجازه دادن",
+    "definition_en": "to give someone permission to do something",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "alternative",
+    "phonetic": "/ɔːlˈtɜːrnətɪv/",
+    "translation_fa": "جایگزین",
+    "definition_en": "something that can be chosen instead of something else",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "amend",
+    "phonetic": "/əˈmɛnd/",
+    "translation_fa": "اصلاح کردن",
+    "definition_en": "to make changes to a law, document, or system",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "ancient",
+    "phonetic": "/ˈeɪnʃənt/",
+    "translation_fa": "قدیمی",
+    "definition_en": "very old, from a long time ago",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "anger",
+    "phonetic": "/ˈæŋɡər/",
+    "translation_fa": "خشم",
+    "definition_en": "a strong feeling of displeasure or hostility",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "announce",
+    "phonetic": "/əˈnaʊns/",
+    "translation_fa": "اعلام کردن",
+    "definition_en": "to tell people officially about something",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "annual",
+    "phonetic": "/ˈænjuəl/",
+    "translation_fa": "سالانه",
+    "definition_en": "happening or done once a year",
+    "book": 3,
+    "unit": 2
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 3
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic activity",
+    "book": 3,
+    "unit": 3
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 3
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very little vegetation",
+    "book": 3,
+    "unit": 3
+  },
+  {
+    "word": "forest",
+    "phonetic": "/ˈfɒrɪst/",
+    "translation_fa": "جنگل",
+    "definition_en": "a large area of land covered with trees and undergrowth",
+    "book": 3,
+    "unit": 3
+  },
+  {
+    "word": "river",
+    "phonetic": "/ˈrɪvər/",
+    "translation_fa": "رودخانه",
+    "definition_en": "a natural flow of water that moves across the land",
+    "book": 3,
+    "unit": 3
+  },
+  {
+    "word": "lake",
+    "phonetic": "/leɪk/",
+    "translation_fa": "دریاچه",
+    "definition_en": "a body of fresh or salt water that is surrounded by land",
+    "book": 3,
+    "unit": 3
+  },
+  {
+    "word": "sea",
+    "phonetic": "/siː/",
+    "translation_fa": "دریا",
+    "definition_en": "a large area of saltwater that covers a significant portion of the earth's surface",
+    "book": 3,
+    "unit": 3
+  },
+  {
+    "word": "coast",
+    "phonetic": "/koʊst/",
+    "translation_fa": "ساحل",
+    "definition_en": "the land along the edge of a sea, ocean, or lake",
+    "book": 3,
+    "unit": 3
+  },
+  {
+    "word": "beach",
+    "phonetic": "/biːtʃ/",
+    "translation_fa": "ساحل دریا",
+    "definition_en": "an area of land along the edge of a sea, ocean, or lake, covered with sand or pebbles",
+    "book": 3,
+    "unit": 3
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkʌntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very little vegetation",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "forest",
+    "phonetic": "/ˈfɒrɪst/",
+    "translation_fa": "جنگل",
+    "definition_en": "a large area of land covered with trees and undergrowth",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "hill",
+    "phonetic": "/hɪl/",
+    "translation_fa": "تپه",
+    "definition_en": "a natural elevation of the earth's surface, smaller than a mountain",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "coast",
+    "phonetic": "/koʊst/",
+    "translation_fa": "ساحل",
+    "definition_en": "the land along the edge of the sea",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "beach",
+    "phonetic": "/biːtʃ/",
+    "translation_fa": "ساحل دریا",
+    "definition_en": "an area of sand or pebbles along a sea or lake",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "lake",
+    "phonetic": "/leɪk/",
+    "translation_fa": "دریاچه",
+    "definition_en": "a body of fresh or salt water surrounded by land",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "river",
+    "phonetic": "/ˈrɪvər/",
+    "translation_fa": "رودخانه",
+    "definition_en": "a natural flowing body of water, often connecting lakes, wetlands, and the ocean",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "sea",
+    "phonetic": "/siː/",
+    "translation_fa": "دریا",
+    "definition_en": "a large area of saltwater, usually connected to an ocean",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "ocean",
+    "phonetic": "/ˈoʊʃən/",
+    "translation_fa": "اقیانوس",
+    "definition_en": "the vast body of saltwater that covers most of the Earth's surface",
+    "book": 3,
+    "unit": 4
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 5
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkʌntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 5
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 5
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 5
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very few plants",
+    "book": 3,
+    "unit": 5
+  },
+  {
+    "word": "beach",
+    "phonetic": "/biːtʃ/",
+    "translation_fa": "ساحل",
+    "definition_en": "an area of sand or small rocks along a sea or lake",
+    "book": 3,
+    "unit": 5
+  },
+  {
+    "word": "forest",
+    "phonetic": "/ˈfɒrɪst/",
+    "translation_fa": "جنگل",
+    "definition_en": "a large area of land covered with trees and undergrowth",
+    "book": 3,
+    "unit": 5
+  },
+  {
+    "word": "hill",
+    "phonetic": "/hɪl/",
+    "translation_fa": "تپه",
+    "definition_en": "a natural elevation of the earth's surface, smaller than a mountain",
+    "book": 3,
+    "unit": 5
+  },
+  {
+    "word": "lake",
+    "phonetic": "/leɪk/",
+    "translation_fa": "دریاچه",
+    "definition_en": "a body of fresh or salt water that is surrounded by land",
+    "book": 3,
+    "unit": 5
+  },
+  {
+    "word": "river",
+    "phonetic": "/ˈrɪvər/",
+    "translation_fa": "رودخانه",
+    "definition_en": "a natural flow of water that moves across land",
+    "book": 3,
+    "unit": 5
+  },
+  {
+    "word": "concern",
+    "phonetic": "/kənˈsɜːrn/",
+    "translation_fa": "نگرانی",
+    "definition_en": "a feeling of worry about something",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "concerned",
+    "phonetic": "/kənˈsɜːrnd/",
+    "translation_fa": "نگران",
+    "definition_en": "feeling worry or anxiety about something",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "consequence",
+    "phonetic": "/ˈkɒnsɪkwəns/",
+    "translation_fa": "عاقبت",
+    "definition_en": "a result of something that has happened",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "consider",
+    "phonetic": "/kənˈsɪdər/",
+    "translation_fa": "در نظر گرفتن",
+    "definition_en": "to think carefully about something",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "consistent",
+    "phonetic": "/kənˈsɪstənt/",
+    "translation_fa": "هماهنگ",
+    "definition_en": "always behaving or happening in a similar way",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "constant",
+    "phonetic": "/ˈkɒnstənt/",
+    "translation_fa": "پایا",
+    "definition_en": "not changing or varying",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "consult",
+    "phonetic": "/kənˈsʌlt/",
+    "translation_fa": "مشورت کردن",
+    "definition_en": "to ask someone for their opinion or advice",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "consume",
+    "phonetic": "/kənˈsuːm/",
+    "translation_fa": "استفاده کردن",
+    "definition_en": "to eat, drink, or use something",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "contact",
+    "phonetic": "/ˈkɒntækt/",
+    "translation_fa": "تماس",
+    "definition_en": "to get in touch with someone",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "contain",
+    "phonetic": "/kənˈteɪn/",
+    "translation_fa": "در بر داشتن",
+    "definition_en": "to hold or keep something inside",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "content",
+    "phonetic": "/ˈkɒntent/",
+    "translation_fa": "محتوا",
+    "definition_en": "the things that are inside something",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "contest",
+    "phonetic": "/ˈkɒntest/",
+    "translation_fa": "مسابقه",
+    "definition_en": "a competition or a fight",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "continue",
+    "phonetic": "/kənˈtɪnjuː/",
+    "translation_fa": "ادامه دادن",
+    "definition_en": "to keep doing something",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "contract",
+    "phonetic": "/ˈkɒntrækt/",
+    "translation_fa": "قرارداد",
+    "definition_en": "a formal agreement between two or more people",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "contrary",
+    "phonetic": "/ˈkɒntrəri/",
+    "translation_fa": "بر خلاف",
+    "definition_en": "completely different or opposite",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "contribute",
+    "phonetic": "/kənˈtrɪbjuːt/",
+    "translation_fa": "مشارکت کردن",
+    "definition_en": "to give something, especially money, to help a cause",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "control",
+    "phonetic": "/kənˈtroʊl/",
+    "translation_fa": "کنترل",
+    "definition_en": "the power to make decisions or to direct something",
+    "book": 3,
+    "unit": 6
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 7
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkaʊntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 7
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 7
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 7
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very little water or plants",
+    "book": 3,
+    "unit": 7
+  },
+  {
+    "word": "forest",
+    "phonetic": "/ˈfɔrɪst/",
+    "translation_fa": "جنگل",
+    "definition_en": "a large area of land covered with trees and undergrowth",
+    "book": 3,
+    "unit": 7
+  },
+  {
+    "word": "river",
+    "phonetic": "/ˈrɪvər/",
+    "translation_fa": "رودخانه",
+    "definition_en": "a natural flowing body of water, usually larger than a stream",
+    "book": 3,
+    "unit": 7
+  },
+  {
+    "word": "lake",
+    "phonetic": "/leɪk/",
+    "translation_fa": "دریاچه",
+    "definition_en": "a body of fresh or salt water that is surrounded by land",
+    "book": 3,
+    "unit": 7
+  },
+  {
+    "word": "sea",
+    "phonetic": "/siː/",
+    "translation_fa": "دریا",
+    "definition_en": "a large area of saltwater that is often connected to an ocean",
+    "book": 3,
+    "unit": 7
+  },
+  {
+    "word": "beach",
+    "phonetic": "/biːtʃ/",
+    "translation_fa": "ساحل",
+    "definition_en": "an area of sand or small rocks at the edge of the sea or a lake",
+    "book": 3,
+    "unit": 7
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 8
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkʌntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 8
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually steeper and taller than a hill",
+    "book": 3,
+    "unit": 8
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 8
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very little water or plants",
+    "book": 3,
+    "unit": 8
+  },
+  {
+    "word": "beach",
+    "phonetic": "/biːtʃ/",
+    "translation_fa": "ساحل",
+    "definition_en": "an area of sand or small rocks along a sea or lake",
+    "book": 3,
+    "unit": 8
+  },
+  {
+    "word": "forest",
+    "phonetic": "/ˈfɒrɪst/",
+    "translation_fa": "جنگل",
+    "definition_en": "a large area of land covered with trees and undergrowth",
+    "book": 3,
+    "unit": 8
+  },
+  {
+    "word": "hill",
+    "phonetic": "/hɪl/",
+    "translation_fa": "تپه",
+    "definition_en": "an area of land that is higher than the surrounding land, but not as high as a mountain",
+    "book": 3,
+    "unit": 8
+  },
+  {
+    "word": "lake",
+    "phonetic": "/leɪk/",
+    "translation_fa": "دریاچه",
+    "definition_en": "a large area of fresh or salt water that is surrounded by land",
+    "book": 3,
+    "unit": 8
+  },
+  {
+    "word": "river",
+    "phonetic": "/ˈrɪvər/",
+    "translation_fa": "رودخانه",
+    "definition_en": "a natural flow of water that moves across the land",
+    "book": 3,
+    "unit": 8
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 9
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkaʊntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 9
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 9
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 9
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very little vegetation",
+    "book": 3,
+    "unit": 9
+  },
+  {
+    "word": "forest",
+    "phonetic": "/ˈfɔrɪst/",
+    "translation_fa": "جنگل",
+    "definition_en": "a large area of land covered with trees and undergrowth",
+    "book": 3,
+    "unit": 9
+  },
+  {
+    "word": "beach",
+    "phonetic": "/biːtʃ/",
+    "translation_fa": "ساحل",
+    "definition_en": "an area of sand or pebbles along a sea or lake",
+    "book": 3,
+    "unit": 9
+  },
+  {
+    "word": "coast",
+    "phonetic": "/koʊst/",
+    "translation_fa": "ساحل دریا",
+    "definition_en": "the land along the edge of a sea, ocean, or lake",
+    "book": 3,
+    "unit": 9
+  },
+  {
+    "word": "hill",
+    "phonetic": "/hɪl/",
+    "translation_fa": "تپه",
+    "definition_en": "a natural elevation of the earth's surface, smaller than a mountain",
+    "book": 3,
+    "unit": 9
+  },
+  {
+    "word": "valley",
+    "phonetic": "/ˈvæli/",
+    "translation_fa": "دره",
+    "definition_en": "a low area of land between hills or mountains, typically with a river or stream flowing through it",
+    "book": 3,
+    "unit": 9
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 10
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkʌntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 10
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 10
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 10
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very few plants",
+    "book": 3,
+    "unit": 10
+  },
+  {
+    "word": "forest",
+    "phonetic": "/ˈfɒrɪst/",
+    "translation_fa": "جنگل",
+    "definition_en": "a large area of land covered with trees and undergrowth",
+    "book": 3,
+    "unit": 10
+  },
+  {
+    "word": "river",
+    "phonetic": "/ˈrɪvər/",
+    "translation_fa": "رودخانه",
+    "definition_en": "a natural flow of water that moves across land",
+    "book": 3,
+    "unit": 10
+  },
+  {
+    "word": "lake",
+    "phonetic": "/leɪk/",
+    "translation_fa": "دریاچه",
+    "definition_en": "a body of fresh or salt water that is surrounded by land",
+    "book": 3,
+    "unit": 10
+  },
+  {
+    "word": "sea",
+    "phonetic": "/siː/",
+    "translation_fa": "دریا",
+    "definition_en": "a large area of saltwater that covers a significant portion of the Earth's surface",
+    "book": 3,
+    "unit": 10
+  },
+  {
+    "word": "coast",
+    "phonetic": "/koʊst/",
+    "translation_fa": "ساحل",
+    "definition_en": "the land along the edge of a sea, ocean, or lake",
+    "book": 3,
+    "unit": 10
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 11
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkaʊntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 11
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 11
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 11
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very little vegetation",
+    "book": 3,
+    "unit": 11
+  },
+  {
+    "word": "forest",
+    "phonetic": "/ˈfɔrɪst/",
+    "translation_fa": "جنگل",
+    "definition_en": "a large area of land covered with trees and undergrowth",
+    "book": 3,
+    "unit": 11
+  },
+  {
+    "word": "coast",
+    "phonetic": "/koʊst/",
+    "translation_fa": "ساحل",
+    "definition_en": "the land along the edge of the sea",
+    "book": 3,
+    "unit": 11
+  },
+  {
+    "word": "beach",
+    "phonetic": "/biːtʃ/",
+    "translation_fa": "ساحل دریا",
+    "definition_en": "an area of sand or small rocks along a sea or lake",
+    "book": 3,
+    "unit": 11
+  },
+  {
+    "word": "hill",
+    "phonetic": "/hɪl/",
+    "translation_fa": "تپه",
+    "definition_en": "a natural elevation of the earth's surface, smaller than a mountain",
+    "book": 3,
+    "unit": 11
+  },
+  {
+    "word": "valley",
+    "phonetic": "/ˈvæli/",
+    "translation_fa": "دره",
+    "definition_en": "a low area of land between hills or mountains, typically with a river or stream flowing through it",
+    "book": 3,
+    "unit": 11
+  },
+  {
+    "word": "consequence",
+    "phonetic": "/ˈkɒnsɪkwəns/",
+    "translation_fa": "عاقبت",
+    "definition_en": "a result of something that has happened",
+    "book": 3,
+    "unit": 12
+  },
+  {
+    "word": "crisis",
+    "phonetic": "/ˈkraɪsɪs/",
+    "translation_fa": "بحران",
+    "definition_en": "a situation in which an important decision must be made",
+    "book": 3,
+    "unit": 12
+  },
+  {
+    "word": "dilemma",
+    "phonetic": "/dɪˈlemə/",
+    "translation_fa": "مضطرب ساختن",
+    "definition_en": "a situation in which you have to make a difficult decision",
+    "book": 3,
+    "unit": 12
+  },
+  {
+    "word": "disaster",
+    "phonetic": "/dɪˈzɑːstər/",
+    "translation_fa": "فاجعه",
+    "definition_en": "a sudden event that causes a lot of damage or harm",
+    "book": 3,
+    "unit": 12
+  },
+  {
+    "word": "emergency",
+    "phonetic": "/ɪˈmɜːrdʒənsi/",
+    "translation_fa": "حال اضطراری",
+    "definition_en": "a situation in which people need help quickly",
+    "book": 3,
+    "unit": 12
+  },
+  {
+    "word": "hazard",
+    "phonetic": "/ˈhæzərd/",
+    "translation_fa": "خطر",
+    "definition_en": "a situation or thing that could be dangerous",
+    "book": 3,
+    "unit": 12
+  },
+  {
+    "word": "risk",
+    "phonetic": "/rɪsk/",
+    "translation_fa": "خطر کردن",
+    "definition_en": "a situation that could be dangerous",
+    "book": 3,
+    "unit": 12
+  },
+  {
+    "word": "threat",
+    "phonetic": "/θret/",
+    "translation_fa": "تهدید",
+    "definition_en": "a situation or person that could cause harm",
+    "book": 3,
+    "unit": 12
+  },
+  {
+    "word": "tragedy",
+    "phonetic": "/ˈtrædʒɪdi/",
+    "translation_fa": "فاجعه",
+    "definition_en": "a very sad event, especially one that causes suffering",
+    "book": 3,
+    "unit": 12
+  },
+  {
+    "word": "vulnerable",
+    "phonetic": "/ˈvʌlnərəbəl/",
+    "translation_fa": "آسیب‌پذیر",
+    "definition_en": "able to be easily hurt or attacked",
+    "book": 3,
+    "unit": 12
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 13
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkʌntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 13
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 13
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 13
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very little vegetation",
+    "book": 3,
+    "unit": 13
+  },
+  {
+    "word": "forest",
+    "phonetic": "/ˈfɒrɪst/",
+    "translation_fa": "جنگل",
+    "definition_en": "a large area of land covered with trees and undergrowth",
+    "book": 3,
+    "unit": 13
+  },
+  {
+    "word": "coast",
+    "phonetic": "/koʊst/",
+    "translation_fa": "ساحل",
+    "definition_en": "the land along the edge of the sea",
+    "book": 3,
+    "unit": 13
+  },
+  {
+    "word": "hill",
+    "phonetic": "/hɪl/",
+    "translation_fa": "تپه",
+    "definition_en": "a natural elevation of the earth's surface, smaller than a mountain",
+    "book": 3,
+    "unit": 13
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 14
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkaʊntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 14
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 14
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 14
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very little vegetation",
+    "book": 3,
+    "unit": 14
+  },
+  {
+    "word": "beach",
+    "phonetic": "/biːtʃ/",
+    "translation_fa": "ساحل",
+    "definition_en": "an area of sand or small rocks along a sea or lake",
+    "book": 3,
+    "unit": 14
+  },
+  {
+    "word": "forest",
+    "phonetic": "/ˈfɒrɪst/",
+    "translation_fa": "جنگل",
+    "definition_en": "a large area of land covered with trees and undergrowth",
+    "book": 3,
+    "unit": 14
+  },
+  {
+    "word": "hill",
+    "phonetic": "/hɪl/",
+    "translation_fa": "تپه",
+    "definition_en": "a natural elevation of the earth's surface, smaller than a mountain",
+    "book": 3,
+    "unit": 14
+  },
+  {
+    "word": "lake",
+    "phonetic": "/leɪk/",
+    "translation_fa": "دریاچه",
+    "definition_en": "a body of fresh or salt water that is surrounded by land",
+    "book": 3,
+    "unit": 14
+  },
+  {
+    "word": "river",
+    "phonetic": "/ˈrɪvər/",
+    "translation_fa": "رودخانه",
+    "definition_en": "a natural flow of water that moves across the land",
+    "book": 3,
+    "unit": 14
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 15
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkaʊntrɪsaɪd/",
+    "translation_fa": "مناطق روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 15
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 15
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 15
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very little vegetation",
+    "book": 3,
+    "unit": 15
+  },
+  {
+    "word": "beach",
+    "phonetic": "/biːtʃ/",
+    "translation_fa": "ساحل",
+    "definition_en": "an area of sand or small rocks at the edge of the sea",
+    "book": 3,
+    "unit": 15
+  },
+  {
+    "word": "coast",
+    "phonetic": "/koʊst/",
+    "translation_fa": "ساحل دریا",
+    "definition_en": "the land along the edge of the sea",
+    "book": 3,
+    "unit": 15
+  },
+  {
+    "word": "forest",
+    "phonetic": "/ˈfɔrɪst/",
+    "translation_fa": "جنگل",
+    "definition_en": "a large area of land covered with trees and undergrowth",
+    "book": 3,
+    "unit": 15
+  },
+  {
+    "word": "vessel",
+    "phonetic": "/ˈvɛsəl/",
+    "translation_fa": "کشتی یا شناور",
+    "definition_en": "a ship or boat",
+    "book": 3,
+    "unit": 16
+  },
+  {
+    "word": "navigation",
+    "phonetic": "/nævɪˈɡeɪʃən/",
+    "translation_fa": "ناوبری یا هدایت کشتی",
+    "definition_en": "the act of controlling the movement of a ship or plane",
+    "book": 3,
+    "unit": 16
+  },
+  {
+    "word": "port",
+    "phonetic": "/pɔrt/",
+    "translation_fa": "بندر",
+    "definition_en": "a place where ships stop to load or unload goods",
+    "book": 3,
+    "unit": 16
+  },
+  {
+    "word": "starboard",
+    "phonetic": "/ˈstɑrbərd/",
+    "translation_fa": "کنار راست کشتی",
+    "definition_en": "the right side of a ship",
+    "book": 3,
+    "unit": 16
+  },
+  {
+    "word": "anchor",
+    "phonetic": "/ˈæŋkər/",
+    "translation_fa": "لنگر",
+    "definition_en": "a heavy metal object that is dropped into the water to stop a ship from moving",
+    "book": 3,
+    "unit": 16
+  },
+  {
+    "word": "crew",
+    "phonetic": "/kruː/",
+    "translation_fa": "کارکنان کشتی",
+    "definition_en": "the people who work on a ship or plane",
+    "book": 3,
+    "unit": 16
+  },
+  {
+    "word": "passenger",
+    "phonetic": "/ˈpæsɪndʒər/",
+    "translation_fa": "مسافر",
+    "definition_en": "a person who is traveling in a vehicle, but is not driving it or working on it",
+    "book": 3,
+    "unit": 16
+  },
+  {
+    "word": "cabin",
+    "phonetic": "/ˈkæbɪn/",
+    "translation_fa": "کابین",
+    "definition_en": "a small room on a ship or plane where people can sleep or sit",
+    "book": 3,
+    "unit": 16
+  },
+  {
+    "word": "deck",
+    "phonetic": "/dɛk/",
+    "translation_fa": "سطح کشتی",
+    "definition_en": "a floor or level on a ship",
+    "book": 3,
+    "unit": 16
+  },
+  {
+    "word": "ferry",
+    "phonetic": "/ˈfɛri/",
+    "translation_fa": "قایق یا کشتی باری",
+    "definition_en": "a boat or ship that carries people or goods, especially over a short distance",
+    "book": 3,
+    "unit": 16
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 17
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkaʊntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 17
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 17
+  },
+  {
+    "word": "hill",
+    "phonetic": "/hɪl/",
+    "translation_fa": "تپه",
+    "definition_en": "a natural elevation of the earth's surface, smaller than a mountain",
+    "book": 3,
+    "unit": 17
+  },
+  {
+    "word": "valley",
+    "phonetic": "/ˈvæli/",
+    "translation_fa": "دره",
+    "definition_en": "a low area of land between hills or mountains, typically with a river or stream flowing through it",
+    "book": 3,
+    "unit": 17
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land surrounded by water",
+    "book": 3,
+    "unit": 17
+  },
+  {
+    "word": "coast",
+    "phonetic": "/koʊst/",
+    "translation_fa": "ساحل",
+    "definition_en": "the land along the edge of a sea, ocean, or lake",
+    "book": 3,
+    "unit": 17
+  },
+  {
+    "word": "beach",
+    "phonetic": "/biːtʃ/",
+    "translation_fa": "ساحل دریا",
+    "definition_en": "an area of sand or pebbles along a sea, lake, or river",
+    "book": 3,
+    "unit": 17
+  },
+  {
+    "word": "concern",
+    "phonetic": "/kənˈsɜːrn/",
+    "translation_fa": "نگرانی",
+    "definition_en": "a feeling of worry about something",
+    "book": 3,
+    "unit": 18
+  },
+  {
+    "word": "concerned",
+    "phonetic": "/kənˈsɜːrnd/",
+    "translation_fa": "نگران",
+    "definition_en": "feeling worry or anxiety about something",
+    "book": 3,
+    "unit": 18
+  },
+  {
+    "word": "consequence",
+    "phonetic": "/ˈkɒnsɪkwəns/",
+    "translation_fa": "عاقبت",
+    "definition_en": "a result of something that has happened",
+    "book": 3,
+    "unit": 18
+  },
+  {
+    "word": "consider",
+    "phonetic": "/kənˈsɪdər/",
+    "translation_fa": "در نظر گرفتن",
+    "definition_en": "to think carefully about something",
+    "book": 3,
+    "unit": 18
+  },
+  {
+    "word": "consistent",
+    "phonetic": "/kənˈsɪstənt/",
+    "translation_fa": "هماهنگ",
+    "definition_en": "always acting or behaving in the same way",
+    "book": 3,
+    "unit": 18
+  },
+  {
+    "word": "constant",
+    "phonetic": "/ˈkɒnstənt/",
+    "translation_fa": "پایا",
+    "definition_en": "not changing or varying",
+    "book": 3,
+    "unit": 18
+  },
+  {
+    "word": "consult",
+    "phonetic": "/kənˈsʌlt/",
+    "translation_fa": "مشورت کردن",
+    "definition_en": "to ask someone for their opinion or advice",
+    "book": 3,
+    "unit": 18
+  },
+  {
+    "word": "consume",
+    "phonetic": "/kənˈsuːm/",
+    "translation_fa": "مصرف کردن",
+    "definition_en": "to eat, drink, or use something",
+    "book": 3,
+    "unit": 18
+  },
+  {
+    "word": "contact",
+    "phonetic": "/ˈkɒntækt/",
+    "translation_fa": "تماس",
+    "definition_en": "to get in touch with someone",
+    "book": 3,
+    "unit": 18
+  },
+  {
+    "word": "contain",
+    "phonetic": "/kənˈteɪn/",
+    "translation_fa": "در بر داشتن",
+    "definition_en": "to hold or keep something inside",
+    "book": 3,
+    "unit": 18
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 19
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkaʊntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 19
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 19
+  },
+  {
+    "word": "hill",
+    "phonetic": "/hɪl/",
+    "translation_fa": "تپه",
+    "definition_en": "an area of land that is higher than the surrounding land, but not as high as a mountain",
+    "book": 3,
+    "unit": 19
+  },
+  {
+    "word": "valley",
+    "phonetic": "/ˈvæli/",
+    "translation_fa": "دره",
+    "definition_en": "a low area of land between hills or mountains, typically with a river or stream flowing through it",
+    "book": 3,
+    "unit": 19
+  },
+  {
+    "word": "coast",
+    "phonetic": "/koʊst/",
+    "translation_fa": "ساحل",
+    "definition_en": "the land along the edge of a sea, ocean, or lake",
+    "book": 3,
+    "unit": 19
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land that is surrounded by water",
+    "book": 3,
+    "unit": 19
+  },
+  {
+    "word": "desert",
+    "phonetic": "/ˈdɛzərt/",
+    "translation_fa": "بیابان",
+    "definition_en": "a large area of land that is very dry and has very little vegetation",
+    "book": 3,
+    "unit": 19
+  },
+  {
+    "word": "vessel",
+    "phonetic": "/ˈvɛsəl/",
+    "translation_fa": "کشتی",
+    "definition_en": "a ship or boat",
+    "book": 3,
+    "unit": 20
+  },
+  {
+    "word": "navigation",
+    "phonetic": "/nævɪˈɡeɪʃən/",
+    "translation_fa": "ناوبری",
+    "definition_en": "the act of controlling the movement of a ship or plane",
+    "book": 3,
+    "unit": 20
+  },
+  {
+    "word": "port",
+    "phonetic": "/pɔrt/",
+    "translation_fa": "بندر",
+    "definition_en": "a place where ships stop to load or unload goods",
+    "book": 3,
+    "unit": 20
+  },
+  {
+    "word": "crew",
+    "phonetic": "/kruː/",
+    "translation_fa": "کارکنان کشتی",
+    "definition_en": "the people who work on a ship or plane",
+    "book": 3,
+    "unit": 20
+  },
+  {
+    "word": "route",
+    "phonetic": "/ruːt/",
+    "translation_fa": "مسیر",
+    "definition_en": "the way that someone or something travels",
+    "book": 3,
+    "unit": 20
+  },
+  {
+    "word": "schedule",
+    "phonetic": "/ˈskɛdʒuːl/",
+    "translation_fa": "برنامه زمانی",
+    "definition_en": "a plan for when something should happen",
+    "book": 3,
+    "unit": 20
+  },
+  {
+    "word": "departure",
+    "phonetic": "/dɪˈpɑrtʃər/",
+    "translation_fa": "خروج",
+    "definition_en": "the act of leaving a place",
+    "book": 3,
+    "unit": 20
+  },
+  {
+    "word": "arrival",
+    "phonetic": "/əˈraɪvəl/",
+    "translation_fa": "ورود",
+    "definition_en": "the act of coming to a place",
+    "book": 3,
+    "unit": 20
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 21
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkaʊntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 21
+  },
+  {
+    "word": "farmer",
+    "phonetic": "/ˈfɑːrmər/",
+    "translation_fa": "کشاورز",
+    "definition_en": "a person who owns or manages a farm",
+    "book": 3,
+    "unit": 21
+  },
+  {
+    "word": "crop",
+    "phonetic": "/krɒp/",
+    "translation_fa": "محصول",
+    "definition_en": "a plant such as wheat, corn, or soybeans that is grown for food or other products",
+    "book": 3,
+    "unit": 21
+  },
+  {
+    "word": "harvest",
+    "phonetic": "/ˈhɑːrvɪst/",
+    "translation_fa": "درو",
+    "definition_en": "the time of year when crops are gathered in",
+    "book": 3,
+    "unit": 21
+  },
+  {
+    "word": "tractor",
+    "phonetic": "/ˈtræktər/",
+    "translation_fa": "تراکتور",
+    "definition_en": "a vehicle with large wheels, used for pulling farm equipment",
+    "book": 3,
+    "unit": 21
+  },
+  {
+    "word": "plow",
+    "phonetic": "/plaʊ/",
+    "translation_fa": "شخم",
+    "definition_en": "a farm tool used for breaking and turning over soil",
+    "book": 3,
+    "unit": 21
+  },
+  {
+    "word": "rural",
+    "phonetic": "/ˈrʊrəl/",
+    "translation_fa": "روستایی",
+    "definition_en": "relating to the countryside",
+    "book": 3,
+    "unit": 21
+  },
+  {
+    "word": "vessel",
+    "phonetic": "/ˈvɛsəl/",
+    "translation_fa": "کشتی",
+    "definition_en": "a ship or boat",
+    "book": 3,
+    "unit": 22
+  },
+  {
+    "word": "port",
+    "phonetic": "/pɔrt/",
+    "translation_fa": "بندر",
+    "definition_en": "a place where ships stop to load or unload goods",
+    "book": 3,
+    "unit": 22
+  },
+  {
+    "word": "crew",
+    "phonetic": "/kruː/",
+    "translation_fa": "خدمه",
+    "definition_en": "the people who work on a ship or plane",
+    "book": 3,
+    "unit": 22
+  },
+  {
+    "word": "navigation",
+    "phonetic": "/nævɪˈgeɪʃən/",
+    "translation_fa": "ناوبری",
+    "definition_en": "the act of finding your way from one place to another, especially when you are traveling by sea or air",
+    "book": 3,
+    "unit": 22
+  },
+  {
+    "word": "route",
+    "phonetic": "/ruːt/",
+    "translation_fa": "مسیر",
+    "definition_en": "a way or course that you take in order to get from one place to another",
+    "book": 3,
+    "unit": 22
+  },
+  {
+    "word": "schedule",
+    "phonetic": "/ˈskɛdʒuːl/",
+    "translation_fa": "برنامه زمانی",
+    "definition_en": "a plan for what you will do and when you will do it",
+    "book": 3,
+    "unit": 22
+  },
+  {
+    "word": "departure",
+    "phonetic": "/dɪˈpɑrtʃər/",
+    "translation_fa": "خروج",
+    "definition_en": "the act of leaving a place",
+    "book": 3,
+    "unit": 22
+  },
+  {
+    "word": "arrival",
+    "phonetic": "/əˈraɪvəl/",
+    "translation_fa": "ورود",
+    "definition_en": "the act of coming to a place",
+    "book": 3,
+    "unit": 22
+  },
+  {
+    "word": "vessel",
+    "phonetic": "/ˈvɛsəl/",
+    "translation_fa": "کشتی یا شناور",
+    "definition_en": "a ship or boat",
+    "book": 3,
+    "unit": 23
+  },
+  {
+    "word": "navigation",
+    "phonetic": "/nævɪˈɡeɪʃən/",
+    "translation_fa": "ناوبری یا هدایت کشتی",
+    "definition_en": "the act of controlling the movement of a ship or plane",
+    "book": 3,
+    "unit": 23
+  },
+  {
+    "word": "port",
+    "phonetic": "/pɔrt/",
+    "translation_fa": "بندر",
+    "definition_en": "a place where ships stop to load or unload goods",
+    "book": 3,
+    "unit": 23
+  },
+  {
+    "word": "starboard",
+    "phonetic": "/ˈstɑrbərd/",
+    "translation_fa": "کنار راست کشتی",
+    "definition_en": "the right side of a ship",
+    "book": 3,
+    "unit": 23
+  },
+  {
+    "word": "anchor",
+    "phonetic": "/ˈæŋkər/",
+    "translation_fa": "لنگر",
+    "definition_en": "a heavy metal object that is dropped into the water to stop a ship from moving",
+    "book": 3,
+    "unit": 23
+  },
+  {
+    "word": "crew",
+    "phonetic": "/kruː/",
+    "translation_fa": "گروه خدمه",
+    "definition_en": "the people who work on a ship or plane",
+    "book": 3,
+    "unit": 23
+  },
+  {
+    "word": "deck",
+    "phonetic": "/dɛk/",
+    "translation_fa": "سطح کشتی",
+    "definition_en": "a floor or surface of a ship",
+    "book": 3,
+    "unit": 23
+  },
+  {
+    "word": "ferry",
+    "phonetic": "/ˈfɛri/",
+    "translation_fa": "قایق یا کشتی باری",
+    "definition_en": "a boat or ship that carries people or goods, especially over a short distance",
+    "book": 3,
+    "unit": 23
+  },
+  {
+    "word": "consequence",
+    "phonetic": "/ˈkɒnsɪkwəns/",
+    "translation_fa": "پی‌آمد",
+    "definition_en": "a result of something that has happened",
+    "book": 3,
+    "unit": 24
+  },
+  {
+    "word": "crisis",
+    "phonetic": "/ˈkraɪsɪs/",
+    "translation_fa": "بحران",
+    "definition_en": "a situation in which an important decision must be made",
+    "book": 3,
+    "unit": 24
+  },
+  {
+    "word": "dilemma",
+    "phonetic": "/dɪˈlemə/",
+    "translation_fa": "معضل",
+    "definition_en": "a situation in which you have to make a difficult decision",
+    "book": 3,
+    "unit": 24
+  },
+  {
+    "word": "disaster",
+    "phonetic": "/dɪˈzɑːstər/",
+    "translation_fa": "فاجعه",
+    "definition_en": "a sudden event that causes a lot of damage or suffering",
+    "book": 3,
+    "unit": 24
+  },
+  {
+    "word": "emergency",
+    "phonetic": "/ɪˈmɜːrdʒənsi/",
+    "translation_fa": "حالت اضطراری",
+    "definition_en": "a situation in which people need help quickly",
+    "book": 3,
+    "unit": 24
+  },
+  {
+    "word": "hazard",
+    "phonetic": "/ˈhæzərd/",
+    "translation_fa": "خطر",
+    "definition_en": "a situation or thing that could be dangerous",
+    "book": 3,
+    "unit": 24
+  },
+  {
+    "word": "risk",
+    "phonetic": "/rɪsk/",
+    "translation_fa": "خطر",
+    "definition_en": "the possibility of something bad happening",
+    "book": 3,
+    "unit": 24
+  },
+  {
+    "word": "threat",
+    "phonetic": "/θret/",
+    "translation_fa": "تهدید",
+    "definition_en": "a situation or person that could cause danger",
+    "book": 3,
+    "unit": 24
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 25
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkaʊntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 25
+  },
+  {
+    "word": "mountain",
+    "phonetic": "/ˈmaʊntɪn/",
+    "translation_fa": "کوه",
+    "definition_en": "a natural elevation of the earth's surface, usually formed by volcanic or tectonic action",
+    "book": 3,
+    "unit": 25
+  },
+  {
+    "word": "hill",
+    "phonetic": "/hɪl/",
+    "translation_fa": "تپه",
+    "definition_en": "a natural elevation of the earth's surface, smaller than a mountain",
+    "book": 3,
+    "unit": 25
+  },
+  {
+    "word": "valley",
+    "phonetic": "/ˈvæli/",
+    "translation_fa": "دره",
+    "definition_en": "a low area of land between hills or mountains, typically with a river or stream flowing through it",
+    "book": 3,
+    "unit": 25
+  },
+  {
+    "word": "island",
+    "phonetic": "/ˈaɪlənd/",
+    "translation_fa": "جزیره",
+    "definition_en": "a piece of land surrounded by water",
+    "book": 3,
+    "unit": 25
+  },
+  {
+    "word": "coast",
+    "phonetic": "/koʊst/",
+    "translation_fa": "ساحل",
+    "definition_en": "the land along the edge of the sea",
+    "book": 3,
+    "unit": 25
+  },
+  {
+    "word": "beach",
+    "phonetic": "/biːtʃ/",
+    "translation_fa": "ساحل دریا",
+    "definition_en": "an area of sand or pebbles along a sea or lake",
+    "book": 3,
+    "unit": 25
+  },
+  {
+    "word": "concern",
+    "phonetic": "/kənˈsɜːrn/",
+    "translation_fa": "مورد توجه قرار گرفتن",
+    "definition_en": "a feeling of worry about something",
+    "book": 3,
+    "unit": 26
+  },
+  {
+    "word": "concerned",
+    "phonetic": "/kənˈsɜːrnd/",
+    "translation_fa": "مورد توجه قرار گرفته",
+    "definition_en": "feeling worry or interest",
+    "book": 3,
+    "unit": 26
+  },
+  {
+    "word": "conclusion",
+    "phonetic": "/kənˈkljuːʒən/",
+    "translation_fa": "نتیجه گیری",
+    "definition_en": "the final part of something",
+    "book": 3,
+    "unit": 26
+  },
+  {
+    "word": "concrete",
+    "phonetic": "/ˈkɒŋkriːt/",
+    "translation_fa": "بتن",
+    "definition_en": "a hard, strong building material",
+    "book": 3,
+    "unit": 26
+  },
+  {
+    "word": "condemn",
+    "phonetic": "/kənˈdɛm/",
+    "translation_fa": "محکوم کردن",
+    "definition_en": "to say that someone or something is bad",
+    "book": 3,
+    "unit": 26
+  },
+  {
+    "word": "conduct",
+    "phonetic": "/ˈkɒndʌkt/",
+    "translation_fa": "رفتار",
+    "definition_en": "the way someone behaves",
+    "book": 3,
+    "unit": 26
+  },
+  {
+    "word": "confess",
+    "phonetic": "/kənˈfɛs/",
+    "translation_fa": "اعتراف کردن",
+    "definition_en": "to say that you have done something wrong",
+    "book": 3,
+    "unit": 26
+  },
+  {
+    "word": "confident",
+    "phonetic": "/ˈkɒnfɪdnt/",
+    "translation_fa": "مطمئن",
+    "definition_en": "feeling that you can do something",
+    "book": 3,
+    "unit": 26
+  },
+  {
+    "word": "conflict",
+    "phonetic": "/ˈkɒnflɪkt/",
+    "translation_fa": "درگیری",
+    "definition_en": "a serious disagreement",
+    "book": 3,
+    "unit": 26
+  },
+  {
+    "word": "congratulate",
+    "phonetic": "/kənˈɡrætʃʊleɪt/",
+    "translation_fa": "تبریك گفتن",
+    "definition_en": "to say that you are pleased",
+    "book": 3,
+    "unit": 26
+  },
+  {
+    "word": "vessel",
+    "phonetic": "/ˈvɛsəl/",
+    "translation_fa": "کشتی",
+    "definition_en": "a ship or boat",
+    "book": 3,
+    "unit": 27
+  },
+  {
+    "word": "navigation",
+    "phonetic": "/nævɪˈɡeɪʃən/",
+    "translation_fa": "ناوبری",
+    "definition_en": "the act of controlling the movement of a ship or plane",
+    "book": 3,
+    "unit": 27
+  },
+  {
+    "word": "port",
+    "phonetic": "/pɔrt/",
+    "translation_fa": "بندر",
+    "definition_en": "a place where ships stop to load or unload goods",
+    "book": 3,
+    "unit": 27
+  },
+  {
+    "word": "crew",
+    "phonetic": "/kruː/",
+    "translation_fa": "کارکنان کشتی",
+    "definition_en": "the people who work on a ship or plane",
+    "book": 3,
+    "unit": 27
+  },
+  {
+    "word": "route",
+    "phonetic": "/ruːt/",
+    "translation_fa": "مسیر",
+    "definition_en": "a way or course that someone or something takes",
+    "book": 3,
+    "unit": 27
+  },
+  {
+    "word": "passenger",
+    "phonetic": "/ˈpæsɪndʒər/",
+    "translation_fa": "مسافر",
+    "definition_en": "a person who is traveling in a vehicle, ship, or plane",
+    "book": 3,
+    "unit": 27
+  },
+  {
+    "word": "cargo",
+    "phonetic": "/ˈkɑːrɡoʊ/",
+    "translation_fa": "بار",
+    "definition_en": "goods that are being transported by ship, plane, or truck",
+    "book": 3,
+    "unit": 27
+  },
+  {
+    "word": "ferry",
+    "phonetic": "/ˈfɛri/",
+    "translation_fa": "قایق",
+    "definition_en": "a boat that carries people, cars, or goods from one side of a river or sea to the other",
+    "book": 3,
+    "unit": 27
+  },
+  {
+    "word": "village",
+    "phonetic": "/ˈvɪlɪdʒ/",
+    "translation_fa": "دهکده",
+    "definition_en": "a group of houses and associated buildings, larger than a hamlet and smaller than a town",
+    "book": 3,
+    "unit": 28
+  },
+  {
+    "word": "countryside",
+    "phonetic": "/ˈkaʊntrɪsaɪd/",
+    "translation_fa": "منطقه روستایی",
+    "definition_en": "land and scenery outside towns and cities",
+    "book": 3,
+    "unit": 28
+  },
+  {
+    "word": "farmer",
+    "phonetic": "/ˈfɑːrmər/",
+    "translation_fa": "کشاورز",
+    "definition_en": "a person who owns or manages a farm",
+    "book": 3,
+    "unit": 28
+  },
+  {
+    "word": "crop",
+    "phonetic": "/krɒp/",
+    "translation_fa": "محصول",
+    "definition_en": "a plant such as wheat, corn, or soybeans that is grown for food or other products",
+    "book": 3,
+    "unit": 28
+  },
+  {
+    "word": "harvest",
+    "phonetic": "/ˈhɑːrvɪst/",
+    "translation_fa": "درو",
+    "definition_en": "the time of year when crops are gathered in",
+    "book": 3,
+    "unit": 28
+  },
+  {
+    "word": "rural",
+    "phonetic": "/ˈrʊrəl/",
+    "translation_fa": "روستایی",
+    "definition_en": "connected with the countryside",
+    "book": 3,
+    "unit": 28
+  },
+  {
+    "word": "tract",
+    "phonetic": "/trækt/",
+    "translation_fa": "برش",
+    "definition_en": "a large area of land",
+    "book": 3,
+    "unit": 28
+  },
+  {
+    "word": "plow",
+    "phonetic": "/plaʊ/",
+    "translation_fa": "شخم",
+    "definition_en": "a farm tool used for breaking and turning over soil",
+    "book": 3,
+    "unit": 28
+  },
+  {
+    "word": "concern",
+    "phonetic": "/kənˈsɜːrn/",
+    "translation_fa": "مورد توجه قرار گرفتن",
+    "definition_en": "a feeling of worry about something",
+    "book": 3,
+    "unit": 29
+  },
+  {
+    "word": "concerned",
+    "phonetic": "/kənˈsɜːrnd/",
+    "translation_fa": "مورد توجه قرار گرفته",
+    "definition_en": "feeling worry or interest",
+    "book": 3,
+    "unit": 29
+  },
+  {
+    "word": "conclusion",
+    "phonetic": "/kənˈkluːʒən/",
+    "translation_fa": "نتیجه گیری",
+    "definition_en": "the final part of something",
+    "book": 3,
+    "unit": 29
+  },
+  {
+    "word": "concrete",
+    "phonetic": "/ˈkɒŋkriːt/",
+    "translation_fa": "بتن",
+    "definition_en": "a hard, strong building material",
+    "book": 3,
+    "unit": 29
+  },
+  {
+    "word": "condemn",
+    "phonetic": "/kənˈdɛm/",
+    "translation_fa": "محکوم کردن",
+    "definition_en": "to say that someone or something is bad",
+    "book": 3,
+    "unit": 29
+  },
+  {
+    "word": "conduct",
+    "phonetic": "/ˈkɒndʌkt/",
+    "translation_fa": "رفتار",
+    "definition_en": "the way someone behaves",
+    "book": 3,
+    "unit": 29
+  },
+  {
+    "word": "confess",
+    "phonetic": "/kənˈfɛs/",
+    "translation_fa": "اعتراف کردن",
+    "definition_en": "to say that you have done something wrong",
+    "book": 3,
+    "unit": 29
+  },
+  {
+    "word": "confident",
+    "phonetic": "/ˈkɒnfɪdnt/",
+    "translation_fa": "مطمئن",
+    "definition_en": "feeling that you can do something",
+    "book": 3,
+    "unit": 29
+  },
+  {
+    "word": "vessel",
+    "phonetic": "/ˈvɛsəl/",
+    "translation_fa": "کشتی",
+    "definition_en": "a ship or boat",
+    "book": 3,
+    "unit": 30
+  },
+  {
+    "word": "navigation",
+    "phonetic": "/nævɪˈɡeɪʃən/",
+    "translation_fa": "ناوبری",
+    "definition_en": "the act of controlling the movement of a ship or plane",
+    "book": 3,
+    "unit": 30
+  },
+  {
+    "word": "port",
+    "phonetic": "/pɔrt/",
+    "translation_fa": "بندر",
+    "definition_en": "a place where ships load or unload cargo",
+    "book": 3,
+    "unit": 30
+  },
+  {
+    "word": "starboard",
+    "phonetic": "/ˈstɑrbərd/",
+    "translation_fa": "کنار راست",
+    "definition_en": "the right side of a ship",
+    "book": 3,
+    "unit": 30
+  },
+  {
+    "word": "anchor",
+    "phonetic": "/ˈæŋkər/",
+    "translation_fa": "لنگر",
+    "definition_en": "a heavy metal object attached to a ship to prevent it from moving",
+    "book": 3,
+    "unit": 30
+  },
+  {
+    "word": "crew",
+    "phonetic": "/kruː/",
+    "translation_fa": "کارکنان",
+    "definition_en": "the people who work on a ship or plane",
+    "book": 3,
+    "unit": 30
+  },
+  {
+    "word": "passenger",
+    "phonetic": "/ˈpæsɪndʒər/",
+    "translation_fa": "مسافر",
+    "definition_en": "a person who is traveling in a vehicle, but is not driving it or working on it",
+    "book": 3,
+    "unit": 30
+  },
+  {
+    "word": "cabin",
+    "phonetic": "/ˈkæbɪn/",
+    "translation_fa": "کابین",
+    "definition_en": "a small room on a ship or plane where people can sleep or rest",
+    "book": 3,
+    "unit": 30
+  }
+]
