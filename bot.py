@@ -415,19 +415,20 @@ Return ONLY raw JSON (no code blocks):
 def generate_news_post() -> str:
     time_seed = datetime.now().strftime("%Y%m%d%H%M%S")
     prompt = f"""
-Write a short, simple, real-world style English news summary suitable for English learners (B1-B2 level).
+Write a short, simple, real-world style English news summary suitable for English learners (B2-C1 level).
 Seed: {time_seed}
 
 Format strictly using HTML:
-📰 <b>English News Summary</b>
+📰 <b>English News Summary ([level])</b>
 
 📌 <b>[Headline in English]</b>
 
-[Write 3-4 simple sentences explaining the news story in English. Wrap 2 key words in <b> tags]
+[Write 3-4 simple sentences explaining the news story in English. Wrap 2-3 key words in <b> tags]
 
 ✍️ <b>کلمات کلیدی:</b>
 🔹 <b>word1</b>: معنی فارسی
 🔹 <b>word2</b>: معنی فارسی
+🔹 <b>word3</b>: معنی فارسی
 
 <b>ترجمه (برای باز شدن لمس کنید):</b>
 <blockquote expandable>
@@ -555,12 +556,15 @@ Format strictly with HTML:
 [Story text in English with 2-3 key words in <b> tags]
 
 ✍️ <b>واژگان:</b>
-🔹 <b>word1</b>: معنی
+💙 <b>word1</b>: معنی
+💚 <b>word2</b>: معنی
+🧡 <b>word3</b>: معنی
 
 <b>ترجمه داستان:</b>
 <blockquote expandable>
 [Persian translation]
 </blockquote>
+  
 """
     try:
         completion = client.chat.completions.create(
