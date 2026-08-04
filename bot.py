@@ -208,8 +208,11 @@ CRITICAL RULES:
 # 🎯 هدف: ساخت پست کامل آموزشی اختصاصی برای یک لغت مشخص از کتاب‌ها
 # 📥 ورودی: vocab_item (دیکشنری اطلاعات لغت یا رشته)
 # 📤 خروجی: متن کامل پست با رعایت تگ‌های HTML
-# 🔗 کاربرد: استفاده در مسیر /send_vocab
+# 🔗 کاربرد: استفاده در مسیر /send_vocab -post_vocab
 # ==============================================================================
+#== ما دو تا تابع انتخاب تصادفی واژه داریم. که فکر کنم اگه این رو حذف کنیم مشکلی نباشه.
+# چون تابع های پایین همه از vocab_item دارن استفاده می کنن
+
 def get_random_vocab():
     """
     تمام فایل‌های book_*.json در پوشه data را می‌شناسد، 
@@ -319,81 +322,6 @@ CRITICAL RULES:
 # 📤 خروجی: دیکشنری شامل سوال، گزینه‌ها، نمایه پاسخ صحیح و توضیحات
 # 🔗 کاربرد: استفاده در مسیر /send_quiz
 # ==============================================================================
-def generate_educational_post_vocab(vocab_item) -> str:
-    """
-    تولید پست آموزشی تلگرام بر اساس واژه دریافتی
-    """
-    if not vocab_item:
-        return None
-
-    word = ""
-    phonetic = ""
-    translation = ""
-    definition = ""
-    book = 1
-    unit = 1
-
-    if isinstance(vocab_item, str):
-        word = vocab_item.strip()
-    elif isinstance(vocab_item, dict):
-        word = vocab_item.get("word") or vocab_item.get("vocab") or vocab_item.get("text") or ""
-        phonetic = vocab_item.get("phonetic") or vocab_item.get("pronunciation") or ""
-        translation = vocab_item.get("translation_fa") or vocab_item.get("meaning") or ""
-        definition = vocab_item.get("definition_en") or vocab_item.get("definition") or ""
-        book = vocab_item.get("book", 1)
-        unit = vocab_item.get("unit", 1)
-
-    if not word:
-        return None
-
-    time_context = get_time_context()
-    
-    prompt = f"""
-You are an expert English teacher creating a Telegram post to teach a specific word or phrase for Book {book}, Unit {unit}.
-
-Target Word/Phrase: {word}
-Phonetic: {phonetic if phonetic else "Provide accurate IPA phonetic pronunciation in brackets"}
-Persian Meaning: {translation if translation else "Provide accurate fluent Persian translation"}
-English Definition: {definition if definition else "Provide a short clear English definition"}
-
-Format the post EXACTLY using HTML tags (NO asterisks *):
-
-<b>🟢 Book {book} - Unit {unit}</b>
-
-😍 <b>[{time_context}]</b>
-📌 <b>واژه / اصطلاح روز:\n{word}</b>
-
-🔴 <b>{word}</b> {phonetic if phonetic else ""}
-🔹 <b>معنی:</b> {translation if translation else "[Persian translation]"}
-📖 <b>تعریف انگلیسی:\n</b> {definition if definition else "[English definition]"}
-
-🟢 <b>مثال اول:</b>
-📣 [English sentence using <b>{word}</b>]
-🔹 <b>ترجمه:</b> [Persian translation]
-
-🟡 <b>مثال دوم:</b>
-🔔 [Another English sentence using <b>{word}</b>]
-🔸 <b>ترجمه:</b> [Persian translation]
-
-👩‍🏫 <b>حالا تو بگو:</b>
-[An interactive question asking members to use <b>{word}</b> in a sentence]
-🟣 [ترجمه سوال به فارسی]
-
-CRITICAL RULES:
-1. Use ONLY <b> tags for bold text. Do NOT use asterisks (*).
-2. Write English and Persian on separate lines.
-3. Complete any missing translations or definitions accurately.
-"""
-    try:
-        completion = client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.7,
-        )
-        return clean_text(completion.choices[0].message.content.strip())
-    except Exception as e:
-        logger.error(f"Post Vocab Error: {e}")
-        return None
 
 
 # ==============================================================================
@@ -420,7 +348,7 @@ Book {book}, Unit {unit}
 
 Return ONLY raw JSON (no code blocks):
 {{
-  "level": "کتاب {book} - درس {unit}",
+  "level": "4000 واژه جلد {book} - یونیت {unit}",
   "question": "Fill-in-the-blank sentence where '{word}' fits.",
   "options": ["{word}", "WrongOption1", "WrongOption2", "WrongOption3"],
   "correct_option_index": 0,
@@ -711,13 +639,13 @@ def home():
 
 
 # ==============================================================================
-# 📘 راهنمای مسیر: /send_vocab
+# 📘 راهنمای مسیر: /send_vocab - post_vocab
 # 🎯 هدف: دریافت یک واژه تصادفی از کتاب‌ها و ارسال پست آموزشی آن به تلگرام
 # 📥 ورودی: درخواست GET یا POST
 # 📤 خروجی: پاسخ JSON شامل وضعیت ارسال پست و نام واژه
 # 🔗 کاربرد: زمان‌بندی مستقل برای ارسال پست‌های آموزشی لغت
 # ==============================================================================
-@app.route("/send_vocab", methods=["GET", "POST"])
+@app.route("/post_vocab", methods=["GET", "POST"])
 def trigger_vocab():
     try:
         # دریافت یک واژه تصادفی از کتاب‌های موجود با تابع get_random_vocab
