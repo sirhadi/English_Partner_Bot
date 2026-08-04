@@ -864,27 +864,29 @@ def trigger_idiom():
         logger.error(f"Route /idiom Error: {e}")
         return f"Error: {e}", 500
 
-#================ build_book ================
-@app.route("/build_book", methods=["GET"])
+#================ build_book ================@app.route("/build_book", methods=["GET"])
 def build_book_route():
     book_num = request.args.get("book", default=3, type=int)
-    
+    start_unit = request.args.get("start_unit", default=1, type=int)
+    end_unit = request.args.get("end_unit", default=5, type=int)
+
     if book_num < 1 or book_num > 6:
         return "شماره کتاب باید بین ۱ تا ۶ باشد.", 400
 
-    logger.info(f"شروع تولید فایل برای کتاب جلد {book_num}...")
-    
     os.makedirs("data", exist_ok=True)
     file_path = os.path.join("data", f"book_{book_num}.json")
-    all_words = []
 
-    # برای جلوگیری از تایم‌اوت، ۳۰ درس را در ۶ دسته ۵‌تایی دریافت می‌کنیم
-    for batch_start in range(1, 31, 5):
-        batch_end = min(batch_start + 4, 30)
-        
-        prompt = f"""
+    existing_words = []
+    if os.path.exists(file_path):
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                existing_words = json.load(f)
+        except Exception:
+            existing_words = []
+
+    prompt = f"""
 You are an expert lexical database creator for Paul Nation's "4000 Essential English Words" (Latest Edition).
-Generate all target words for Book {book_num}, from Unit {batch_start} to Unit {batch_end} inclusive.
+Generate all target words for Book {book_num}, from Unit {start_unit} to Unit {end_unit} inclusive.
 
 Return ONLY a valid JSON array of objects with this EXACT structure (no markdown fences, no explanation):
 [
@@ -898,32 +900,59 @@ Return ONLY a valid JSON array of objects with this EXACT structure (no markdown
   }}
 ]
 """
-        try:
-            completion = client.chat.completions.create(
-                model=MODEL_NAME,
-                messages=[{"role": "user", "content": prompt}],
-                temperature=0.2,
-            )
-            raw_res = completion.choices[0].message.content.strip()
-            cleaned_res = raw_res.replace("```json", "").replace("```", "").strip()
-            batch_data = json.loads(cleaned_res)
-            
-            if isinstance(batch_data, list):
-                all_words.extend(batch_data)
-        except Exception as e:
-            logger.error(f"خطا در دریافت دروس {batch_start} تا {batch_end} کتاب {book_num}: {e}")
+    try:
+        completion = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.2,
+        )
+        raw_res = completion.choices[0].message.content.strip()
+        cleaned_res = raw_res.replace("```json", "").replace("```", "").strip()
+        new_words = json.loads(cleaned_res)
 
-    # ذخیره فایل روی سرور
-    with open(file_path, "w", encoding="utf-8") as f:
-        json.dump(all_words, f, ensure_ascii=False, indent=2)
+        if isinstance(new_words, list):
+            # حذف دروس تکراری قبلی در صورت ساخت مجدد
+            existing_words = [w for w in existing_words if not (isinstance(w, dict) and start_unit <= w.get("unit", 0) <= end_unit)]
+            existing_words.extend(new_words)
 
-    # دانلود مستقیم فایل توسط مرورگر شما
-    return send_file(
-        file_path,
-        mimetype="application/json",
-        as_attachment=True,
-        download_name=f"book_{book_num}.json"
-    )
+            with open(file_path, "w", encoding="utf-8") as f:
+                json.dump(existing_words, f, ensure_ascii=False, indent=2)
+
+            next_start = end_unit + 1
+            next_end = min(end_unit + 5, 30)
+
+            msg = f"<h3>✅ دروس {start_unit} تا {end_unit} از کتاب {book_num} با موفقیت ساخته شد.</h3>"
+            msg += f"<p>تعداد کل واژگان ذخیره‌شده تا اکنون: <b>{len(existing_words)}</b></p>"
+
+            if end_unit < 30:
+                next_url = f"/build_book?book={book_num}&start_unit={next_start}&end_unit={next_end}"
+                msg += f"<p>👉 <a href='{next_url}'><b>برای ساخت ۵ درس بعدی (دروس {next_start} تا {next_end}) اینجا کلیک کنید</b></a></p>"
+            else:
+                download_url = f"/download_book?book={book_num}"
+                msg += f"<h2>🎉 ساخت کتاب {book_num} کامل شد!</h2>"
+                msg += f"<p>📥 <a href='{download_url}'><b>برای دانلود فایل JSON کامل کتاب {book_num} اینجا کلیک کنید</b></a></p>"
+
+            return msg, 200
+
+    except Exception as e:
+        logger.error(f"Error generating units {start_unit}-{end_unit}: {e}")
+        return f"خطا در ساخت: {e}", 500
+
+    return "خطای نامشخص", 500
+
+
+@app.route("/download_book", methods=["GET"])
+def download_book_route():
+    book_num = request.args.get("book", default=3, type=int)
+    file_path = os.path.join("data", f"book_{book_num}.json")
+    if os.path.exists(file_path):
+        return send_file(
+            file_path,
+            mimetype="application/json",
+            as_attachment=True,
+            download_name=f"book_{book_num}.json"
+        )
+    return "فایل مورد نظر یافت نشد.", 404 )
 
 #================== تلگرام روتز ==================
 
