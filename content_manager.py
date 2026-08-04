@@ -53,7 +53,7 @@ def load_all_book_words() -> list:
 # 🎯 هدف: دریافت لغت بعدی به صورت منظم و ترتیبی + بروزرسانی ایندکس در state.json
 # 📥 ورودی: ندارد
 # 📤 خروجی: دیکشنری (dict) شامل مشخصات لغت (word, translation, definition, book, unit)
-# 🔗 کاربرد: استفاده در مسیر /send_vocab سرور Flask
+# 🔗 کاربرد: استفاده در مسیر /post_vocab سرور Flask
 # ==============================================================================
 def get_next_vocab_item() -> dict:
     all_words = load_all_book_words()
@@ -120,7 +120,7 @@ def get_grammar_from_data() -> dict:
 # 🎯 هدف: استخراج یک نقل‌قول تصادفی از فایل‌های quote_*.json
 # 📥 ورودی: ندارد
 # 📤 خروجی: دیکشنری (dict) شامل متن نقل‌قول (text) و نویسنده (author)
-# 🔗 کاربرد: فراخوانی توسط مسیر /send_quote
+# 🔗 کاربرد: فراخوانی توسط مسیر /quote
 # ==============================================================================
 def get_quote_from_data() -> dict:
     if not os.path.exists(DATA_DIR):
