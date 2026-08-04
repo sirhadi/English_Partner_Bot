@@ -951,7 +951,8 @@ def trigger_idiom():
 def build_book_route():
     book_num = request.args.get("book", default=3, type=int)
     start_unit = request.args.get("start_unit", default=1, type=int)
-    end_unit = request.args.get("end_unit", default=5, type=int)
+    # تعداد دروس در هر مرحله به صورت پیش‌فرض روی ۲ درس تنظیم شد
+    end_unit = request.args.get("end_unit", default=2, type=int)
 
     if book_num < 1 or book_num > 6:
         return "شماره کتاب باید بین ۱ تا ۶ باشد.", 400
@@ -971,7 +972,7 @@ def build_book_route():
 You are an expert lexical database creator for Paul Nation's "4000 Essential English Words" (Latest Edition).
 Generate all target words for Book {book_num}, from Unit {start_unit} to Unit {end_unit} inclusive.
 
-Return ONLY a valid JSON array of objects with this EXACT structure (no markdown fences, no explanation):
+Return ONLY a valid JSON array of objects with this EXACT structure (no markdown fences, no extra text):
 [
   {{
     "word": "target word",
@@ -979,7 +980,7 @@ Return ONLY a valid JSON array of objects with this EXACT structure (no markdown
     "translation_fa": "ترجمه دقیق فارسی",
     "definition_en": "Clear English definition from the book",
     "book": {book_num},
-    "unit": 1
+    "unit": {start_unit}
   }}
 ]
 """
@@ -988,10 +989,13 @@ Return ONLY a valid JSON array of objects with this EXACT structure (no markdown
             model=MODEL_NAME,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.2,
+            max_tokens=4000
         )
         raw_res = completion.choices[0].message.content.strip()
         cleaned_res = raw_res.replace("```json", "").replace("```", "").strip()
-        new_words = json.loads(cleaned_res)
+        
+        # استفاده از strict=False برای جلوگیری از خطاهای کاراکترهای رزرو شده
+        new_words = json.loads(cleaned_res, strict=False)
 
         if isinstance(new_words, list):
             # حذف دروس تکراری قبلی در صورت ساخت مجدد
@@ -1001,15 +1005,16 @@ Return ONLY a valid JSON array of objects with this EXACT structure (no markdown
             with open(file_path, "w", encoding="utf-8") as f:
                 json.dump(existing_words, f, ensure_ascii=False, indent=2)
 
+            step = (end_unit - start_unit) + 1
             next_start = end_unit + 1
-            next_end = min(end_unit + 5, 30)
+            next_end = min(end_unit + step, 30)
 
             msg = f"<h3>✅ دروس {start_unit} تا {end_unit} از کتاب {book_num} با موفقیت ساخته شد.</h3>"
             msg += f"<p>تعداد کل واژگان ذخیره‌شده تا اکنون: <b>{len(existing_words)}</b></p>"
 
             if end_unit < 30:
                 next_url = f"/build_book?book={book_num}&start_unit={next_start}&end_unit={next_end}"
-                msg += f"<p>👉 <a href='{next_url}'><b>برای ساخت ۵ درس بعدی (دروس {next_start} تا {next_end}) اینجا کلیک کنید</b></a></p>"
+                msg += f"<p>👉 <a href='{next_url}'><b>برای ساخت دروس بعدی ({next_start} تا {next_end}) اینجا کلیک کنید</b></a></p>"
             else:
                 download_url = f"/download_book?book={book_num}"
                 msg += f"<h2>🎉 ساخت کتاب {book_num} کامل شد!</h2>"
@@ -1017,12 +1022,14 @@ Return ONLY a valid JSON array of objects with this EXACT structure (no markdown
 
             return msg, 200
 
+    except json.JSONDecodeError as e:
+        logger.error(f"JSON Parsing Error: {e}")
+        return f"خطا در قالب JSON خروجی هوش مصنوعی. لطفاً بازه دروس را کوچکتر کنید (مثلاً ۲ درس). جزئیات: {e}", 500
     except Exception as e:
         logger.error(f"Error generating units {start_unit}-{end_unit}: {e}")
         return f"خطا در ساخت: {e}", 500
 
     return "خطای نامشخص", 500
-
 
 # ------------------------------------------------------------------------------
 # 🌐 ROUTE: GET /download_book
