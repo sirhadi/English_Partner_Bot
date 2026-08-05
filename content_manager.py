@@ -15,6 +15,9 @@ STATE_FILE = os.path.join(BASE_DIR, "state.json") # فایل ذخیره آخری
 # آدرس‌دهی مطلق جهت جلوگیری از خطای آدرس در سرور Render
 IDIOMS_FILE = os.path.join(BASE_DIR, "data", "idioms_master.json")
 
+# آدرس‌دهی دقیق فایل نقل‌قول‌ها
+QUOTES_FILE = os.path.join(BASE_DIR, "data", "quotes_master.json")
+
 # ==============================================================================
 # 📘 راهنمای تابع: load_all_book_words
 # 🎯 هدف: خواندن و ادغام تمامی لغات از فایل‌های book_*.json بر اساس شماره کتاب
@@ -124,24 +127,35 @@ def get_grammar_from_data() -> dict:
 # 📤 خروجی: دیکشنری (dict) شامل متن نقل‌قول (text) و نویسنده (author)
 # 🔗 کاربرد: فراخوانی توسط مسیر /quote
 # ==============================================================================
-def get_quote_from_data() -> dict:
-    if not os.path.exists(DATA_DIR):
-        return None
-        
-    all_quotes = []
-    for filename in os.listdir(DATA_DIR):
-        if filename.startswith("quote") and filename.endswith(".json"):
-            file_path = os.path.join(DATA_DIR, filename)
-            try:
-                with open(file_path, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                    if isinstance(data, list):
-                        all_quotes.extend(data)
-            except Exception as e:
-                logger.error(f"خطا در خواندن نقل‌قول {filename}: {e}")
-                
-    return random.choice(all_quotes) if all_quotes else None
 
+# ==============================================================================
+# 📘 راهنمای تابع: get_quote_from_data
+# 🎯 هدف: خواندن فایل quotes_master.json و انتخاب تصادفی یک نقل‌قول
+# 📥 ورودی: ندارد
+# 📤 خروجی: متن نقل‌قول یا دیکشنری اطلاعات آن
+# ==============================================================================
+def get_quote_from_data():
+    """
+    خواندن فایل کلی نقل‌قول‌ها و انتخاب تصادفی یک مورد.
+    """
+    if not os.path.exists(QUOTES_FILE):
+        logger.error(f"فایل نقل‌قول‌ها یافت نشد: {QUOTES_FILE}")
+        return None
+
+    try:
+        with open(QUOTES_FILE, "r", encoding="utf-8") as f:
+            quotes_list = json.load(f)
+
+        if not quotes_list:
+            logger.error("فایل quotes_master.json خالی است.")
+            return None
+
+        # انتخاب تصادفی یک نقل‌قول
+        return random.choice(quotes_list)
+
+    except Exception as e:
+        logger.error(f"Error reading quotes file: {e}")
+        return None
 
 
 # ==============================================================================
