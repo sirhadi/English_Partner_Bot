@@ -16,7 +16,7 @@ STATE_FILE = os.path.join(BASE_DIR, "state.json") # فایل ذخیره آخری
 IDIOMS_FILE = os.path.join(BASE_DIR, "data", "idioms_master.json")
 
 # آدرس‌دهی دقیق فایل نقل‌قول‌ها
-QUOTES_FILE = os.path.join(BASE_DIR, "data", "quotes_master.json")
+QUOTES_FILE = os.path.join(BASE_DIR, "data", "quotes.json")
 
 # ==============================================================================
 # 📘 راهنمای تابع: load_all_book_words
@@ -130,7 +130,7 @@ def get_grammar_from_data() -> dict:
 
 # ==============================================================================
 # 📘 راهنمای تابع: get_quote_from_data
-# 🎯 هدف: خواندن فایل quotes_master.json و انتخاب تصادفی یک نقل‌قول
+# 🎯 هدف: خواندن فایل quotes.json و انتخاب تصادفی یک نقل‌قول
 # 📥 ورودی: ندارد
 # 📤 خروجی: متن نقل‌قول یا دیکشنری اطلاعات آن
 # ==============================================================================
@@ -147,7 +147,7 @@ def get_quote_from_data():
             quotes_list = json.load(f)
 
         if not quotes_list:
-            logger.error("فایل quotes_master.json خالی است.")
+            logger.error("فایل quotes.json خالی است.")
             return None
 
         # انتخاب تصادفی یک نقل‌قول
