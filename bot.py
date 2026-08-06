@@ -533,12 +533,17 @@ Author: {author_str}
 
 Format:
 🐣 <b>نقل‌قول روز (Quote of the Day)</b>
+<blockquote>
+💬 <b>"{quote_str}"</b>
+✍️ <i>— {author_str}</i>
+</blockquote>
 
-💬 <i>"{quote_str}"</i>
-✍️ <b>— {author_str}</b>
+🔹 <b>ترجمه:</b>
+<blockquote>[Persian translation]</blockquote>
 
-🔹 <b>ترجمه فارسی:</b> [Persian translation]
-✨ <b>پیام کوتاه:</b> [A short inspiring 1-line thought in Persian]
+🤔 <b>نظر شما چیه؟</b>
+[English question for readers]
+🟣 [ترجمه سوال]
 
 CRITICAL RULES:
 1. Use ONLY <b> and <i> tags. Do NOT use markdown asterisks (*).
