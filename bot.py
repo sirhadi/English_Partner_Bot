@@ -501,30 +501,55 @@ Format strictly using HTML:
 # 📤 خروجی: متن پست نقل‌قول به زبان فارسی و انگلیسی
 # 🔗 کاربرد: استفاده در مسیر /send_quote
 # ==============================================================================
-def generate_quote_post_vocab(quote_item=None) -> str:
+# ==============================================================================
+# 📘 راهنمای تابع: generate_quote_post
+# 🎯 هدف: تولید پست نقل‌قول (Quote of the Day) همراه با ترجمه و تحلیل به فارسی
+# 📥 ورودی: quote_item (اختیاری - رشته یا دیکشنری شامل متن نقل‌قول و نویسنده)
+# 📤 خروجی: متن آماده ارسال پست تلگرام
+# 🔗 کاربرد: استفاده در مسیر /send_quote
+# ==============================================================================
+def generate_quote_post(quote_item=None) -> str:
+    """
+    تولید متن پست آموزشی/انگیزشی نقل‌قول روز با هوش مصنوعی.
+    """
     if not quote_item:
         quote_item = get_quote_from_data()
 
-    quote_text = quote_item.get("text", "Believe you can.") if isinstance(quote_item, dict) else "Believe you can."
-    author = quote_item.get("author", "Unknown") if isinstance(quote_item, dict) else "Unknown"
+    if not quote_item:
+        logger.error("هیچ نقل‌قولی برای تولید پست دریافت نشد.")
+        return None
+
+    # استخراج متن و گوینده (چه فایل به صورت لیست متنی باشد چه دیکشنری)
+    if isinstance(quote_item, dict):
+        quote_str = quote_item.get("quote") or quote_item.get("text") or quote_item.get("statement") or ""
+        author_str = quote_item.get("author") or quote_item.get("by") or "Unknown"
+    elif isinstance(quote_item, str):
+        quote_str = quote_item.strip()
+        author_str = "Unknown"
+    else:
+        quote_str = str(quote_item)
+        author_str = "Unknown"
+
+    if not quote_str:
+        return None
 
     prompt = f"""
-Create a Telegram post featuring this quote:
-Quote: "{quote_text}"
-Author: {author}
+Create an inspiring Telegram post for this English quote:
+Quote: "{quote_str}"
+Author: {author_str}
 
 Format:
-🐣 <b>Quote of the Day</b>
+🐣 <b>نقل‌قول روز (Quote of the Day)</b>
 
-<blockquote><b>"{quote_text}"</b>
-— <i>{author}</i></blockquote>
+💬 <i>"{quote_str}"</i>
+✍️ <b>— {author_str}</b>
 
-<b>ترجمه:</b>
-<blockquote>[Persian translation]</blockquote>
+🔹 <b>ترجمه فارسی:</b> [Persian translation]
+✨ <b>پیام کوتاه:</b> [A short inspiring 1-line thought in Persian]
 
-🤔 <b>نظر شما چیه؟</b>
-[English question for readers]
-🟣 [ترجمه سوال]
+CRITICAL RULES:
+1. Use ONLY <b> and <i> tags. Do NOT use markdown asterisks (*).
+2. Keep line breaks clean and layout professional.
 """
     try:
         completion = client.chat.completions.create(
@@ -536,7 +561,6 @@ Format:
     except Exception as e:
         logger.error(f"Quote Error: {e}")
         return None
-
 
 # ==============================================================================
 # 📘 راهنمای تابع: generate_story_post
@@ -803,9 +827,21 @@ def trigger_story():
 # ==============================================================================
 @app.route("/quote", methods=["GET", "POST"])
 def trigger_quote():
-    post_text = generate_quote_post_vocab()
-    sent = send_telegram_message(post_text)
-    return jsonify({"status": "ok", "sent": sent}), 200
+    try:
+        post_text = generate_quote_post()
+        if not post_text:
+            return jsonify({"status": "error", "message": "خطا در ساخت پست نقل‌قول"}), 500
+
+        msg_sent = send_telegram_message(post_text)
+
+        return jsonify({
+            "status": "ok", 
+            "sent": msg_sent
+        }), 200
+
+    except Exception as e:
+        logger.error(f"Error in /send_quote: {e}")
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 
 # ==============================================================================
