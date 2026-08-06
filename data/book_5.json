@@ -1,17 +1,9 @@
 [
   {
-    "word": "abbey",
-    "phonetic": "/ˈæbi/",
-    "translation_fa": "صومعه",
-    "definition_en": "a building where monks or nuns live or used to live",
-    "book": 5,
-    "unit": 1
-  },
-  {
     "word": "allot",
     "phonetic": "/əˈlɒt/",
-    "translation_fa": "اختصاص دادن",
-    "definition_en": "to give something to someone as a share of what is available",
+    "translation_fa": "تخصیص دادن",
+    "definition_en": "to give something to someone as a share or task",
     "book": 5,
     "unit": 1
   },
@@ -26,23 +18,31 @@
   {
     "word": "cache",
     "phonetic": "/kæʃ/",
-    "translation_fa": "مخفیگاه",
-    "definition_en": "a hiding place used especially for storing things",
+    "translation_fa": "مخفیگاه / حافظه پنهان",
+    "definition_en": "a hiding place for stored things",
     "book": 5,
     "unit": 1
   },
   {
-    "word": "commence",
-    "phonetic": "/kəˈmɛns/",
-    "translation_fa": "شروع کردن",
-    "definition_en": "to begin something",
+    "word": "convenience",
+    "phonetic": "/kənˈviːniəns/",
+    "translation_fa": "راحتی / سهولت",
+    "definition_en": "the state of being suitable or easy to use",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "dearth",
+    "phonetic": "/dɜːθ/",
+    "translation_fa": "کمبود / کمندانی",
+    "definition_en": "a lack or scarcity of something",
     "book": 5,
     "unit": 1
   },
   {
     "word": "deliberate",
     "phonetic": "/dɪˈlɪbərət/",
-    "translation_fa": "آگاهانه و عمدی",
+    "translation_fa": "عمدی / آگاهانه",
     "definition_en": "done consciously and intentionally",
     "book": 5,
     "unit": 1
@@ -50,47 +50,31 @@
   {
     "word": "dire",
     "phonetic": "/ˈdaɪər/",
-    "translation_fa": "وخیم و بحرانی",
-    "definition_en": "very serious or extreme",
+    "translation_fa": "وخیم / اضطراری",
+    "definition_en": "very serious or terrible",
     "book": 5,
     "unit": 1
   },
   {
     "word": "elapse",
     "phonetic": "/ɪˈlæps/",
-    "translation_fa": "سپری شدن زمان",
-    "definition_en": "if time elapses, it passes",
+    "translation_fa": "سپری شدن (زمان)",
+    "definition_en": "to pass or go by (of time)",
     "book": 5,
     "unit": 1
   },
   {
     "word": "empathy",
-    "phonetic": "/ˈɛmpəθi/",
-    "translation_fa": "هم‌حسی و همدلی",
-    "definition_en": "the ability to understand another person's feelings",
-    "book": 5,
-    "unit": 1
-  },
-  {
-    "word": "fanciful",
-    "phonetic": "/ˈfænsɪfʊl/",
-    "translation_fa": "خیالی و غیرواقعی",
-    "definition_en": "not based on fact or reason; unrealistic",
-    "book": 5,
-    "unit": 1
-  },
-  {
-    "word": "gripe",
-    "phonetic": "/ɡraɪp/",
-    "translation_fa": "شکایت کردن",
-    "definition_en": "to complain continuously about something unimportant",
+    "phonetic": "/ˈempəθi/",
+    "translation_fa": "همدلی",
+    "definition_en": "the ability to understand and share feelings of another",
     "book": 5,
     "unit": 1
   },
   {
     "word": "grueling",
     "phonetic": "/ˈɡruːəlɪŋ/",
-    "translation_fa": " طاقت‌فرسا",
+    "translation_fa": "خسته‌کننده و طاقت‌فرسا",
     "definition_en": "extremely tiring and demanding",
     "book": 5,
     "unit": 1
@@ -98,7 +82,7 @@
   {
     "word": "mundane",
     "phonetic": "/mʌnˈdeɪn/",
-    "translation_fa": "معمولی و کسل‌کننده",
+    "translation_fa": "دنیوی / معمولی و خسته‌کننده",
     "definition_en": "lacking interest or excitement; dull",
     "book": 5,
     "unit": 1
@@ -115,232 +99,656 @@
     "word": "outrage",
     "phonetic": "/ˈaʊtreɪdʒ/",
     "translation_fa": "خشم شدید",
-    "definition_en": "a feeling of anger and shock",
+    "definition_en": "an extremely strong reaction of anger or shock",
     "book": 5,
     "unit": 1
   },
   {
     "word": "paltry",
     "phonetic": "/ˈpɔːltri/",
-    "translation_fa": "ناچیز و اندک",
-    "definition_en": "too small to be considered important or useful",
+    "translation_fa": "ناچیز / ناچیز و بی‌ارزش",
+    "definition_en": "small or meager in amount",
     "book": 5,
     "unit": 1
   },
   {
     "word": "rectify",
-    "phonetic": "/ˈrɛktɪfaɪ/",
+    "phonetic": "/ˈrektɪfaɪ/",
     "translation_fa": "اصلاح کردن",
-    "definition_en": "to correct or fix something that is wrong",
+    "definition_en": "to put something right; to correct",
     "book": 5,
     "unit": 1
   },
   {
-    "word": "resourcefulness",
-    "phonetic": "/rɪˈsɔːrsfʊlnəs/",
-    "translation_fa": "کاردانی و ابتکار عمل",
-    "definition_en": "the ability to find quick and clever ways to overcome difficulties",
+    "word": "resourceful",
+    "phonetic": "/rɪˈzɔːsfl/",
+    "translation_fa": "کاردان / مدبر",
+    "definition_en": "having the ability to find quick and clever ways to overcome difficulties",
     "book": 5,
     "unit": 1
   },
   {
     "word": "sustenance",
     "phonetic": "/ˈsʌstənəns/",
-    "translation_fa": "معیشت و رزق",
-    "definition_en": "food and drink regarded as a source of strength or nourishment",
+    "translation_fa": "تغذیه / مایحتاج زندگی",
+    "definition_en": "food and drink regarded as a source of strength; nourishment",
     "book": 5,
     "unit": 1
   },
   {
     "word": "tedious",
     "phonetic": "/ˈtiːdiəs/",
-    "translation_fa": "خسته‌کننده",
-    "definition_en": "boring and lasting for too long",
+    "translation_fa": "کسل‌کننده",
+    "definition_en": "too long, slow, or dull; tiresome",
     "book": 5,
     "unit": 1
   },
   {
-    "word": "advert",
-    "phonetic": "/ˈædvɜːrt/",
-    "translation_fa": "آگهی تبلیغاتی",
-    "definition_en": "a notice or announcement in a public medium promoting a product",
+    "word": "abbey",
+    "phonetic": "/ˈæbi/",
+    "translation_fa": "صومعه / کلیسای بزرگ",
+    "definition_en": "a building used by a community of monks or nuns",
     "book": 5,
     "unit": 2
   },
   {
-    "word": "assign",
-    "phonetic": "/əˈsaɪn/",
-    "translation_fa": "واگذار کردن",
-    "definition_en": "to give someone a particular job or duty",
+    "word": "abundant",
+    "phonetic": "/əˈbʌndənt/",
+    "translation_fa": "فراوان",
+    "definition_en": "existing or available in large quantities",
     "book": 5,
     "unit": 2
   },
   {
-    "word": "concede",
-    "phonetic": "/kənˈsiːd/",
-    "translation_fa": "اذعان داشتن",
-    "definition_en": "to admit that something is true after first denying it",
+    "word": "adjoin",
+    "phonetic": "/əˈdʒɔɪn/",
+    "translation_fa": "مجاورت داشتن / متصل بودن",
+    "definition_en": "to be next to or joined with something",
     "book": 5,
     "unit": 2
   },
   {
-    "word": "decay",
-    "phonetic": "/dɪˈkeɪ/",
-    "translation_fa": "پوسیدگی",
-    "definition_en": "the process or result of being destroyed by natural causes",
+    "word": "ample",
+    "phonetic": "/ˈæmpl/",
+    "translation_fa": "بسیار / کافی و بیش از حد نیاز",
+    "definition_en": "enough or more than enough; plentiful",
     "book": 5,
     "unit": 2
   },
   {
-    "word": "fitful",
-    "phonetic": "/ˈfɪtfʊl/",
-    "translation_fa": "ناپیوسته و گسسته",
-    "definition_en": "not regular or continuous; happening in short periods",
+    "word": "arid",
+    "phonetic": "/ˈærɪd/",
+    "translation_fa": "خشک و بی‌آب",
+    "definition_en": "having little or no rain; too dry or barren to support vegetation",
     "book": 5,
     "unit": 2
   },
   {
-    "word": "hospitable",
-    "phonetic": "/hɒsˈpɪtəbl/",
-    "translation_fa": "مهمان‌نواز",
-    "definition_en": "friendly and welcoming to guests or strangers",
+    "word": "cathedral",
+    "phonetic": "/kəˈθiːdrəl/",
+    "translation_fa": "کلیسای جامع",
+    "definition_en": "the principal church of a diocese",
     "book": 5,
     "unit": 2
   },
   {
-    "word": "incline",
-    "phonetic": "/ɪnˈklaɪn/",
-    "translation_fa": "تمایل داشتن",
-    "definition_en": "to feel willing or favorably disposed toward something",
+    "word": "deprive",
+    "phonetic": "/dɪˈpraɪv/",
+    "translation_fa": "محروم کردن",
+    "definition_en": "to deny someone the possession or use of something",
     "book": 5,
     "unit": 2
   },
   {
-    "word": "justice",
-    "phonetic": "/ˈdʒʌstɪs/",
-    "translation_fa": "عدالت",
-    "definition_en": "fair treatment or behavior",
+    "word": "drought",
+    "phonetic": "/draʊt/",
+    "translation_fa": "خشکسالی",
+    "definition_en": "a long period of abnormally low rainfall",
     "book": 5,
     "unit": 2
   },
   {
-    "word": "naughty",
-    "phonetic": "/ˈnɔːti/",
-    "translation_fa": "شیطون و بدرفتار",
-    "definition_en": "badly behaved or disobedient",
+    "word": "eligible",
+    "phonetic": "/ˈelɪdʒəbl/",
+    "translation_fa": "واجد شرایط",
+    "definition_en": "having the right to do or obtain something",
     "book": 5,
     "unit": 2
   },
   {
-    "word": "perceive",
-    "phonetic": "/pərˈsiːv/",
-    "translation_fa": "درک کردن",
-    "definition_en": "to become aware or conscious of something",
+    "word": "fast",
+    "phonetic": "/fɑːst/",
+    "translation_fa": "روزه گرفتن",
+    "definition_en": "to abstain from all or some kinds of food or drink",
     "book": 5,
     "unit": 2
   },
   {
-    "word": "refuge",
-    "phonetic": "/ˈrɛfjuːdʒ/",
-    "translation_fa": "پناهگاه",
-    "definition_en": "a place of safety or shelter",
+    "word": "speculate",
+    "phonetic": "/ˈspekjuleɪt/",
+    "translation_fa": "حدس زدن / گمانه‌زنی کردن",
+    "definition_en": "to form a theory or conjecture about a subject without firm evidence",
     "book": 5,
     "unit": 2
   },
   {
-    "word": "restore",
-    "phonetic": "/rɪˈstɔːr/",
-    "translation_fa": "بازسازی کردن",
-    "definition_en": "to bring back to a former condition or state",
-    "book": 5,
-    "unit": 2
-  },
-  {
-    "word": "scarcity",
-    "phonetic": "/ˈskɛərsəti/",
-    "translation_fa": "کمیابی",
-    "definition_en": "a situation in which something is not easy to find or get",
-    "book": 5,
-    "unit": 2
-  },
-  {
-    "word": "stock",
-    "phonetic": "/stɒk/",
-    "translation_fa": "موجودی کالا",
-    "definition_en": "a supply of something available for use",
-    "book": 5,
-    "unit": 2
-  },
-  {
-    "word": "substance",
-    "phonetic": "/ˈsʌbstəns/",
-    "translation_fa": "ماده",
-    "definition_en": "a particular kind of matter with uniform properties",
-    "book": 5,
-    "unit": 2
-  },
-  {
-    "word": "benevolent",
-    "phonetic": "/bəˈnɛvələnt/",
-    "translation_fa": "خیرخواه",
-    "definition_en": "kind and helpful",
+    "word": "analytic",
+    "phonetic": "/ˌænəˈlɪtɪk/",
+    "translation_fa": "تحلیلی",
+    "definition_en": "relating to or using analysis or logical reasoning",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "clamor",
-    "phonetic": "/ˈklæmər/",
-    "translation_fa": "همهمه و جنجال",
-    "definition_en": "a loud demand or complaint by a lot of people",
+    "word": "assert",
+    "phonetic": "/əˈsɜːt/",
+    "translation_fa": "ادعا کردن / پافشاری کردن",
+    "definition_en": "to state a fact or belief confidently and forcefully",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "decisive",
-    "phonetic": "/dɪˈsaɪsɪv/",
-    "translation_fa": "قاطع",
-    "definition_en": "able to make decisions quickly and confidently",
+    "word": "bachelor",
+    "phonetic": "/ˈbætʃələr/",
+    "translation_fa": "مرد مجرد / مدرک لیسانس",
+    "definition_en": "an unmarried man or a person with a first university degree",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "discretion",
-    "phonetic": "/dɪˈskrɛʃən/",
-    "translation_fa": "ملاحظه‌کاری و احتیاط",
-    "definition_en": "the quality of behaving in a way that avoids causing offense or revealing secrets",
+    "word": "cohesive",
+    "phonetic": "/kəʊˈhiːsɪv/",
+    "translation_fa": "منسجم / همبسته",
+    "definition_en": "characterized by or causing cohesion; sticking together",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "enforce",
-    "phonetic": "/ɪnˈfɔːrs/",
-    "translation_fa": "اجرا کردن (قانون)",
-    "definition_en": "to make people obey a rule or law",
+    "word": "confirm",
+    "phonetic": "/kənˈfɜːm/",
+    "translation_fa": "تأیید کردن",
+    "definition_en": "to establish the truth or correctness of something",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "intimidate",
-    "phonetic": "/ɪnˈtɪmɪdeɪt/",
-    "translation_fa": "ترساندن",
-    "definition_en": "to frighten or threaten someone",
+    "word": "electromagnetic",
+    "phonetic": "/ɪˌlektroʊmæɡˈnetɪk/",
+    "translation_fa": "الکترومغناطیسی",
+    "definition_en": "relating to electric and magnetic fields",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "sovereign",
-    "phonetic": "/ˈsɒvrɪn/",
-    "translation_fa": "فرمانروا / مستقل",
-    "definition_en": "a king or queen; or having supreme power",
+    "word": "institute",
+    "phonetic": "/ˈɪnstɪtjuːt/",
+    "translation_fa": "مؤسسه / تأسیس کردن",
+    "definition_en": "an organization founded for a particular purpose or to introduce something",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "treason",
-    "phonetic": "/ˈtriːzn/",
-    "translation_fa": "خیانت به کشور",
-    "definition_en": "the crime of helping your country's enemies",
+    "word": "intellect",
+    "phonetic": "/ˈɪntəlekt/",
+    "translation_fa": "هوش / خرد",
+    "definition_en": "the faculty of reasoning and understanding objectively",
     "book": 5,
     "unit": 3
+  },
+  {
+    "word": "keen",
+    "phonetic": "/kiːn/",
+    "translation_fa": "مشتاق / تیز و دقیق",
+    "definition_en": "having or showing eagerness or enthusiasm",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "asset",
+    "phonetic": "/ˈæset/",
+    "translation_fa": "دارایی / سرمایه",
+    "definition_en": "a useful or valuable quality, person, or thing",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "aspect",
+    "phonetic": "/ˈæspekt/",
+    "translation_fa": "جنبه / بعد",
+    "definition_en": "a particular feature or phase of a subject",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "commemorate",
+    "phonetic": "/kəˈmeməreɪt/",
+    "translation_fa": "گرامی داشتن (یادبود)",
+    "definition_en": "to recall and show respect for someone or something",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "alter",
+    "phonetic": "/ˈɔːltər/",
+    "translation_fa": "تغییر دادن",
+    "definition_en": "to make or become different",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "blend",
+    "phonetic": "/blend/",
+    "translation_fa": "مخلوط کردن / ترکیب",
+    "definition_en": "to mix different substances together",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "collapse",
+    "phonetic": "/kəˈlæps/",
+    "translation_fa": "فروپاشی / فروریختن",
+    "definition_en": "to fall down or in suddenly",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "accommodate",
+    "phonetic": "/əˈkɒmədeɪt/",
+    "translation_fa": "اسکان دادن / جا دادن",
+    "definition_en": "to provide lodging or sufficient space for",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "applaud",
+    "phonetic": "/əˈplɔːd/",
+    "translation_fa": "تشویق کردن / دست زدن",
+    "definition_en": "to show approval or praise by clapping",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "aptitude",
+    "phonetic": "/ˈæptɪtjuːd/",
+    "translation_fa": "استعداد / شایستگی",
+    "definition_en": "a natural ability to do something",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "compliment",
+    "phonetic": "/ˈkɒmplɪmənt/",
+    "translation_fa": "تمجید / تعریف کردن",
+    "definition_en": "a polite expression of praise or admiration",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "condemn",
+    "phonetic": "/kənˈdem/",
+    "translation_fa": "محکوم کردن",
+    "definition_en": "to express complete disapproval of",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "diverse",
+    "phonetic": "/daɪˈvɜːs/",
+    "translation_fa": "متنوع / گوناگون",
+    "definition_en": "showing a great deal of variety; very different",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "elaborate",
+    "phonetic": "/ɪˈlæbərət/",
+    "translation_fa": "پیچیده / با جزئیات کامل",
+    "definition_en": "involving many carefully arranged parts or details",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "enhance",
+    "phonetic": "/ɪnˈhɑːns/",
+    "translation_fa": "بهبود بخشیدن / ارتقا دادن",
+    "definition_en": "to intensify, increase, or further improve the quality of",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "facilitate",
+    "phonetic": "/fəˈsɪlɪteɪt/",
+    "translation_fa": "تسهیل کردن / آسان ساختن",
+    "definition_en": "to make an action or process easy or easier",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "fluctuate",
+    "phonetic": "/ˈflʌktʃueɪt/",
+    "translation_fa": "نوسان داشتن",
+    "definition_en": "to rise and fall irregularly in number or amount",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "foster",
+    "phonetic": "/ˈfɒstər/",
+    "translation_fa": "پرورش دادن / تشویق کردن",
+    "definition_en": "to encourage or promote the development of something",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "hierarchy",
+    "phonetic": "/ˈhaɪərɑːki/",
+    "translation_fa": "سلسله‌مراتب",
+    "definition_en": "a system in which members of an organization are ranked according to status",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "hypothesis",
+    "phonetic": "/haɪˈpɒθəsɪs/",
+    "translation_fa": "فرضیه",
+    "definition_en": "a proposed explanation made on the basis of limited evidence",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "illuminate",
+    "phonetic": "/ɪˈluːmɪneɪt/",
+    "translation_fa": "روشن کردن / تبیین کردن",
+    "definition_en": "to make lighter or brighter; to clarify",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "implicit",
+    "phonetic": "/ɪmˈplɪsɪt/",
+    "translation_fa": "ضمنی / غیرمستقیم",
+    "definition_en": "implied though not plainly expressed",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "incentive",
+    "phonetic": "/ɪnˈsentɪv/",
+    "translation_fa": "انگیزه / پاداش تشویقی",
+    "definition_en": "a thing that motivates or encourages someone to do something",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "inevitable",
+    "phonetic": "/ɪnˈevɪtəbl/",
+    "translation_fa": "اجتناب‌ناپذیر",
+    "definition_en": "certain to happen; unavoidable",
+    "book": 5,
+    "unit": 14
+  },
+  {
+    "word": "inherent",
+    "phonetic": "/ɪnˈhɪərənt/",
+    "translation_fa": "ذاتی / همراستا",
+    "definition_en": "existing in something as a permanent, essential quality",
+    "book": 5,
+    "unit": 14
+  },
+  {
+    "word": "integrate",
+    "phonetic": "/ˈɪntɪɡreɪt/",
+    "translation_fa": "ادغام کردن / یکپارچه ساختن",
+    "definition_en": "to combine one thing with another so that they become a whole",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "justify",
+    "phonetic": "/ˈdʒʌstɪfaɪ/",
+    "translation_fa": "توجیه کردن",
+    "definition_en": "to show or prove to be right or reasonable",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "manipulate",
+    "phonetic": "/məˈnɪpjuleɪt/",
+    "translation_fa": "دستکاری کردن",
+    "definition_en": "to handle or control something in a skillful or devious manner",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "marginal",
+    "phonetic": "/ˈmɑːdʒɪnl/",
+    "translation_fa": "حاشیه‌ای / اندک",
+    "definition_en": "relating to or at the edge or margin; minimal",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "notion",
+    "phonetic": "/ˈnəʊʃn/",
+    "translation_fa": "مفهوم / باور",
+    "definition_en": "a conception of or belief about something",
+    "book": 5,
+    "unit": 17
+  },
+  {
+    "word": "objective",
+    "phonetic": "/əbˈdʒektɪv/",
+    "translation_fa": "هدف / بی‌طرفانه",
+    "definition_en": "a goal or target; not influenced by personal feelings",
+    "book": 5,
+    "unit": 17
+  },
+  {
+    "word": "paradigm",
+    "phonetic": "/ˈpærədaɪm/",
+    "translation_fa": "الگو / نمونه الگو",
+    "definition_en": "a typical example or pattern of something; a model",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "plausible",
+    "phonetic": "/ˈplɔːzəbl/",
+    "translation_fa": "باورکردنی / معقول",
+    "definition_en": "seeming reasonable or probable",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "prevalent",
+    "phonetic": "/ˈprevələnt/",
+    "translation_fa": "رایج / شایع",
+    "definition_en": "widespread in a particular area or at a particular time",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "profound",
+    "phonetic": "/prəˈfaʊnd/",
+    "translation_fa": "عمیق / ژرف",
+    "definition_en": "very great or intense; having deep insight",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "quantify",
+    "phonetic": "/ˈkwɒntɪfaɪ/",
+    "translation_fa": "کمی‌سازی کردن / اندازه‌گیری کردن",
+    "definition_en": "to express or measure the quantity of",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "refine",
+    "phonetic": "/rɪˈfaɪn/",
+    "translation_fa": "بهبود دادن / پالایش کردن",
+    "definition_en": "to improve something by making small changes",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "reinforce",
+    "phonetic": "/ˌriːɪnˈfɔːs/",
+    "translation_fa": "تقویت کردن",
+    "definition_en": "to strengthen or support an object or idea",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "reluctant",
+    "phonetic": "/rɪˈlʌktənt/",
+    "translation_fa": "بی‌میل / ناخواستار",
+    "definition_en": "unwilling and hesitant; disinclined",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "scrutiny",
+    "phonetic": "/ˈskruːtəni/",
+    "translation_fa": "بررسی دقیق / موشکافی",
+    "definition_en": "critical observation or examination",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "sequential",
+    "phonetic": "/sɪˈkwenʃl/",
+    "translation_fa": "ترتیبی / پیاپی",
+    "definition_en": "forming or following in a logical order or sequence",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "subsequent",
+    "phonetic": "/ˈsʌbsɪkwənt/",
+    "translation_fa": "بعدی / متعاقب",
+    "definition_en": "coming after something in time; following",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "substantial",
+    "phonetic": "/səbˈstænʃl/",
+    "translation_fa": "قابل توجه / بزرگ",
+    "definition_en": "of considerable importance, size, or value",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "subtle",
+    "phonetic": "/ˈsʌtl/",
+    "translation_fa": "ظریف / نامحسوس",
+    "definition_en": "so delicate or precise as to be difficult to analyze or describe",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "tangible",
+    "phonetic": "/ˈtændʒəbl/",
+    "translation_fa": "ملموس / واقعی",
+    "definition_en": "perceptible by touch; clear and definite",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "tentative",
+    "phonetic": "/ˈtentətɪv/",
+    "translation_fa": "آزمایشی / غیرقطعی",
+    "definition_en": "not certain or fixed; provisional",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "terminate",
+    "phonetic": "/ˈtɜːmɪneɪt/",
+    "translation_fa": "خاتمه دادن",
+    "definition_en": "to bring to an end",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "unify",
+    "phonetic": "/ˈjuːnɪfaɪ/",
+    "translation_fa": "متحد کردن / یکپارچه کردن",
+    "definition_en": "to make or become united, uniform, or whole",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "utilize",
+    "phonetic": "/ˈjuːtəlaɪz/",
+    "translation_fa": "استفاده کردن / به کار گرفتن",
+    "definition_en": "to make practical and effective use of",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "validate",
+    "phonetic": "/ˈvælɪdeɪt/",
+    "translation_fa": "اعتبارسنجی کردن / تأیید کردن",
+    "definition_en": "to check or prove the validity or accuracy of",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "versatile",
+    "phonetic": "/ˈvɜːsətaɪl/",
+    "translation_fa": "همه‌کاره / چندبعدی",
+    "definition_en": "able to adapt or be adapted to many different functions or activities",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "viable",
+    "phonetic": "/ˈvaɪəbl/",
+    "translation_fa": "قابل اجرا / زیست‌پذیر",
+    "definition_en": "capable of working successfully; feasible",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "virtual",
+    "phonetic": "/ˈvɜːtʃuəl/",
+    "translation_fa": "مجازی / تقریباً واقعی",
+    "definition_en": "almost or nearly as described, or created by software",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "vulnerable",
+    "phonetic": "/ˈvʌlnərəbl/",
+    "translation_fa": "آسیب‌پذیر",
+    "definition_en": "exposed to the possibility of being attacked or harmed",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "warrant",
+    "phonetic": "/ˈwɒrənt/",
+    "translation_fa": "توجیه کردن / حکم قانونی",
+    "definition_en": "to justify or necessitate an action; an official authorization",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "yield",
+    "phonetic": "/jiːld/",
+    "translation_fa": "بازده داشتن / تسلیم شدن",
+    "definition_en": "to produce or provide a result or result in surrender",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "zeal",
+    "phonetic": "/ziːl/",
+    "translation_fa": "اشتیاق شدید / غیرت",
+    "definition_en": "great energy or enthusiasm in pursuit of a cause or an objective",
+    "book": 5,
+    "unit": 30
   }
 ]
