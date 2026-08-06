@@ -1,8 +1,8 @@
 [
   {
     "word": "allot",
-    "phonetic": "/əˈlɒt/",
-    "translation_fa": "تخصیص دادن",
+    "phonetic": "/əˈlɑːt/",
+    "translation_fa": "اختصاص دادن / سهم دادن",
     "definition_en": "to give something to someone as a share or task",
     "book": 5,
     "unit": 1
@@ -10,7 +10,7 @@
   {
     "word": "appall",
     "phonetic": "/əˈpɔːl/",
-    "translation_fa": "وحشت‌زده کردن",
+    "translation_fa": "شوکه کردن / وحشت‌زده کردن",
     "definition_en": "to shock or offend someone greatly",
     "book": 5,
     "unit": 1
@@ -18,8 +18,8 @@
   {
     "word": "cache",
     "phonetic": "/kæʃ/",
-    "translation_fa": "مخفیگاه / حافظه پنهان",
-    "definition_en": "a hiding place for stored things",
+    "translation_fa": "محل اختفا / انبار پنهانی",
+    "definition_en": "a hiding place for storing valuable items or supplies",
     "book": 5,
     "unit": 1
   },
@@ -27,15 +27,15 @@
     "word": "convenience",
     "phonetic": "/kənˈviːniəns/",
     "translation_fa": "راحتی / سهولت",
-    "definition_en": "the state of being suitable or easy to use",
+    "definition_en": "the state of being able to proceed without difficulty",
     "book": 5,
     "unit": 1
   },
   {
     "word": "dearth",
-    "phonetic": "/dɜːθ/",
-    "translation_fa": "کمبود / کمندانی",
-    "definition_en": "a lack or scarcity of something",
+    "phonetic": "/dɜːrθ/",
+    "translation_fa": "کمبود / کمیابی",
+    "definition_en": "a scarcity or lack of something",
     "book": 5,
     "unit": 1
   },
@@ -50,15 +50,15 @@
   {
     "word": "dire",
     "phonetic": "/ˈdaɪər/",
-    "translation_fa": "وخیم / اضطراری",
-    "definition_en": "very serious or terrible",
+    "translation_fa": "وخیم / شدید",
+    "definition_en": "extremely serious or urgent",
     "book": 5,
     "unit": 1
   },
   {
     "word": "elapse",
     "phonetic": "/ɪˈlæps/",
-    "translation_fa": "سپری شدن (زمان)",
+    "translation_fa": "سپری شدن / گذشتن زمان",
     "definition_en": "to pass or go by (of time)",
     "book": 5,
     "unit": 1
@@ -66,15 +66,31 @@
   {
     "word": "empathy",
     "phonetic": "/ˈempəθi/",
-    "translation_fa": "همدلی",
-    "definition_en": "the ability to understand and share feelings of another",
+    "translation_fa": "همدردی / درک متقابل",
+    "definition_en": "the ability to understand and share the feelings of another",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "fanciful",
+    "phonetic": "/ˈfænsɪfl/",
+    "translation_fa": "خیالی / غیرواقعی",
+    "definition_en": "over-imaginative and unrealistic",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "gripe",
+    "phonetic": "/ɡraɪp/",
+    "translation_fa": "شکایت کردن / غر زدن",
+    "definition_en": "to express a complaint about something trivial",
     "book": 5,
     "unit": 1
   },
   {
     "word": "grueling",
     "phonetic": "/ˈɡruːəlɪŋ/",
-    "translation_fa": "خسته‌کننده و طاقت‌فرسا",
+    "translation_fa": "طاقت‌فرسا / بسیار سخت",
     "definition_en": "extremely tiring and demanding",
     "book": 5,
     "unit": 1
@@ -82,15 +98,15 @@
   {
     "word": "mundane",
     "phonetic": "/mʌnˈdeɪn/",
-    "translation_fa": "دنیوی / معمولی و خسته‌کننده",
+    "translation_fa": "معمولی / روزمره",
     "definition_en": "lacking interest or excitement; dull",
     "book": 5,
     "unit": 1
   },
   {
     "word": "opt",
-    "phonetic": "/ɒpt/",
-    "translation_fa": "انتخاب کردن",
+    "phonetic": "/ɑːpt/",
+    "translation_fa": "انتخاب کردن / ترجیح دادن",
     "definition_en": "to make a choice from a range of possibilities",
     "book": 5,
     "unit": 1
@@ -98,7 +114,7 @@
   {
     "word": "outrage",
     "phonetic": "/ˈaʊtreɪdʒ/",
-    "translation_fa": "خشم شدید",
+    "translation_fa": "خشم شدید / انزجار",
     "definition_en": "an extremely strong reaction of anger or shock",
     "book": 5,
     "unit": 1
@@ -106,39 +122,39 @@
   {
     "word": "paltry",
     "phonetic": "/ˈpɔːltri/",
-    "translation_fa": "ناچیز / ناچیز و بی‌ارزش",
-    "definition_en": "small or meager in amount",
+    "translation_fa": "ناچیز / حقیر",
+    "definition_en": "a small or meager amount",
     "book": 5,
     "unit": 1
   },
   {
     "word": "rectify",
     "phonetic": "/ˈrektɪfaɪ/",
-    "translation_fa": "اصلاح کردن",
-    "definition_en": "to put something right; to correct",
+    "translation_fa": "اصلاح کردن / جبران کردن",
+    "definition_en": "to put right or correct a situation",
     "book": 5,
     "unit": 1
   },
   {
-    "word": "resourceful",
-    "phonetic": "/rɪˈzɔːsfl/",
-    "translation_fa": "کاردان / مدبر",
-    "definition_en": "having the ability to find quick and clever ways to overcome difficulties",
+    "word": "resourcefulness",
+    "phonetic": "/rɪˈsɔːrsfəlnəs/",
+    "translation_fa": "تدبیر / مبتکر بودن",
+    "definition_en": "the ability to find quick and clever ways to overcome difficulties",
     "book": 5,
     "unit": 1
   },
   {
     "word": "sustenance",
     "phonetic": "/ˈsʌstənəns/",
-    "translation_fa": "تغذیه / مایحتاج زندگی",
-    "definition_en": "food and drink regarded as a source of strength; nourishment",
+    "translation_fa": "غذا / تغذیه",
+    "definition_en": "food and drink regarded as a source of strength or nourishment",
     "book": 5,
     "unit": 1
   },
   {
     "word": "tedious",
     "phonetic": "/ˈtiːdiəs/",
-    "translation_fa": "کسل‌کننده",
+    "translation_fa": "خسته‌کننده / ملال‌آور",
     "definition_en": "too long, slow, or dull; tiresome",
     "book": 5,
     "unit": 1
@@ -147,14 +163,14 @@
     "word": "abbey",
     "phonetic": "/ˈæbi/",
     "translation_fa": "صومعه / کلیسای بزرگ",
-    "definition_en": "a building used by a community of monks or nuns",
+    "definition_en": "a building occupied by a community of monks or nuns",
     "book": 5,
     "unit": 2
   },
   {
     "word": "abundant",
     "phonetic": "/əˈbʌndənt/",
-    "translation_fa": "فراوان",
+    "translation_fa": "فراوان / وافر",
     "definition_en": "existing or available in large quantities",
     "book": 5,
     "unit": 2
@@ -162,15 +178,15 @@
   {
     "word": "adjoin",
     "phonetic": "/əˈdʒɔɪn/",
-    "translation_fa": "مجاورت داشتن / متصل بودن",
-    "definition_en": "to be next to or joined with something",
+    "translation_fa": "مجاور بودن / هم‌مرز بودن",
+    "definition_en": "to be next to and joined with a place or building",
     "book": 5,
     "unit": 2
   },
   {
     "word": "ample",
     "phonetic": "/ˈæmpl/",
-    "translation_fa": "بسیار / کافی و بیش از حد نیاز",
+    "translation_fa": "کافی / بیش از حد نیاز",
     "definition_en": "enough or more than enough; plentiful",
     "book": 5,
     "unit": 2
@@ -178,48 +194,104 @@
   {
     "word": "arid",
     "phonetic": "/ˈærɪd/",
-    "translation_fa": "خشک و بی‌آب",
+    "translation_fa": "خشک / بی‌اب-و-علل",
     "definition_en": "having little or no rain; too dry or barren to support vegetation",
-    "book": 5,
-    "unit": 2
-  },
-  {
-    "word": "cathedral",
-    "phonetic": "/kəˈθiːdrəl/",
-    "translation_fa": "کلیسای جامع",
-    "definition_en": "the principal church of a diocese",
-    "book": 5,
-    "unit": 2
-  },
-  {
-    "word": "deprive",
-    "phonetic": "/dɪˈpraɪv/",
-    "translation_fa": "محروم کردن",
-    "definition_en": "to deny someone the possession or use of something",
     "book": 5,
     "unit": 2
   },
   {
     "word": "drought",
     "phonetic": "/draʊt/",
-    "translation_fa": "خشکسالی",
-    "definition_en": "a long period of abnormally low rainfall",
+    "translation_fa": "خشکسالی / کم‌آبی",
+    "definition_en": "a prolonged period of abnormally low rainfall leading to a shortage of water",
     "book": 5,
     "unit": 2
   },
   {
     "word": "eligible",
     "phonetic": "/ˈelɪdʒəbl/",
-    "translation_fa": "واجد شرایط",
-    "definition_en": "having the right to do or obtain something",
+    "translation_fa": "واجد شرایط / شایسته",
+    "definition_en": "having the right to do or obtain something through satisfying conditions",
     "book": 5,
     "unit": 2
   },
   {
     "word": "fast",
-    "phonetic": "/fɑːst/",
-    "translation_fa": "روزه گرفتن",
-    "definition_en": "to abstain from all or some kinds of food or drink",
+    "phonetic": "/fæst/",
+    "translation_fa": "روزه گرفتن / امساک کردن",
+    "definition_en": "to abstain from all or certain kinds of food or drink",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "grumble",
+    "phonetic": "/ˈɡrʌmbl/",
+    "translation_fa": "غر زدن / گله کردن",
+    "definition_en": "to complain about something in a bad-tempered way",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "inland",
+    "phonetic": "/ˈɪnlænd/",
+    "translation_fa": "بخش‌های داخلی کشور / دور از دریا",
+    "definition_en": "situated in the interior of a country rather than on the coast",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "moisture",
+    "phonetic": "/ˈmɔɪstʃər/",
+    "translation_fa": "رطوبت / نم",
+    "definition_en": "water or other liquid diffused as a vapor or small drops",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "nonetheless",
+    "phonetic": "/ˌnʌnðəˈles/",
+    "translation_fa": "با این حال / مع‌الوصف",
+    "definition_en": "in spite of that; nevertheless",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "oath",
+    "phonetic": "/oʊθ/",
+    "translation_fa": "سوگند / قسم",
+    "definition_en": "a solemn promise, often invoking a divine witness",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "prairie",
+    "phonetic": "/ˈpreri/",
+    "translation_fa": "دشت / چمنزار بزرگ",
+    "definition_en": "a large open area of grassland",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "ragged",
+    "phonetic": "/ˈræɡɪd/",
+    "translation_fa": "ژنده / کهنه و پاره",
+    "definition_en": "worn or torn into rags; rough and uneven",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "rugged",
+    "phonetic": "/ˈrʌɡɪd/",
+    "translation_fa": "ناهموار / سخت و محکم",
+    "definition_en": "having a broken, rocky, and uneven surface",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "scarce",
+    "phonetic": "/skers/",
+    "translation_fa": "کمیاب / نادیافت",
+    "definition_en": "insufficient for the demand; hard to find",
     "book": 5,
     "unit": 2
   },
@@ -234,14 +306,14 @@
   {
     "word": "analytic",
     "phonetic": "/ˌænəˈlɪtɪk/",
-    "translation_fa": "تحلیلی",
+    "translation_fa": "تحلیلی / منطقی",
     "definition_en": "relating to or using analysis or logical reasoning",
     "book": 5,
     "unit": 3
   },
   {
     "word": "assert",
-    "phonetic": "/əˈsɜːt/",
+    "phonetic": "/əˈsɜːrt/",
     "translation_fa": "ادعا کردن / پافشاری کردن",
     "definition_en": "to state a fact or belief confidently and forcefully",
     "book": 5,
@@ -250,47 +322,87 @@
   {
     "word": "bachelor",
     "phonetic": "/ˈbætʃələr/",
-    "translation_fa": "مرد مجرد / مدرک لیسانس",
-    "definition_en": "an unmarried man or a person with a first university degree",
+    "translation_fa": "مرد مجرد / دارنده مدرک لیسانس",
+    "definition_en": "a man who is not and has never been married",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "cohesive",
-    "phonetic": "/kəʊˈhiːsɪv/",
-    "translation_fa": "منسجم / همبسته",
-    "definition_en": "characterized by or causing cohesion; sticking together",
+    "word": "calculus",
+    "phonetic": "/ˈkælkjələs/",
+    "translation_fa": "حساب دیفرانسیل و انتگرال",
+    "definition_en": "a particular branch of mathematics that deals with rates of change",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "confirm",
-    "phonetic": "/kənˈfɜːm/",
-    "translation_fa": "تأیید کردن",
-    "definition_en": "to establish the truth or correctness of something",
+    "word": "celestial",
+    "phonetic": "/səˈlestʃl/",
+    "translation_fa": "آسمانی / فلکی",
+    "definition_en": "positioned in or relating to the sky, or outer space",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "electromagnetic",
-    "phonetic": "/ɪˌlektroʊmæɡˈnetɪk/",
-    "translation_fa": "الکترومغناطیسی",
-    "definition_en": "relating to electric and magnetic fields",
+    "word": "cognitive",
+    "phonetic": "/ˈkɑːɡnətɪv/",
+    "translation_fa": "شناختی / ذهنی",
+    "definition_en": "relating to cognition, mental processes of perception and judgment",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "institute",
-    "phonetic": "/ˈɪnstɪtjuːt/",
-    "translation_fa": "مؤسسه / تأسیس کردن",
-    "definition_en": "an organization founded for a particular purpose or to introduce something",
+    "word": "collision",
+    "phonetic": "/kəˈlɪʒn/",
+    "translation_fa": "برخورد / تصادف",
+    "definition_en": "an instance of one moving object striking violently against another",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "competent",
+    "phonetic": "/ˈkɑːmpətənt/",
+    "translation_fa": "دارای صلاحیت / ماهر",
+    "definition_en": "having the necessary ability, knowledge, or skill to do something successfully",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "diploma",
+    "phonetic": "/dɪˈploʊmə/",
+    "translation_fa": "مدرک تحصیلی / دیپلم",
+    "definition_en": "a certificate awarded by an educational institution to show completion of a course",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "excel",
+    "phonetic": "/ɪkˈsel/",
+    "translation_fa": "درخشان بودن / برتر بودن",
+    "definition_en": "to be exceptionally good at or proficient in an activity",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "geology",
+    "phonetic": "/dʒiˈɑːlədʒi/",
+    "translation_fa": "زمین‌شناسی",
+    "definition_en": "the science that deals with the earth's physical structure and substance",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "harness",
+    "phonetic": "/ˈhɑːrnɪs/",
+    "translation_fa": "مهار کردن / به کار گرفتن",
+    "definition_en": "to control and make use of natural resources or power",
     "book": 5,
     "unit": 3
   },
   {
     "word": "intellect",
     "phonetic": "/ˈɪntəlekt/",
-    "translation_fa": "هوش / خرد",
+    "translation_fa": "هوش / استعداد ذهنی",
     "definition_en": "the faculty of reasoning and understanding objectively",
     "book": 5,
     "unit": 3
@@ -298,330 +410,2274 @@
   {
     "word": "keen",
     "phonetic": "/kiːn/",
-    "translation_fa": "مشتاق / تیز و دقیق",
-    "definition_en": "having or showing eagerness or enthusiasm",
+    "translation_fa": "تیزبین / مشتاق",
+    "definition_en": "having or showing eagerness, enthusiasm, or sharp perception",
     "book": 5,
     "unit": 3
   },
   {
-    "word": "asset",
-    "phonetic": "/ˈæset/",
-    "translation_fa": "دارایی / سرمایه",
-    "definition_en": "a useful or valuable quality, person, or thing",
+    "word": "mythology",
+    "phonetic": "/mɪˈθɑːlədʒi/",
+    "translation_fa": "اسطوره‌شناسی / افسانه‌ها",
+    "definition_en": "a collection of myths, especially one belonging to a particular religious or cultural tradition",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "physiology",
+    "phonetic": "/ˌfɪziˈɑːlədʒi/",
+    "translation_fa": "فیزیولوژی / وظایف اعضای بدن",
+    "definition_en": "the branch of biology that deals with the normal functions of living organisms",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "radioactive",
+    "phonetic": "/ˌreɪdioʊˈæktɪv/",
+    "translation_fa": "رادیواکتیو / پرتوپا",
+    "definition_en": "emitting or relating to the emission of ionizing radiation or particles",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "relativity",
+    "phonetic": "/ˌreləˈtɪvəti/",
+    "translation_fa": "نسبیت",
+    "definition_en": "the state or quality of being dependent on or in comparison to something else",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "sociology",
+    "phonetic": "/ˌsoʊsiˈɑːlədʒi/",
+    "translation_fa": "جامعه‌شناسی",
+    "definition_en": "the study of the development, structure, and functioning of human society",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "theoretical",
+    "phonetic": "/ˌθiːəˈretɪkl/",
+    "translation_fa": "نظری / تئوریک",
+    "definition_en": "concerned with or involving the theory of a subject rather than its practical application",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "administrator",
+    "phonetic": "/ədˈmɪnɪstreɪtər/",
+    "translation_fa": "مدیر / سرپرست",
+    "definition_en": "a person responsible for running a business or organization",
     "book": 5,
     "unit": 4
   },
   {
-    "word": "aspect",
-    "phonetic": "/ˈæspekt/",
-    "translation_fa": "جنبه / بعد",
-    "definition_en": "a particular feature or phase of a subject",
+    "word": "affluent",
+    "phonetic": "/ˈæfluənt/",
+    "translation_fa": "ثروتمند / مرفه",
+    "definition_en": "having a great deal of money; wealthy",
     "book": 5,
     "unit": 4
   },
   {
-    "word": "commemorate",
-    "phonetic": "/kəˈmeməreɪt/",
-    "translation_fa": "گرامی داشتن (یادبود)",
-    "definition_en": "to recall and show respect for someone or something",
+    "word": "audit",
+    "phonetic": "/ˈɔːdɪt/",
+    "translation_fa": "حسابرسی کردن / بازرسی مالی",
+    "definition_en": "an official inspection of an individual's or organization's accounts",
     "book": 5,
     "unit": 4
   },
   {
-    "word": "alter",
+    "word": "automate",
+    "phonetic": "/ˈɔːtəmeɪt/",
+    "translation_fa": "اتوماتیک کردن / مکانیزه ساختن",
+    "definition_en": "to convert a process or facility to produce or operate automatically",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "bribe",
+    "phonetic": "/braɪb/",
+    "translation_fa": "رشوه دادن / رشوه",
+    "definition_en": "money or favor given to someone to influence their conduct dishonestly",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "corrupt",
+    "phonetic": "/kəˈrʌpt/",
+    "translation_fa": "فاسد / انحراف‌یافته",
+    "definition_en": "willing to act dishonestly in return for money or personal gain",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "dispose",
+    "phonetic": "/dɪˈspoʊz/",
+    "translation_fa": "دور انداختن / رفع کردن",
+    "definition_en": "to get rid of by throwing away or giving or selling to someone else",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "headquarters",
+    "phonetic": "/ˈhedkwɔːrtərz/",
+    "translation_fa": "دفتر مرکزی / ستاد",
+    "definition_en": "the premises serving as the center of an organization",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "incentive",
+    "phonetic": "/ɪnˈsentɪv/",
+    "translation_fa": "انگیزه / مشوق",
+    "definition_en": "a thing that motivates or encourages someone to do something",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "infrastructure",
+    "phonetic": "/ˈɪnfrəstrʌktʃər/",
+    "translation_fa": "زیرساخت / ساختار پایه",
+    "definition_en": "the basic physical structures needed for the operation of a society or enterprise",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "legislate",
+    "phonetic": "/ˈledʒɪsleɪt/",
+    "translation_fa": "قانون‌گذاری کردن",
+    "definition_en": "to make or enact laws",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "legitimate",
+    "phonetic": "/lɪˈdʒɪtɪmət/",
+    "translation_fa": "قانونی / مشروع",
+    "definition_en": "conforming to the law or to rules",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "manipulate",
+    "phonetic": "/məˈnɪpjuleɪt/",
+    "translation_fa": "دستکاری کردن / سوءاستفاده کردن",
+    "definition_en": "to handle or control skillfully, often in a deceptive way",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "merchandise",
+    "phonetic": "/ˈmɜːrtʃəndaɪs/",
+    "translation_fa": "کالا / اجناس",
+    "definition_en": "goods to be bought and sold",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "retail",
+    "phonetic": "/ˈriːteɪl/",
+    "translation_fa": "خرده‌فروشی",
+    "definition_en": "the sale of goods to the public in relatively small quantities",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "revenue",
+    "phonetic": "/ˈrevənuː/",
+    "translation_fa": "درآمد / عایدی",
+    "definition_en": "income, especially when of a company or organization",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "rubbish",
+    "phonetic": "/ˈrʌbɪʃ/",
+    "translation_fa": "زباله / آشغال",
+    "definition_en": "waste material or things that are considered useless",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "subsidy",
+    "phonetic": "/ˈsʌbsədi/",
+    "translation_fa": "یارانه / سوبسید",
+    "definition_en": "a sum of money granted by the government or a public body to assist an industry",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "transaction",
+    "phonetic": "/trænˈzækʃn/",
+    "translation_fa": "تراکنش / معامله",
+    "definition_en": "an instance of buying or selling something; a business deal",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "violate",
+    "phonetic": "/ˈvaɪəleɪt/",
+    "translation_fa": "نقض کردن / تجاوز کردن",
+    "definition_en": "to break or fail to comply with a rule or formal agreement",
+    "book": 5,
+    "unit": 4
+  },
+  {
+    "word": "assess",
+    "phonetic": "/əˈses/",
+    "translation_fa": "ارزیابی کردن / سنجیدن",
+    "definition_en": "to evaluate or estimate the nature, quality, or ability of something",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "astonish",
+    "phonetic": "/əˈstɑːnɪʃ/",
+    "translation_fa": "شگفت‌زده کردن / متحیر ساختن",
+    "definition_en": "to surprise or impress someone greatly",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "commence",
+    "phonetic": "/kəˈmens/",
+    "translation_fa": "آغاز کردن / شروع شدن",
+    "definition_en": "to begin or start",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "essence",
+    "phonetic": "/ˈesns/",
+    "translation_fa": "جوهر / ماهیت اصلی",
+    "definition_en": "the intrinsic nature or indispensable quality of something",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "extract",
+    "phonetic": "/ˈekstrækt/",
+    "translation_fa": "استخراج کردن / بیرون کشیدن",
+    "definition_en": "to remove or take out by effort or force",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "fabulous",
+    "phonetic": "/ˈfæbjələs/",
+    "translation_fa": "فوق‌العاده / شگفت‌انگیز",
+    "definition_en": "extraordinary, especially extraordinarily good",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "haste",
+    "phonetic": "/heɪst/",
+    "translation_fa": "عجله / شتاب",
+    "definition_en": "excessive speed or urgency of movement or action",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "impulse",
+    "phonetic": "/ˈɪmpʌls/",
+    "translation_fa": "انگیزه آنی / تکانه",
+    "definition_en": "a sudden strong and unreflective urge or desire to act",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "latter",
+    "phonetic": "/ˈlætər/",
+    "translation_fa": "دومی / اخیر",
+    "definition_en": "denoting the second or second mentioned of two people or things",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "molecule",
+    "phonetic": "/ˈmɑːlɪkjuːl/",
+    "translation_fa": "مولکول",
+    "definition_en": "a group of atoms bonded together, representing the smallest fundamental unit",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "ongoing",
+    "phonetic": "/ˈɑːnɡoʊɪŋ/",
+    "translation_fa": "در حال جریان / مداوم",
+    "definition_en": "continuing; still in progress",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "pharmaceutical",
+    "phonetic": "/ˌfɑːrməˈsuːtɪkl/",
+    "translation_fa": "دارویی / داروسازی",
+    "definition_en": "relating to medicinal drugs, or their preparation and sale",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "precise",
+    "phonetic": "/prɪˈsaɪs/",
+    "translation_fa": "دقیق / مشخص",
+    "definition_en": "marked by exactness and accuracy of detail",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "proximity",
+    "phonetic": "/prɑːkˈsɪməti/",
+    "translation_fa": "نزدیکی / مجاورت",
+    "definition_en": "nearness in space, time, or relationship",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "publicity",
+    "phonetic": "/pʌbˈlɪsəti/",
+    "translation_fa": "تبلیغات / جلب توجه عمومی",
+    "definition_en": "notice or attention given to someone or something by the media",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "remedy",
+    "phonetic": "/ˈremədi/",
+    "translation_fa": "درمان / راه حل",
+    "definition_en": "a medicine or treatment for a disease or injury",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "significance",
+    "phonetic": "/sɪɡˈnɪfɪkəns/",
+    "translation_fa": "اهمیت / معنا",
+    "definition_en": "the quality of being worthy of attention; importance",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "subsequent",
+    "phonetic": "/ˈsʌbsɪkwənt/",
+    "translation_fa": "متعاقب / بعدی",
+    "definition_en": "coming after something in time; following",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "synthetic",
+    "phonetic": "/sɪnˈθetɪk/",
+    "translation_fa": "مصنوعی / ترکیبی",
+    "definition_en": "made by chemical synthesis, especially to imitate a natural product",
+    "book": 5,
+    "unit": 5
+  }ز
+  {
+    "word": "terminal",
+    "phonetic": "/ˈtɜːrmɪnl/",
+    "translation_fa": "پایانی / مهلک / ترمینال",
+    "definition_en": "predicted to lead to death; forming or situated at the end",
+    "book": 5,
+    "unit": 5
+  },
+  {
+    "word": "altitude",
+    "phonetic": "/ˈæltɪtuːd/",
+    "translation_fa": "ارتفاع / بلندی از سطح دریا",
+    "definition_en": "the height of an object or point in relation to sea level or ground level",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "coastline",
+    "phonetic": "/ˈkoʊstlaɪn/",
+    "translation_fa": "خط ساحلی",
+    "definition_en": "the outline of a coast, especially with regard to its shape and appearance",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "deter",
+    "phonetic": "/dɪˈtɜːr/",
+    "translation_fa": "بازداشتن / مانع شدن",
+    "definition_en": "to discourage someone from doing something by instilling doubt or fear of consequences",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "devise",
+    "phonetic": "/dɪˈvaɪz/",
+    "translation_fa": "طراحی کردن / تدبیر کردن",
+    "definition_en": "to plan or invent a complex procedure, system, or mechanism by careful thought",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "expertise",
+    "phonetic": "/ˌekspɜːrˈtiːz/",
+    "translation_fa": "تخصص / مهارت ویژه",
+    "definition_en": "expert skill or knowledge in a particular field",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "fracture",
+    "phonetic": "/ˈfræktʃər/",
+    "translation_fa": "شکستگی / ترک‌خوردگی",
+    "definition_en": "the cracking or breaking of a hard object or material, especially a bone",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "impair",
+    "phonetic": "/ɪmˈper/",
+    "translation_fa": "تضعیف کردن / آسیب زدن",
+    "definition_en": "to weaken or damage something, especially a human faculty or function",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "implement",
+    "phonetic": "/ˈɪmplɪment/",
+    "translation_fa": "اجرا کردن / به کار بستن",
+    "definition_en": "to put a decision, plan, or agreement into effect",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "indigenous",
+    "phonetic": "/ɪnˈdɪdʒənəs/",
+    "translation_fa": "بومی / محلی",
+    "definition_en": "originating or occurring naturally in a particular place; native",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "insight",
+    "phonetic": "/ˈɪnsaɪt/",
+    "translation_fa": "بینش / درک عمیق",
+    "definition_en": "the capacity to gain an accurate and deep intuitive understanding of a person or thing",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "limb",
+    "phonetic": "/lɪm/",
+    "translation_fa": "عضو بدن (دست و پا) / شاخه درخت",
+    "definition_en": "an arm or leg of a person or four-legged animal, or a main branch of a tree",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "migraine",
+    "phonetic": "/ˈmaɪɡreɪn/",
+    "translation_fa": "میگرن / سردرد شدید دوره ای",
+    "definition_en": "a recurrent throbbing headache that typically affects one side of the head",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "optimism",
+    "phonetic": "/ˈɑːptɪmɪzəm/",
+    "translation_fa": "خوش‌بینی / امیدواری",
+    "definition_en": "hopefulness and confidence about the future or the successful outcome of something",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "peculiar",
+    "phonetic": "/pɪˈkjuːliər/",
+    "translation_fa": "عجیب / خاص",
+    "definition_en": "strange or odd; unusual",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "proficient",
+    "phonetic": "/prəˈfɪʃnt/",
+    "translation_fa": "ماهر / زبردست",
+    "definition_en": "competent or skilled in doing or using something",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "quest",
+    "phonetic": "/kwest/",
+    "translation_fa": "جستجو / تلاش برای کشف",
+    "definition_en": "a long or arduous search for something",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "ridge",
+    "phonetic": "/rɪdʒ/",
+    "translation_fa": "رشته‌کوه / خط‌الرأس",
+    "definition_en": "a long narrow hilltop, mountain range, or watershed",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "spouse",
+    "phonetic": "/spaʊs/",
+    "translation_fa": "همسر",
+    "definition_en": "a husband or wife",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "thrust",
+    "phonetic": "/θrʌst/",
+    "translation_fa": "هل دادن شدید / پرتاب کردن",
+    "definition_en": "to push something or someone suddenly or violently in a specified direction",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "tolerate",
+    "phonetic": "/ˈtɑːləreɪt/",
+    "translation_fa": "تحمل کردن / تاب آوردن",
+    "definition_en": "to allow the existence or occurrence of something without interference; endure",
+    "book": 5,
+    "unit": 6
+  },
+  {
+    "word": "aquatic",
+    "phonetic": "/əˈkwætɪk/",
+    "translation_fa": "آبی / وابسته به آب",
+    "definition_en": "relating to water; living or growing in or near water",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "biosphere",
+    "phonetic": "/ˈbaɪoʊsfɪr/",
+    "translation_fa": "زیست‌کره / بیوسفر",
+    "definition_en": "the regions of the surface, atmosphere, and hydrosphere of the earth occupied by living organisms",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "bizarre",
+    "phonetic": "/bɪˈzɑːr/",
+    "translation_fa": "عجیب و غریب / غیرعادی",
+    "definition_en": "very strange or unusual, especially so as to cause interest or amusement",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "compulsory",
+    "phonetic": "/kəmˈpʌlsəri/",
+    "translation_fa": "اجباری / الزامی",
+    "definition_en": "required by law or a rule; mandatory",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "core",
+    "phonetic": "/kɔːr/",
+    "translation_fa": "هسته / مرکز اصلی",
+    "definition_en": "the tough central part of various fruits, or the central/innermost part of something",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "curvature",
+    "phonetic": "/ˈkɜːrvətʃər/",
+    "translation_fa": "انحنا / خمیدگی",
+    "definition_en": "the fact or degree of being curved",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "diminish",
+    "phonetic": "/dɪˈmɪnɪʃ/",
+    "translation_fa": "کاهش یافتن / کم شدن",
+    "definition_en": "to make or become less",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "duration",
+    "phonetic": "/duˈreɪʃn/",
+    "translation_fa": "مدت زمان / طول بازه",
+    "definition_en": "the time during which something continues",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "exotic",
+    "phonetic": "/ɪɡˈzɑːtɪk/",
+    "translation_fa": "عجیب و غریب / خارجی",
+    "definition_en": "originating in or characteristic of a distant foreign country",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "gale",
+    "phonetic": "/ɡeɪl/",
+    "translation_fa": "تندباد / طوفان شدید",
+    "definition_en": "a very strong wind",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "inmate",
+    "phonetic": "/ˈɪnmeɪt/",
+    "translation_fa": "زندانی / بستری در بیمارستان",
+    "definition_en": "a person serving a sentence in a prison or residing in an institution",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "magnify",
+    "phonetic": "/ˈmæɡnɪfaɪ/",
+    "translation_fa": "بزرگ‌نمایی کردن / درشت کردن",
+    "definition_en": "to make something appear larger than it is, especially with a lens or microscope",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "mainstream",
+    "phonetic": "/ˈmeɪnstriːm/",
+    "translation_fa": "جریان اصلی / عامه‌پسند",
+    "definition_en": "ideas, attitudes, or activities that are regarded as normal or conventional",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "microbe",
+    "phonetic": "/ˈmaɪkroʊb/",
+    "translation_fa": "میکروب / میکروارگانیسم",
+    "definition_en": "a microorganism, especially a bacterium causing disease or fermentation",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "negligible",
+    "phonetic": "/ˈneɡlɪdʒəbl/",
+    "translation_fa": "ناچیز / قابل چشم‌پوشی",
+    "definition_en": "so small or unimportant as to be not worth considering; insignificant",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "paralysis",
+    "phonetic": "/pəˈræləsɪs/",
+    "translation_fa": "فلج / از کار افتادگی",
+    "definition_en": "the loss of the ability to move in part or most of the body",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "pestilence",
+    "phonetic": "/ˈpestɪləns/",
+    "translation_fa": "طاعون / بیماری همه‌گیر مهلک",
+    "definition_en": "a fatal epidemic disease, especially bubonic plague",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "plunge",
+    "phonetic": "/plʌndʒ/",
+    "translation_fa": "شیرجه زدن / سقوط ناگهانی",
+    "definition_en": "to jump or dive quickly and energetically",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "vulnerable",
+    "phonetic": "/ˈvʌlnərəbl/",
+    "translation_fa": "آسیب‌پذیر / حساس",
+    "definition_en": "susceptible to physical or emotional attack or harm",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "whereabouts",
+    "phonetic": "/ˈwerəbaʊts/",
+    "translation_fa": "محل اختفا / مکان تقریبی",
+    "definition_en": "the place where someone or something is",
+    "book": 5,
+    "unit": 7
+  },
+  {
+    "word": "degrade",
+    "phonetic": "/dɪˈɡreɪd/",
+    "translation_fa": "تخریب کردن / پست کردن",
+    "definition_en": "to treat or regard someone with disrespect, or break down chemically",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "gap",
+    "phonetic": "/ɡæp/",
+    "translation_fa": "شکاف / فاصله",
+    "definition_en": "a break or opening in a material or between two things",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "indisputable",
+    "phonetic": "/ˌɪndɪˈspjuːtəbl/",
+    "translation_fa": "غیرقابل انکار / قطعی",
+    "definition_en": "unable to be challenged or denied",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "intervene",
+    "phonetic": "/ˌɪntərˈviːn/",
+    "translation_fa": "مداخله کردن / وساطت کردن",
+    "definition_en": "to come between so as to prevent or alter a result or course of events",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "landmark",
+    "phonetic": "/ˈlændmɑːrk/",
+    "translation_fa": "بنای شاخص / نقطه عطف",
+    "definition_en": "an object or feature of a landscape or town that is easily seen and recognized",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "lineage",
+    "phonetic": "/ˈlɪniɪdʒ/",
+    "translation_fa": "نسب / دودمان",
+    "definition_en": "lineal descent from an ancestor; ancestry",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "majestic",
+    "phonetic": "/məˈdʒestɪk/",
+    "translation_fa": "باشکوه / باابهت",
+    "definition_en": "having or showing impressive beauty or dignity",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "myopic",
+    "phonetic": "/maɪˈɑːpɪk/",
+    "translation_fa": "کوتاه‌بین / نزدیک‌بین",
+    "definition_en": "nearsighted; lacking imagination, foresight, or intellectual insight",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "patriot",
+    "phonetic": "/ˈpeɪtriət/",
+    "translation_fa": "میهن‌پرست / وطندوست",
+    "definition_en": "a person who vigorously supports their country and is prepared to defend it",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "philanthropic",
+    "phonetic": "/ˌfɪlənˈθrɑːpɪk/",
+    "translation_fa": "بشردوستانه / خیرخواهانه",
+    "definition_en": "seeking to promote the welfare of others, especially by donating money",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "pollute",
+    "phonetic": "/pəˈluːt/",
+    "translation_fa": "آلوده کردن / مسموم ساختن",
+    "definition_en": "to contaminate water, air, or soil with harmful or poisonous substances",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "populous",
+    "phonetic": "/ˈpɑːpjələs/",
+    "translation_fa": "پرجمعیت / پرتراکم",
+    "definition_en": "having a large population; densely populated",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "progenitor",
+    "phonetic": "/proʊˈdʒenɪtər/",
+    "translation_fa": "جد / نیا / بنیان‌گذار",
+    "definition_en": "a person or thing from which a person, animal, or plant is descended; an ancestor",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "prolong",
+    "phonetic": "/prəˈlɔːŋ/",
+    "translation_fa": "طولانی کردن / کش دادن",
+    "definition_en": "to extend the duration of something",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "publicize",
+    "phonetic": "/ˈpʌblɪsaɪz/",
+    "translation_fa": "علنی کردن / تبلیغ کردن",
+    "definition_en": "to make something widely known to the public",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "surplus",
+    "phonetic": "/ˈsɜːrpləs/",
+    "translation_fa": "مازاد / اضافی",
+    "definition_en": "an amount of something left over when requirements have been met",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "survive",
+    "phonetic": "/sərˈvaɪv/",
+    "translation_fa": "زنده ماندن / جان سالم به در بردن",
+    "definition_en": "to continue to live or exist, especially in spite of danger or hardship",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "theorize",
+    "phonetic": "/ˈθiːəraɪz/",
+    "translation_fa": "نظریه‌پردازی کردن / فرضیه ساختن",
+    "definition_en": "to form a theory or theories about something",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "verify",
+    "phonetic": "/ˈverɪfaɪ/",
+    "translation_fa": "تایید کردن / راستی‌آزمایی",
+    "definition_en": "to make sure or demonstrate that something is true, accurate, or justified",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "vigorous",
+    "phonetic": "/ˈvɪɡərəs/",
+    "translation_fa": "شدید / پرانرژی و نیرومند",
+    "definition_en": "characterized by or involving physical strength, effort, or energy",
+    "book": 5,
+    "unit": 8
+  },
+  {
+    "word": "altar",
     "phonetic": "/ˈɔːltər/",
-    "translation_fa": "تغییر دادن",
-    "definition_en": "to make or become different",
+    "translation_fa": "محراب / قربانگاه",
+    "definition_en": "a raised structure on which gifts or sacrifices to a god are made",
     "book": 5,
-    "unit": 5
+    "unit": 9
   },
   {
-    "word": "blend",
-    "phonetic": "/blend/",
-    "translation_fa": "مخلوط کردن / ترکیب",
-    "definition_en": "to mix different substances together",
+    "word": "arthritis",
+    "phonetic": "/ɑːrˈθraɪtɪs/",
+    "translation_fa": "آرتروز / التهاب مفاصل",
+    "definition_en": "painful inflammation and stiffness of the joints",
     "book": 5,
-    "unit": 5
+    "unit": 9
   },
   {
-    "word": "collapse",
-    "phonetic": "/kəˈlæps/",
-    "translation_fa": "فروپاشی / فروریختن",
-    "definition_en": "to fall down or in suddenly",
+    "word": "botany",
+    "phonetic": "/ˈbɑːtəni/",
+    "translation_fa": "گیاه‌شناسی",
+    "definition_en": "the scientific study of plants",
     "book": 5,
-    "unit": 5
+    "unit": 9
   },
   {
-    "word": "accommodate",
-    "phonetic": "/əˈkɒmədeɪt/",
-    "translation_fa": "اسکان دادن / جا دادن",
-    "definition_en": "to provide lodging or sufficient space for",
+    "word": "credible",
+    "phonetic": "/ˈkredəbl/",
+    "translation_fa": "معتبر / باورکردنی",
+    "definition_en": "able to be believed; convincing",
     "book": 5,
-    "unit": 6
+    "unit": 9
   },
   {
-    "word": "applaud",
-    "phonetic": "/əˈplɔːd/",
-    "translation_fa": "تشویق کردن / دست زدن",
-    "definition_en": "to show approval or praise by clapping",
+    "word": "decease",
+    "phonetic": "/dɪˈsiːs/",
+    "translation_fa": "فوت / درگذشت",
+    "definition_en": "a person's death",
     "book": 5,
-    "unit": 6
+    "unit": 9
   },
   {
-    "word": "aptitude",
-    "phonetic": "/ˈæptɪtjuːd/",
-    "translation_fa": "استعداد / شایستگی",
-    "definition_en": "a natural ability to do something",
+    "word": "deception",
+    "phonetic": "/dɪˈsepʃn/",
+    "translation_fa": "فریب / نیرنگ",
+    "definition_en": "the action of deceiving someone or state of being deceived",
     "book": 5,
-    "unit": 7
+    "unit": 9
   },
   {
-    "word": "compliment",
-    "phonetic": "/ˈkɒmplɪmənt/",
-    "translation_fa": "تمجید / تعریف کردن",
-    "definition_en": "a polite expression of praise or admiration",
+    "word": "decipher",
+    "phonetic": "/dɪˈsaɪfər/",
+    "translation_fa": "رمزگشایی کردن / کشف رمز",
+    "definition_en": "to succeed in understanding, interpreting, or reading something complex",
     "book": 5,
-    "unit": 7
+    "unit": 9
+  },
+  {
+    "word": "dung",
+    "phonetic": "/dʌŋ/",
+    "translation_fa": "پهن / کود حیوانی",
+    "definition_en": "the excrement of animals, especially large herbivores",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "dusk",
+    "phonetic": "/dʌsk/",
+    "translation_fa": "غروب / تاریک‌روشنا",
+    "definition_en": "the darker stage of twilight in the evening",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "gratify",
+    "phonetic": "/ˈɡrætɪfaɪ/",
+    "translation_fa": "خشنود کردن / ارضا کردن",
+    "definition_en": "to give someone pleasure or satisfaction",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "hone",
+    "phonetic": "/hoʊn/",
+    "translation_fa": "تیز کردن / تقویت کردن",
+    "definition_en": "to refine or perfect something over a period of time",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "mash",
+    "phonetic": "/mæʃ/",
+    "translation_fa": "له کردن / خمیر کردن",
+    "definition_en": "to crush food into a soft, wet mass",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "ornament",
+    "phonetic": "/ˈɔːrnəmənt/",
+    "translation_fa": "زیور / وسایل تزیینی",
+    "definition_en": "a thing used to make something look more attractive",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "pneumonia",
+    "phonetic": "/nuːˈmoʊniə/",
+    "translation_fa": "ذات‌الریه / پنومونی",
+    "definition_en": "lung inflammation caused by bacterial or viral infection",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "powder",
+    "phonetic": "/ˈpaʊdər/",
+    "translation_fa": "پودر / گرد",
+    "definition_en": "fine, dry particles produced by the grinding or crushing of a solid substance",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "psychic",
+    "phonetic": "/ˈsaɪkɪk/",
+    "translation_fa": "ماوراءالطبیعه / پیش‌گو",
+    "definition_en": "relating to faculties or phenomena that are apparently inexplicable by natural laws",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "psychotic",
+    "phonetic": "/saɪˈkɑːtɪk/",
+    "translation_fa": "روان‌پریش / روانی",
+    "definition_en": "relating to or suffering from psychosis",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "scope",
+    "phonetic": "/skoʊp/",
+    "translation_fa": "دامنه / حوزه بررسی",
+    "definition_en": "the extent of the area or subject matter that something deals with",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "sinister",
+    "phonetic": "/ˈsɪnɪstər/",
+    "translation_fa": "شوم / شرورانه",
+    "definition_en": "giving the impression that something harmful or evil is happening or will happen",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "strife",
+    "phonetic": "/straɪf/",
+    "translation_fa": "نزاع / کشمکش",
+    "definition_en": "angry or bitter disagreement over something fundamental; conflict",
+    "book": 5,
+    "unit": 9
+  },
+  {
+    "word": "archaic",
+    "phonetic": "/ɑːrˈkeɪɪk/",
+    "translation_fa": "کهنه / منسوخ",
+    "definition_en": "very old or old-fashioned; belonging to an earlier period",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "benevolent",
+    "phonetic": "/bəˈnevələnt/",
+    "translation_fa": "خیرخواه / مهربان",
+    "definition_en": "well meaning and kindly; serving a charitable rather than a profit-making purpose",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "brass",
+    "phonetic": "/bræs/",
+    "translation_fa": "برنج (فلز)",
+    "definition_en": "a yellow alloy of copper and zinc",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "capitalism",
+    "phonetic": "/ˈkæpɪtəlɪzəm/",
+    "translation_fa": "سرمایه‌داری",
+    "definition_en": "an economic system in which trade and industry are controlled by private owners for profit",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "component",
+    "phonetic": "/kəmˈpoʊnənt/",
+    "translation_fa": "جزء / بخش سازنده",
+    "definition_en": "a part or element of a larger whole",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "compound",
+    "phonetic": "/ˈkɑːmpaʊnd/",
+    "translation_fa": "ترکیب / محوطه",
+    "definition_en": "a thing that is composed of two or more separate elements; a mixture",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "dependence",
+    "phonetic": "/dɪˈpendəns/",
+    "translation_fa": "وابستگی / اتکا",
+    "definition_en": "the state of relying on or being controlled by someone or something else",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "diminish",
+    "phonetic": "/dɪˈmɪnɪʃ/",
+    "translation_fa": "کم‌ارزش کردن / کاستن",
+    "definition_en": "to make or become less or cause to seem less impressive",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "drawback",
+    "phonetic": "/ˈdrɔːbæk/",
+    "translation_fa": "عیب / نقطه ضعف",
+    "definition_en": "a feature that renders something less acceptable; a disadvantage or problem",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "fad",
+    "phonetic": "/fæd/",
+    "translation_fa": "مد زودگذر / جَوگیری",
+    "definition_en": "an intense and widely shared enthusiasm for something that is short-lived",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "impose",
+    "phonetic": "/ɪmˈpoʊz/",
+    "translation_fa": "تحمیل کردن / وضع کردن",
+    "definition_en": "to force something to be accepted or put in place",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "managerial",
+    "phonetic": "/ˌmænəˈdʒɪriəl/",
+    "translation_fa": "مدیریتی",
+    "definition_en": "relating to the management of a company or organization",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "medieval",
+    "phonetic": "/ˌmedˈiːvl/",
+    "translation_fa": "قرون وسطایی",
+    "definition_en": "relating to the Middle Ages",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "metropolis",
+    "phonetic": "/məˈtrɑːpəlɪs/",
+    "translation_fa": "کلان‌شهر",
+    "definition_en": "a very large and densely populated city, often the capital of a region",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "miniature",
+    "phonetic": "/ˈmɪnətʃər/",
+    "translation_fa": "مینیاتوری / بسیار کوچک",
+    "definition_en": "a thing that is much smaller than normal size",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "monotonous",
+    "phonetic": "/məˈnɑːtənəs/",
+    "translation_fa": "یکنواخت / کسل‌کننده",
+    "definition_en": "dull, tedious, and repetitious; lacking in variety and interest",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "neither",
+    "phonetic": "/ˈniːðər/",
+    "translation_fa": "هیچ‌کدام (از دو تا)",
+    "definition_en": "not one nor the other of two people or things",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "norm",
+    "phonetic": "/nɔːrm/",
+    "translation_fa": "هنجار / معیار معمول",
+    "definition_en": "something that is usual, typical, or standard",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "pirate",
+    "phonetic": "/ˈpaɪrət/",
+    "translation_fa": "دزد دریایی / تکثیر غیرقانونی",
+    "definition_en": "a person who attacks and robs ships at sea; or reproduce work illegally",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "syndrome",
+    "phonetic": "/ˈsɪndroʊm/",
+    "translation_fa": "سندروم / نشانگان",
+    "definition_en": "a group of symptoms which consistently occur together",
+    "book": 5,
+    "unit": 10
+  },
+  {
+    "word": "alienate",
+    "phonetic": "/ˈeɪliəneɪt/",
+    "translation_fa": "بیگانه کردن / دور کردن",
+    "definition_en": "to cause someone to feel isolated or estranged",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "alleviate",
+    "phonetic": "/əˈliːvieɪt/",
+    "translation_fa": "تسکین دادن / کاهش دادن",
+    "definition_en": "to make suffering or a problem less severe",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "declare",
+    "phonetic": "/dɪˈkler/",
+    "translation_fa": "اعلام کردن / اظهار داشتن",
+    "definition_en": "to state or announce firmly and publicly",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "equate",
+    "phonetic": "/ɪˈkweɪt/",
+    "translation_fa": "برابر دانستن / مقایسه کردن",
+    "definition_en": "to consider one thing to be the same as or equivalent to another",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "exclude",
+    "phonetic": "/ɪkˈskluːd/",
+    "translation_fa": "مستثنی کردن / محروم ساختن",
+    "definition_en": "to deny someone access to or bar them from a place or group",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "fragment",
+    "phonetic": "/ˈfræɡmənt/",
+    "translation_fa": "تکه / قطعه شکسته",
+    "definition_en": "a small part broken or separated off from something",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "interest",
+    "phonetic": "/ˈɪntrest/",
+    "translation_fa": "سود بانکی / علاقه / منفعت",
+    "definition_en": "money paid regularly for the use of money lent, or a feeling of wanting to know about something",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "obsolete",
+    "phonetic": "/ˌɑːbsəˈliːt/",
+    "translation_fa": "منسوخ / از‌رده‌خارج",
+    "definition_en": "no longer produced or used; out of date",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "partake",
+    "phonetic": "/pɑːrˈteɪk/",
+    "translation_fa": "شرکت کردن / سهیم شدن",
+    "definition_en": "to eat or drink something, or join in an activity",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "perform",
+    "phonetic": "/pərˈfɔːrm/",
+    "translation_fa": "اجرا کردن / انجام دادن",
+    "definition_en": "to carry out, accomplish, or fulfill an action or task",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "persuade",
+    "phonetic": "/pərˈsweɪd/",
+    "translation_fa": "متقاعد کردن / راضی کردن",
+    "definition_en": "to cause someone to do or believe something through reasoning",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "rebel",
+    "phonetic": "/ˈrebl/",
+    "translation_fa": "شورشی / طغیان‌گر",
+    "definition_en": "a person who rises in opposition or armed resistance against an established government",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "reconcile",
+    "phonetic": "/ˈrekənsaɪl/",
+    "translation_fa": "آشتی دادن / وفاق دادن",
+    "definition_en": "to restore friendly relations between two parties",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "reject",
+    "phonetic": "/rɪˈdʒekt/",
+    "translation_fa": "رد کردن / نپذیرفتن",
+    "definition_en": "to dismiss as inadequate, unacceptable, or faulty",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "revere",
+    "phonetic": "/rɪˈvɪr/",
+    "translation_fa": "احترام گذاشتن / تکریم کردن",
+    "definition_en": "to feel deep respect or admiration for something or someone",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "scandal",
+    "phonetic": "/ˈskændl/",
+    "translation_fa": "رسوایی / آبروریزی",
+    "definition_en": "an action or event regarded as morally or legally wrong and causing public outrage",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "socialize",
+    "phonetic": "/ˈsoʊʃəlaɪz/",
+    "translation_fa": "معاشرت کردن / اجتماعی شدن",
+    "definition_en": "to participate in social activities; mix socially with others",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "sum",
+    "phonetic": "/sʌm/",
+    "translation_fa": "مجموع / مبلغ پول",
+    "definition_en": "a particular amount of money, or a total resulting from addition",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "undermine",
+    "phonetic": "/ˌʌndərˈmaɪn/",
+    "translation_fa": "تضعیف کردن / آسیب زدن",
+    "definition_en": "to lessen the effectiveness, power, or ability of someone or something",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "uphold",
+    "phonetic": "/ʌpˈhoʊld/",
+    "translation_fa": "حمایت کردن / حفظ کردن قانونی",
+    "definition_en": "to confirm or support something, especially a law or decision",
+    "book": 5,
+    "unit": 11
+  },
+  {
+    "word": "advocate",
+    "phonetic": "/ˈædvəkət/",
+    "translation_fa": "مدافع / حامی",
+    "definition_en": "a person who publicly supports or recommends a particular cause or policy",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "authority",
+    "phonetic": "/əˈθɔːrəti/",
+    "translation_fa": "سلطه / اختیار / مقام مسئول",
+    "definition_en": "the power or right to give orders, make decisions, and enforce obedience",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "capitalize",
+    "phonetic": "/ˈkæpɪtəlaɪz/",
+    "translation_fa": "بهره‌برداری کردن / سرمایه‌گذاری",
+    "definition_en": "to take advantage of a situation or use as a resource",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "constrain",
+    "phonetic": "/kənˈstreɪn/",
+    "translation_fa": "محدود کردن / مجبور ساختن",
+    "definition_en": "to severely restrict the scope, extent, or activity of",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "contaminate",
+    "phonetic": "/kənˈtæmɪneɪt/",
+    "translation_fa": "آلوده کردن",
+    "definition_en": "to make something impure by exposure to or addition of a poisonous substance",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "deplete",
+    "phonetic": "/dɪˈpliːt/",
+    "translation_fa": "خالی کردن / تحلیل بردن",
+    "definition_en": "to use up the supply or resources of",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "detoxify",
+    "phonetic": "/diːˈtɑːksɪfaɪ/",
+    "translation_fa": "سم‌زدایی کردن",
+    "definition_en": "to remove toxic substances or qualities from",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "externalize",
+    "phonetic": "/ɪkˈstɜːrnəlaɪz/",
+    "translation_fa": "بیرونی کردن / بروز دادن",
+    "definition_en": "to express or represent an emotion, thought, or aspect of personality externally",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "ignore",
+    "phonetic": "/ɪɡˈnɔːr/",
+    "translation_fa": "نادیده گرفتن",
+    "definition_en": "to refuse to take notice of or acknowledge",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "induce",
+    "phonetic": "/ɪnˈduːs/",
+    "translation_fa": "القا کردن / وادار کردن",
+    "definition_en": "to succeed in persuading or leading someone to do something",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "inevitable",
+    "phonetic": "/ɪnˈevɪtəbl/",
+    "translation_fa": "اجتناب‌ناپذیر / حتمی",
+    "definition_en": "certain to happen; unavoidable",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "institute",
+    "phonetic": "/ˈɪnstɪtuːt/",
+    "translation_fa": "تأسیس کردن / سازمان",
+    "definition_en": "to introduce or establish a scheme or system",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "intervene",
+    "phonetic": "/ˌɪntərˈviːn/",
+    "translation_fa": "مداخله کردن",
+    "definition_en": "to come between so as to prevent or alter a result",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "modify",
+    "phonetic": "/ˈmɑːdɪfaɪ/",
+    "translation_fa": "تغییر دادن / اصلاح کردن",
+    "definition_en": "to make partial or minor changes to something",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "offset",
+    "phonetic": "/ˈɔːfset/",
+    "translation_fa": "خنثی کردن / جبران کردن",
+    "definition_en": "to counteract or compensate for something",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "patron",
+    "phonetic": "/ˈpeɪtrən/",
+    "translation_fa": "حامی / پشتیبان",
+    "definition_en": "a person who gives financial or other support to a person or organization",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "prosecute",
+    "phonetic": "/ˈprɑːsɪkjuːt/",
+    "translation_fa": "پیگرد قانونی کردن",
+    "definition_en": "to institute legal proceedings against a person or organization",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "rigid",
+    "phonetic": "/ˈrɪdʒɪd/",
+    "translation_fa": "سخت / انعطاف‌ناپذیر",
+    "definition_en": "unable to bend or be forced out of shape; not flexible",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "secular",
+    "phonetic": "/ˈsekjələr/",
+    "translation_fa": "غیردینی / سکولار",
+    "definition_en": "denoting attitudes, activities, or other things that have no religious basis",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "utility",
+    "phonetic": "/juːˈtɪləti/",
+    "translation_fa": "کاربرد / سودمندی",
+    "definition_en": "the state of being useful, profitable, or beneficial",
+    "book": 5,
+    "unit": 12
+  },
+  {
+    "word": "absolute",
+    "phonetic": "/ˈæbsəluːt/",
+    "translation_fa": "مطلق / کامل",
+    "definition_en": "not qualified or diminished in any way; total",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "alas",
+    "phonetic": "/əˈlæs/",
+    "translation_fa": "افسوس / متأسفانه",
+    "definition_en": "an expression of grief, pity, or concern",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "attentive",
+    "phonetic": "/əˈtentɪv/",
+    "translation_fa": "دقیق / حواس‌جمع",
+    "definition_en": "paying close attention to something",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "cape",
+    "phonetic": "/keɪp/",
+    "translation_fa": "شنل / دماغه ساحلی",
+    "definition_en": "a sleeveless outer garment or a high point of land extending into water",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "envision",
+    "phonetic": "/ɪnˈvɪʒn/",
+    "translation_fa": "مجسم کردن / تصور کردن",
+    "definition_en": "to imagine as a future possibility; visualize",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "evenly",
+    "phonetic": "/ˈiːvnli/",
+    "translation_fa": "به طور یکنواخت / مساوی",
+    "definition_en": "in equal amounts or at a uniform rate",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "folk",
+    "phonetic": "/foʊk/",
+    "translation_fa": "مردم / فولکلور",
+    "definition_en": "people in general or of a particular group",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "melt",
+    "phonetic": "/melt/",
+    "translation_fa": "ذوب شدن / آب شدن",
+    "definition_en": "to make or become liquefied by heat",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "patch",
+    "phonetic": "/pætʃ/",
+    "translation_fa": "وصله / قطعه زمین",
+    "definition_en": "a small piece of material used to mend or cover a hole",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "pleasure",
+    "phonetic": "/ˈpleʒər/",
+    "translation_fa": "لذت / خوشی",
+    "definition_en": "a feeling of happy satisfaction and enjoyment",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "pop",
+    "phonetic": "/pɑːp/",
+    "translation_fa": "صدای ناگهانی / باز شدن ناگهانی",
+    "definition_en": "to make a light, explosive sound",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "pudding",
+    "phonetic": "/ˈpʊdɪŋ/",
+    "translation_fa": "پودینگ / دسر",
+    "definition_en": "a cooked sweet dish usually served at the end of a meal",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "rail",
+    "phonetic": "/reɪl/",
+    "translation_fa": "ریل / نرده",
+    "definition_en": "a bar or series of bars acting as a guard or barrier",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "recipe",
+    "phonetic": "/ˈresəpi/",
+    "translation_fa": "دستور پخت / دستورالعمل",
+    "definition_en": "a set of instructions for preparing a particular dish",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "role",
+    "phonetic": "/roʊl/",
+    "translation_fa": "نقش / ایفا",
+    "definition_en": "an actor's part in a play, movie, or function assumed by a person",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "shrink",
+    "phonetic": "/ʃrɪŋk/",
+    "translation_fa": "آب رفتن / کوچک شدن",
+    "definition_en": "to become or make smaller in size or amount",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "soak",
+    "phonetic": "/soʊk/",
+    "translation_fa": "خیساندن / غوطه‌ور کردن",
+    "definition_en": "to make or allow something to become thoroughly wet",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "spark",
+    "phonetic": "/spɑːrk/",
+    "translation_fa": "جرقه / ایجاد کردن",
+    "definition_en": "a small fiery particle produced by a fire or friction",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "spirit",
+    "phonetic": "/ˈspɪrɪt/",
+    "translation_fa": "روح / روحیه",
+    "definition_en": "the non-physical part of a person; soul or mood",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "suit",
+    "phonetic": "/suːt/",
+    "translation_fa": "کت و شلوار / مناسب بودن",
+    "definition_en": "a set of outer clothes or to be convenient for",
+    "book": 5,
+    "unit": 13
+  },
+  {
+    "word": "annex",
+    "phonetic": "/əˈneks/",
+    "translation_fa": "ضمیمه کردن / ملحق ساختن",
+    "definition_en": "to add to one's own territory or property",
+    "book": 5,
+    "unit": 14
+  },
+  {
+    "word": "asymmetric",
+    "phonetic": "/ˌeɪsɪˈmetrɪk/",
+    "translation_fa": "نابرابر / غیرمتقارن",
+    "definition_en": "having parts or aspects that are not equal or equivalent",
+    "book": 5,
+    "unit": 14
+  },
+  {
+    "word": "backbone",
+    "phonetic": "/ˈbækboʊn/",
+    "translation_fa": "ستون فقرات / شالوده",
+    "definition_en": "the series of vertebrae extending from the skull to the pelvis",
+    "book": 5,
+    "unit": 14
+  },
+  {
+    "word": "benefactor",
+    "phonetic": "/ˈbenɪfæktər/",
+    "translation_fa": "خیر / نیکوکار",
+    "definition_en": "a person who gives money or other help to a person or cause",
+    "book": 5,
+    "unit": 14
   },
   {
     "word": "condemn",
     "phonetic": "/kənˈdem/",
     "translation_fa": "محکوم کردن",
-    "definition_en": "to express complete disapproval of",
+    "definition_en": "to express complete disapproval of, typically in public",
     "book": 5,
-    "unit": 8
+    "unit": 14
   },
   {
-    "word": "diverse",
-    "phonetic": "/daɪˈvɜːs/",
-    "translation_fa": "متنوع / گوناگون",
-    "definition_en": "showing a great deal of variety; very different",
+    "word": "delicate",
+    "phonetic": "/ˈdelɪkət/",
+    "translation_fa": "ظریف / حساس",
+    "definition_en": "very fine in texture or structure; easily broken",
     "book": 5,
-    "unit": 8
+    "unit": 14
   },
   {
-    "word": "elaborate",
-    "phonetic": "/ɪˈlæbərət/",
-    "translation_fa": "پیچیده / با جزئیات کامل",
-    "definition_en": "involving many carefully arranged parts or details",
+    "word": "diminish",
+    "phonetic": "/dɪˈmɪnɪʃ/",
+    "translation_fa": "کاهش یافتن / کم اثر شدن",
+    "definition_en": "to make or become less",
     "book": 5,
-    "unit": 9
+    "unit": 14
   },
   {
-    "word": "enhance",
-    "phonetic": "/ɪnˈhɑːns/",
-    "translation_fa": "بهبود بخشیدن / ارتقا دادن",
-    "definition_en": "to intensify, increase, or further improve the quality of",
+    "word": "disaster",
+    "phonetic": "/dɪˈzæstər/",
+    "translation_fa": "فاجعه / مصیبت",
+    "definition_en": "a sudden event that causes great damage or loss of life",
     "book": 5,
-    "unit": 9
+    "unit": 14
   },
   {
-    "word": "facilitate",
-    "phonetic": "/fəˈsɪlɪteɪt/",
-    "translation_fa": "تسهیل کردن / آسان ساختن",
-    "definition_en": "to make an action or process easy or easier",
+    "word": "dominant",
+    "phonetic": "/ˈdɑːmɪnənt/",
+    "translation_fa": "مسلط / غالب",
+    "definition_en": "most important, powerful, or influential",
     "book": 5,
-    "unit": 10
+    "unit": 14
   },
   {
-    "word": "fluctuate",
-    "phonetic": "/ˈflʌktʃueɪt/",
-    "translation_fa": "نوسان داشتن",
-    "definition_en": "to rise and fall irregularly in number or amount",
+    "word": "dynamic",
+    "phonetic": "/daɪˈnæmɪk/",
+    "translation_fa": "پویا / پرانرژی",
+    "definition_en": "characterized by constant change, activity, or progress",
     "book": 5,
-    "unit": 10
+    "unit": 14
   },
   {
-    "word": "foster",
-    "phonetic": "/ˈfɒstər/",
-    "translation_fa": "پرورش دادن / تشویق کردن",
-    "definition_en": "to encourage or promote the development of something",
+    "word": "epic",
+    "phonetic": "/ˈepɪk/",
+    "translation_fa": "حماسی / داستان حماسی",
+    "definition_en": "a long poem or story narrating the deeds and adventures of heroic figures",
     "book": 5,
-    "unit": 11
+    "unit": 14
+  },
+  {
+    "word": "genre",
+    "phonetic": "/ˈʒɑːnrə/",
+    "translation_fa": "سبک / ژانر",
+    "definition_en": "a category of artistic composition, as in music or literature",
+    "book": 5,
+    "unit": 14
+  },
+  {
+    "word": "harvest",
+    "phonetic": "/ˈhɑːrvɪst/",
+    "translation_fa": "برداشت محصول",
+    "definition_en": "the process or period of gathering in crops",
+    "book": 5,
+    "unit": 14
   },
   {
     "word": "hierarchy",
-    "phonetic": "/ˈhaɪərɑːki/",
+    "phonetic": "/ˈhaɪərɑːrki/",
     "translation_fa": "سلسله‌مراتب",
-    "definition_en": "a system in which members of an organization are ranked according to status",
-    "book": 5,
-    "unit": 11
-  },
-  {
-    "word": "hypothesis",
-    "phonetic": "/haɪˈpɒθəsɪs/",
-    "translation_fa": "فرضیه",
-    "definition_en": "a proposed explanation made on the basis of limited evidence",
-    "book": 5,
-    "unit": 12
-  },
-  {
-    "word": "illuminate",
-    "phonetic": "/ɪˈluːmɪneɪt/",
-    "translation_fa": "روشن کردن / تبیین کردن",
-    "definition_en": "to make lighter or brighter; to clarify",
-    "book": 5,
-    "unit": 12
-  },
-  {
-    "word": "implicit",
-    "phonetic": "/ɪmˈplɪsɪt/",
-    "translation_fa": "ضمنی / غیرمستقیم",
-    "definition_en": "implied though not plainly expressed",
-    "book": 5,
-    "unit": 13
-  },
-  {
-    "word": "incentive",
-    "phonetic": "/ɪnˈsentɪv/",
-    "translation_fa": "انگیزه / پاداش تشویقی",
-    "definition_en": "a thing that motivates or encourages someone to do something",
-    "book": 5,
-    "unit": 13
-  },
-  {
-    "word": "inevitable",
-    "phonetic": "/ɪnˈevɪtəbl/",
-    "translation_fa": "اجتناب‌ناپذیر",
-    "definition_en": "certain to happen; unavoidable",
+    "definition_en": "a system or organization in which people or groups are ranked",
     "book": 5,
     "unit": 14
   },
   {
-    "word": "inherent",
-    "phonetic": "/ɪnˈhɪərənt/",
-    "translation_fa": "ذاتی / همراستا",
-    "definition_en": "existing in something as a permanent, essential quality",
+    "word": "inspect",
+    "phonetic": "/ɪnˈspekt/",
+    "translation_fa": "بازرسی کردن / بررسی دقیق",
+    "definition_en": "to look at something closely, typically to assess its condition",
     "book": 5,
     "unit": 14
   },
   {
-    "word": "integrate",
-    "phonetic": "/ˈɪntɪɡreɪt/",
-    "translation_fa": "ادغام کردن / یکپارچه ساختن",
-    "definition_en": "to combine one thing with another so that they become a whole",
+    "word": "intermediate",
+    "phonetic": "/ˌɪntərˈmiːdiət/",
+    "translation_fa": "متوسط / میانجی",
+    "definition_en": "coming between two things in time, place, order, character, etc.",
+    "book": 5,
+    "unit": 14
+  },
+  {
+    "word": "organic",
+    "phonetic": "/ɔːrˈɡænɪk/",
+    "translation_fa": "ارگانیک / طبیعی",
+    "definition_en": "relating to or derived from living matter",
+    "book": 5,
+    "unit": 14
+  },
+  {
+    "word": "pitch",
+    "phonetic": "/pɪtʃ/",
+    "translation_fa": "گام صدا / پرتاب",
+    "definition_en": "the degree of highness or lowness of a tone",
+    "book": 5,
+    "unit": 14
+  },
+  {
+    "word": "propagate",
+    "phonetic": "/ˈprɑːpəɡeɪt/",
+    "translation_fa": "تکثیر کردن / ترویج دادن",
+    "definition_en": "to breed specimens of a plant or animal, or spread ideas",
+    "book": 5,
+    "unit": 14
+  },
+  {
+    "word": "refrain",
+    "phonetic": "/rɪˈfreɪn/",
+    "translation_fa": "خودداری کردن / ترجیع‌بند",
+    "definition_en": "to stop oneself from doing something",
+    "book": 5,
+    "unit": 14
+  },
+  {
+    "word": "accommodate",
+    "phonetic": "/əˈkɑːmədeɪt/",
+    "translation_fa": "اسکان دادن / جا دادن",
+    "definition_en": "to provide lodging or sufficient space for",
     "book": 5,
     "unit": 15
   },
   {
-    "word": "justify",
-    "phonetic": "/ˈdʒʌstɪfaɪ/",
-    "translation_fa": "توجیه کردن",
-    "definition_en": "to show or prove to be right or reasonable",
+    "word": "alliance",
+    "phonetic": "/əˈlaɪəns/",
+    "translation_fa": "اتحاد / ائتلاف",
+    "definition_en": "a union or association formed for mutual benefit",
     "book": 5,
     "unit": 15
+  },
+  {
+    "word": "clause",
+    "phonetic": "/klɔːz/",
+    "translation_fa": "بند / ماده قانونی",
+    "definition_en": "a unit of grammatical organization, or a particular condition in a legal document",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "commend",
+    "phonetic": "/kəˈmend/",
+    "translation_fa": "ستودن / تمجید کردن",
+    "definition_en": "to praise formally or officially",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "commission",
+    "phonetic": "/kəˈmɪʃn/",
+    "translation_fa": "کمیسیون / ماموریت دادن",
+    "definition_en": "an instruction, command, or duty given to a person or group",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "counterpart",
+    "phonetic": "/ˈkaʊntərpɑːrt/",
+    "translation_fa": "همتا / همتای تجاری یا اداری",
+    "definition_en": "a person or thing holding a position corresponding to another",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "diligent",
+    "phonetic": "/ˈdɪlɪdʒənt/",
+    "translation_fa": "کوشا / سخت‌کوش",
+    "definition_en": "having or showing care and conscientiousness in one's work",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "doctrine",
+    "phonetic": "/ˈdɑːktrɪn/",
+    "translation_fa": "دکترین / آئین",
+    "definition_en": "a belief or set of beliefs held and taught by a church, political party, etc.",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "imperil",
+    "phonetic": "/ɪmˈperəl/",
+    "translation_fa": "به خطر انداختن",
+    "definition_en": "to put at risk of being harmed, injured, or destroyed",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "informal",
+    "phonetic": "/ɪnˈfɔːrml/",
+    "translation_fa": "غیررسمی / دوستانه",
+    "definition_en": "having a relaxed, friendly, or unofficial style",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "inherently",
+    "phonetic": "/ɪnˈhɪrəntli/",
+    "translation_fa": "ذاتاً / به طور ذاتی",
+    "definition_en": "in a permanent, essential, or characteristic way",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "prompt",
+    "phonetic": "/prɑːmpt/",
+    "translation_fa": "وادار کردن / سریع",
+    "definition_en": "done without delay; cause to take a course of action",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "recruit",
+    "phonetic": "/rɪˈkruːt/",
+    "translation_fa": "استخدام کردن / نیروی جدید گرفتن",
+    "definition_en": "to enlist someone in the armed forces or an organization",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "shelter",
+    "phonetic": "/ˈʃeltər/",
+    "translation_fa": "پناهگاه / پناه دادن",
+    "definition_en": "a structure that provides privacy and protection from danger",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "substantial",
+    "phonetic": "/səbˈstænʃl/",
+    "translation_fa": "قابل توجه / اساسی",
+    "definition_en": "of considerable importance, size, or worth",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "suppress",
+    "phonetic": "/səˈpres/",
+    "translation_fa": "سرکوب کردن / فرونشاندن",
+    "definition_en": "to forcibly put an end to something",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "suspend",
+    "phonetic": "/səˈspend/",
+    "translation_fa": "معلق کردن / به تعویق انداختن",
+    "definition_en": "to temporarily prevent from continuing or being in force",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "distort",
+    "phonetic": "/dɪˈstɔːrt/",
+    "translation_fa": "تحریف کردن / تغییر شکل دادن",
+    "definition_en": "to pull or twist out of shape; give a misleading account of",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "intact",
+    "phonetic": "/ɪnˈtækt/",
+    "translation_fa": "دست‌نخورده / سالم",
+    "definition_en": "not damaged or impaired in any way; complete",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "vague",
+    "phonetic": "/veɪɡ/",
+    "translation_fa": "مبهم / گنگ",
+    "definition_en": "of uncertain, indefinite, or unclear character or meaning",
+    "book": 5,
+    "unit": 15
+  },
+  {
+    "word": "bisect",
+    "phonetic": "/ˈbaɪsekt/",
+    "translation_fa": "دو نیم کردن / دو بخش کردن",
+    "definition_en": "to divide into two equal parts",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "currency",
+    "phonetic": "/ˈkɜːrənsi/",
+    "translation_fa": "واحد پول / ارز",
+    "definition_en": "a system of money in general use in a particular country",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "deduction",
+    "phonetic": "/dɪˈdʌkʃn/",
+    "translation_fa": "کسر / استنتاج",
+    "definition_en": "the action of deducting or subtracting something, or a conclusion reached by reasoning",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "deregulate",
+    "phonetic": "/ˌdiːˈreɡjuleɪt/",
+    "translation_fa": "مقررات‌زدایی کردن",
+    "definition_en": "to remove regulations or restrictions from an industry or activity",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "dissent",
+    "phonetic": "/dɪˈsent/",
+    "translation_fa": "ابراز مخالفت / اختلاف نظر",
+    "definition_en": "the expression or holding of opinions at variance with those official",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "dividend",
+    "phonetic": "/ˈdɪvɪdend/",
+    "translation_fa": "سود سهام",
+    "definition_en": "a sum of money paid regularly by a company to its shareholders",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "electronics",
+    "phonetic": "/ɪˌlekˈtrɑːnɪks/",
+    "translation_fa": "الکترونیک",
+    "definition_en": "the branch of physics and technology concerned with circuits and electrical components",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "enterprise",
+    "phonetic": "/ˈentərpraɪz/",
+    "translation_fa": "شرکت / کارآفرینی / پروژه بزرگ",
+    "definition_en": "a project or undertaking, typically one that is difficult or requires effort",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "exorbitant",
+    "phonetic": "/ɪɡˈzɔːrbɪtənt/",
+    "translation_fa": "بسیار گزاف / بیش از حد",
+    "definition_en": "unreasonably high in price or degree",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "fiscal",
+    "phonetic": "/ˈfɪskl/",
+    "translation_fa": "مالی / بودجه‌ای",
+    "definition_en": "relating to government revenue, especially taxes",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "franchise",
+    "phonetic": "/ˈfræntʃaɪz/",
+    "translation_fa": "حق امتیاز / نمایندگی",
+    "definition_en": "an authorization granted to an individual or group enabling them to carry out commercial activities",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "fund",
+    "phonetic": "/fʌnd/",
+    "translation_fa": "سرمایه / تامين اعتبار کردن",
+    "definition_en": "a sum of money saved or made available for a particular purpose",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "infrastructure",
+    "phonetic": "/ˈɪnfrəstrʌktʃər/",
+    "translation_fa": "زیرساخت",
+    "definition_en": "the basic physical and organizational structures needed for the operation of a society",
+    "book": 5,
+    "unit": 16
   },
   {
     "word": "manipulate",
     "phonetic": "/məˈnɪpjuleɪt/",
-    "translation_fa": "دستکاری کردن",
-    "definition_en": "to handle or control something in a skillful or devious manner",
+    "translation_fa": "دستکاری کردن / هدایت کردن",
+    "definition_en": "to handle or control typically in a skillful or unfair manner",
     "book": 5,
     "unit": 16
   },
   {
-    "word": "marginal",
-    "phonetic": "/ˈmɑːdʒɪnl/",
-    "translation_fa": "حاشیه‌ای / اندک",
-    "definition_en": "relating to or at the edge or margin; minimal",
+    "word": "merchandise",
+    "phonetic": "/ˈmɜːrtʃəndaɪs/",
+    "translation_fa": "کالا / اجناس",
+    "definition_en": "goods to be bought and sold",
     "book": 5,
     "unit": 16
   },
   {
-    "word": "notion",
-    "phonetic": "/ˈnəʊʃn/",
-    "translation_fa": "مفهوم / باور",
-    "definition_en": "a conception of or belief about something",
+    "word": "retail",
+    "phonetic": "/ˈriːteɪl/",
+    "translation_fa": "خرده‌فروشی",
+    "definition_en": "the sale of goods to the public in relatively small quantities",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "revenue",
+    "phonetic": "/ˈrevənuː/",
+    "translation_fa": "درآمد / بازده مالی",
+    "definition_en": "income, especially of a company or organization of a substantial nature",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "sentiment",
+    "phonetic": "/ˈsentɪmənt/",
+    "translation_fa": "احساس / دیدگاه",
+    "definition_en": "a view of or attitude toward a situation or event; an opinion",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "substantiate",
+    "phonetic": "/səbˈstænʃieɪt/",
+    "translation_fa": "اثبات کردن / با مدرک ثابت کردن",
+    "definition_en": "to provide evidence to support or prove the truth of",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "verify",
+    "phonetic": "/ˈverɪfaɪ/",
+    "translation_fa": "تایید کردن / راست‌آزمایی",
+    "definition_en": "to make sure or demonstrate that something is true, accurate, or justified",
+    "book": 5,
+    "unit": 16
+  },
+  {
+    "word": "assess",
+    "phonetic": "/əˈses/",
+    "translation_fa": "ارزیابی کردن / برآورد کردن",
+    "definition_en": "to evaluate or estimate the nature, ability, or quality of",
     "book": 5,
     "unit": 17
   },
   {
-    "word": "objective",
-    "phonetic": "/əbˈdʒektɪv/",
-    "translation_fa": "هدف / بی‌طرفانه",
-    "definition_en": "a goal or target; not influenced by personal feelings",
+    "word": "astonish",
+    "phonetic": "/əˈstɑːnɪʃ/",
+    "translation_fa": "شگفت‌زده کردن / متحیر ساختن",
+    "definition_en": "to surprise or impress someone greatly",
     "book": 5,
     "unit": 17
   },
   {
-    "word": "paradigm",
-    "phonetic": "/ˈpærədaɪm/",
-    "translation_fa": "الگو / نمونه الگو",
-    "definition_en": "a typical example or pattern of something; a model",
+    "word": "commence",
+    "phonetic": "/kəˈmens/",
+    "translation_fa": "آغاز کردن / شروع شدن",
+    "definition_en": "to begin or start something",
     "book": 5,
-    "unit": 18
+    "unit": 17
   },
   {
-    "word": "plausible",
-    "phonetic": "/ˈplɔːzəbl/",
-    "translation_fa": "باورکردنی / معقول",
-    "definition_en": "seeming reasonable or probable",
+    "word": "essence",
+    "phonetic": "/ˈesns/",
+    "translation_fa": "جوهره / ذات / عصاره",
+    "definition_en": "the intrinsic nature or indispensable quality of something",
     "book": 5,
-    "unit": 18
+    "unit": 17
   },
   {
-    "word": "prevalent",
-    "phonetic": "/ˈprevələnt/",
-    "translation_fa": "رایج / شایع",
-    "definition_en": "widespread in a particular area or at a particular time",
+    "word": "extract",
+    "phonetic": "/ˈekstrækt/",
+    "translation_fa": "استخراج کردن / بیرون کشیدن",
+    "definition_en": "to remove or take out, especially by effort or force",
     "book": 5,
-    "unit": 19
+    "unit": 17
   },
   {
-    "word": "profound",
-    "phonetic": "/prəˈfaʊnd/",
-    "translation_fa": "عمیق / ژرف",
-    "definition_en": "very great or intense; having deep insight",
+    "word": "fabulous",
+    "phonetic": "/ˈfæbjələs/",
+    "translation_fa": "شگفت‌انگیز / عالی",
+    "definition_en": "extraordinary, especially extraordinarily good",
     "book": 5,
-    "unit": 19
+    "unit": 17
   },
   {
-    "word": "quantify",
-    "phonetic": "/ˈkwɒntɪfaɪ/",
-    "translation_fa": "کمی‌سازی کردن / اندازه‌گیری کردن",
-    "definition_en": "to express or measure the quantity of",
+    "word": "haste",
+    "phonetic": "/heɪst/",
+    "translation_fa": "شتاب / عجله",
+    "definition_en": "excessive speed or urgency of movement or action; hurry",
     "book": 5,
-    "unit": 20
+    "unit": 17
   },
   {
-    "word": "refine",
-    "phonetic": "/rɪˈfaɪn/",
-    "translation_fa": "بهبود دادن / پالایش کردن",
-    "definition_en": "to improve something by making small changes",
+    "word": "impulse",
+    "phonetic": "/ˈɪmpʌls/",
+    "translation_fa": "انگیزه ناگهانی / تکانه",
+    "definition_en": "a sudden strong and unreflective urge or desire to act",
     "book": 5,
-    "unit": 20
+    "unit": 17
   },
   {
-    "word": "reinforce",
-    "phonetic": "/ˌriːɪnˈfɔːs/",
-    "translation_fa": "تقویت کردن",
-    "definition_en": "to strengthen or support an object or idea",
+    "word": "latter",
+    "phonetic": "/ˈlætər/",
+    "translation_fa": "دومی / اخیر",
+    "definition_en": "denoting the second or second mentioned of two people or things",
     "book": 5,
-    "unit": 21
+    "unit": 17
   },
   {
-    "word": "reluctant",
-    "phonetic": "/rɪˈlʌktənt/",
-    "translation_fa": "بی‌میل / ناخواستار",
-    "definition_en": "unwilling and hesitant; disinclined",
+    "word": "molecule",
+    "phonetic": "/ˈmɑːlɪkjuːl/",
+    "translation_fa": "مولکول",
+    "definition_en": "a group of atoms bonded together",
     "book": 5,
-    "unit": 21
+    "unit": 17
   },
   {
-    "word": "scrutiny",
-    "phonetic": "/ˈskruːtəni/",
-    "translation_fa": "بررسی دقیق / موشکافی",
-    "definition_en": "critical observation or examination",
+    "word": "ongoing",
+    "phonetic": "/ˈɑːnɡoʊɪŋ/",
+    "translation_fa": "در حال پیشرفت / مداوم",
+    "definition_en": "continuing; still in progress",
     "book": 5,
-    "unit": 22
+    "unit": 17
   },
   {
-    "word": "sequential",
-    "phonetic": "/sɪˈkwenʃl/",
-    "translation_fa": "ترتیبی / پیاپی",
-    "definition_en": "forming or following in a logical order or sequence",
+    "word": "pharmaceutical",
+    "phonetic": "/ˌfɑːrməˈsuːtɪkl/",
+    "translation_fa": "دارویی / داروسازی",
+    "definition_en": "relating to medicinal drugs, or their preparation, use, or sale",
     "book": 5,
-    "unit": 22
+    "unit": 17
+  },
+  {
+    "word": "precise",
+    "phonetic": "/prɪˈsaɪs/",
+    "translation_fa": "دقیق / صریح",
+    "definition_en": "marked by exactness and accuracy of expression or detail",
+    "book": 5,
+    "unit": 17
+  },
+  {
+    "word": "proximity",
+    "phonetic": "/prɑːkˈsɪməti/",
+    "translation_fa": "نزدیکی / مجاورت",
+    "definition_en": "nearness in space, time, or relationship",
+    "book": 5,
+    "unit": 17
+  },
+  {
+    "word": "publicity",
+    "phonetic": "/pʌbˈlɪsəti/",
+    "translation_fa": "تبلیغات / توجه عمومی",
+    "definition_en": "notice or attention given to someone or something by the media",
+    "book": 5,
+    "unit": 17
+  },
+  {
+    "word": "remedy",
+    "phonetic": "/ˈremədi/",
+    "translation_fa": "درمان / راهکار",
+    "definition_en": "a medicine or treatment for a disease, or a means of counteracting a problem",
+    "book": 5,
+    "unit": 17
+  },
+  {
+    "word": "significance",
+    "phonetic": "/sɪɡˈnɪfɪkəns/",
+    "translation_fa": "اهمیت / معنی",
+    "definition_en": "the quality of being worthy of attention; importance",
+    "book": 5,
+    "unit": 17
   },
   {
     "word": "subsequent",
@@ -629,125 +2685,2101 @@
     "translation_fa": "بعدی / متعاقب",
     "definition_en": "coming after something in time; following",
     "book": 5,
-    "unit": 23
+    "unit": 17
   },
   {
-    "word": "substantial",
-    "phonetic": "/səbˈstænʃl/",
-    "translation_fa": "قابل توجه / بزرگ",
-    "definition_en": "of considerable importance, size, or value",
+    "word": "synthetic",
+    "phonetic": "/sɪnˈθetɪk/",
+    "translation_fa": "مصنوعی / ترکیبی",
+    "definition_en": "made by chemical synthesis, especially to imitate a natural product",
     "book": 5,
-    "unit": 23
+    "unit": 17
   },
   {
-    "word": "subtle",
-    "phonetic": "/ˈsʌtl/",
-    "translation_fa": "ظریف / نامحسوس",
-    "definition_en": "so delicate or precise as to be difficult to analyze or describe",
+    "word": "terminal",
+    "phonetic": "/ˈtɜːrmɪnl/",
+    "translation_fa": "پایانه / کشنده (بیماری)",
+    "definition_en": "forming or situated at the end or extremity of something",
     "book": 5,
-    "unit": 24
+    "unit": 17
   },
   {
-    "word": "tangible",
-    "phonetic": "/ˈtændʒəbl/",
-    "translation_fa": "ملموس / واقعی",
-    "definition_en": "perceptible by touch; clear and definite",
+    "word": "altitude",
+    "phonetic": "/ˈæltɪtuːd/",
+    "translation_fa": "ارتفاع از سطح دریا",
+    "definition_en": "the height of an object or point in relation to sea level or ground level",
     "book": 5,
-    "unit": 24
+    "unit": 18
   },
   {
-    "word": "tentative",
-    "phonetic": "/ˈtentətɪv/",
-    "translation_fa": "آزمایشی / غیرقطعی",
-    "definition_en": "not certain or fixed; provisional",
+    "word": "coastline",
+    "phonetic": "/ˈkoʊstlaɪn/",
+    "translation_fa": "خط ساحلی",
+    "definition_en": "the outline of a coast, especially with regard to its shape and appearance",
     "book": 5,
-    "unit": 25
+    "unit": 18
   },
   {
-    "word": "terminate",
-    "phonetic": "/ˈtɜːmɪneɪt/",
-    "translation_fa": "خاتمه دادن",
-    "definition_en": "to bring to an end",
+    "word": "deter",
+    "phonetic": "/dɪˈtɜːr/",
+    "translation_fa": "منصرف کردن / بازداشتن",
+    "definition_en": "to discourage someone from doing something by instilling doubt or fear",
     "book": 5,
-    "unit": 25
+    "unit": 18
   },
   {
-    "word": "unify",
-    "phonetic": "/ˈjuːnɪfaɪ/",
-    "translation_fa": "متحد کردن / یکپارچه کردن",
-    "definition_en": "to make or become united, uniform, or whole",
+    "word": "devise",
+    "phonetic": "/dɪˈvaɪz/",
+    "translation_fa": "برنامه‌ریزی کردن / ابداع کردن",
+    "definition_en": "to plan or invent a complex procedure, system, or mechanism by careful thought",
     "book": 5,
-    "unit": 26
+    "unit": 18
   },
   {
-    "word": "utilize",
-    "phonetic": "/ˈjuːtəlaɪz/",
-    "translation_fa": "استفاده کردن / به کار گرفتن",
-    "definition_en": "to make practical and effective use of",
+    "word": "expertise",
+    "phonetic": "/ˌekspɜːrˈtiːz/",
+    "translation_fa": "تخصص / مهارت",
+    "definition_en": "expert skill or knowledge in a particular field",
     "book": 5,
-    "unit": 26
+    "unit": 18
   },
   {
-    "word": "validate",
-    "phonetic": "/ˈvælɪdeɪt/",
-    "translation_fa": "اعتبارسنجی کردن / تأیید کردن",
-    "definition_en": "to check or prove the validity or accuracy of",
+    "word": "fracture",
+    "phonetic": "/ˈfræktʃər/",
+    "translation_fa": "شکستگی / ترک خوردن",
+    "definition_en": "the cracking or breaking of a hard object or material",
     "book": 5,
-    "unit": 27
+    "unit": 18
   },
   {
-    "word": "versatile",
-    "phonetic": "/ˈvɜːsətaɪl/",
-    "translation_fa": "همه‌کاره / چندبعدی",
-    "definition_en": "able to adapt or be adapted to many different functions or activities",
+    "word": "impair",
+    "phonetic": "/ɪmˈper/",
+    "translation_fa": "تضعیف کردن / آسیب زدن",
+    "definition_en": "to weaken or damage something, especially a human faculty or function",
     "book": 5,
-    "unit": 27
+    "unit": 18
   },
   {
-    "word": "viable",
-    "phonetic": "/ˈvaɪəbl/",
-    "translation_fa": "قابل اجرا / زیست‌پذیر",
-    "definition_en": "capable of working successfully; feasible",
+    "word": "implement",
+    "phonetic": "/ˈɪmplɪment/",
+    "translation_fa": "اجرا کردن / پیاده‌سازی",
+    "definition_en": "to put a decision, plan, or agreement into effect",
     "book": 5,
-    "unit": 28
+    "unit": 18
   },
   {
-    "word": "virtual",
-    "phonetic": "/ˈvɜːtʃuəl/",
-    "translation_fa": "مجازی / تقریباً واقعی",
-    "definition_en": "almost or nearly as described, or created by software",
+    "word": "indigenous",
+    "phonetic": "/ɪnˈdɪdʒənəs/",
+    "translation_fa": "بومی",
+    "definition_en": "originating or occurring naturally in a particular place; native",
     "book": 5,
-    "unit": 28
+    "unit": 18
+  },
+  {
+    "word": "insight",
+    "phonetic": "/ˈɪnsaɪt/",
+    "translation_fa": "بینش / درک عمیق",
+    "definition_en": "an accurate and deep intuitive understanding of a person or thing",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "limb",
+    "phonetic": "/lɪm/",
+    "translation_fa": "اندام (دست و پا) / شاخه اصلی",
+    "definition_en": "an arm or leg of a person or four-legged animal, or a main branch of a tree",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "migraine",
+    "phonetic": "/ˈmaɪɡreɪn/",
+    "translation_fa": "میگرن",
+    "definition_en": "a recurrent throbbing headache that typically affects one side of the head",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "optimism",
+    "phonetic": "/ˈɑːptɪmɪzəm/",
+    "translation_fa": "خوش‌بینی",
+    "definition_en": "hopefulness and confidence about the future or the successful outcome of something",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "peculiar",
+    "phonetic": "/pɪˈkjuːliər/",
+    "translation_fa": "عجیب / خاص",
+    "definition_en": "strange or odd; unusual",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "proficient",
+    "phonetic": "/prəˈfɪʃnt/",
+    "translation_fa": "ماهر / زبردست",
+    "definition_en": "competent or skilled in doing or using something",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "quest",
+    "phonetic": "/kwest/",
+    "translation_fa": "جستجو / تلاش برای کشف",
+    "definition_en": "a long or arduous search for something",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "ridge",
+    "phonetic": "/rɪdʒ/",
+    "translation_fa": "لبه / پشته / دیواره کوه",
+    "definition_en": "a long narrow hilltop, mountain range, or watershed",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "spouse",
+    "phonetic": "/spaʊs/",
+    "translation_fa": "همسر",
+    "definition_en": "a husband or wife",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "thrust",
+    "phonetic": "/θrʌst/",
+    "translation_fa": "پرتاب کردن / نیرو دادن / رانش",
+    "definition_en": "to push something suddenly or violently in a specified direction",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "tolerate",
+    "phonetic": "/ˈtɑːləreɪt/",
+    "translation_fa": "تحمل کردن / مدارا کردن",
+    "definition_en": "to allow the existence, occurrence, or practice of without interference",
+    "book": 5,
+    "unit": 18
+  },
+  {
+    "word": "aquatic",
+    "phonetic": "/əˈkwætɪk/",
+    "translation_fa": "آبزی / آبی",
+    "definition_en": "relating to water; living or growing in or near water",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "biosphere",
+    "phonetic": "/ˈbaɪoʊsfɪr/",
+    "translation_fa": "زیست‌کره",
+    "definition_en": "the regions of the surface, atmosphere, and hydrosphere of the earth occupied by living organisms",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "bizarre",
+    "phonetic": "/bɪˈzɑːr/",
+    "translation_fa": "عجیب و غریب",
+    "definition_en": "very strange or unusual, especially so as to cause interest or amusement",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "Celsius",
+    "phonetic": "/ˈselsiəs/",
+    "translation_fa": "سلسیوس / سانتی‌گراد",
+    "definition_en": "a scale of temperature on which water freezes at 0 degrees and boils at 100 degrees",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "coarse",
+    "phonetic": "/kɔːrs/",
+    "translation_fa": "زبر / خشن",
+    "definition_en": "rough or loose in texture or grain",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "companion",
+    "phonetic": "/kəmˈpænjən/",
+    "translation_fa": "همراه / همدم",
+    "definition_en": "a person or animal with whom one spends time or travels",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "digest",
+    "phonetic": "/daɪˈdʒest/",
+    "translation_fa": "هضم کردن",
+    "definition_en": "to break down food in the alimentary canal into substances that can be absorbed by the body",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "duration",
+    "phonetic": "/duˈreɪʃn/",
+    "translation_fa": "مدت زمان",
+    "definition_en": "the time during which something continues",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "ecology",
+    "phonetic": "/iˈkɑːlədʒi/",
+    "translation_fa": "بوم‌شناسی / اکولوژی",
+    "definition_en": "the branch of biology that deals with the relations of organisms to one another and to their physical surroundings",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "feat",
+    "phonetic": "/fiːt/",
+    "translation_fa": "کار بزرگ / شاهکار",
+    "definition_en": "an achievement that requires great courage, skill, or strength",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "infinite",
+    "phonetic": "/ˈɪnfɪnət/",
+    "translation_fa": "بی‌نهایت / نامحدود",
+    "definition_en": "limitless or endless in space, extent, or size",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "nucleus",
+    "phonetic": "/ˈnuːkliəs/",
+    "translation_fa": "هسته",
+    "definition_en": "the central and most important part of an object, movement, or group",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "parasite",
+    "phonetic": "/ˈpærəsaɪt/",
+    "translation_fa": "انگل",
+    "definition_en": "an organism that lives in or on another organism and benefits by deriving nutrients at the host's expense",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "prominent",
+    "phonetic": "/ˈprɑːmɪnənt/",
+    "translation_fa": "برجسته / مهم",
+    "definition_en": "important; famous or particularly noticeable",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "repetitive",
+    "phonetic": "/rɪˈpetətɪv/",
+    "translation_fa": "تکراری",
+    "definition_en": "containing or characterized by repetition, especially when unnecessary or tiresome",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "reproductive",
+    "phonetic": "/ˌriːprəˈdʌktɪv/",
+    "translation_fa": "تولیدمثلی",
+    "definition_en": "relating to or involved in the production of offspring",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "temperate",
+    "phonetic": "/ˈtempərət/",
+    "translation_fa": "معتدل",
+    "definition_en": "relating to or denoting a region or climate characterized by mild temperatures",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "tolerance",
+    "phonetic": "/ˈtɑːlərəns/",
+    "translation_fa": "بردباری / تحمل",
+    "definition_en": "the ability or willingness to tolerate something, especially opinions or behavior that one does not necessarily agree with",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "undergo",
+    "phonetic": "/ˌʌndərˈɡoʊ/",
+    "translation_fa": "متحمل شدن / تجربه کردن",
+    "definition_en": "to experience or be subjected to something",
+    "book": 5,
+    "unit": 19
   },
   {
     "word": "vulnerable",
     "phonetic": "/ˈvʌlnərəbl/",
     "translation_fa": "آسیب‌پذیر",
-    "definition_en": "exposed to the possibility of being attacked or harmed",
+    "definition_en": "susceptible to physical or emotional attack or harm",
+    "book": 5,
+    "unit": 19
+  },
+  {
+    "word": "adept",
+    "phonetic": "/əˈdept/",
+    "translation_fa": "ماهر / زبردست",
+    "definition_en": "very skilled or proficient at something",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "barren",
+    "phonetic": "/ˈbærən/",
+    "translation_fa": "لم‌یزرع / بی‌بار",
+    "definition_en": "too poor to produce much or any vegetation",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "ceramic",
+    "phonetic": "/səˈræmɪk/",
+    "translation_fa": "سرامیکی / سفالی",
+    "definition_en": "made of clay and permanently hardened by heat",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "culinary",
+    "phonetic": "/ˈkʌlɪneri/",
+    "translation_fa": "مربوط به آشپزی",
+    "definition_en": "of or relating to a kitchen or to cookery",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "cuisine",
+    "phonetic": "/kwɪˈziːn/",
+    "translation_fa": "سبک آشپزی",
+    "definition_en": "a style or method of cooking, especially as characteristic of a particular country or region",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "dense",
+    "phonetic": "/dens/",
+    "translation_fa": "متراکم / انبوه",
+    "definition_en": "closely compacted in substance; crowded together",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "dusk",
+    "phonetic": "/dʌsk/",
+    "translation_fa": "غروب / تاریک‌روشن",
+    "definition_en": "the darker stage of twilight",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "felicity",
+    "phonetic": "/fəˈlɪsəti/",
+    "translation_fa": "خوشبختی / شادمانی",
+    "definition_en": "intense happiness",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "flavor",
+    "phonetic": "/ˈfleɪvər/",
+    "translation_fa": "طعم / مزه",
+    "definition_en": "the distinctive taste of a food or drink",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "flour",
+    "phonetic": "/ˈflaʊər/",
+    "translation_fa": "آرد",
+    "definition_en": "a powder obtained by grinding grain, typically wheat",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "host",
+    "phonetic": "/hoʊst/",
+    "translation_fa": "میزبان",
+    "definition_en": "a person who receives or entertains other people as guests",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "immenseness",
+    "phonetic": "/ɪˈmensnəs/",
+    "translation_fa": "عظمت / پهناوری",
+    "definition_en": "unusual largeness in size or extent",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "inciter",
+    "phonetic": "/ɪnˈsaɪtər/",
+    "translation_fa": "تحریک‌کننده / ترغیب‌کننده",
+    "definition_en": "a person who encourages or stirs up violent or unlawful behavior",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "moisture",
+    "phonetic": "/ˈmɔɪstʃər/",
+    "translation_fa": "رطوبت / نم",
+    "definition_en": "water or other liquid diffused in a small quantity as vapor, within a solid, or condensed on a surface",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "nonperishable",
+    "phonetic": "/ˌnɑːnˈperɪʃəbl/",
+    "translation_fa": "فاسدنشدنی",
+    "definition_en": "not subject to rapid deterioration or decay",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "nourish",
+    "phonetic": "/ˈnɜːrɪʃ/",
+    "translation_fa": "تغذیه کردن / پرورش دادن",
+    "definition_en": "to provide with the food or other substances necessary for growth, health, and good condition",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "pastry",
+    "phonetic": "/ˈpeɪstri/",
+    "translation_fa": "شیرینی / خمیر شیرینی",
+    "definition_en": "a dough of flour, fat, and water, used as a base and pastry cases for baked dishes",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "profound",
+    "phonetic": "/prəˈfaʊnd/",
+    "translation_fa": "عمیق / ژرف",
+    "definition_en": "very great or intense; having or showing great knowledge or insight",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "stimulate",
+    "phonetic": "/ˈstɪmjuleɪt/",
+    "translation_fa": "تحریک کردن / برانگیختن",
+    "definition_en": "to raise levels of physiological or nervous activity in",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "subside",
+    "phonetic": "/səbˈsaɪd/",
+    "translation_fa": "فروکش کردن / کاهش یافتن",
+    "definition_en": "to become less intense, violent, or severe",
+    "book": 5,
+    "unit": 20
+  },
+  {
+    "word": "aggregate",
+    "phonetic": "/ˈæɡrɪɡət/",
+    "translation_fa": "مجموع / کل",
+    "definition_en": "formed or calculated by the combination of many separate units",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "antibiotic",
+    "phonetic": "/ˌæntibaɪˈɑːtɪk/",
+    "translation_fa": "آنتی‌بیوتیک / پادتن",
+    "definition_en": "a medicine that inhibits the growth of or destroys microorganisms",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "circuit",
+    "phonetic": "/ˈsɜːrkɪt/",
+    "translation_fa": "مدار / مسیر",
+    "definition_en": "a roughly circular line, route, or movement that starts and finishes at the same place",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "complement",
+    "phonetic": "/ˈkɑːmplɪment/",
+    "translation_fa": "مکمل بودن / کامل کردن",
+    "definition_en": "a thing that completes or brings to perfection",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "compress",
+    "phonetic": "/kəmˈpres/",
+    "translation_fa": "فشرده کردن / متراکم ساختن",
+    "definition_en": "to flatten by pressure; squeeze or press",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "database",
+    "phonetic": "/ˈdeɪtəbeɪs/",
+    "translation_fa": "پایگاه داده / بانک اطلاعاتی",
+    "definition_en": "a structured set of data held in a computer",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "equivalent",
+    "phonetic": "/ɪˈkwɪvələnt/",
+    "translation_fa": "معادل / برابر",
+    "definition_en": "equal in value, amount, function, meaning, etc.",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "immune",
+    "phonetic": "/ɪˈmjuːn/",
+    "translation_fa": "ایمن / مصون",
+    "definition_en": "resistant to a particular infection or toxin",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "input",
+    "phonetic": "/ˈɪnpʊt/",
+    "translation_fa": "ورودی / داده‌های ورودی",
+    "definition_en": "what is put in, taken in, or operated on by any process or system",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "intimate",
+    "phonetic": "/ˈɪntɪmət/",
+    "translation_fa": "صمیمی / نزدیک",
+    "definition_en": "closely acquainted; familiar, close",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "magnet",
+    "phonetic": "/ˈmæɡnət/",
+    "translation_fa": "آهنربا",
+    "definition_en": "a piece of iron that has its component atoms so ordered that the material exhibits magnetism",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "metabolism",
+    "phonetic": "/məˈtæbəlɪzəm/",
+    "translation_fa": "سوخت‌وساز / متابولیسم",
+    "definition_en": "the chemical processes that occur within a living organism in order to maintain life",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "microchip",
+    "phonetic": "/ˈmaɪkroʊtʃɪp/",
+    "translation_fa": "ریزتراشه / میکروچیپ",
+    "definition_en": "a tiny wafer of semiconducting material used to make an integrated circuit",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "phase",
+    "phonetic": "/feɪz/",
+    "translation_fa": "مرحله / فاز",
+    "definition_en": "a distinct stage in a series of events or a process",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "pinch",
+    "phonetic": "/pɪntʃ/",
+    "translation_fa": "نیشگون گرفتن / فشردن",
+    "definition_en": "to grip tightly between the finger and thumb",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "prevalent",
+    "phonetic": "/ˈprevələnt/",
+    "translation_fa": "شایع / رایج",
+    "definition_en": "widespread in a particular area or at a particular time",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "quantum",
+    "phonetic": "/ˈkwɑːntəm/",
+    "translation_fa": "کوانتوم / مقدار مشخص",
+    "definition_en": "a discrete quantity of energy proportional in magnitude to the frequency of the radiation it represents",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "ratio",
+    "phonetic": "/ˈreɪʃioʊ/",
+    "translation_fa": "نسبت / تناسب",
+    "definition_en": "the quantitative relation between two amounts showing the number of times one value contains or is contained within the other",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "spiral",
+    "phonetic": "/ˈspaɪrəl/",
+    "translation_fa": "مارپیچ / حلزونی",
+    "definition_en": "winding in a continuous and gradually widening or tightening curve",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "viral",
+    "phonetic": "/ˈvaɪrəl/",
+    "translation_fa": "ویروسی / همه‌گیر",
+    "definition_en": "relating to or caused by a virus",
+    "book": 5,
+    "unit": 21
+  },
+  {
+    "word": "acid",
+    "phonetic": "/ˈæsɪd/",
+    "translation_fa": "اسید / ماده اسیدی",
+    "definition_en": "a chemical substance that neutralizes alkalis and dissolves some metals",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "administration",
+    "phonetic": "/ədˌmɪnɪˈstreɪʃn/",
+    "translation_fa": "مدیریت / اداره",
+    "definition_en": "the process or activity of running a business, organization, etc.",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "administrative",
+    "phonetic": "/ədˈmɪnɪstreɪtɪv/",
+    "translation_fa": "اداری / مدیریتی",
+    "definition_en": "relating to the running of a business, organization, etc.",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "biotechnology",
+    "phonetic": "/ˌbaɪoʊtekˈnɑːlədʒi/",
+    "translation_fa": "زیست‌فناوری / بیوتکنولوژی",
+    "definition_en": "the exploitation of biological processes for industrial and other purposes",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "cholesterol",
+    "phonetic": "/kəˈlestərɔːl/",
+    "translation_fa": "کلسترول",
+    "definition_en": "a compound of the sterol type found in most body tissues",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "coalition",
+    "phonetic": "/ˌkoʊəˈlɪʃn/",
+    "translation_fa": "ائتلاف / اتحاد",
+    "definition_en": "an alliance for combined action, especially a temporary alliance of political parties",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "deceptive",
+    "phonetic": "/dɪˈseptɪv/",
+    "translation_fa": "گمراه‌کننده / فریبنده",
+    "definition_en": "giving an appearance or impression different from the true one",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "diabetes",
+    "phonetic": "/ˌdaɪəˈbiːtiːz/",
+    "translation_fa": "دیابت / بیماری قند",
+    "definition_en": "a disease in which the body's ability to produce or respond to the hormone insulin is impaired",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "eliminate",
+    "phonetic": "/ɪˈlɪmɪneɪt/",
+    "translation_fa": "حذف کردن / از بین بردن",
+    "definition_en": "to completely remove or get rid of something",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "erosion",
+    "phonetic": "/ɪˈroʊʒn/",
+    "translation_fa": "فرسایش / ساییدگی",
+    "definition_en": "the process of eroding or being eroded by wind, water, or other natural agents",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "ethics",
+    "phonetic": "/ˈeθɪks/",
+    "translation_fa": "اخلاق / اصول اخلاقی",
+    "definition_en": "moral principles that govern a person's behavior or the conducting of an activity",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "explicit",
+    "phonetic": "/ɪkˈsplɪsɪt/",
+    "translation_fa": "صریح / روشن",
+    "definition_en": "stated clearly and in detail, leaving no room for confusion or doubt",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "framework",
+    "phonetic": "/ˈfreɪmwɜːrk/",
+    "translation_fa": "چارچوب / ساختار",
+    "definition_en": "an essential supporting structure of a building, vehicle, or object",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "manufacture",
+    "phonetic": "/ˌmænjuˈfæktʃər/",
+    "translation_fa": "تولید کردن / ساختن",
+    "definition_en": "to make something on a large scale using machinery",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "mechanism",
+    "phonetic": "/ˈmekənɪzəm/",
+    "translation_fa": "مکانیسم / سازوکار",
+    "definition_en": "a system of parts working together in a machine or a process",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "minimize",
+    "phonetic": "/ˈmɪnɪmaɪz/",
+    "translation_fa": "به حداقل رساندن",
+    "definition_en": "to reduce something to the smallest possible amount or degree",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "nectar",
+    "phonetic": "/ˈnektər/",
+    "translation_fa": "شهد",
+    "definition_en": "a sugar-rich liquid produced by plants in flowers",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "notion",
+    "phonetic": "/ˈnoʊʃn/",
+    "translation_fa": "مفهوم / تصور / باور",
+    "definition_en": "a conception of or belief about something",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "prone",
+    "phonetic": "/proʊn/",
+    "translation_fa": "مستعد / در معرض",
+    "definition_en": "likely to or liable to suffer from, do, or experience something unfortunate",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "straightforward",
+    "phonetic": "/ˌstreɪtˈfɔːrwərd/",
+    "translation_fa": "ساده / بی‌پرده / مستقیم",
+    "definition_en": "uncomplicated and easy to do or understand",
+    "book": 5,
+    "unit": 22
+  },
+  {
+    "word": "astronomical",
+    "phonetic": "/ˌæstrəˈnɑːmɪkl/",
+    "translation_fa": "نجومی / بسیار بزرگ",
+    "definition_en": "relating to astronomy or extremely large",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "atom",
+    "phonetic": "/ˈætəm/",
+    "translation_fa": "اتم",
+    "definition_en": "the basic unit of a chemical element",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "breadth",
+    "phonetic": "/bredθ/",
+    "translation_fa": "عرض / پهنا",
+    "definition_en": "the distance or measurement from side to side of something",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "circumference",
+    "phonetic": "/sərˈkʌmfərəns/",
+    "translation_fa": "محیط (دایره)",
+    "definition_en": "the enclosing boundary of a curved geometric figure, especially a circle",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "comet",
+    "phonetic": "/ˈkɑːmət/",
+    "translation_fa": "ستاره دنباله‌دار",
+    "definition_en": "a celestial object consisting of a nucleus of ice and dust",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "crater",
+    "phonetic": "/ˈkreɪtər/",
+    "translation_fa": "دهانه آتشفشان / گودال",
+    "definition_en": "a large, bowl-shaped cavity in the ground or on the surface of a planet or the moon",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "crescent",
+    "phonetic": "/ˈkresnt/",
+    "translation_fa": "هلال ماه / هلالی",
+    "definition_en": "the curved sickle shape of the waxing or waning moon",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "debris",
+    "phonetic": "/dəˈbriː/",
+    "translation_fa": "آوار / خرده‌ها",
+    "definition_en": "scattered pieces of waste or remains",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "despair",
+    "phonetic": "/dɪˈsper/",
+    "translation_fa": "ناامیدی / یاس",
+    "definition_en": "the complete loss or absence of hope",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "embed",
+    "phonetic": "/ɪmˈbed/",
+    "translation_fa": "تثبیت کردن / جا دادن",
+    "definition_en": "to fix an object firmly and deeply in a surrounding mass",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "fragment",
+    "phonetic": "/ˈfræɡmənt/",
+    "translation_fa": "تکه / قطعه",
+    "definition_en": "a small part broken or separated off from something",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "galaxy",
+    "phonetic": "/ˈɡæləksi/",
+    "translation_fa": "کهکشان",
+    "definition_en": "a system of millions or billions of stars, together with gas and dust",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "gigantic",
+    "phonetic": "/dʒaɪˈɡæntɪk/",
+    "translation_fa": "غول‌پیکر / عظیم",
+    "definition_en": "of very great size or extent; huge or enormous",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "gloom",
+    "phonetic": "/ɡluːm/",
+    "translation_fa": "تاریکی / غم و اندوه",
+    "definition_en": "partial or total darkness, or a state of depression",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "radiate",
+    "phonetic": "/ˈreɪdieɪt/",
+    "translation_fa": "تابیدن / ساطع کردن",
+    "definition_en": "to emit energy, especially light or heat, in the form of rays or waves",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "roam",
+    "phonetic": "/roʊm/",
+    "translation_fa": "سرگردان بودن / پرسه زدن",
+    "definition_en": "to move about or travel aimlessly or unsystematically",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "solitary",
+    "phonetic": "/ˈsɑːləteri/",
+    "translation_fa": "تنها / منزوی",
+    "definition_en": "done or existing alone",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "spectrum",
+    "phonetic": "/ˈspektrəm/",
+    "translation_fa": "طیف",
+    "definition_en": "a band of colors, as seen in a rainbow, produced by separation of the components of light",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "sphere",
+    "phonetic": "/sfɪr/",
+    "translation_fa": "کره / قلمرو",
+    "definition_en": "a round solid figure, or an area of activity or interest",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "status",
+    "phonetic": "/ˈsteɪtəs/",
+    "translation_fa": "وضعیت / مقام",
+    "definition_en": "the relative social, professional, or other standing of someone or something",
+    "book": 5,
+    "unit": 23
+  },
+  {
+    "word": "bank",
+    "phonetic": "/bæŋk/",
+    "translation_fa": "ساحل رودخانه / بانک",
+    "definition_en": "the land alongside or sloping down to a river or lake",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "birch",
+    "phonetic": "/bɜːrtʃ/",
+    "translation_fa": "درخت توس (توسه)",
+    "definition_en": "a slender hardy tree with thin bark and delicate foliage",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "defect",
+    "phonetic": "/ˈdiːfekt/",
+    "translation_fa": "عیب / نقص",
+    "definition_en": "a shortcoming, imperfection, or lack",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "depict",
+    "phonetic": "/dɪˈpɪkt/",
+    "translation_fa": "تصویر کردن / توصیف کردن",
+    "definition_en": "to show or represent by a drawing, painting, or other art form",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "ecological",
+    "phonetic": "/ˌiːkəˈlɑːdʒɪkl/",
+    "translation_fa": "بوم‌شناختی / محیط‌زیستی",
+    "definition_en": "relating to or concerned with the relation of living organisms to one another and to their physical surroundings",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "eternal",
+    "phonetic": "/ɪˈtɜːrnl/",
+    "translation_fa": "ابدی / جاودان",
+    "definition_en": "lasting or existing forever; without end or beginning",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "genius",
+    "phonetic": "/ˈdʒiːniəs/",
+    "translation_fa": "نبوغ / نابغه",
+    "definition_en": "exceptional intellectual or creative power or other natural ability",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "horizon",
+    "phonetic": "/həˈraɪzn/",
+    "translation_fa": "افق",
+    "definition_en": "the line at which the earth's surface and the sky appear to meet",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "illuminate",
+    "phonetic": "/ɪˈluːmɪneɪt/",
+    "translation_fa": "روشن کردن / روشنگری کردن",
+    "definition_en": "to make something visible or bright with light",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "impress",
+    "phonetic": "/ɪmˈpres/",
+    "translation_fa": "تحت تاثیر قرار دادن",
+    "definition_en": "to make someone feel admiration and respect",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "individual",
+    "phonetic": "/ˌɪndɪˈvɪdʒuəl/",
+    "translation_fa": "فرد / فردی",
+    "definition_en": "single; separate; a single human being",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "intent",
+    "phonetic": "/ɪnˈtent/",
+    "translation_fa": "قصد / نیت",
+    "definition_en": "intention or purpose",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "justify",
+    "phonetic": "/ˈdʒʌstɪfaɪ/",
+    "translation_fa": "توجیه کردن",
+    "definition_en": "to show or prove to be right or reasonable",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "mention",
+    "phonetic": "/ˈmenʃn/",
+    "translation_fa": "اشاره کردن / ذکر کردن",
+    "definition_en": "to refer to something briefly and without going into detail",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "old-fashioned",
+    "phonetic": "/ˌoʊld ˈfæʃnd/",
+    "translation_fa": "قدیمی / کهنه",
+    "definition_en": "in or according to styles or types no longer current or common",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "particular",
+    "phonetic": "/pərˈtɪkjələr/",
+    "translation_fa": "خاص / ویژه",
+    "definition_en": "used to single out an individual member of a specified group or class",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "passenger",
+    "phonetic": "/ˈpæsɪndʒər/",
+    "translation_fa": "مسافر",
+    "definition_en": "a traveler on a public or private conveyance other than the driver",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "poem",
+    "phonetic": "/ˈpoʊəm/",
+    "translation_fa": "شعر",
+    "definition_en": "a piece of writing that partakes of the nature of both speech and song",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "presence",
+    "phonetic": "/ˈprezns/",
+    "translation_fa": "حضور / وجود",
+    "definition_en": "the state or fact of existing, occurring, or being present in a place",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "subtle",
+    "phonetic": "/ˈsʌtl/",
+    "translation_fa": "ظریف / غیرمحسوس",
+    "definition_en": "so delicate or precise as to be difficult to analyze or describe",
+    "book": 5,
+    "unit": 24
+  },
+  {
+    "word": "accent",
+    "phonetic": "/ˈæksent/",
+    "translation_fa": "لهجه / تاکید",
+    "definition_en": "a distinctive mode of pronunciation of a language",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "barber",
+    "phonetic": "/ˈbɑːrbər/",
+    "translation_fa": "آرایشگر (مردانه)",
+    "definition_en": "a person whose business is cutting and trimming men's hair",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "basement",
+    "phonetic": "/ˈbeɪsmənt/",
+    "translation_fa": "زیرزمین",
+    "definition_en": "the floor of a building which is partly or entirely below ground level",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "blank",
+    "phonetic": "/blæŋk/",
+    "translation_fa": "خالی / سفید",
+    "definition_en": "bare, empty, or showing no expression",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "blink",
+    "phonetic": "/blɪŋk/",
+    "translation_fa": "پلک زدن",
+    "definition_en": "to shut and open the eyes quickly",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "choir",
+    "phonetic": "/ˈkwaɪər/",
+    "translation_fa": "گروه کر / سرودخوانان",
+    "definition_en": "an organized group of singers, typically one that takes part in church services",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "comic",
+    "phonetic": "/ˈkɑːmɪk/",
+    "translation_fa": "کمدی / خنده‌دار",
+    "definition_en": "causing or meant to cause laughter",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "complicate",
+    "phonetic": "/ˈkɑːmplɪkeɪt/",
+    "translation_fa": "پیچیده کردن",
+    "definition_en": "to make something more difficult or confusing",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "decline",
+    "phonetic": "/dɪˈklaɪn/",
+    "translation_fa": "کاهش یافتن / رد کردن",
+    "definition_en": "to become smaller, fewer, or less; decrease",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "errand",
+    "phonetic": "/ˈerənd/",
+    "translation_fa": "ماموریت کوتاه / کار بیرون",
+    "definition_en": "a short trip taken to attend to a small matter or business",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "glove",
+    "phonetic": "/ɡlʌv/",
+    "translation_fa": "دستکش",
+    "definition_en": "a covering for the hand having separate sheaths for each finger and the thumb",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "hermit",
+    "phonetic": "/ˈhɜːrmɪt/",
+    "translation_fa": "زاهد / گوشه‌گیر",
+    "definition_en": "a person living in solitude as a religious discipline",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "just",
+    "phonetic": "/dʒʌst/",
+    "translation_fa": "عادلانه / منصفانه",
+    "definition_en": "based on or behaving according to what is morally right and fair",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "leather",
+    "phonetic": "/ˈleðər/",
+    "translation_fa": "چرم",
+    "definition_en": "a material made from the skin of an animal by tanning or a similar process",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "ponder",
+    "phonetic": "/ˈpɑːndər/",
+    "translation_fa": "اندیشیدن / به فکر فرو رفتن",
+    "definition_en": "to think about something carefully, especially before making a decision or reaching a conclusion",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "reserve",
+    "phonetic": "/rɪˈzɜːrv/",
+    "translation_fa": "رزرو کردن / ذخیره",
+    "definition_en": "to retain for future use or hold for a particular person",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "script",
+    "phonetic": "/skrɪpt/",
+    "translation_fa": "متن / فیلم‌نامه",
+    "definition_en": "the written text of a play, movie, or broadcast",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "search",
+    "phonetic": "/sɜːrtʃ/",
+    "translation_fa": "جستجو کردن",
+    "definition_en": "to try to find something by looking or otherwise seeking carefully",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "slam",
+    "phonetic": "/slæm/",
+    "translation_fa": "به هم کوبیدن",
+    "definition_en": "to shut forcefully and loudly",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "staircase",
+    "phonetic": "/ˈsterkeɪs/",
+    "translation_fa": "راه پله",
+    "definition_en": "a set of stairs and its surrounding structure",
+    "book": 5,
+    "unit": 25
+  },
+  {
+    "word": "afflict",
+    "phonetic": "/əˈflɪkt/",
+    "translation_fa": "مبتلا کردن / رنج دادن",
+    "definition_en": "to cause pain or suffering to; affect or trouble",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "aisle",
+    "phonetic": "/aɪl/",
+    "translation_fa": "راهرو (بین صندلی‌ها یا قفسه‌ها)",
+    "definition_en": "a passage between rows of seats in a building, aircraft, or train",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "atmosphere",
+    "phonetic": "/ˈætməsfɪr/",
+    "translation_fa": "جو / اتمسفر / فضا",
+    "definition_en": "the envelope of gases surrounding the earth or another planet",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "author",
+    "phonetic": "/ˈɔːθər/",
+    "translation_fa": "نویسنده / پدیدآورنده",
+    "definition_en": "a writer of a book, article, or report",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "breakdown",
+    "phonetic": "/ˈbreɪkdaʊn/",
+    "translation_fa": "خرابی / فروپاشی / شکست",
+    "definition_en": "a mechanical failure or a collapse in health or a relationship",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "cargo",
+    "phonetic": "/ˈkɑːrɡoʊ/",
+    "translation_fa": "بار / محموله",
+    "definition_en": "goods carried on a ship, aircraft, or motor vehicle",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "chapter",
+    "phonetic": "/ˈtʃæptər/",
+    "translation_fa": "فصل (کتاب) / دوره",
+    "definition_en": "a main division of a book, typically with a number or title",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "connect",
+    "phonetic": "/kəˈnekt/",
+    "translation_fa": "وصل کردن / ارتباط دادن",
+    "definition_en": "to bring together or into contact so that a real or notional link is established",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "etc.",
+    "phonetic": "/etˈsetərə/",
+    "translation_fa": "و غیره",
+    "definition_en": "used at the end of a list to indicate that further, similar items are included",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "flip",
+    "phonetic": "/flɪp/",
+    "translation_fa": "پشت و رو کردن / پرتاب کردن",
+    "definition_en": "to turn over or cause to turn over with a sudden quick movement",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "idle",
+    "phonetic": "/ˈaɪdl/",
+    "translation_fa": "بیکار / تنبل / بی‌کارکرد",
+    "definition_en": "avoiding work; lazy; not in use or working",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "notify",
+    "phonetic": "/ˈnoʊtɪfaɪ/",
+    "translation_fa": "اطلاع دادن / آگاه ساختن",
+    "definition_en": "to inform someone officially of something",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "pea",
+    "phonetic": "/piː/",
+    "translation_fa": "نخودفرنگی",
+    "definition_en": "a spherical green seed eaten as a vegetable",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "raisin",
+    "phonetic": "/ˈreɪzn/",
+    "translation_fa": "کشمش",
+    "definition_en": "a dried grape",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "retain",
+    "phonetic": "/rɪˈteɪn/",
+    "translation_fa": "حفظ کردن / نگه داشتن",
+    "definition_en": "to continue to have something; keep possession of",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "state",
+    "phonetic": "/steɪt/",
+    "translation_fa": "حالت / وضعیت / ایالت / بیان کردن",
+    "definition_en": "the particular condition that someone or something is in, or to express something formally",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "tray",
+    "phonetic": "/treɪ/",
+    "translation_fa": "سینی",
+    "definition_en": "a flat, shallow container with a raised rim, used for carrying or holding things",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "unfortunate",
+    "phonetic": "/ʌnˈfɔːrtʃənət/",
+    "translation_fa": "بدشانس / ناخوشایند",
+    "definition_en": "having or marked by bad fortune; unlucky",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "vivid",
+    "phonetic": "/ˈvɪvɪd/",
+    "translation_fa": "شفاف / روشن / زنده",
+    "definition_en": "producing powerful feelings or strong, clear images in the mind",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "vomit",
+    "phonetic": "/ˈvɑːmɪt/",
+    "translation_fa": "استفراغ کردن / بالا آوردن",
+    "definition_en": "to eject matter from the stomach through the mouth",
+    "book": 5,
+    "unit": 26
+  },
+  {
+    "word": "betray",
+    "phonetic": "/bɪˈtreɪ/",
+    "translation_fa": "خیانت کردن / افشا کردن",
+    "definition_en": "to expose one's country, a group, or a person to danger by treacherously giving information",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "blast",
+    "phonetic": "/blæst/",
+    "translation_fa": "انفجار / موج انفجار",
+    "definition_en": "a destructive wave of highly compressed air spreading outward from an explosion",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "bracelet",
+    "phonetic": "/ˈbreɪslət/",
+    "translation_fa": "دستبند",
+    "definition_en": "an ornamental band, hoop, or chain worn on the wrist or arm",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "cease",
+    "phonetic": "/siːs/",
+    "translation_fa": "متوقف شدن / دست کشیدن",
+    "definition_en": "to bring or come to an end",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "choke",
+    "phonetic": "/tʃoʊk/",
+    "translation_fa": "خفه شدن / مسدود کردن",
+    "definition_en": "to have severe difficulty breathing because of a constricted or obstructed throat",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "civil",
+    "phonetic": "/ˈsɪvl/",
+    "translation_fa": "مدنی / کشوری / مبادی آداب",
+    "definition_en": "relating to ordinary citizens and their concerns, as distinct from military or ecclesiastical matters",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "comment",
+    "phonetic": "/ˈkɑːment/",
+    "translation_fa": "نظر دادن / اظهار نظر",
+    "definition_en": "a remark expressing an opinion or reaction",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "cross",
+    "phonetic": "/krɔːs/",
+    "translation_fa": "عبور کردن / عصبانی",
+    "definition_en": "to go from one side to the other, or annoyed and angry",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "dent",
+    "phonetic": "/dent/",
+    "translation_fa": "فرورفتگی / گود افتادن",
+    "definition_en": "a slight hollow in a hard surface made by a blow or pressure",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "distrust",
+    "phonetic": "/dɪsˈtrʌst/",
+    "translation_fa": "بی‌اعتمادی / بدگمانی",
+    "definition_en": "the feeling that someone or something cannot be relied upon",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "fort",
+    "phonetic": "/fɔːrt/",
+    "translation_fa": "قلعه / دژ",
+    "definition_en": "a fortified building or strategic position",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "lining",
+    "phonetic": "/ˈlaɪnɪŋ/",
+    "translation_fa": "آستر / پوشش داخلی",
+    "definition_en": "a layer of material on the inner surface of something, especially clothing",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "mass",
+    "phonetic": "/mæs/",
+    "translation_fa": "جرم / توده / انبوه",
+    "definition_en": "a large body of matter with no definite shape",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "pray",
+    "phonetic": "/preɪ/",
+    "translation_fa": "دعا کردن / نیایش کردن",
+    "definition_en": "to address a solemn request or expression of thanks to God or a deity",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "rouse",
+    "phonetic": "/raʊz/",
+    "translation_fa": "بیدار کردن / برانگیختن",
+    "definition_en": "to bring out of sleep or awaken; excite",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "rumor",
+    "phonetic": "/ˈruːmər/",
+    "translation_fa": "شایعه",
+    "definition_en": "a currently circulating story or report of uncertain or doubtful truth",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "senile",
+    "phonetic": "/ˈsiːnaɪl/",
+    "translation_fa": "دچار زوال عقل / کهنسال",
+    "definition_en": "showing weaknesses or diseases of old age, especially a loss of mental faculties",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "strip",
+    "phonetic": "/strɪp/",
+    "translation_fa": "برهنه کردن / نوار باریک",
+    "definition_en": "to remove all coverings or clothing, or a long narrow piece of something",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "syllable",
+    "phonetic": "/ˈsɪləbl/",
+    "translation_fa": "هجا / بخش کلمه",
+    "definition_en": "a unit of pronunciation having one vowel sound, with or without surrounding consonants",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "twitch",
+    "phonetic": "/twɪtʃ/",
+    "translation_fa": "پرش ناگهانی عضله / تکان ناگهانی",
+    "definition_en": "to give or cause to give a short, sudden jerking movement",
+    "book": 5,
+    "unit": 27
+  },
+  {
+    "word": "accurate",
+    "phonetic": "/ˈækjərət/",
+    "translation_fa": "دقیق / درست",
+    "definition_en": "correct in all details; exact",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "analyze",
+    "phonetic": "/ˈænəlaɪz/",
+    "translation_fa": "تحلیل کردن / بررسی دقیق",
+    "definition_en": "to examine methodically and in detail the structure or constitution of something",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "asteroid",
+    "phonetic": "/ˈæstərɔɪd/",
+    "translation_fa": "سیارک",
+    "definition_en": "a small rocky body orbiting the sun",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "controversy",
+    "phonetic": "/ˈkɑːntrəvɜːrsi/",
+    "translation_fa": "مباحثه / جنجال / چالش",
+    "definition_en": "disagreement, typically when prolonged, public, and heated",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "evolve",
+    "phonetic": "/ɪˈvɑːlv/",
+    "translation_fa": "تکامل یافتن / تدریجاً شکل گرفتن",
+    "definition_en": "to develop gradually, especially from a simple to a more complex form",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "factor",
+    "phonetic": "/ˈfæktər/",
+    "translation_fa": "فاکتور / عامل",
+    "definition_en": "a circumstance, fact, or influence that contributes to a result or outcome",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "genetic",
+    "phonetic": "/dʒəˈnetɪk/",
+    "translation_fa": "ژنتیکی",
+    "definition_en": "relating to genes or heredity",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "genome",
+    "phonetic": "/ˈdʒiːnoʊm/",
+    "translation_fa": "ژنوم / ژن‌گان",
+    "definition_en": "the complete set of genes or genetic material present in a cell or organism",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "identical",
+    "phonetic": "/aɪˈdentɪkl/",
+    "translation_fa": "کاملاً یکسان / همانند",
+    "definition_en": "similar in every detail; exactly alike",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "intellectual",
+    "phonetic": "/ˌɪntəˈlektʃuəl/",
+    "translation_fa": "روشنفکر / فکری / عقلانی",
+    "definition_en": "relating to the intellect or possessive of a high degree of intelligence",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "majority",
+    "phonetic": "/məˈdʒɔːrəti/",
+    "translation_fa": "اکثریت",
+    "definition_en": "the greater number or part of something",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "mammal",
+    "phonetic": "/ˈmæml/",
+    "translation_fa": "پستاندار",
+    "definition_en": "a warm-blooded vertebrate animal characterized by the possession of hair and mammary glands",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "multiply",
+    "phonetic": "/ˈmʌltɪplaɪ/",
+    "translation_fa": "ضرب کردن / تکثیر شدن",
+    "definition_en": "to obtain from another number or set of numbers a total that contains the first number a specified number of times; increase in number",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "offspring",
+    "phonetic": "/ˈɔːfsprɪŋ/",
+    "translation_fa": "فرزند / نسل / فرزندان",
+    "definition_en": "a person's child or children, or an animal's young",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "pesticide",
+    "phonetic": "/ˈpestɪsaɪd/",
+    "translation_fa": "آفت‌کش",
+    "definition_en": "a substance used for destroying insects or other organisms harmful to cultivated plants",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "regulate",
+    "phonetic": "/ˈreɡjuleɪt/",
+    "translation_fa": "تنظیم کردن / کنترل کردن",
+    "definition_en": "to control or maintain the rate or speed of a machine or process so that it operates properly",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "reinforce",
+    "phonetic": "/ˌriːɪnˈfɔːrs/",
+    "translation_fa": "تقویت کردن / محکم کردن",
+    "definition_en": "to strengthen or support an object or substance, especially with additional material",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "stricken",
+    "phonetic": "/ˈstrɪkən/",
+    "translation_fa": "آسیب‌دیده / مبتلا / مصیبت‌زده",
+    "definition_en": "seriously affected by an undesirable condition or unpleasant feeling",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "vast",
+    "phonetic": "/væst/",
+    "translation_fa": "وسیع / پهناور / عظیم",
+    "definition_en": "of very great extent or quantity; immense",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "vegetarian",
+    "phonetic": "/ˌvedʒəˈteriən/",
+    "translation_fa": "گیاه‌خوار",
+    "definition_en": "a person who does not eat meat or fish and sometimes other animal products",
+    "book": 5,
+    "unit": 28
+  },
+  {
+    "word": "cherish",
+    "phonetic": "/ˈtʃerɪʃ/",
+    "translation_fa": "گرامی داشتن / عزیز داشتن",
+    "definition_en": "to protect and care for someone or something lovingly",
     "book": 5,
     "unit": 29
   },
   {
-    "word": "warrant",
-    "phonetic": "/ˈwɒrənt/",
-    "translation_fa": "توجیه کردن / حکم قانونی",
-    "definition_en": "to justify or necessitate an action; an official authorization",
+    "word": "compassion",
+    "phonetic": "/kəmˈpæʃn/",
+    "translation_fa": "دلسوزی / شفقت",
+    "definition_en": "sympathetic pity and concern for the sufferings or misfortunes of others",
     "book": 5,
     "unit": 29
   },
   {
-    "word": "yield",
-    "phonetic": "/jiːld/",
-    "translation_fa": "بازده داشتن / تسلیم شدن",
-    "definition_en": "to produce or provide a result or result in surrender",
+    "word": "consent",
+    "phonetic": "/kənˈsent/",
+    "translation_fa": "رضایت دادن / موافقت کردن",
+    "definition_en": "to give permission for something to happen or agreement to do something",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "core",
+    "phonetic": "/kɔːr/",
+    "translation_fa": "هسته / مرکز / اصل",
+    "definition_en": "the tough central part of various fruits, or the central or most important part of something",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "cunning",
+    "phonetic": "/ˈkʌnɪŋ/",
+    "translation_fa": "حیله‌گر / مکار / زیرک",
+    "definition_en": "having or showing skill in achieving one's ends by deceit or evasion",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "dizzy",
+    "phonetic": "/ˈdɪzi/",
+    "translation_fa": "دچار سرگیجه",
+    "definition_en": "having or involving a sensation of spinning around and losing one's balance",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "equilibrium",
+    "phonetic": "/ˌiːkwɪˈlɪbriəm/",
+    "translation_fa": "تعادل / توازن",
+    "definition_en": "a state in which opposing forces or influences are balanced",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "foster",
+    "phonetic": "/ˈfɔːstər/",
+    "translation_fa": "پرورش دادن / تشویق کردن",
+    "definition_en": "to encourage or promote the development of something",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "grind",
+    "phonetic": "/ɡraɪnd/",
+    "translation_fa": "آسیاب کردن / خرد کردن",
+    "definition_en": "to reduce something to small particles or powder by crushing it",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "growl",
+    "phonetic": "/ɡraʊl/",
+    "translation_fa": "خرناس کشیدن / ناله غضب‌آلود",
+    "definition_en": "to make a low guttural sound in the throat, typically as a hostility or warning",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "moderation",
+    "phonetic": "/ˌmɑːdəˈreɪʃn/",
+    "translation_fa": "اعتدال / میانه‌روی",
+    "definition_en": "the avoidance of excess or extremes, especially in one's behavior or political opinions",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "predator",
+    "phonetic": "/ˈpredətər/",
+    "translation_fa": "شکارچی / حیوان درنده",
+    "definition_en": "an animal that naturally preys on others",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "sane",
+    "phonetic": "/seɪn/",
+    "translation_fa": "عاقل / دارای سلامت عقل",
+    "definition_en": "of sound mind; not mad or mentally ill",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "saucer",
+    "phonetic": "/ˈsɔːsər/",
+    "translation_fa": "نعلبکی",
+    "definition_en": "a small shallow dish, having a slight depression in the center, for holding a cup",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "snatch",
+    "phonetic": "/snætʃ/",
+    "translation_fa": "قاپیدن / ربودن",
+    "definition_en": "to eagerly take something quickly or abruptly",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "stagger",
+    "phonetic": "/ˈstæɡər/",
+    "translation_fa": "تلوتلو خوردن",
+    "definition_en": "to walk or move unsteadily, as if about to fall",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "stumble",
+    "phonetic": "/ˈstʌmbl/",
+    "translation_fa": "سکندری خوردن / لغزیدن",
+    "definition_en": "to trip or momentarily lose one's balance almost falling",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "tense",
+    "phonetic": "/tens/",
+    "translation_fa": "متشنج / کشیده / نگران",
+    "definition_en": "stretched tight or unable to relax because of nervousness or anxiety",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "tumble",
+    "phonetic": "/ˈtʌmbl/",
+    "translation_fa": "افتادن / غلت خوردن",
+    "definition_en": "to fall suddenly, clumsily, or headlong",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "withhold",
+    "phonetic": "/wɪðˈhoʊld/",
+    "translation_fa": "خودداری کردن از دادن / دریغ داشتن",
+    "definition_en": "to refuse to give or grant something to someone",
+    "book": 5,
+    "unit": 29
+  },
+  {
+    "word": "aircraft",
+    "phonetic": "/ˈerkræft/",
+    "translation_fa": "هواپیما / وسایل نقلیه هوایی",
+    "definition_en": "an airplane, helicopter, or other machine capable of flight",
     "book": 5,
     "unit": 30
   },
   {
-    "word": "zeal",
-    "phonetic": "/ziːl/",
-    "translation_fa": "اشتیاق شدید / غیرت",
-    "definition_en": "great energy or enthusiasm in pursuit of a cause or an objective",
+    "word": "celebrity",
+    "phonetic": "/səˈlebrəti/",
+    "translation_fa": "فرد مشهور / سلبریتی",
+    "definition_en": "a famous person",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "concrete",
+    "phonetic": "/ˈkɑːnkriːt/",
+    "translation_fa": "بتن / ملموس / واقعی",
+    "definition_en": "building material made from gravel, sand, cement, and water; existing in a material or physical form",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "decisive",
+    "phonetic": "/dɪˈsaɪsɪv/",
+    "translation_fa": "قاطع / تعیین‌کننده",
+    "definition_en": "settling an issue; producing a definite result or showing determination",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "esteemed",
+    "phonetic": "/ɪˈstiːmd/",
+    "translation_fa": "محترم / گرانقدر",
+    "definition_en": "held in great respect or admiration; respected",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "ethical",
+    "phonetic": "/ˈeθɪkl/",
+    "translation_fa": "اخلاقی / اصولی",
+    "definition_en": "relating to moral principles or the branch of knowledge dealing with these",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "extinct",
+    "phonetic": "/ɪkˈstɪŋkt/",
+    "translation_fa": "منقرض‌شده / خاموش‌گشته",
+    "definition_en": "having no living members; no longer in existence",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "hardy",
+    "phonetic": "/ˈhɑːrdi/",
+    "translation_fa": "مقاوم / جان‌سخت",
+    "definition_en": "robust; capable of enduring difficult conditions or harsh environments",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "institute",
+    "phonetic": "/ˈɪnstɪtuːt/",
+    "translation_fa": "موسسه / بنیاد / تأسیس کردن",
+    "definition_en": "an organization having a particular purpose, especially one involved with science or education",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "jealousy",
+    "phonetic": "/ˈdʒeləsi/",
+    "translation_fa": "حسادت",
+    "definition_en": "the state or feeling of being jealous",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "migrate",
+    "phonetic": "/ˈmaɪɡreɪt/",
+    "translation_fa": "مهاجرت کردن",
+    "definition_en": "to move from one region or habitat to another according to the seasons",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "nurture",
+    "phonetic": "/ˈnɜːrtʃər/",
+    "translation_fa": "پرورش دادن / مراقبت کردن",
+    "definition_en": "to care for and encourage the growth or development of someone or something",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "overhead",
+    "phonetic": "/ˌoʊvərˈhed/",
+    "translation_fa": "بالای سر / بالاسری",
+    "definition_en": "above one's head; in the sky or space above",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "principle",
+    "phonetic": "/ˈprɪnsəpl/",
+    "translation_fa": "اصل / قاعده / قانون اخلاقی",
+    "definition_en": "a fundamental truth or proposition that serves as the foundation for a system of belief",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "rural",
+    "phonetic": "/ˈrʊrəl/",
+    "translation_fa": "روستایی",
+    "definition_en": "in, relating to, or characteristic of the countryside rather than the town",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "secluded",
+    "phonetic": "/sɪˈkluːdɪd/",
+    "translation_fa": "ایزوله / خلوت / دور از انظار",
+    "definition_en": "sheltered and private; not watched or disturbed by other people",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "species",
+    "phonetic": "/ˈspiːʃiːz/",
+    "translation_fa": "گونه (زیست‌شناسی)",
+    "definition_en": "a group of living organisms consisting of similar individuals capable of exchanging genes",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "swamp",
+    "phonetic": "/swɑːmp/",
+    "translation_fa": "باتلاق / مرداب",
+    "definition_en": "an area of low-lying, uncultivated ground where water collects; a bog or marsh",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "traverse",
+    "phonetic": "/trəˈvɜːrs/",
+    "translation_fa": "پیمودن / عبور کردن از",
+    "definition_en": "to travel across or through",
+    "book": 5,
+    "unit": 30
+  },
+  {
+    "word": "zoology",
+    "phonetic": "/zuˈɑːlədʒi/",
+    "translation_fa": "جانورشناسی",
+    "definition_en": "the scientific study of the behavior, structure, physiology, classification, and distribution of animals",
     "book": 5,
     "unit": 30
   }
