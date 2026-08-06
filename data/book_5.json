@@ -1,0 +1,346 @@
+[
+  {
+    "word": "abbey",
+    "phonetic": "/ˈæbi/",
+    "translation_fa": "صومعه",
+    "definition_en": "a building where monks or nuns live or used to live",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "allot",
+    "phonetic": "/əˈlɒt/",
+    "translation_fa": "اختصاص دادن",
+    "definition_en": "to give something to someone as a share of what is available",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "appall",
+    "phonetic": "/əˈpɔːl/",
+    "translation_fa": "وحشت‌زده کردن",
+    "definition_en": "to shock or offend someone greatly",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "cache",
+    "phonetic": "/kæʃ/",
+    "translation_fa": "مخفیگاه",
+    "definition_en": "a hiding place used especially for storing things",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "commence",
+    "phonetic": "/kəˈmɛns/",
+    "translation_fa": "شروع کردن",
+    "definition_en": "to begin something",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "deliberate",
+    "phonetic": "/dɪˈlɪbərət/",
+    "translation_fa": "آگاهانه و عمدی",
+    "definition_en": "done consciously and intentionally",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "dire",
+    "phonetic": "/ˈdaɪər/",
+    "translation_fa": "وخیم و بحرانی",
+    "definition_en": "very serious or extreme",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "elapse",
+    "phonetic": "/ɪˈlæps/",
+    "translation_fa": "سپری شدن زمان",
+    "definition_en": "if time elapses, it passes",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "empathy",
+    "phonetic": "/ˈɛmpəθi/",
+    "translation_fa": "هم‌حسی و همدلی",
+    "definition_en": "the ability to understand another person's feelings",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "fanciful",
+    "phonetic": "/ˈfænsɪfʊl/",
+    "translation_fa": "خیالی و غیرواقعی",
+    "definition_en": "not based on fact or reason; unrealistic",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "gripe",
+    "phonetic": "/ɡraɪp/",
+    "translation_fa": "شکایت کردن",
+    "definition_en": "to complain continuously about something unimportant",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "grueling",
+    "phonetic": "/ˈɡruːəlɪŋ/",
+    "translation_fa": " طاقت‌فرسا",
+    "definition_en": "extremely tiring and demanding",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "mundane",
+    "phonetic": "/mʌnˈdeɪn/",
+    "translation_fa": "معمولی و کسل‌کننده",
+    "definition_en": "lacking interest or excitement; dull",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "opt",
+    "phonetic": "/ɒpt/",
+    "translation_fa": "انتخاب کردن",
+    "definition_en": "to make a choice from a range of possibilities",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "outrage",
+    "phonetic": "/ˈaʊtreɪdʒ/",
+    "translation_fa": "خشم شدید",
+    "definition_en": "a feeling of anger and shock",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "paltry",
+    "phonetic": "/ˈpɔːltri/",
+    "translation_fa": "ناچیز و اندک",
+    "definition_en": "too small to be considered important or useful",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "rectify",
+    "phonetic": "/ˈrɛktɪfaɪ/",
+    "translation_fa": "اصلاح کردن",
+    "definition_en": "to correct or fix something that is wrong",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "resourcefulness",
+    "phonetic": "/rɪˈsɔːrsfʊlnəs/",
+    "translation_fa": "کاردانی و ابتکار عمل",
+    "definition_en": "the ability to find quick and clever ways to overcome difficulties",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "sustenance",
+    "phonetic": "/ˈsʌstənəns/",
+    "translation_fa": "معیشت و رزق",
+    "definition_en": "food and drink regarded as a source of strength or nourishment",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "tedious",
+    "phonetic": "/ˈtiːdiəs/",
+    "translation_fa": "خسته‌کننده",
+    "definition_en": "boring and lasting for too long",
+    "book": 5,
+    "unit": 1
+  },
+  {
+    "word": "advert",
+    "phonetic": "/ˈædvɜːrt/",
+    "translation_fa": "آگهی تبلیغاتی",
+    "definition_en": "a notice or announcement in a public medium promoting a product",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "assign",
+    "phonetic": "/əˈsaɪn/",
+    "translation_fa": "واگذار کردن",
+    "definition_en": "to give someone a particular job or duty",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "concede",
+    "phonetic": "/kənˈsiːd/",
+    "translation_fa": "اذعان داشتن",
+    "definition_en": "to admit that something is true after first denying it",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "decay",
+    "phonetic": "/dɪˈkeɪ/",
+    "translation_fa": "پوسیدگی",
+    "definition_en": "the process or result of being destroyed by natural causes",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "fitful",
+    "phonetic": "/ˈfɪtfʊl/",
+    "translation_fa": "ناپیوسته و گسسته",
+    "definition_en": "not regular or continuous; happening in short periods",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "hospitable",
+    "phonetic": "/hɒsˈpɪtəbl/",
+    "translation_fa": "مهمان‌نواز",
+    "definition_en": "friendly and welcoming to guests or strangers",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "incline",
+    "phonetic": "/ɪnˈklaɪn/",
+    "translation_fa": "تمایل داشتن",
+    "definition_en": "to feel willing or favorably disposed toward something",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "justice",
+    "phonetic": "/ˈdʒʌstɪs/",
+    "translation_fa": "عدالت",
+    "definition_en": "fair treatment or behavior",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "naughty",
+    "phonetic": "/ˈnɔːti/",
+    "translation_fa": "شیطون و بدرفتار",
+    "definition_en": "badly behaved or disobedient",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "perceive",
+    "phonetic": "/pərˈsiːv/",
+    "translation_fa": "درک کردن",
+    "definition_en": "to become aware or conscious of something",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "refuge",
+    "phonetic": "/ˈrɛfjuːdʒ/",
+    "translation_fa": "پناهگاه",
+    "definition_en": "a place of safety or shelter",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "restore",
+    "phonetic": "/rɪˈstɔːr/",
+    "translation_fa": "بازسازی کردن",
+    "definition_en": "to bring back to a former condition or state",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "scarcity",
+    "phonetic": "/ˈskɛərsəti/",
+    "translation_fa": "کمیابی",
+    "definition_en": "a situation in which something is not easy to find or get",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "stock",
+    "phonetic": "/stɒk/",
+    "translation_fa": "موجودی کالا",
+    "definition_en": "a supply of something available for use",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "substance",
+    "phonetic": "/ˈsʌbstəns/",
+    "translation_fa": "ماده",
+    "definition_en": "a particular kind of matter with uniform properties",
+    "book": 5,
+    "unit": 2
+  },
+  {
+    "word": "benevolent",
+    "phonetic": "/bəˈnɛvələnt/",
+    "translation_fa": "خیرخواه",
+    "definition_en": "kind and helpful",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "clamor",
+    "phonetic": "/ˈklæmər/",
+    "translation_fa": "همهمه و جنجال",
+    "definition_en": "a loud demand or complaint by a lot of people",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "decisive",
+    "phonetic": "/dɪˈsaɪsɪv/",
+    "translation_fa": "قاطع",
+    "definition_en": "able to make decisions quickly and confidently",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "discretion",
+    "phonetic": "/dɪˈskrɛʃən/",
+    "translation_fa": "ملاحظه‌کاری و احتیاط",
+    "definition_en": "the quality of behaving in a way that avoids causing offense or revealing secrets",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "enforce",
+    "phonetic": "/ɪnˈfɔːrs/",
+    "translation_fa": "اجرا کردن (قانون)",
+    "definition_en": "to make people obey a rule or law",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "intimidate",
+    "phonetic": "/ɪnˈtɪmɪdeɪt/",
+    "translation_fa": "ترساندن",
+    "definition_en": "to frighten or threaten someone",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "sovereign",
+    "phonetic": "/ˈsɒvrɪn/",
+    "translation_fa": "فرمانروا / مستقل",
+    "definition_en": "a king or queen; or having supreme power",
+    "book": 5,
+    "unit": 3
+  },
+  {
+    "word": "treason",
+    "phonetic": "/ˈtriːzn/",
+    "translation_fa": "خیانت به کشور",
+    "definition_en": "the crime of helping your country's enemies",
+    "book": 5,
+    "unit": 3
+  }
+]
