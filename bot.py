@@ -535,31 +535,37 @@ Format strictly using HTML:
 # 🔗 کاربرد: استفاده در مسیر /quote
 # ==============================================================================
 def generate_quote_post(quote_item=None) -> str:
-    """
-    تولید متن پست آموزشی/انگیزشی نقل‌قول روز با هوش مصنوعی.
-    """
-    if not quote_item:
-        quote_item = get_quote_from_data()
+  """تولید متن پست آموزشی/انگیزشی نقل‌قول روز با هوش مصنوعی."""
+  if not quote_item:
+    quote_item = get_quote_from_data()
 
-    if not quote_item:
-        logger.error("هیچ نقل‌قولی برای تولید پست دریافت نشد.")
-        return None
+  if not quote_item:
+    logger.error("هیچ نقل‌قولی برای تولید پست دریافت نشد.")
+    return None
 
-    # استخراج متن و گوینده (چه فایل به صورت لیست متنی باشد چه دیکشنری)
-    if isinstance(quote_item, dict):
-        quote_str = quote_item.get("quote") or quote_item.get("text") or quote_item.get("statement") or ""
-        author_str = quote_item.get("author") or quote_item.get("by") or "Unknown"
-    elif isinstance(quote_item, str):
-        quote_str = quote_item.strip()
-        author_str = "Unknown"
-    else:
-        quote_str = str(quote_item)
-        author_str = "Unknown"
+  # استخراج متن و گوینده
+  if isinstance(quote_item, dict):
+    quote_str = (
+        quote_item.get("quote")
+        or quote_item.get("text")
+        or quote_item.get("statement")
+        or ""
+    )
+    author_str = quote_item.get("author") or quote_item.get("by") or "Unknown"
+  elif isinstance(quote_item, str):
+    quote_str = quote_item.strip()
+    author_str = "Unknown"
+  else:
+    quote_str = str(quote_item)
+    author_str = "Unknown"
 
-    if not quote_str:
-        return None
+  if not quote_str:
+    return None
 
-    prompt = f"""
+  # اضافه کردن کاراکتر مخفی راست‌چین \u200F برای اجبار تلگرام به راست‌چین کردن بلاک ترجمه
+  rtl_mark = "\u200F"
+
+  prompt = f"""
 Create an inspiring Telegram post for this English quote:
 Quote: "{quote_str}"
 Author: {author_str}
@@ -572,7 +578,7 @@ Format:
 </blockquote>
 
 🔹<b>ترجمه:</b>
-<blockquote>[[Full Persian translation here]- use RTL format (Right To Left)]</blockquote>
+<blockquote>{rtl_mark}[Full Persian translation here starting strictly with Persian letters]</blockquote>
 
 🤔 <b>نظر شما چیه؟</b>
 [English question for readers]
@@ -581,17 +587,18 @@ Format:
 CRITICAL RULES:
 1. Use ONLY <b> and <i> tags. Do NOT use markdown asterisks (*).
 2. Keep line breaks clean and layout professional.
+3. The Persian translation MUST start directly with a Persian letter (no spaces, symbols, or English words at the very beginning of the translation).
 """
-    try:
-        completion = client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.7,
-        )
-        return clean_text(completion.choices[0].message.content.strip())
-    except Exception as e:
-        logger.error(f"Quote Error: {e}")
-        return None
+  try:
+    completion = client.chat.completions.create(
+        model=MODEL_NAME,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.7,
+    )
+    return clean_text(completion.choices[0].message.content.strip())
+  except Exception as e:
+    logger.error(f"Quote Error: {e}")
+    return None
 
 # ==============================================================================
 # 📘 راهنمای تابع: generate_story_post
