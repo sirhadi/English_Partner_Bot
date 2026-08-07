@@ -595,37 +595,45 @@ CRITICAL RULES:
 # 🔗 کاربرد: استفاده در مسیر /story
 # ==============================================================================
 def generate_story_post() -> str:
-    prompt = """
-Write a short English story for B2-C1 learners (5-7 sentences).
+  # ۱. ساخت پرامپت برای اینکه مدل گروق داستان انگلیسی را تولید کند
+  prompt = """
+    Write a short English story for B2-C1 learners (5-7 sentences).
+    Include 2-3 key words in <b> tags within the story.
+    Also extract those 3 key words with their Persian meanings in this exact format:
+    
+    📖 <b>Short Story (B2-C1)</b>
+    [Story text in English]
 
-Format strictly with HTML:
-📖 <b>Short Story ([level])</b>
-[blank line]
-                                             
-eng_text= [Story text in English with 2-3 key words in <b> tags]
+    ✍️ <b>واژگان:</b>
+    💙 <b>word1</b>: معنی
+    💚 <b>word2</b>: معنی
+    🧡 <b>word3</b>: معنی
+    """
 
-✍️ <b>واژگان:</b>
-💙 <b>word1</b>: معنی
-💚 <b>word2</b>: معنی
-🧡 <b>word3</b>: معنی
+  # ۲. گرفتن داستان و واژگان از گروق
+  response = client.chat.completions.create(
+      model="llama-3.3-70b-versatile",
+      temperature=0.7,  # برای خلاقیت در نوشتن داستان
+      messages=[{"role": "user", "content": prompt}],
+  )
+  story_and_vocab = response.choices[0].message.content
 
-<b>ترجمه داستان:</b>
-<blockquote expandable>
-translate_to_natural_persian(eng_text)
-</blockquote>
-  
-"""
-    try:
-        completion = client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.7,
-        )
-        return clean_text(completion.choices[0].message.content.strip())
-    except Exception as e:
-        logger.error(f"Story Error: {e}")
-        return None
+  # ۳. استخراج متن انگلیسی داستان (یا کل متن داستان) برای ترجمه
+  # (بسته به خروجی مدل، می‌توانید بخش انگلیسی را جدا کرده یا کل داستان را بفرستید)
+  # فرض میکنیم متنی که مدل داده را به تابع ترجمه می‌فرستیم تا ترجمه روان فارسی اش را بگیریم:
+  persian_translation = translate_to_natural_persian(story_and_vocab)
 
+  # ۴. ترکیب نهایی با استفاده از f-string
+  final_post = f"""
+    {story_and_vocab}
+
+    <b>ترجمه داستان:</b>
+    <blockquote expandable>
+    {persian_translation}
+    </blockquote>
+    """
+
+  return final_post
 
 # ==============================================================================
 # 📘 راهنمای تابع: generate_idiom_post
