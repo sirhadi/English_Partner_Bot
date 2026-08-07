@@ -89,27 +89,30 @@ def get_time_context() -> str:
 # 📥 ورودی: text_to_translate
 # 📤 خروجی: متن تمیز
 # ==============================================================================
+# تابع ترجمه با تنظیمات فوق‌العاده سخت‌گیرانه
 def translate_to_natural_persian(text_to_translate):
   response = client.chat.completions.create(
-      model="llama-3.3-70b-versatile",  # یا مدل مدنظر شما در گروق
-      temperature=0.0,  # صفر کردن خلاقیت برای جلوگیری از کلمات عجیب
-      top_p=0.1,  # محدود کردن انتخاب‌ها به کلمات رایج و دقیق
+      model="llama-3.3-70b-versatile",
+      temperature=0.0,  # صفر مطلق برای جلوگیری از کلمات ساختگی و کاراکترهای عجیب
+      top_p=0.1,
       messages=[
           {
               "role": "system",
               "content": (
-                  "تو یک مترجم حرفه‌ای و دقیق هستی. وظیفه تو ترجمه متن به زبان"
-                  " فارسی کاملاً روان، طبیعی و معیار است.\nقوانین"
-                  " سخت‌گیرانه:\n1. به هیچ وجه از کلمات نامأنوس، ساختگی یا"
-                  " ترجمه‌های تحت‌اللفظی و عجیب استفاده نکن.\n2. ساختار جملات"
-                  " باید کاملاً مطابق قواعد نگارشی رایج فارسی باشد.\n3. فقط از"
-                  " واژگان درست و جاافتاده استفاده کن."
+                  "تو یک مترجم حرفه‌ای هستی. متن انگلیسی داده شده را فقط به"
+                  " زبان فارسی کاملاً روان، طبیعی، استاندارد و معیار ترجمه کن."
+                  " قوانین حیاتی:\n1. به هیچ وجه از کاراکترهای چینی، ژاپنی یا"
+                  " حروف عجیب و غریب استفاده نکن.\n2. از ترکیب زبان‌ها (مثل"
+                  " نوشتن کلمه انگلیسی وسط متن فارسی مانند khiếnم) کاملاً"
+                  " خودداری کن.\n3. ترجمه باید یکدست، فارسی خالص و بدون نقص"
+                  " باشد."
               ),
           },
           {"role": "user", "content": text_to_translate},
       ],
   )
   return response.choices[0].message.content
+    
 # ==============================================================================
 # 📘 راهنمای تابع: process_telegram_update
 # 🎯 هدف: پردازش پیام‌های دریافتی از تلگرام (پاسخ به دستورات مانند /start)
@@ -595,37 +598,53 @@ CRITICAL RULES:
 # 🔗 کاربرد: استفاده در مسیر /story
 # ==============================================================================
 def generate_story_post() -> str:
-  # ۱. ساخت پرامپت برای اینکه مدل گروق داستان انگلیسی را تولید کند
+  # از مدل می‌خواهیم داستان و واژگان را در بخش‌های مشخص تولید کند
   prompt = """
     Write a short English story for B2-C1 learners (5-7 sentences).
     Include 2-3 key words in <b> tags within the story.
-    Also extract those 3 key words with their Persian meanings in this exact format:
     
-    📖 <b>Short Story (B2-C1)</b>
-    [Story text in English]
+    Format your response strictly like this:
+    [ENGLISH_STORY_START]
+    (Put the English story here)
+    [ENGLISH_STORY_END]
 
     ✍️ <b>واژگان:</b>
-    💙 <b>word1</b>: معنی
-    💚 <b>word2</b>: معنی
-    🧡 <b>word3</b>: معنی
+    💙 <b>word1</b>: معنی فارسی
+    💚 <b>word2</b>: معنی فارسی
+    🧡 <b>word3</b>: معنی فارسی
     """
 
-  # ۲. گرفتن داستان و واژگان از گروق
   response = client.chat.completions.create(
       model="llama-3.3-70b-versatile",
-      temperature=0.7,  # برای خلاقیت در نوشتن داستان
+      temperature=0.7,
       messages=[{"role": "user", "content": prompt}],
   )
-  story_and_vocab = response.choices[0].message.content
+  output_text = response.choices[0].message.content
 
-  # ۳. استخراج متن انگلیسی داستان (یا کل متن داستان) برای ترجمه
-  # (بسته به خروجی مدل، می‌توانید بخش انگلیسی را جدا کرده یا کل داستان را بفرستید)
-  # فرض میکنیم متنی که مدل داده را به تابع ترجمه می‌فرستیم تا ترجمه روان فارسی اش را بگیریم:
-  persian_translation = translate_to_natural_persian(story_and_vocab)
+  # استخراج هوشمندانه فقط متن انگلیسی داستان از بین تگ‌ها
+  try:
+    english_story = (
+        output_text.split("[ENGLISH_STORY_START]")[1]
+        .split("[ENGLISH_STORY_END]")[0]
+        .strip()
+    )
+  except:
+    english_story = output_text  # اگر تگ‌ها پیدا نشد، کل متن را در نظر بگیریم
 
-  # ۴. ترکیب نهایی با استفاده از f-string
+  # ترجمه تمیز و ایزوله شده‌ی فقط بخش انگلیسی توسط تابع جداگانه
+  persian_translation = translate_to_natural_persian(english_story)
+
+  # حذف تگ‌های کمکی از متن اصلی مدل
+  clean_story_structure = (
+      output_text.replace("[ENGLISH_STORY_START]", "")
+      .replace("[ENGLISH_STORY_END]", "")
+      .strip()
+  )
+
+  # قالب نهایی پست
   final_post = f"""
-    {story_and_vocab}
+    📖 <b>Short Story (B2-C1)</b>
+    {clean_story_structure}
 
     <b>ترجمه داستان:</b>
     <blockquote expandable>
