@@ -83,7 +83,33 @@ def get_time_context() -> str:
     else:
         return "Night"
 
-
+# ==============================================================================
+# 📘 راهنمای تابع: translate_to_natural_persian
+# 🎯 هدف: صفر کردن خلاقیت برای جلوگیری از کلمات عجیب
+# 📥 ورودی: text_to_translate
+# 📤 خروجی: متن تمیز
+# ==============================================================================
+def translate_to_natural_persian(text_to_translate):
+  response = client.chat.completions.create(
+      model="llama-3.3-70b-versatile",  # یا مدل مدنظر شما در گروق
+      temperature=0.0,  # صفر کردن خلاقیت برای جلوگیری از کلمات عجیب
+      top_p=0.1,  # محدود کردن انتخاب‌ها به کلمات رایج و دقیق
+      messages=[
+          {
+              "role": "system",
+              "content": (
+                  "تو یک مترجم حرفه‌ای و دقیق هستی. وظیفه تو ترجمه متن به زبان"
+                  " فارسی کاملاً روان، طبیعی و معیار است.\nقوانین"
+                  " سخت‌گیرانه:\n1. به هیچ وجه از کلمات نامأنوس، ساختگی یا"
+                  " ترجمه‌های تحت‌اللفظی و عجیب استفاده نکن.\n2. ساختار جملات"
+                  " باید کاملاً مطابق قواعد نگارشی رایج فارسی باشد.\n3. فقط از"
+                  " واژگان درست و جاافتاده استفاده کن."
+              ),
+          },
+          {"role": "user", "content": text_to_translate},
+      ],
+  )
+  return response.choices[0].message.content
 # ==============================================================================
 # 📘 راهنمای تابع: process_telegram_update
 # 🎯 هدف: پردازش پیام‌های دریافتی از تلگرام (پاسخ به دستورات مانند /start)
@@ -178,9 +204,10 @@ Generate a complete educational post following this EXACT layout and emoji style
 🔔 [English sentence with the target phrase wrapped in <b>tags</b>]
 🔸 <b>ترجمه:</b> [Persian translation]
 
-👨‍🏫 <b>نقل‌قول / نکته طلایی:</b>
-"A short English quote related to learning or life"
-💬 <b>ترجمه:</b> "ترجمه فارسی نقل‌قول"
+# به دلیل طولانی شدن پستها و تکراری بودن نقل قول ها این قسمت رو حذف کردم
+# 👨‍🏫 <b>نقل‌قول / نکته طلایی:</b>
+# "A short English quote related to learning or life"
+# 💬 <b>ترجمه:</b> "ترجمه فارسی نقل‌قول"
 
 👩‍🏫 <b>حالا جواب این سوال و تو بده:</b>
 [An engaging question in English related to the topic]
@@ -415,7 +442,7 @@ Return ONLY raw JSON (no code blocks):
 def generate_news_post() -> str:
     time_seed = datetime.now().strftime("%Y%m%d%H%M%S")
     prompt = f"""
-Write a short, simple, real-world style English news summary suitable for English learners (B2-C1 level).
+Write a short, simple, real-world style English news summary suitable for English learners (B2-C1 level). be sure to use the lates news.
 Seed: {time_seed}
 
 Format strictly using HTML:
@@ -432,7 +459,7 @@ Format strictly using HTML:
 
 <b>ترجمه (برای باز شدن لمس کنید):</b>
 <blockquote expandable>
-[Full Persian translation here]
+[Full Persian translation here- Persian texts are RTL (right to left)]
 </blockquote>
 
 CRITICAL RULES:
@@ -532,14 +559,14 @@ Quote: "{quote_str}"
 Author: {author_str}
 
 Format:
-🐣 <b>نقل‌قول روز (Quote of the Day)</b>
+🐣 <b>Quote of the Day</b>
 <blockquote>
-💬 <b>"{quote_str}"</b>
-✍️ <i>— {author_str}</i>
+💬 <i>"{quote_str}"</i>
+✍️ <b>— {author_str}</b>
 </blockquote>
 
-🔹 <b>ترجمه:</b>
-<blockquote>[Persian translation]</blockquote>
+🔹<b>ترجمه:</b>
+<blockquote>[[Full Persian translation here]- use RTL format (Right To Left)]</blockquote>
 
 🤔 <b>نظر شما چیه؟</b>
 [English question for readers]
@@ -575,7 +602,7 @@ Format strictly with HTML:
 📖 <b>Short Story ([level])</b>
 [blank line]
                                              
-[Story text in English with 2-3 key words in <b> tags]
+eng_text= [Story text in English with 2-3 key words in <b> tags]
 
 ✍️ <b>واژگان:</b>
 💙 <b>word1</b>: معنی
@@ -584,7 +611,7 @@ Format strictly with HTML:
 
 <b>ترجمه داستان:</b>
 <blockquote expandable>
-[Full Persian translation here]
+translate_to_natural_persian(eng_text)
 </blockquote>
   
 """
